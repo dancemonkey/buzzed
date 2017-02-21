@@ -21,7 +21,8 @@ class BuzzedTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCaffeineSource() {
+      let source = CaffeineSource(type: .dripCoffee, size: 16.0)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

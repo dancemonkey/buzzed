@@ -19,6 +19,8 @@
 		10011AF61E592DE30096F426 /* Meter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10011AF41E592DE30096F426 /* Meter.xib */; };
 		109362EA1E5B35DA0056C54B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109362E91E5B35DA0056C54B /* HealthKit.framework */; };
 		109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109362ED1E5B399C0056C54B /* HealthManager.swift */; };
+		10AE2EF51E5BE42600B9AFB4 /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF41E5BE42600B9AFB4 /* CaffeineSource.swift */; };
+		10AE2EF71E5BE75400B9AFB4 /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF41E5BE42600B9AFB4 /* CaffeineSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		109362E71E5B35DA0056C54B /* Buzzed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Buzzed.entitlements; sourceTree = "<group>"; };
 		109362E91E5B35DA0056C54B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		109362ED1E5B399C0056C54B /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		10AE2EF41E5BE42600B9AFB4 /* CaffeineSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,7 @@
 			children = (
 				10011AD11E592A460096F426 /* Buzzed.xcdatamodeld */,
 				109362ED1E5B399C0056C54B /* HealthManager.swift */,
+				10AE2EF41E5BE42600B9AFB4 /* CaffeineSource.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10011ACD1E592A460096F426 /* ViewController.swift in Sources */,
+				10AE2EF51E5BE42600B9AFB4 /* CaffeineSource.swift in Sources */,
 				109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */,
 				10011ACB1E592A460096F426 /* AppDelegate.swift in Sources */,
 				10011AD31E592A460096F426 /* Buzzed.xcdatamodeld in Sources */,
@@ -280,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10011AE31E592A460096F426 /* BuzzedTests.swift in Sources */,
+				10AE2EF71E5BE75400B9AFB4 /* CaffeineSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
