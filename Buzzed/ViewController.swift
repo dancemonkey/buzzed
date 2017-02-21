@@ -15,6 +15,19 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // testing caffeineSource
+    let source = CaffeineSource(type: .dripCoffee, volume: 16.0)
+    print("volume \(source.volume)")
+    print("mg caff per vol \(source.mgCaffeinePerVolume)")
+    print("total caff \(source.totalCaffeineContent)")
+    
+    source.toggleMetricOrCustomary()
+    print("volume \(source.volume)")
+    print("mg caff per vol \(source.mgCaffeinePerVolume)")
+    print("total caff \(source.totalCaffeineContent)")
+    
+    // testing HM permissions
     let hm = HealthManager()
     hm.authorizeHealthkit { (complete, error) in
       if complete {

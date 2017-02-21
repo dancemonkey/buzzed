@@ -47,6 +47,9 @@ class HealthManager {
         print(error!)
       }
     })
+  }
+  
+  func storeSample() {
     
   }
   
