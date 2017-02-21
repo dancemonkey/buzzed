@@ -37,6 +37,11 @@
                BlueprintName = "BuzzedTests"
                ReferencedContainer = "container:Buzzed.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "MeterTest">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

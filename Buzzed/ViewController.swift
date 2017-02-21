@@ -9,9 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  @IBOutlet weak var meter: Meter!
+  @IBOutlet weak var angleField: UITextField!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    let hm = HealthManager()
+    hm.authorizeHealthkit { (complete, error) in
+      if complete {
+        print("Authorized")
+      } else {
+        print(error)
+      }
+    }
     // Do any additional setup after loading the view, typically from a nib.
   }
 
@@ -20,6 +31,11 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  @IBAction func setMeterLevel() {
+    if let text = angleField.text, let number = NumberFormatter().number(from: text) {
+      meter.setLevel(to: CGFloat(number))
+    }
+  }
 
 }
 

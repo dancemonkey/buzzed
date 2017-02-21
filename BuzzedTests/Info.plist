@@ -18,5 +18,9 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>&quot;Buzzed would like to read your caffeine intake from the Health app.&quot;</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>&quot;Buzzed would like to store your caffeine intake in the Health app.&quot;</string>
 </dict>
 </plist>

@@ -27,6 +27,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>healthkit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -34,5 +35,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>&quot;Buzzed would like to store your caffeine intake in the Health app.&quot;</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>&quot;Buzzed would like to read your caffeine intake from the Health app.&quot;</string>
 </dict>
 </plist>
