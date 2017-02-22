@@ -24,7 +24,7 @@ class DataManager {
     readUserDefaults()
   }
   
-  func readUserDefaults() {
+  private func readUserDefaults() {
     let defaults = UserDefaults.standard
     
     if let drinkValue = defaults.object(forKey: defaultKeys.favoriteDrinkType.rawValue) as? String, let drinkVolume = defaults.object(forKey: defaultKeys.favoriteDrinkVolume.rawValue) as? Double {
@@ -67,12 +67,19 @@ class DataManager {
     defaults.set(defaultUnits.description, forKey: defaultKeys.defaultUnits.rawValue)
   }
   
-  func saveFavorite(drink: CaffeineSource) {
+  func saveFavorite(drink: CaffeineSource?) {
     let defaults = UserDefaults.standard
-    defaults.set(drink.sourceType.rawValue, forKey: defaultKeys.favoriteDrinkType.rawValue)
-    defaults.set(drink.sourceName, forKey: defaultKeys.favoriteDrinkName.rawValue)
-    defaults.set(drink.sourceDescription, forKey: defaultKeys.favoriteDrinkDescription.rawValue)
-    defaults.set(drink.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
+    guard let source = drink else {
+      defaults.removeObject(forKey: defaultKeys.favoriteDrinkType.rawValue)
+      defaults.removeObject(forKey: defaultKeys.favoriteDrinkName.rawValue)
+      defaults.removeObject(forKey: defaultKeys.favoriteDrinkDescription.rawValue)
+      defaults.removeObject(forKey: defaultKeys.favoriteDrinkVolume.rawValue)
+      return
+    }
+    defaults.set(source.sourceType.rawValue, forKey: defaultKeys.favoriteDrinkType.rawValue)
+    defaults.set(source.sourceName, forKey: defaultKeys.favoriteDrinkName.rawValue)
+    defaults.set(source.sourceDescription, forKey: defaultKeys.favoriteDrinkDescription.rawValue)
+    defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
   func saveDailyIntake(limit: Double) {
@@ -83,6 +90,22 @@ class DataManager {
   func saveDefaultMeasurement(unit: UnitVolume) {
     let defaults = UserDefaults.standard
     defaults.set(unit.description, forKey: defaultKeys.defaultUnits.rawValue)
+  }
+  
+  func getFavoriteDrink() -> CaffeineSource? {
+    let defaults = UserDefaults.standard
+    var drink: CaffeineSource?
+    
+    if let drinkValue = defaults.object(forKey: defaultKeys.favoriteDrinkType.rawValue) as? String, let drinkVolume = defaults.object(forKey: defaultKeys.favoriteDrinkVolume.rawValue) as? Double {
+      let favoriteDrinkType = CaffeineSourceType(rawValue: drinkValue)!
+      drink = CaffeineSource(type: favoriteDrinkType, volume: drinkVolume)
+      if let name = defaults.object(forKey: defaultKeys.favoriteDrinkName.rawValue) as? String {
+        drink?.changeName(to: name)
+      }
+    } else {
+      drink = nil
+    }
+    return drink
   }
   
 }

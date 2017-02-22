@@ -18,25 +18,23 @@ class ViewController: UIViewController {
     
     // testing caffeineSource
     let source = CaffeineSource(type: .dripCoffee, volume: 16.0)
-    print("volume \(source.volume)")
-    print("mg caff per vol \(source.mgCaffeinePerVolume)")
-    print("total caff \(source.totalCaffeineContent)")
-    
-    source.toggleMetricOrCustomary()
-    print("volume \(source.volume)")
-    print("mg caff per vol \(source.mgCaffeinePerVolume)")
-    print("total caff \(source.totalCaffeineContent)")
+    let dM = DataManager()
+    dM.saveFavorite(drink: nil)
+    if let drink = dM.getFavoriteDrink() {
+      print(drink.sourceName, drink.sourceType, drink.volume)
+    } else {
+      print("no favorite drink")
+    }
     
     // testing HM permissions
-    let hm = HealthManager()
-    hm.authorizeHealthkit { (complete, error) in
-      if complete {
-        print("Authorized")
-      } else {
-        print(error)
-      }
-    }
-    // Do any additional setup after loading the view, typically from a nib.
+//    let hm = HealthManager()
+//    hm.authorizeHealthkit { (complete, error) in
+//      if complete {
+//        print("Authorized")
+//      } else {
+//        print(error)
+//      }
+//    }
   }
 
   override func didReceiveMemoryWarning() {
