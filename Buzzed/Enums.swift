@@ -8,7 +8,9 @@
 
 import Foundation
 
-enum CaffeineSourceType {
+enum CaffeineSourceType: String {
+  
+  // eventually add custom case to this with empty strings and values, user will have to fill it all in
   case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea
   
   func getName() -> String {
@@ -86,4 +88,8 @@ enum CaffeineSourceType {
       return 0.11
     }
   }
+}
+
+enum defaultKeys: String {
+  case favoriteDrinkType, favoriteDrinkVolume, favoriteDrinkName, favoriteDrinkDescription, dailyIntakeLimit, defaultUnits, milliliters, fluidOunces
 }
