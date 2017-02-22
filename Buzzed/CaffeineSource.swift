@@ -54,6 +54,11 @@ class CaffeineSource {
     return _sourceDescription
   }
   
+  private var _percentageConsumed: Double = 0.0
+  var percentageConsumed: Double {
+    return _percentageConsumed
+  }
+  
   init(type: CaffeineSourceType, volume: Double) {
     self._sourceType = type
     self._volume = volume
@@ -93,6 +98,14 @@ class CaffeineSource {
       _volume = measurement.converted(to: .fluidOunces).value.roundTo(places: 2)
     }
     setCaffeinePerVolume(inMg: _sourceType.getMgCaffeinePer(volumeUnit: unit))
+  }
+  
+  func consume(percentage: Double) {
+    _percentageConsumed = percentage / 100
+  }
+  
+  func totalCaffeineConsumed() -> Double {
+    return (totalCaffeineContent * percentageConsumed).roundTo(places: 2)
   }
   
 }
