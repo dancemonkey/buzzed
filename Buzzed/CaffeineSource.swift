@@ -12,6 +12,11 @@ class CaffeineSource {
   let ozToMl = 29.57
   let mlToOz = 1/29.57
   
+  private var _creation: Date
+  var creation: Date {
+    return _creation
+  }
+  
   private var _sourceType: CaffeineSourceType
   var sourceType: CaffeineSourceType {
     return _sourceType
@@ -22,13 +27,11 @@ class CaffeineSource {
     return _volume
   }
   
-  // eventually pull this as a default from the userSettings
   private var _baseUnit: UnitVolume = UnitVolume.fluidOunces
   var baseUnit: UnitVolume {
     return _baseUnit
   }
   
-  // pull this from a local store, json file
   private var _mgCaffeinePerVolume: Double = 0.0
   var mgCaffeinePerVolume: Double {
     return _mgCaffeinePerVolume
@@ -56,12 +59,21 @@ class CaffeineSource {
     return _percentageConsumed
   }
   
+  private var _associatedImageURL: URL?
+  var associatedImageURL: URL? {
+    return _associatedImageURL
+  }
+  
   init(type: CaffeineSourceType, volume: Double) {
+    let dm = DataManager()
+    _baseUnit = dm.getDefaultUnits()
     self._sourceType = type
     self._volume = volume
     self._sourceName = _sourceType.getName()
     self._sourceDescription = _sourceType.getDescription()
     self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(volumeUnit: _baseUnit)
+    self._associatedImageURL = _sourceType.getAssociatedImage()
+    self._creation = Date()
   }
   
   func toggleMetricOrCustomary() {

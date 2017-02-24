@@ -11,7 +11,7 @@ import Foundation
 enum CaffeineSourceType: String {
   
   // eventually add custom case to this with empty strings and values, user will have to fill it all in
-  case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea
+  case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea, custom
   
   func getName() -> String {
     switch self {
@@ -27,6 +27,8 @@ enum CaffeineSourceType: String {
       return "Black Tea"
     case .greenTea:
       return "Green Tea"
+    case .custom:
+      return "Source name"
     }
   }
   
@@ -44,6 +46,27 @@ enum CaffeineSourceType: String {
       return "Black teas have higher caffeine content than others. Early Grey, English Breakfast, Lipton, and even Chai."
     case .greenTea:
       return "Green Tea is lighter in caffeine than the standard variety of tea."
+    case .custom:
+      return "Source description."
+    }
+  }
+  
+  func getAssociatedImage() -> URL? {
+    switch self {
+    case .dripCoffee:
+      return nil
+    case .espresso:
+      return nil
+    case .soda:
+      return nil
+    case .energyDrink:
+      return nil
+    case .blackTea:
+      return nil
+    case .greenTea:
+      return nil
+    case .custom:
+      return nil
     }
   }
   
@@ -69,6 +92,8 @@ enum CaffeineSourceType: String {
       return 6.0
     case .greenTea:
       return 3.2
+    case .custom:
+      return 0.0
     }
   }
   
@@ -86,6 +111,8 @@ enum CaffeineSourceType: String {
       return 0.20
     case .greenTea:
       return 0.11
+    case .custom:
+      return 0.0
     }
   }
 }

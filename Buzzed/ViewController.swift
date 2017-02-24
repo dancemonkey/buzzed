@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     } else {
       print("no favorite drink")
     }
-    dM.saveDefaultMeasurement(unit: .milliliters)
-    dM.saveDailyIntake(limit: 250.0)
+    dM.setDefaultMeasurement(unit: .milliliters)
+    dM.setDailyIntake(limit: 250.0)
     print(dM.getDefaultUnits().description)
     print(dM.getDailyIntake())
     

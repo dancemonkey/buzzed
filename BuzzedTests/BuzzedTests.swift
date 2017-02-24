@@ -13,6 +13,8 @@ class BuzzedTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
+    let dm = DataManager()
+    dm.clearUserDefaults()
     // Put setup code here. This method is called before the invocation of each test method in the class.
   }
   
@@ -27,9 +29,9 @@ class BuzzedTests: XCTestCase {
     XCTAssert(source.sourceDescription == CaffeineSourceType.dripCoffee.getDescription())
     XCTAssert(source.baseUnit == UnitVolume.fluidOunces)
     XCTAssert(source.volume == 16.0)
-    
     XCTAssert(source.mgCaffeinePerVolume == 15.0)
     XCTAssert(source.totalCaffeineContent == 240.0)
+    XCTAssert(source.associatedImageURL == nil)
     
     source.toggleMetricOrCustomary()
     XCTAssert(source.baseUnit == UnitVolume.milliliters)

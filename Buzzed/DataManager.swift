@@ -30,12 +30,12 @@ class DataManager {
     defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
-  func saveDailyIntake(limit: Double) {
+  func setDailyIntake(limit: Double) {
     let defaults = UserDefaults.standard
     defaults.set(limit, forKey: defaultKeys.dailyIntakeLimit.rawValue)
   }
   
-  func saveDefaultMeasurement(unit: UnitVolume) {
+  func setDefaultMeasurement(unit: UnitVolume) {
     let defaults = UserDefaults.standard
     defaults.set(unit.symbol, forKey: defaultKeys.defaultUnits.rawValue)
   }
@@ -79,6 +79,16 @@ class DataManager {
     } else {
       return .fluidOunces
     }
+  }
+  
+  func clearUserDefaults() {
+    let defaults = UserDefaults.standard
+    defaults.removeObject(forKey: defaultKeys.favoriteDrinkType.rawValue)
+    defaults.removeObject(forKey: defaultKeys.favoriteDrinkName.rawValue)
+    defaults.removeObject(forKey: defaultKeys.favoriteDrinkDescription.rawValue)
+    defaults.removeObject(forKey: defaultKeys.favoriteDrinkVolume.rawValue)
+    defaults.removeObject(forKey: defaultKeys.defaultUnits.rawValue)
+    defaults.removeObject(forKey: defaultKeys.dailyIntakeLimit.rawValue)
   }
   
 }
