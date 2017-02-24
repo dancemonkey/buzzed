@@ -2,14 +2,13 @@
 //  CaffeineSource.swift
 //  Buzzed
 //
-//  Created by Drew Lanning on 2/20/17.
+//  Created by Drew Lanning on 2/23/17.
 //  Copyright © 2017 Drew Lanning. All rights reserved.
 //
 
 import Foundation
 
 class CaffeineSource {
-  
   let ozToMl = 29.57
   let mlToOz = 1/29.57
   
@@ -30,16 +29,14 @@ class CaffeineSource {
   }
   
   // pull this from a local store, json file
-  private var _mgCaffeinePerVolume: Double = 0 {
-    didSet {
-      self._totalCaffeineContent = (_mgCaffeinePerVolume * _volume).roundTo(places: 2)
-    }
-  }
+  private var _mgCaffeinePerVolume: Double = 0.0
   var mgCaffeinePerVolume: Double {
     return _mgCaffeinePerVolume
   }
   
-  private var _totalCaffeineContent: Double
+  private var _totalCaffeineContent: Double {
+    return (_mgCaffeinePerVolume * _volume).roundTo(places: 2)
+  }
   var totalCaffeineContent: Double {
     return _totalCaffeineContent
   }
@@ -65,7 +62,6 @@ class CaffeineSource {
     self._sourceName = _sourceType.getName()
     self._sourceDescription = _sourceType.getDescription()
     self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(volumeUnit: _baseUnit)
-    self._totalCaffeineContent = _mgCaffeinePerVolume * _volume
   }
   
   func toggleMetricOrCustomary() {
@@ -107,5 +103,5 @@ class CaffeineSource {
   func totalCaffeineConsumed() -> Double {
     return (totalCaffeineContent * percentageConsumed).roundTo(places: 2)
   }
-  
+
 }

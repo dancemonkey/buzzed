@@ -16,7 +16,6 @@ class HealthManager {
   init() {
     if HKHealthStore.isHealthDataAvailable() {
       healthStore = HKHealthStore()
-      
       // request permission to read and write data, if not already granted
     }
   }

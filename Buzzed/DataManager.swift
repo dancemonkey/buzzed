@@ -15,22 +15,6 @@ class DataManager {
   
   static let instance = DataManager()
   
-//  var favoriteDrink: CaffeineSource?
-//  var favoriteDrinkVolume: Double!
-//  var dailyIntakeLimit: Double!
-//  var defaultUnits: UnitVolume!
-
-  
-//  func writeAllUserDefaults() {
-//    let defaults = UserDefaults.standard
-//    defaults.set(favoriteDrink?.sourceType.rawValue, forKey: defaultKeys.favoriteDrinkType.rawValue)
-//    defaults.set(favoriteDrink?.sourceName, forKey: defaultKeys.favoriteDrinkName.rawValue)
-//    defaults.set(favoriteDrink?.sourceDescription, forKey: defaultKeys.favoriteDrinkDescription.rawValue)
-//    defaults.set(favoriteDrinkVolume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
-//    defaults.set(dailyIntakeLimit, forKey: defaultKeys.dailyIntakeLimit.rawValue)
-//    defaults.set(defaultUnits.description, forKey: defaultKeys.defaultUnits.rawValue)
-//  }
-  
   func saveFavorite(drink: CaffeineSource?) {
     let defaults = UserDefaults.standard
     guard let source = drink else {
