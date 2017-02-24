@@ -16,7 +16,6 @@ class HealthManager {
   init() {
     if HKHealthStore.isHealthDataAvailable() {
       healthStore = HKHealthStore()
-      // request permission to read and write data, if not already granted
     }
   }
   
@@ -49,7 +48,19 @@ class HealthManager {
   }
   
   func storeSample() {
-    
+    print(healthStore!.authorizationStatus(for: HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!))
+    if healthStore!.authorizationStatus(for: HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!) == .sharingAuthorized {
+      let sampleType = HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)
+      let sampleQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .milli), doubleValue: 25.0)
+      let sample = HKQuantitySample(type: sampleType!, quantity: sampleQuantity, start: Date(), end: Date())
+      healthStore!.save(sample, withCompletion: { (success, error) in
+        if error != nil {
+          print("Error saving sample")
+        } else {
+          print("Caffeine sample saved")
+        }
+      })
+    }
   }
   
 }

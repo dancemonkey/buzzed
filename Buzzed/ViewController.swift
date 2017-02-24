@@ -31,14 +31,11 @@ class ViewController: UIViewController {
     print(dM.getDailyIntake())
     
     // testing HM permissions
-//    let hm = HealthManager()
-//    hm.authorizeHealthkit { (complete, error) in
-//      if complete {
-//        print("Authorized")
-//      } else {
-//        print(error)
-//      }
-//    }
+    let hm = HealthManager()
+    hm.authorizeHealthkit { (complete, error) in
+      
+    }
+    hm.storeSample()
   }
 
   override func didReceiveMemoryWarning() {
