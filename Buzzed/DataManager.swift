@@ -13,7 +13,7 @@ class DataManager {
   // read userDefaults for settings like measurement units, max caffeine target/day, favorite drink
   // if nothing in userSettings, offer up defaults
   
-  static let instance = DataManager()
+  //  static let instance = DataManager()
   
   func saveFavorite(drink: CaffeineSource?) {
     let defaults = UserDefaults.standard

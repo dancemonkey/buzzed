@@ -27,15 +27,18 @@ class ViewController: UIViewController {
     }
     dM.setDefaultMeasurement(unit: .milliliters)
     dM.setDailyIntake(limit: 250.0)
-    print(dM.getDefaultUnits().description)
-    print(dM.getDailyIntake())
     
     // testing HM permissions
     let hm = HealthManager()
     hm.authorizeHealthkit { (complete, error) in
-      
+      if complete {
+        print("complete from VC")
+        hm.getHeight()
+      } else {
+        print("did not authorize healthkit")
+      }
     }
-    hm.storeSample()
+    
   }
 
   override func didReceiveMemoryWarning() {
