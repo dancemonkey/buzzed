@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConsumptionSetView" customModule="Buzzed" customModuleProvider="target">
             <connections>
+                <outlet property="caffeineConsumptionLbl" destination="kLL-NE-X9j" id="a2H-zV-sdJ"/>
                 <outlet property="caffeineSourceImg" destination="1xT-1I-y1N" id="Z1J-fE-Ag5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vHW-7L-7tJ"/>
             </connections>
@@ -27,11 +28,19 @@
                         <constraint firstAttribute="height" constant="240" id="tDu-Xc-DOj"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffeine Cons." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-NE-X9j">
+                    <rect key="frame" x="32" y="110" width="112.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hy4-WV-7En"/>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PlL-8w-IIU"/>
+                <constraint firstItem="kLL-NE-X9j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XQp-z3-HUW"/>
+                <constraint firstItem="kLL-NE-X9j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZtU-0R-Sj8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>

@@ -13,6 +13,9 @@ class ConsumptionSetView: UIView {
   @IBOutlet weak var caffeineSourceImg: UIImageView!
   @IBOutlet weak var view: UIView!
   
+  // TESTING: Label for testing
+  @IBOutlet weak var caffeineConsumptionLbl: UILabel!
+  
   var source: CaffeineSource?
   var level: Double!
   
@@ -38,8 +41,14 @@ class ConsumptionSetView: UIView {
   
   func setLevel(to level: Double) {
     self.level = level
-    print("\(#function) level set to \(self.level)")
     source?.consume(percentage: self.level)
+    
+    // TESTING: Label is just for testing until I get drawing implemented
+    if let source = self.source {
+      caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
+    } else {
+      caffeineConsumptionLbl.text = ""
+    }
   }
   
   func setSource(to source: CaffeineSource) {
