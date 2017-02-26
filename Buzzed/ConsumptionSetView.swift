@@ -42,8 +42,9 @@ class ConsumptionSetView: UIView {
   func setLevel(to level: Double) {
     self.level = level
     source?.consume(percentage: self.level)
-    
+  
     // TESTING: Label is just for testing until I get drawing implemented
+    cropToConsumptionTest()
     if let source = self.source {
       caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
     } else {
@@ -55,6 +56,20 @@ class ConsumptionSetView: UIView {
     self.source = source
     let imageName = self.source!.associatedImageName
     caffeineSourceImg.image = UIImage(named: imageName!)
+  }
+  
+  func cropToConsumptionTest() {
+    // calculation wrong, should be inverted percentage
+    // zooming in on image, should remain in place
+    guard let src = self.source else {
+      return
+    }
+    let rect = caffeineSourceImg.bounds
+    let cc = src.percentageConsumed
+    let cropRect = CGRect(x: 0, y: 0, width: rect.size.width, height: CGFloat(Double(rect.size.height) * cc))
+    let imageRef = caffeineSourceImg.image?.cgImage?.cropping(to: cropRect)
+    let newImage = UIImage(cgImage: imageRef!, scale: (caffeineSourceImg.image?.scale)!, orientation: (caffeineSourceImg.image?.imageOrientation)!)
+    caffeineSourceImg.image = newImage
   }
   
   /*
