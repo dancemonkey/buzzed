@@ -59,9 +59,9 @@ class CaffeineSource {
     return _percentageConsumed
   }
   
-  private var _associatedImageURL: URL?
-  var associatedImageURL: URL? {
-    return _associatedImageURL
+  private var _associatedImageName: String?
+  var associatedImageName: String? {
+    return _associatedImageName
   }
   
   init(type: CaffeineSourceType, volume: Double) {
@@ -72,8 +72,10 @@ class CaffeineSource {
     self._sourceName = _sourceType.getName()
     self._sourceDescription = _sourceType.getDescription()
     self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(volumeUnit: _baseUnit)
-    self._associatedImageURL = _sourceType.getAssociatedImage()
+    self._associatedImageName = _sourceType.getAssociatedImageName()
     self._creation = Date()
+    
+    print("\(#function) \(_mgCaffeinePerVolume)")
   }
   
   func toggleMetricOrCustomary() {
@@ -110,9 +112,12 @@ class CaffeineSource {
   
   func consume(percentage: Double) {
     _percentageConsumed = percentage / 100
+    print("\(#function) caffeine consumed - \(totalCaffeineConsumed())")
   }
   
   func totalCaffeineConsumed() -> Double {
+    print("\(totalCaffeineContent)")
+    print("\(percentageConsumed)")
     return (totalCaffeineContent * percentageConsumed).roundTo(places: 2)
   }
 

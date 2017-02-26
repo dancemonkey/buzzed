@@ -21,6 +21,9 @@
 		100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
 		108023061E5DD17000D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
 		108023071E5DD17300D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
+		108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */; };
+		108EE97D1E632BDB006FDCFC /* CaffeineInputSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EE97C1E632BDB006FDCFC /* CaffeineInputSlider.swift */; };
+		108EE97F1E6330F7006FDCFC /* ConsumptionSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */; };
 		109362EA1E5B35DA0056C54B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109362E91E5B35DA0056C54B /* HealthKit.framework */; };
 		109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109362ED1E5B399C0056C54B /* HealthManager.swift */; };
 		10AE2EF91E5C7CFA00B9AFB4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* Enums.swift */; };
@@ -54,6 +57,9 @@
 		10011AF41E592DE30096F426 /* Meter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meter.xib; sourceTree = "<group>"; };
 		100F91211E5FDA9B007E74CA /* CaffeineSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSource.swift; sourceTree = "<group>"; };
 		108023051E5DD17000D948C1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionSetView.swift; sourceTree = "<group>"; };
+		108EE97C1E632BDB006FDCFC /* CaffeineInputSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineInputSlider.swift; sourceTree = "<group>"; };
+		108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionSetView.xib; sourceTree = "<group>"; };
 		109362E71E5B35DA0056C54B /* Buzzed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Buzzed.entitlements; sourceTree = "<group>"; };
 		109362E91E5B35DA0056C54B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		109362ED1E5B399C0056C54B /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 			children = (
 				10011AF11E592A790096F426 /* Meter.swift */,
 				10011AF41E592DE30096F426 /* Meter.xib */,
+				108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */,
+				108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */,
+				108EE97C1E632BDB006FDCFC /* CaffeineInputSlider.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 				10011AD81E592A460096F426 /* LaunchScreen.storyboard in Resources */,
 				10011AD51E592A460096F426 /* Assets.xcassets in Resources */,
 				10011AD01E592A460096F426 /* Main.storyboard in Resources */,
+				108EE97F1E6330F7006FDCFC /* ConsumptionSetView.xib in Resources */,
 				10011AF51E592DE30096F426 /* Meter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +299,9 @@
 				100F91221E5FDA9B007E74CA /* CaffeineSource.swift in Sources */,
 				10AE2EF91E5C7CFA00B9AFB4 /* Enums.swift in Sources */,
 				10011AD31E592A460096F426 /* Buzzed.xcdatamodeld in Sources */,
+				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
+				108EE97D1E632BDB006FDCFC /* CaffeineInputSlider.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

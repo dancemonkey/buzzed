@@ -10,7 +10,6 @@ import Foundation
 
 enum CaffeineSourceType: String {
   
-  // eventually add custom case to this with empty strings and values, user will have to fill it all in
   case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea, custom
   
   func getName() -> String {
@@ -51,22 +50,22 @@ enum CaffeineSourceType: String {
     }
   }
   
-  func getAssociatedImage() -> URL? {
+  func getAssociatedImageName() -> String {
     switch self {
     case .dripCoffee:
-      return nil
+      return "16oz Cup - White"
     case .espresso:
-      return nil
+      return ""
     case .soda:
-      return nil
+      return ""
     case .energyDrink:
-      return nil
+      return ""
     case .blackTea:
-      return nil
+      return ""
     case .greenTea:
-      return nil
+      return ""
     case .custom:
-      return nil
+      return ""
     }
   }
   
