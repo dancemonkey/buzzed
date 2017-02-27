@@ -58,7 +58,7 @@ class ConsumptionSetView: UIView {
     self.source = source
     let imageName = self.source!.associatedImageName
     // TODO: load liquid background view image from enum too, based on drink type
-    let liquidImage = UIImage(named: "LiquidBrown")
+    let liquidImage = UIImage(named: "LiquidWhite")
     caffeineSourceImg.image = UIImage(named: imageName!)
     liquidImg.image = liquidImage
   }
@@ -66,6 +66,7 @@ class ConsumptionSetView: UIView {
   func addMask() {
     let drinkMask = UIImageView(image: UIImage(named: "DrinkMask"))
     drinkMask.contentMode = liquidImg.contentMode
+    drinkMask.bounds = liquidImg.bounds
     liquidImg.mask = drinkMask
     bottomOutMask()
   }
@@ -93,15 +94,10 @@ class ConsumptionSetView: UIView {
     
     let cc = src.percentageConsumed
     let newY = -(liquidImg.bounds.height * CGFloat(cc))
-    
-    print(#function)
-    print(newY)
-    print("original mask frame = \(liquidImg.mask?.frame)")
-    
-    mask.frame = CGRect(x: 0, y: newY, width: mask.bounds.width, height: mask.bounds.height)
-    
-    print("new mask frame = \(liquidImg.mask?.frame)")
-    print("image bounds = \(liquidImg.bounds)")
+    let offset: CGFloat = 50 * CGFloat(cc)
+
+    mask.frame = CGRect(x: 0, y: newY+offset, width: mask.bounds.width, height: mask.bounds.height)
+
   }
   
   /*

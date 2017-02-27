@@ -53,7 +53,7 @@ enum CaffeineSourceType: String {
   func getAssociatedImageName() -> String {
     switch self {
     case .dripCoffee:
-      return "16oz Cup - White"
+      return "16oz Cup - Brown"
     case .espresso:
       return ""
     case .soda:

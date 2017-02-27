@@ -29,9 +29,8 @@
                         <constraint firstAttribute="height" constant="240" id="tDu-Xc-DOj"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Di-pDl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Di-pDl">
                     <rect key="frame" x="0.0" y="0.0" width="176" height="240"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffeine Cons." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-NE-X9j">
                     <rect key="frame" x="32" y="110" width="112.5" height="21"/>
@@ -42,8 +41,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="7Vf-Di-pDl" secondAttribute="trailing" id="BIB-8q-ZG6"/>
+                <constraint firstItem="7Vf-Di-pDl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fsr-Kc-ZKx"/>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hy4-WV-7En"/>
+                <constraint firstAttribute="bottom" secondItem="7Vf-Di-pDl" secondAttribute="bottom" id="NwJ-z8-b0y"/>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PlL-8w-IIU"/>
+                <constraint firstItem="7Vf-Di-pDl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QKo-u4-7mz"/>
                 <constraint firstItem="kLL-NE-X9j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XQp-z3-HUW"/>
                 <constraint firstItem="kLL-NE-X9j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZtU-0R-Sj8"/>
             </constraints>
