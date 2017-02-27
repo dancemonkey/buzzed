@@ -73,9 +73,7 @@ class CaffeineSource {
     self._sourceDescription = _sourceType.getDescription()
     self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(volumeUnit: _baseUnit)
     self._associatedImageName = _sourceType.getAssociatedImageName()
-    self._creation = Date()
-    
-    print("\(#function) \(_mgCaffeinePerVolume)")
+    self._creation = Date()    
   }
   
   func toggleMetricOrCustomary() {

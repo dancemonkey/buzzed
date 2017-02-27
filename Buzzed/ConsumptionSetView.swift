@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ConsumptionSetView: UIView {
   
@@ -42,7 +43,7 @@ class ConsumptionSetView: UIView {
   func setLevel(to level: Double) {
     self.level = level
     source?.consume(percentage: self.level)
-  
+    
     // TESTING: Label is just for testing until I get drawing implemented
     cropToConsumptionTest()
     if let source = self.source {
@@ -58,18 +59,31 @@ class ConsumptionSetView: UIView {
     caffeineSourceImg.image = UIImage(named: imageName!)
   }
   
+  func addMask() {
+    let mask = CALayer()
+    mask.backgroundColor = UIColor.clear.cgColor
+    mask.frame = caffeineSourceImg.layer.bounds
+    mask.contentsScale = caffeineSourceImg.layer.contentsScale
+    caffeineSourceImg.layer.mask = mask
+    caffeineSourceImg.layer.masksToBounds = true
+    print("mask bounds = \(caffeineSourceImg.layer.mask?.bounds)")
+    print("image bounds = \(caffeineSourceImg.bounds)")
+  }
+  
   func cropToConsumptionTest() {
-    // calculation wrong, should be inverted percentage
-    // zooming in on image, should remain in place
+    guard let mask = caffeineSourceImg.layer.mask else {
+      return
+    }
     guard let src = self.source else {
       return
     }
-    let rect = caffeineSourceImg.bounds
+    
     let cc = src.percentageConsumed
-    let cropRect = CGRect(x: 0, y: 0, width: rect.size.width, height: CGFloat(Double(rect.size.height) * cc))
-    let imageRef = caffeineSourceImg.image?.cgImage?.cropping(to: cropRect)
-    let newImage = UIImage(cgImage: imageRef!, scale: (caffeineSourceImg.image?.scale)!, orientation: (caffeineSourceImg.image?.imageOrientation)!)
-    caffeineSourceImg.image = newImage
+    
+    let newHeight = Double(caffeineSourceImg.bounds.height) - (Double(caffeineSourceImg.bounds.height) * cc)
+    mask.bounds = CGRect(x: 0, y: 0, width: mask.bounds.width, height: CGFloat(newHeight))
+    print("mask bounds = \(caffeineSourceImg.layer.mask?.bounds)")
+    print("image bounds = \(caffeineSourceImg.bounds)")
   }
   
   /*
