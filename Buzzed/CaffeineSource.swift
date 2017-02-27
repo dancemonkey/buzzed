@@ -54,7 +54,7 @@ class CaffeineSource {
     return _sourceDescription
   }
   
-  private var _percentageConsumed: Double = 10.0
+  private var _percentageConsumed: Double = 0.0
   var percentageConsumed: Double {
     return _percentageConsumed
   }

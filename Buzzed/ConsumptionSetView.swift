@@ -31,22 +31,21 @@ class ConsumptionSetView: UIView {
     self.addSubview(view)
     view.frame = self.bounds
     
-    setLevel(to: minLevel)
-    
     // for testing
     guard self.source != nil else {
       setSource(to: testSource)
       return
     }
     // end testing
+
   }
   
   func setLevel(to level: Double) {
     self.level = level
     source?.consume(percentage: self.level)
+    setDrinkLevel()
     
     // TESTING: Label is just for testing until I get drawing implemented
-    cropToConsumptionTest()
     if let source = self.source {
       caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
     } else {
@@ -61,30 +60,20 @@ class ConsumptionSetView: UIView {
     let liquidImage = UIImage(named: "LiquidWhite")
     caffeineSourceImg.image = UIImage(named: imageName!)
     liquidImg.image = liquidImage
+    
+    setLevel(to: minLevel)
+    addMask()
+    setDrinkLevel()
   }
   
-  func addMask() {
+  private func addMask() {
     let drinkMask = UIImageView(image: UIImage(named: "DrinkMask"))
     drinkMask.contentMode = liquidImg.contentMode
     drinkMask.bounds = liquidImg.bounds
     liquidImg.mask = drinkMask
-    bottomOutMask()
   }
   
-  private func bottomOutMask() {
-    guard let mask = liquidImg.mask else {
-      return
-    }
-    
-    print(#function)
-    print("original mask frame = \(liquidImg.mask?.frame)")
-    
-    mask.frame = CGRect(x: 0, y: -liquidImg.frame.height, width: mask.bounds.width, height: mask.bounds.height)
-    
-    print("new mask frame = \(liquidImg.mask?.frame)")
-  }
-  
-  func cropToConsumptionTest() {
+  private func setDrinkLevel() {
     guard let mask = liquidImg.mask else {
       return
     }

@@ -28,10 +28,6 @@ class ViewController: UIViewController {
     dM.setDefaultMeasurement(unit: .fluidOunces)
     dM.setDailyIntake(limit: 250.0)
     
-    // testing change consumption level, temp
-    sourceLevelDisplay.addMask()
-    sourceLevelDisplay.cropToConsumptionTest()
-    
 //    // testing HM permissions
 //    let hm = HealthManager()
 //    hm.authorizeHealthkit { (complete, error) in
