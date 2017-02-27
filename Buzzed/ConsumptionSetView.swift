@@ -12,6 +12,7 @@ import QuartzCore
 class ConsumptionSetView: UIView {
   
   @IBOutlet weak var caffeineSourceImg: UIImageView!
+  @IBOutlet weak var liquidImg: UIImageView!
   @IBOutlet weak var view: UIView!
   
   // TESTING: Label for testing
@@ -56,17 +57,34 @@ class ConsumptionSetView: UIView {
   func setSource(to source: CaffeineSource) {
     self.source = source
     let imageName = self.source!.associatedImageName
+    // TODO: load liquid background view image from enum too, based on drink type
+    let liquidImage = UIImage(named: "LiquidBrown")
     caffeineSourceImg.image = UIImage(named: imageName!)
+    liquidImg.image = liquidImage
   }
   
   func addMask() {
-    let mask = UIView(frame: caffeineSourceImg.bounds)
-    mask.backgroundColor = UIColor.white
-    caffeineSourceImg.mask = mask
+    let drinkMask = UIImageView(image: UIImage(named: "DrinkMask"))
+    drinkMask.contentMode = liquidImg.contentMode
+    liquidImg.mask = drinkMask
+    bottomOutMask()
+  }
+  
+  private func bottomOutMask() {
+    guard let mask = liquidImg.mask else {
+      return
+    }
+    
+    print(#function)
+    print("original mask frame = \(liquidImg.mask?.frame)")
+    
+    mask.frame = CGRect(x: 0, y: -liquidImg.frame.height, width: mask.bounds.width, height: mask.bounds.height)
+    
+    print("new mask frame = \(liquidImg.mask?.frame)")
   }
   
   func cropToConsumptionTest() {
-    guard let mask = caffeineSourceImg.mask else {
+    guard let mask = liquidImg.mask else {
       return
     }
     guard let src = self.source else {
@@ -74,11 +92,16 @@ class ConsumptionSetView: UIView {
     }
     
     let cc = src.percentageConsumed
+    let newY = -(liquidImg.bounds.height * CGFloat(cc))
     
-    let newHeight = Double(caffeineSourceImg.bounds.height) - (Double(caffeineSourceImg.bounds.height) * cc)
-    mask.bounds = CGRect(x: 0, y: 0, width: mask.bounds.width, height: CGFloat(newHeight))
-    print("mask bounds = \(caffeineSourceImg.mask?.bounds)")
-    print("image bounds = \(caffeineSourceImg.bounds)")
+    print(#function)
+    print(newY)
+    print("original mask frame = \(liquidImg.mask?.frame)")
+    
+    mask.frame = CGRect(x: 0, y: newY, width: mask.bounds.width, height: mask.bounds.height)
+    
+    print("new mask frame = \(liquidImg.mask?.frame)")
+    print("image bounds = \(liquidImg.bounds)")
   }
   
   /*

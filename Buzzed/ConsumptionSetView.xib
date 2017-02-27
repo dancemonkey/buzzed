@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="caffeineConsumptionLbl" destination="kLL-NE-X9j" id="a2H-zV-sdJ"/>
                 <outlet property="caffeineSourceImg" destination="1xT-1I-y1N" id="Z1J-fE-Ag5"/>
+                <outlet property="liquidImg" destination="7Vf-Di-pDl" id="jQG-n9-CjX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vHW-7L-7tJ"/>
             </connections>
         </placeholder>
@@ -27,6 +28,10 @@
                         <constraint firstAttribute="width" constant="176" id="WII-NQ-prZ"/>
                         <constraint firstAttribute="height" constant="240" id="tDu-Xc-DOj"/>
                     </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Di-pDl">
+                    <rect key="frame" x="0.0" y="0.0" width="176" height="240"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffeine Cons." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-NE-X9j">
                     <rect key="frame" x="32" y="110" width="112.5" height="21"/>

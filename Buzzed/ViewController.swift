@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var sourceLevelDisplay: ConsumptionSetView!
-  @IBOutlet weak var angleField: UITextField!
+  @IBOutlet weak var slider: UISlider!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,10 +50,8 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  @IBAction func setMeterLevel() {
-    if let text = angleField.text, let number = NumberFormatter().number(from: text) {
-      sourceLevelDisplay.setLevel(to: Double(number))
-    }
+  @IBAction func setMeterLevel(sender: UISlider) {
+    sourceLevelDisplay.setLevel(to: Double(sender.value))
   }
   
 }
