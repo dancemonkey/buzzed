@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
     // testing change consumption level, temp
     sourceLevelDisplay.addMask()
+    sourceLevelDisplay.cropToConsumptionTest()
     
 //    // testing HM permissions
 //    let hm = HealthManager()

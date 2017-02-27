@@ -54,7 +54,7 @@ class CaffeineSource {
     return _sourceDescription
   }
   
-  private var _percentageConsumed: Double = 0.0
+  private var _percentageConsumed: Double = 10.0
   var percentageConsumed: Double {
     return _percentageConsumed
   }
@@ -73,7 +73,8 @@ class CaffeineSource {
     self._sourceDescription = _sourceType.getDescription()
     self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(volumeUnit: _baseUnit)
     self._associatedImageName = _sourceType.getAssociatedImageName()
-    self._creation = Date()    
+    self._creation = Date()
+    consume(percentage: _percentageConsumed)
   }
   
   func toggleMetricOrCustomary() {

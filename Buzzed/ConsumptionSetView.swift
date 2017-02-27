@@ -60,18 +60,13 @@ class ConsumptionSetView: UIView {
   }
   
   func addMask() {
-    let mask = CALayer()
-    mask.backgroundColor = UIColor.clear.cgColor
-    mask.frame = caffeineSourceImg.layer.bounds
-    mask.contentsScale = caffeineSourceImg.layer.contentsScale
-    caffeineSourceImg.layer.mask = mask
-    caffeineSourceImg.layer.masksToBounds = true
-    print("mask bounds = \(caffeineSourceImg.layer.mask?.bounds)")
-    print("image bounds = \(caffeineSourceImg.bounds)")
+    let mask = UIView(frame: caffeineSourceImg.bounds)
+    mask.backgroundColor = UIColor.white
+    caffeineSourceImg.mask = mask
   }
   
   func cropToConsumptionTest() {
-    guard let mask = caffeineSourceImg.layer.mask else {
+    guard let mask = caffeineSourceImg.mask else {
       return
     }
     guard let src = self.source else {
@@ -82,7 +77,7 @@ class ConsumptionSetView: UIView {
     
     let newHeight = Double(caffeineSourceImg.bounds.height) - (Double(caffeineSourceImg.bounds.height) * cc)
     mask.bounds = CGRect(x: 0, y: 0, width: mask.bounds.width, height: CGFloat(newHeight))
-    print("mask bounds = \(caffeineSourceImg.layer.mask?.bounds)")
+    print("mask bounds = \(caffeineSourceImg.mask?.bounds)")
     print("image bounds = \(caffeineSourceImg.bounds)")
   }
   
