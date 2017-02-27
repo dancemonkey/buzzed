@@ -15,3 +15,9 @@ public extension Double {
     return (self * divisor).rounded() / divisor
   }
 }
+
+extension Comparable {
+  func clamped(to limits: ClosedRange<Self>) -> Self {
+    return min(max(self, limits.lowerBound), limits.upperBound)
+  }
+}

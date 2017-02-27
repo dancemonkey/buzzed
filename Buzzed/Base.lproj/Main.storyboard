@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFH-Ri-73T" customClass="ConsumptionSetView" customModule="Buzzed" customModuleProvider="target">
-                                <rect key="frame" x="99" y="36" width="176" height="240"/>
+                                <rect key="frame" x="99" y="213.5" width="176" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="Fif-iJ-dsR"/>
@@ -38,7 +38,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IFH-Ri-73T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="QEG-Wm-eaa"/>
+                            <constraint firstItem="IFH-Ri-73T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NeW-n0-aij"/>
                             <constraint firstItem="iOd-Aj-PP7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ubn-eJ-swr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iOd-Aj-PP7" secondAttribute="bottom" constant="32" id="Wxi-eD-epo"/>
                             <constraint firstItem="IFH-Ri-73T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgE-ID-8im"/>

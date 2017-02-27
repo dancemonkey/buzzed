@@ -20,8 +20,9 @@ class ConsumptionSetView: UIView {
   
   var source: CaffeineSource?
   var level: Double!
+  var settingLevel: Bool = false
   
-  let minLevel: Double = 10.0
+  let minLevel: Double = 0.0
   let testSource: CaffeineSource = CaffeineSource(type: .dripCoffee, volume: 16.0)
   
   required init?(coder aDecoder: NSCoder) {
@@ -31,7 +32,7 @@ class ConsumptionSetView: UIView {
     self.addSubview(view)
     view.frame = self.bounds
     
-    // for testing
+    // for testing, source will most likely be set from parent or segue
     guard self.source != nil else {
       setSource(to: testSource)
       return
@@ -45,7 +46,7 @@ class ConsumptionSetView: UIView {
     source?.consume(percentage: self.level)
     setDrinkLevel()
     
-    // TESTING: Label is just for testing until I get drawing implemented
+    // TESTING: Label is just for testing until I get rest of UI implemented
     if let source = self.source {
       caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
     } else {
@@ -86,7 +87,25 @@ class ConsumptionSetView: UIView {
     let offset: CGFloat = 50 * CGFloat(cc)
 
     mask.frame = CGRect(x: 0, y: newY+offset, width: mask.bounds.width, height: mask.bounds.height)
-
+  }
+  
+  private func getLevel(fromTouchDiff touchDiff: CGFloat) -> CGFloat {
+    return ((touchDiff / caffeineSourceImg.frame.height) * 100).clamped(to: 0...100)
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    settingLevel = true
+    let diff = caffeineSourceImg.frame.height - touches.first!.location(in: self).y
+    setLevel(to: Double(getLevel(fromTouchDiff: diff)))
+  }
+  
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let diff = caffeineSourceImg.frame.height - touches.first!.location(in: self).y
+    setLevel(to: Double(getLevel(fromTouchDiff: diff)))
+  }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    settingLevel = false
   }
   
   /*

@@ -33,7 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="176" height="240"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffeine Cons." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-NE-X9j">
-                    <rect key="frame" x="32" y="110" width="112.5" height="21"/>
+                    <rect key="frame" x="32" y="211" width="112.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -47,8 +47,8 @@
                 <constraint firstAttribute="bottom" secondItem="7Vf-Di-pDl" secondAttribute="bottom" id="NwJ-z8-b0y"/>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PlL-8w-IIU"/>
                 <constraint firstItem="7Vf-Di-pDl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QKo-u4-7mz"/>
-                <constraint firstItem="kLL-NE-X9j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XQp-z3-HUW"/>
                 <constraint firstItem="kLL-NE-X9j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZtU-0R-Sj8"/>
+                <constraint firstAttribute="bottom" secondItem="kLL-NE-X9j" secondAttribute="bottom" constant="8" id="i48-IV-8t8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
