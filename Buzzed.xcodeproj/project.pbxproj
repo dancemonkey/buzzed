@@ -26,9 +26,10 @@
 		108EE97F1E6330F7006FDCFC /* ConsumptionSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */; };
 		109362EA1E5B35DA0056C54B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109362E91E5B35DA0056C54B /* HealthKit.framework */; };
 		109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109362ED1E5B399C0056C54B /* HealthManager.swift */; };
-		10AE2EF91E5C7CFA00B9AFB4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* Enums.swift */; };
-		10AE2EFA1E5C80C600B9AFB4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* Enums.swift */; };
+		10AE2EF91E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
+		10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */; };
+		10DB0ACD1E671B3700804C50 /* DefaultValueEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +64,9 @@
 		109362E71E5B35DA0056C54B /* Buzzed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Buzzed.entitlements; sourceTree = "<group>"; };
 		109362E91E5B35DA0056C54B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		109362ED1E5B399C0056C54B /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
-		10AE2EF81E5C7CFA00B9AFB4 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSourceTypeEnum.swift; sourceTree = "<group>"; };
 		10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValueEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +158,10 @@
 			children = (
 				10011AD11E592A460096F426 /* Buzzed.xcdatamodeld */,
 				109362ED1E5B399C0056C54B /* HealthManager.swift */,
-				10AE2EF81E5C7CFA00B9AFB4 /* Enums.swift */,
+				10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */,
 				108023051E5DD17000D948C1 /* DataManager.swift */,
 				100F91211E5FDA9B007E74CA /* CaffeineSource.swift */,
+				10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,8 +299,9 @@
 				109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */,
 				10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */,
 				10011ACB1E592A460096F426 /* AppDelegate.swift in Sources */,
+				10DB0ACD1E671B3700804C50 /* DefaultValueEnums.swift in Sources */,
 				100F91221E5FDA9B007E74CA /* CaffeineSource.swift in Sources */,
-				10AE2EF91E5C7CFA00B9AFB4 /* Enums.swift in Sources */,
+				10AE2EF91E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */,
 				10011AD31E592A460096F426 /* Buzzed.xcdatamodeld in Sources */,
 				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
@@ -313,7 +317,7 @@
 				10011AE31E592A460096F426 /* BuzzedTests.swift in Sources */,
 				100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */,
 				108023071E5DD17300D948C1 /* DataManager.swift in Sources */,
-				10AE2EFA1E5C80C600B9AFB4 /* Enums.swift in Sources */,
+				10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

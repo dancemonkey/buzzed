@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-open class CaffeineInputSlider: UISlider {
+class CaffeineInputSlider: UISlider {
 
     /*
     // Only override draw() if you perform custom drawing.

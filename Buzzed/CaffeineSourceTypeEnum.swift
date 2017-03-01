@@ -115,18 +115,3 @@ enum CaffeineSourceType: String {
     }
   }
 }
-
-enum defaultKeys: String {
-  case favoriteDrinkType, favoriteDrinkVolume, favoriteDrinkName, favoriteDrinkDescription, dailyIntakeLimit, defaultUnits, mL, flOz
-  
-  func getUnits() -> String {
-    switch self {
-    case .mL:
-      return rawValue
-    case .flOz:
-      return "fl oz"
-    default:
-      return "oops"
-    }
-  }
-}

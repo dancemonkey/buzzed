@@ -29,24 +29,14 @@
                                     <constraint firstAttribute="height" constant="240" id="xgb-KT-fxN"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iOd-Aj-PP7">
-                                <rect key="frame" x="14" y="605" width="347" height="31"/>
-                                <connections>
-                                    <action selector="setMeterLevelWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="1nu-DN-iuy"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IFH-Ri-73T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NeW-n0-aij"/>
-                            <constraint firstItem="iOd-Aj-PP7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ubn-eJ-swr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iOd-Aj-PP7" secondAttribute="bottom" constant="32" id="Wxi-eD-epo"/>
                             <constraint firstItem="IFH-Ri-73T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgE-ID-8im"/>
-                            <constraint firstAttribute="trailing" secondItem="iOd-Aj-PP7" secondAttribute="trailing" constant="16" id="aAf-uf-744"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="slider" destination="iOd-Aj-PP7" id="8BN-uP-i8X"/>
                         <outlet property="sourceLevelDisplay" destination="IFH-Ri-73T" id="Rul-VV-ulQ"/>
                     </connections>
                 </viewController>

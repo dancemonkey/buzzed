@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var sourceLevelDisplay: ConsumptionSetView!
-  @IBOutlet weak var slider: UISlider!
   
   override func viewDidLoad() {
     super.viewDidLoad()

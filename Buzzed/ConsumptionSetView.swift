@@ -62,9 +62,18 @@ class ConsumptionSetView: UIView {
     caffeineSourceImg.image = UIImage(named: imageName!)
     liquidImg.image = liquidImage
     
+    setShadow()
+    
     setLevel(to: minLevel)
     addMask()
     setDrinkLevel()
+  }
+  
+  private func setShadow() {
+    caffeineSourceImg.layer.shadowColor = (LargeDrink.Shadow.color.value() as! CGColor)
+    caffeineSourceImg.layer.shadowRadius = LargeDrink.Shadow.radius.value() as! CGFloat
+    caffeineSourceImg.layer.shadowOffset = LargeDrink.Shadow.offset.value() as! CGSize
+    caffeineSourceImg.layer.shadowOpacity = LargeDrink.Shadow.opacity.value() as! Float
   }
   
   private func addMask() {
