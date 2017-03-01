@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var sourceLevelDisplay: ConsumptionSetView!
+  @IBOutlet weak var meter: Meter!
+  @IBOutlet weak var doneBtn: UIButton!
+  @IBOutlet weak var maxCaffLbl: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,6 +30,8 @@ class ViewController: UIViewController {
     dM.setDefaultMeasurement(unit: .fluidOunces)
     dM.setDailyIntake(limit: 250.0)
     
+    maxCaffLbl.text = String(meter.maxLevel) + "mg per day max"
+    
 //    // testing HM permissions
 //    let hm = HealthManager()
 //    hm.authorizeHealthkit { (complete, error) in
@@ -40,13 +45,8 @@ class ViewController: UIViewController {
     
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  @IBAction func setMeterLevel(sender: UISlider) {
-    sourceLevelDisplay.setLevel(to: Double(sender.value))
+  @IBAction func donePressed(sender: UIButton) {
+    meter.setLevel(to: sourceLevelDisplay.source!.totalCaffeineConsumed())
   }
   
 }

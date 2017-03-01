@@ -29,14 +29,44 @@
                                     <constraint firstAttribute="height" constant="240" id="xgb-KT-fxN"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-Gp-Q7Q" customClass="Meter" customModule="Buzzed" customModuleProvider="target">
+                                <rect key="frame" x="114.5" y="589" width="145" height="58"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="DgA-mD-QWN"/>
+                                    <constraint firstAttribute="height" constant="58" id="KiR-Mc-dvw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-MV-kRs">
+                                <rect key="frame" x="166" y="167.5" width="42" height="30"/>
+                                <state key="normal" title="DONE"/>
+                                <connections>
+                                    <action selector="donePressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Gs-oa-Rl4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEZ-Le-xcd">
+                                <rect key="frame" x="166" y="560" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IFH-Ri-73T" firstAttribute="top" secondItem="fKT-MV-kRs" secondAttribute="bottom" constant="16" id="BzJ-KI-s2A"/>
+                            <constraint firstItem="LEZ-Le-xcd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IHv-HJ-czJ"/>
+                            <constraint firstItem="hsT-Gp-Q7Q" firstAttribute="top" secondItem="LEZ-Le-xcd" secondAttribute="bottom" constant="8" id="It2-Fe-CGT"/>
                             <constraint firstItem="IFH-Ri-73T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NeW-n0-aij"/>
                             <constraint firstItem="IFH-Ri-73T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgE-ID-8im"/>
+                            <constraint firstItem="fKT-MV-kRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eHe-C1-WAg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hsT-Gp-Q7Q" secondAttribute="bottom" constant="20" id="sG4-If-vwY"/>
+                            <constraint firstItem="hsT-Gp-Q7Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zbo-xs-Pcn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneBtn" destination="fKT-MV-kRs" id="VNm-hO-JSK"/>
+                        <outlet property="maxCaffLbl" destination="LEZ-Le-xcd" id="VAA-fk-kXQ"/>
+                        <outlet property="meter" destination="hsT-Gp-Q7Q" id="5yu-ch-Qxh"/>
                         <outlet property="sourceLevelDisplay" destination="IFH-Ri-73T" id="Rul-VV-ulQ"/>
                     </connections>
                 </viewController>

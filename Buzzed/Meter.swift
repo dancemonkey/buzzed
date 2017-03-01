@@ -22,33 +22,36 @@ class Meter: UIView {
     view.frame = self.bounds
     
     setLevel(to: minLevel)
+    
+    let dm = DataManager()
+    setMaxLevel(to: dm.getDailyIntake())
   }
   
-  private var _level: CGFloat = 0
-  var level: CGFloat {
-    return _level
-  }
-  private let _minLevel: CGFloat = 0
-  var minLevel: CGFloat {
-    return _minLevel
-  }
-  private var _maxLevel: CGFloat = 90
-  var maxLevel: CGFloat {
-    return _maxLevel
-  }
-  
-  func setLevel(to level: CGFloat) {
+  func setLevel(to level: Double) {
     self._level = level <= maxLevel ? level : _maxLevel
     rotateNeedle()
   }
   
-  func setMaxLevel(to level: CGFloat) {
+  private var _level: Double = 0
+  var level: Double {
+    return _level
+  }
+  private let _minLevel: Double = 0
+  var minLevel: Double {
+    return _minLevel
+  }
+  private var _maxLevel: Double = 90
+  var maxLevel: Double {
+    return _maxLevel
+  }
+  
+  private func setMaxLevel(to level: Double) {
     self._maxLevel = level
   }
   
   private func rotateNeedle() {
     UIView.animate(withDuration: 0.5) { 
-      self.needle.transform = CGAffineTransform(rotationAngle: self._level * CGFloat.pi / 180)
+      self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(self._level) * CGFloat.pi / 180)
     }
   }
   

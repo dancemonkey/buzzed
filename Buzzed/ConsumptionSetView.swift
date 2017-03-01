@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QuartzCore
+//import QuartzCore
 
 class ConsumptionSetView: UIView {
   
@@ -57,7 +57,9 @@ class ConsumptionSetView: UIView {
   func setSource(to source: CaffeineSource) {
     self.source = source
     let imageName = self.source!.associatedImageName
+    
     // TODO: load liquid background view image from enum too, based on drink type
+    
     let liquidImage = UIImage(named: "LiquidWhite")
     caffeineSourceImg.image = UIImage(named: imageName!)
     liquidImg.image = liquidImage
@@ -84,6 +86,7 @@ class ConsumptionSetView: UIView {
   }
   
   private func setDrinkLevel() {
+
     guard let mask = liquidImg.mask else {
       return
     }
