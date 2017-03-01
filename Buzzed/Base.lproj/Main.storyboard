@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BJA-iL-HUM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,69 +10,47 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Df0-9Y-nFp">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Buzzed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BJA-iL-HUM" customClass="ViewController" customModule="Buzzed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="3M1-nY-cxY"/>
+                        <viewControllerLayoutGuide type="bottom" id="CZ6-5M-txd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="lLI-gs-0pY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFH-Ri-73T" customClass="ConsumptionSetView" customModule="Buzzed" customModuleProvider="target">
-                                <rect key="frame" x="99" y="213.5" width="176" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo1-gy-AqZ" customClass="CaffeineTodayLbl" customModule="Buzzed" customModuleProvider="target">
+                                <rect key="frame" x="137" y="323" width="100" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="Fif-iJ-dsR"/>
-                                    <constraint firstAttribute="height" constant="240" id="xgb-KT-fxN"/>
+                                    <constraint firstAttribute="height" constant="21" id="QP8-Hz-zRp"/>
+                                    <constraint firstAttribute="width" constant="100" id="zSc-Mv-amC"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-Gp-Q7Q" customClass="Meter" customModule="Buzzed" customModuleProvider="target">
-                                <rect key="frame" x="114.5" y="589" width="145" height="58"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="DgA-mD-QWN"/>
-                                    <constraint firstAttribute="height" constant="58" id="KiR-Mc-dvw"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-MV-kRs">
-                                <rect key="frame" x="166" y="167.5" width="42" height="30"/>
-                                <state key="normal" title="DONE"/>
-                                <connections>
-                                    <action selector="donePressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Gs-oa-Rl4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEZ-Le-xcd">
-                                <rect key="frame" x="166" y="560" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddh-5y-Bu6" customClass="Meter" customModule="Buzzed" customModuleProvider="target">
+                                <rect key="frame" x="67" y="20" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.34509803919999998" green="0.2274509804" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="IFH-Ri-73T" firstAttribute="top" secondItem="fKT-MV-kRs" secondAttribute="bottom" constant="16" id="BzJ-KI-s2A"/>
-                            <constraint firstItem="LEZ-Le-xcd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IHv-HJ-czJ"/>
-                            <constraint firstItem="hsT-Gp-Q7Q" firstAttribute="top" secondItem="LEZ-Le-xcd" secondAttribute="bottom" constant="8" id="It2-Fe-CGT"/>
-                            <constraint firstItem="IFH-Ri-73T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NeW-n0-aij"/>
-                            <constraint firstItem="IFH-Ri-73T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgE-ID-8im"/>
-                            <constraint firstItem="fKT-MV-kRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eHe-C1-WAg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hsT-Gp-Q7Q" secondAttribute="bottom" constant="20" id="sG4-If-vwY"/>
-                            <constraint firstItem="hsT-Gp-Q7Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zbo-xs-Pcn"/>
+                            <constraint firstItem="Eo1-gy-AqZ" firstAttribute="centerX" secondItem="lLI-gs-0pY" secondAttribute="centerX" id="A4e-oH-HF4"/>
+                            <constraint firstItem="ddh-5y-Bu6" firstAttribute="centerX" secondItem="lLI-gs-0pY" secondAttribute="centerX" id="Bsp-4u-HYX"/>
+                            <constraint firstItem="Eo1-gy-AqZ" firstAttribute="centerY" secondItem="lLI-gs-0pY" secondAttribute="centerY" id="kXY-CX-ZjH"/>
+                            <constraint firstItem="ddh-5y-Bu6" firstAttribute="top" secondItem="3M1-nY-cxY" secondAttribute="bottom" constant="16" id="oCl-cC-PIm"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="doneBtn" destination="fKT-MV-kRs" id="VNm-hO-JSK"/>
-                        <outlet property="maxCaffLbl" destination="LEZ-Le-xcd" id="VAA-fk-kXQ"/>
-                        <outlet property="meter" destination="hsT-Gp-Q7Q" id="5yu-ch-Qxh"/>
-                        <outlet property="sourceLevelDisplay" destination="IFH-Ri-73T" id="Rul-VV-ulQ"/>
+                        <outlet property="caffeineLbl" destination="Eo1-gy-AqZ" id="0dZ-eE-syv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sz-9A-9lZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="91" y="-29"/>
         </scene>
     </scenes>
 </document>

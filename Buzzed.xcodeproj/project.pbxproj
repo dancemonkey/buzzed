@@ -29,6 +29,7 @@
 		10AE2EF91E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */; };
+		10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */; };
 		10DB0ACD1E671B3700804C50 /* DefaultValueEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		109362ED1E5B399C0056C54B /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSourceTypeEnum.swift; sourceTree = "<group>"; };
 		10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineTodayLbl.swift; sourceTree = "<group>"; };
 		10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValueEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 				108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */,
 				108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */,
 				108EE97C1E632BDB006FDCFC /* CaffeineInputSlider.swift */,
+				10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
 				108EE97D1E632BDB006FDCFC /* CaffeineInputSlider.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
+				10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

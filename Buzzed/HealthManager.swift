@@ -11,7 +11,7 @@ import HealthKit
 
 class HealthManager {
   
-  private var healthStore: HKHealthStore?
+  var healthStore: HKHealthStore?
   
   init() {
     if HKHealthStore.isHealthDataAvailable() {
@@ -95,6 +95,10 @@ class HealthManager {
       }
     })
     hs.execute(heightQuery)
+  }
+  
+  func getTodaysCaffeineIntake() -> Double {
+    return 126.0
   }
   
 }
