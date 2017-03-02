@@ -111,12 +111,9 @@ class CaffeineSource {
   
   func consume(percentage: Double) {
     _percentageConsumed = percentage / 100
-    print("\(#function) caffeine consumed - \(totalCaffeineConsumed())")
   }
   
   func totalCaffeineConsumed() -> Double {
-    print("\(totalCaffeineContent)")
-    print("\(percentageConsumed)")
     return (totalCaffeineContent * percentageConsumed).roundTo(places: 2)
   }
 

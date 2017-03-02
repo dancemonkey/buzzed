@@ -6,7 +6,7 @@
 //  Copyright © 2017 Drew Lanning. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension Double {
   /// Rounds the double to decimal places value

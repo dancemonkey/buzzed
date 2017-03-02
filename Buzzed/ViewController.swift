@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var caffeineLbl: CaffeineTodayLbl!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    _ = ColorGradient(withView: self.view)
     
     // testing caffeineSource
 //    let source = CaffeineSource(type: .dripCoffee, volume: 16.0)
@@ -38,9 +37,7 @@ class ViewController: UIViewController {
         print("did not authorize healthkit")
       }
     }
-    
-    caffeineLbl.setCaffeineInput(to: hm.getTodaysCaffeineIntake())
-    
+        
   }
   
 }
