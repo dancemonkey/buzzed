@@ -59,9 +59,9 @@ class DataManager {
   func getDailyIntake() -> Double {
     let defaults = UserDefaults.standard
     if let intake = defaults.object(forKey: defaultKeys.dailyIntakeLimit.rawValue) as? Double {
-      return intake
+      return intake.roundTo(places: 0)
     } else {
-      return 300.0
+      return 400
     }
   }
   

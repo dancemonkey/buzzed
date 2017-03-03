@@ -41,3 +41,21 @@ enum LargeDrink {
     }
   }
 }
+
+enum Button {
+  enum Shadow {
+    case color, radius, offset, opacity
+    func value() -> Any {
+      switch(self) {
+      case .color:
+        return UIColor.black.cgColor
+      case .radius:
+        return CGFloat(2.0)
+      case .offset:
+        return CGSize(width: 0, height: 2.0)
+      case .opacity:
+        return Float(1.0)
+      }
+    }
+  }
+}

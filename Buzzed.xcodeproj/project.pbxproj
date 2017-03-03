@@ -19,6 +19,9 @@
 		10011AF61E592DE30096F426 /* Meter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10011AF41E592DE30096F426 /* Meter.xib */; };
 		100F91221E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
 		100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
+		1067546D1E68E2B50023D470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
+		1067546F1E68E4C30023D470 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546E1E68E4C30023D470 /* SettingsVC.swift */; };
+		106754711E68E8E00023D470 /* ShadowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106754701E68E8E00023D470 /* ShadowBtn.swift */; };
 		108023061E5DD17000D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
 		108023071E5DD17300D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
 		108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */; };
@@ -61,6 +64,9 @@
 		10011AF11E592A790096F426 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		10011AF41E592DE30096F426 /* Meter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meter.xib; sourceTree = "<group>"; };
 		100F91211E5FDA9B007E74CA /* CaffeineSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSource.swift; sourceTree = "<group>"; };
+		1067546C1E68E2B50023D470 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1067546E1E68E4C30023D470 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		106754701E68E8E00023D470 /* ShadowBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowBtn.swift; sourceTree = "<group>"; };
 		108023051E5DD17000D948C1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionSetView.swift; sourceTree = "<group>"; };
 		108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionSetView.xib; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 			children = (
 				10011ACC1E592A460096F426 /* ViewController.swift */,
 				10E6BBDD1E68729600E5A50F /* CurrentDrinkVC.swift */,
+				1067546E1E68E4C30023D470 /* SettingsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 				10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */,
 				10E6BBD91E686DF900E5A50F /* TopNav.swift */,
 				10E6BBDB1E68709400E5A50F /* NewDrinkBtn.swift */,
+				106754701E68E8E00023D470 /* ShadowBtn.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,7 +181,6 @@
 				10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */,
 				108023051E5DD17000D948C1 /* DataManager.swift */,
 				100F91211E5FDA9B007E74CA /* CaffeineSource.swift */,
-				10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -182,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */,
+				1067546C1E68E2B50023D470 /* Constants.swift */,
+				10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -308,6 +317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10011ACD1E592A460096F426 /* ViewController.swift in Sources */,
+				106754711E68E8E00023D470 /* ShadowBtn.swift in Sources */,
+				1067546D1E68E2B50023D470 /* Constants.swift in Sources */,
 				109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */,
 				10E6BBDC1E68709400E5A50F /* NewDrinkBtn.swift in Sources */,
 				10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */,
@@ -323,6 +334,7 @@
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
 				10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */,
+				1067546F1E68E4C30023D470 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

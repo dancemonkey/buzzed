@@ -28,10 +28,30 @@ class CurrentDrinkVC: UIViewController {
   
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
+    topNav.configure(title: "New drink")
   }
   
   @IBAction func newDrinkPressed(sender: NewDrinkBtn) {
-    
+    presentNewDrinkOptions()
+  }
+  
+  private func presentNewDrinkOptions() {
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let defaultDrink = UIAlertAction(title: "Default", style: .default) { (action) in
+      print("picking default drink")
+    }
+    let lastDrink = UIAlertAction(title: "Last drink", style: .default) { (action) in
+      print("picking last drink")
+    }
+    let choose = UIAlertAction(title: "Choose...", style: .default) { (action) in
+      print("choosing another drink")
+    }
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    alert.addAction(defaultDrink)
+    alert.addAction(lastDrink)
+    alert.addAction(choose)
+    alert.addAction(cancel)
+    present(alert, animated: true, completion: nil)
   }
   
   
