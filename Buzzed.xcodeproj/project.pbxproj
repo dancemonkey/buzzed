@@ -22,6 +22,7 @@
 		1067546D1E68E2B50023D470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
 		1067546F1E68E4C30023D470 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546E1E68E4C30023D470 /* SettingsVC.swift */; };
 		106754711E68E8E00023D470 /* ShadowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106754701E68E8E00023D470 /* ShadowBtn.swift */; };
+		10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10724AE31E68F98E005B4808 /* SettingsCell.swift */; };
 		108023061E5DD17000D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
 		108023071E5DD17300D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
 		108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */; };
@@ -67,6 +68,7 @@
 		1067546C1E68E2B50023D470 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1067546E1E68E4C30023D470 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		106754701E68E8E00023D470 /* ShadowBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowBtn.swift; sourceTree = "<group>"; };
+		10724AE31E68F98E005B4808 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		108023051E5DD17000D948C1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionSetView.swift; sourceTree = "<group>"; };
 		108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionSetView.xib; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				10E6BBD91E686DF900E5A50F /* TopNav.swift */,
 				10E6BBDB1E68709400E5A50F /* NewDrinkBtn.swift */,
 				106754701E68E8E00023D470 /* ShadowBtn.swift */,
+				10724AE31E68F98E005B4808 /* SettingsCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				10E6BBD61E68621700E5A50F /* ColorGradient.swift in Sources */,
 				10011AD31E592A460096F426 /* Buzzed.xcdatamodeld in Sources */,
 				10E6BBDA1E686DF900E5A50F /* TopNav.swift in Sources */,
+				10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */,
 				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
