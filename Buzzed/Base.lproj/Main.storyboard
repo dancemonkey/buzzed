@@ -254,10 +254,10 @@
             </objects>
             <point key="canvasLocation" x="1968.8" y="-790.25487256371821"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings TableVC-->
         <scene sceneID="WVt-lM-3yE">
             <objects>
-                <tableViewController id="fel-fc-RG5" sceneMemberID="viewController">
+                <tableViewController id="fel-fc-RG5" customClass="SettingsTableVC" customModule="Buzzed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="K2S-0N-0Gy">
                         <rect key="frame" x="0.0" y="0.0" width="347" height="434"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,7 +273,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL1-cQ-XJr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="318" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default drink - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUW-43-93k">
                                                             <rect key="frame" x="8" y="14" width="121" height="21"/>
@@ -320,7 +320,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-po-0Ll">
-                                                    <rect key="frame" x="0.0" y="0.0" width="351" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="347" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPM-7u-K68">
                                                             <rect key="frame" x="8" y="13" width="78" height="21"/>
@@ -329,7 +329,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400mg" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzQ-tg-NMh">
-                                                            <rect key="frame" x="102" y="0.0" width="217" height="48"/>
+                                                            <rect key="frame" x="102" y="0.0" width="213" height="48"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="gVH-jD-98c"/>
@@ -380,7 +380,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvW-wc-5wR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="318" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom drinks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-lG-1d3">
                                                             <rect key="frame" x="8" y="13" width="117" height="21"/>
@@ -424,7 +424,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWI-0z-bpk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="318" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected to Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-Xv-Yae">
                                                             <rect key="frame" x="8" y="13" width="167.5" height="21"/>
@@ -432,11 +432,20 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="J3E-il-EtO">
+                                                            <rect key="frame" x="274" y="8" width="32" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="32" id="Bge-Lg-Hwr"/>
+                                                                <constraint firstAttribute="width" constant="32" id="kCG-Po-SJy"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="Zyq-Xv-Yae" firstAttribute="centerY" secondItem="GWI-0z-bpk" secondAttribute="centerY" id="B51-V4-bUk"/>
                                                         <constraint firstItem="Zyq-Xv-Yae" firstAttribute="leading" secondItem="GWI-0z-bpk" secondAttribute="leading" constant="8" id="Dks-wv-l0G"/>
+                                                        <constraint firstAttribute="trailing" secondItem="J3E-il-EtO" secondAttribute="trailing" constant="8" id="ZCh-nH-gEa"/>
+                                                        <constraint firstItem="J3E-il-EtO" firstAttribute="centerY" secondItem="GWI-0z-bpk" secondAttribute="centerY" id="yL8-cn-2p0"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -468,8 +477,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-oQ-eos">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="347" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-BM-ToA">
+                                                            <rect key="frame" x="8" y="13.5" width="102" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wey-O6-MCu">
+                                                            <rect key="frame" x="178" y="10" width="137" height="29"/>
+                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="0.5" colorSpace="deviceRGB"/>
+                                                            <segments>
+                                                                <segment title="Ounces"/>
+                                                                <segment title="Milliliters"/>
+                                                            </segments>
+                                                            <color key="tintColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        </segmentedControl>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="zbB-BM-ToA" firstAttribute="leading" secondItem="Zft-oQ-eos" secondAttribute="leading" constant="8" id="49e-C0-cQJ"/>
+                                                        <constraint firstItem="wey-O6-MCu" firstAttribute="centerY" secondItem="Zft-oQ-eos" secondAttribute="centerY" id="GBD-PP-AEo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wey-O6-MCu" secondAttribute="trailing" constant="32" id="kxc-Em-D51"/>
+                                                        <constraint firstItem="zbB-BM-ToA" firstAttribute="centerY" secondItem="Zft-oQ-eos" secondAttribute="centerY" id="r8Q-nl-qrH"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="4"/>
@@ -503,6 +535,12 @@
                             <outlet property="delegate" destination="fel-fc-RG5" id="JI1-ta-Ltn"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="dailyLimitFld" destination="dzQ-tg-NMh" id="d0T-7O-0eM"/>
+                        <outlet property="defaultDrinkLbl" destination="uUW-43-93k" id="4Qk-kW-aLU"/>
+                        <outlet property="defaultUnitsCtl" destination="wey-O6-MCu" id="6Q1-EY-NPf"/>
+                        <outlet property="healthConnectImg" destination="J3E-il-EtO" id="nDt-Rd-cTk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7E-uY-jRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -575,5 +613,6 @@
     </scenes>
     <resources>
         <image name="Blank Drink" width="183" height="269"/>
+        <image name="Check" width="32" height="26"/>
     </resources>
 </document>

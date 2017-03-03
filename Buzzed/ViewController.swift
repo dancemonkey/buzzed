@@ -32,7 +32,6 @@ class ViewController: UIViewController {
     hm.authorizeHealthkit { (complete, error) in
       if complete {
         print("complete from VC")
-        hm.getHeight()
       } else {
         print("did not authorize healthkit")
       }

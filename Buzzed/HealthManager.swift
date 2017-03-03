@@ -22,13 +22,13 @@ class HealthManager {
   }
   
   func authorizeHealthkit(completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
-    let healthKitTypesToRead: Set<HKObjectType> = [
-      HKSampleType.quantityType(forIdentifier: .bodyMass)!,
-      HKSampleType.quantityType(forIdentifier: .height)!,
-      HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!,
-      HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
-      HKSampleType.characteristicType(forIdentifier: .biologicalSex)!
-    ]
+//    let healthKitTypesToRead: Set<HKObjectType> = [
+//      HKSampleType.quantityType(forIdentifier: .bodyMass)!,
+//      HKSampleType.quantityType(forIdentifier: .height)!,
+//      HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!,
+//      HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
+//      HKSampleType.characteristicType(forIdentifier: .biologicalSex)!
+//    ]
     let healthKitTypesToWrite: Set<HKSampleType> = [
       HKObjectType.quantityType(forIdentifier: .dietaryCaffeine)!
     ]
@@ -40,8 +40,7 @@ class HealthManager {
       return
     }
     
-    healthStore?.requestAuthorization(toShare: healthKitTypesToWrite, read: healthKitTypesToRead, completion: completion)
-    
+    healthStore?.requestAuthorization(toShare: healthKitTypesToWrite, read: nil, completion: completion)
   }
   
   func storeSample() {
