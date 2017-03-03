@@ -15,14 +15,25 @@ class SettingsTableVC: UITableViewController {
   @IBOutlet weak var defaultUnitsCtl: UISegmentedControl!
   @IBOutlet weak var healthConnectImg: UIImageView!
   
+  var dm: DataManager!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    setupViews()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  func setupViews() {
+    dm = DataManager()
+    dailyLimitFld.text = String(dm.getDailyIntake()) + "mg"
+    defaultDrinkLbl.text = "Favorite drink - " + (dm.getFavoriteDrink()?.sourceName ?? "(none selected)")
+    switch dm.getDefaultUnits() {
+    case UnitVolume.milliliters:
+      defaultUnitsCtl.selectedSegmentIndex = 1
+    case UnitVolume.fluidOunces:
+      defaultUnitsCtl.selectedSegmentIndex = 0
+    default:
+      defaultUnitsCtl.selectedSegmentIndex = 0
+    }
   }
   
   // MARK: - Table view data source
