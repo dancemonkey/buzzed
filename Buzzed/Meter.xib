@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Meter" customModule="Buzzed" customModuleProvider="target">
             <connections>
                 <outlet property="background" destination="sC2-Ro-V3b" id="akz-GG-esK"/>
-                <outlet property="needle" destination="BcE-QM-dcM" id="3sT-dA-Ry3"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JmT-c2-2jR"/>
             </connections>
         </placeholder>
@@ -24,19 +23,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="sC2-Ro-V3b">
                     <rect key="frame" x="0.0" y="0.0" width="105" height="51"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-QM-dcM">
-                    <rect key="frame" x="0.0" y="0.0" width="105" height="102"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="BcE-QM-dcM" secondAttribute="bottom" constant="-51" id="4SV-JW-wwa"/>
                 <constraint firstItem="sC2-Ro-V3b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Nk-HJ-O7O"/>
-                <constraint firstItem="BcE-QM-dcM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BdK-bl-7U6"/>
-                <constraint firstItem="BcE-QM-dcM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cuv-bp-fwt"/>
                 <constraint firstItem="sC2-Ro-V3b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LfE-Nh-rWS"/>
                 <constraint firstAttribute="trailing" secondItem="sC2-Ro-V3b" secondAttribute="trailing" id="jOJ-MM-Wih"/>
-                <constraint firstAttribute="trailing" secondItem="BcE-QM-dcM" secondAttribute="trailing" id="laH-sy-jdU"/>
                 <constraint firstAttribute="bottom" secondItem="sC2-Ro-V3b" secondAttribute="bottom" id="t7I-f4-HKx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -45,6 +37,5 @@
     </objects>
     <resources>
         <image name="MeterBackground" width="105" height="51"/>
-        <image name="Needle" width="105" height="102"/>
     </resources>
 </document>

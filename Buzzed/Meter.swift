@@ -11,7 +11,6 @@ import UIKit
 class Meter: UIView {
   
   @IBOutlet weak var background: UIImageView!
-  @IBOutlet weak var needle: UIImageView!
   @IBOutlet weak var view: UIView!
   
   required init?(coder aDecoder: NSCoder) {
@@ -51,8 +50,41 @@ class Meter: UIView {
   
   private func rotateNeedle() {
     UIView.animate(withDuration: 0.5) { 
-      self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(self._level) * CGFloat.pi / 180)
+//      self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(self._level) * CGFloat.pi / 180)
     }
   }
+  
+  private func drawLine() {
+    let start = CGPoint(x: background.frame.width/2, y: background.frame.height)
+    let end = CGPoint(x: background.frame.width/2, y: 0)
+    background.image = drawLineOnImage(size: background.frame.size, image: background.image!, from: start, to: end)
+  }
+  
+  override func draw(_ rect: CGRect) {
+    drawLine()
+  }
+  
+  private func drawLineOnImage(size: CGSize, image: UIImage, from: CGPoint, to: CGPoint) -> UIImage {
+    
+    UIGraphicsBeginImageContext(size)
+    image.draw(at: CGPoint.zero)
+    
+    let context = UIGraphicsGetCurrentContext()
+    
+    context!.setLineWidth(2.0)
+    context!.setStrokeColor(UIColor.white.cgColor)
+    
+    context!.move(to: from)
+    context!.addLine(to: to)
+    
+    context!.strokePath()
+    
+    let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+    
+    UIGraphicsEndImageContext()
+    
+    return resultImage!
+  }
+
   
 }
