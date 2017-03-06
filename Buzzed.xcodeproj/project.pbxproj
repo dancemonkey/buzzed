@@ -32,6 +32,8 @@
 		10AE2EF91E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */; };
+		10B4BD9A1E6DA3A000A5E316 /* DefaultValueEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */; };
+		10B4BD9B1E6DA3B600A5E316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
 		10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */; };
 		10DB0ACD1E671B3700804C50 /* DefaultValueEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */; };
 		10DF0C1F1E69A16D00AC440D /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF0C1E1E69A16D00AC440D /* SettingsTableVC.swift */; };
@@ -128,6 +130,7 @@
 		10011AC91E592A460096F426 /* Buzzed */ = {
 			isa = PBXGroup;
 			children = (
+				10B4BD9C1E6DA62C00A5E316 /* Core Data Entities */,
 				109362E71E5B35DA0056C54B /* Buzzed.entitlements */,
 				10011AF01E592A5B0096F426 /* Util */,
 				10011AEF1E592A570096F426 /* Model */,
@@ -207,6 +210,13 @@
 				109362E91E5B35DA0056C54B /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10B4BD9C1E6DA62C00A5E316 /* Core Data Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Data Entities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,9 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10011AE31E592A460096F426 /* BuzzedTests.swift in Sources */,
+				10B4BD9A1E6DA3A000A5E316 /* DefaultValueEnums.swift in Sources */,
 				100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */,
 				108023071E5DD17300D948C1 /* DataManager.swift in Sources */,
 				10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */,
+				10B4BD9B1E6DA3B600A5E316 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

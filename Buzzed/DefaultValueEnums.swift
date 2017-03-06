@@ -9,7 +9,7 @@
 import UIKit
 
 enum defaultKeys: String {
-  case favoriteDrinkType, favoriteDrinkVolume, favoriteDrinkName, favoriteDrinkDescription, dailyIntakeLimit, defaultUnits, mL, flOz
+  case favoriteDrinkType, favoriteDrinkVolume, favoriteDrinkName, favoriteDrinkDescription, dailyIntakeLimit, defaultUnits, mL, flOz, lastOpen
   
   func getUnits() -> String {
     switch self {

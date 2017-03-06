@@ -22,33 +22,30 @@ class Meter: UIView {
     view.frame = self.bounds
     
     // TODO: this should eventually call core data for current daily caffeine level, not minLevel
-    // INFO: minLevel is basically zero on the meter
-    setLevel(to: minLevel)
-    
     let dm = DataManager()
-    setMaxLevel(to: dm.getDailyIntake())
-  }
-  
-  func setLevel(to level: Double) {
-    self._level = level <= maxLevel ? level : _maxLevel
-    rotateNeedle()
-  }
-  
-  private func setZeroLevel(to level: Double) {
-    
+    _maxIntake = dm.getDailyIntake()
+    setLevel(to: startAngle)
   }
   
   private var _level: Double = 0
   var level: Double {
     return _level
   }
-  private let _minLevel: Double = -75.0
+  private let startAngle: Double = 0
+  private let _minLevel: Double = -90.0
   var minLevel: Double {
     return _minLevel
   }
-  private var _maxLevel: Double = 90
+  private var _maxLevel: Double = 90.0
   var maxLevel: Double {
     return _maxLevel
+  }
+  private var _maxIntake: Double = 300.0
+  
+  func setLevel(to level: Double) {
+    let levelMod = level / (self._maxIntake / 180) - 90
+    self._level = (levelMod <= maxLevel ? levelMod : _maxLevel)
+    rotateNeedle()
   }
   
   private func setMaxLevel(to level: Double) {
@@ -56,42 +53,10 @@ class Meter: UIView {
   }
   
   private func rotateNeedle() {
-    UIView.animate(withDuration: 0.5) { 
-      self.needleImg.transform = CGAffineTransform(rotationAngle: CGFloat(self._level) * CGFloat.pi / 180)
+    UIView.animate(withDuration: 0.5) {
+      let angle = CGFloat(self._level) * CGFloat.pi / 180
+      self.needleImg.transform = CGAffineTransform(rotationAngle: angle) //CGFloat(self._level) * CGFloat.pi / 180)
     }
   }
-  
-//  private func drawNeedle() {
-//    let start = CGPoint(x: background.frame.width/2, y: background.frame.height)
-//    let end = CGPoint(x: background.frame.width/2, y: 0)
-//    background.image = drawLineOnImage(size: background.frame.size, image: needleImg.image!, from: start, to: end)
-//  }
-//  
-//  override func draw(_ rect: CGRect) {
-//    
-//  }
-//  
-//  private func drawLineOnImage(size: CGSize, image: UIImage, from: CGPoint, to: CGPoint) -> UIImage {
-//    
-//    UIGraphicsBeginImageContext(size)
-//    image.draw(at: CGPoint.zero)
-//    
-//    let context = UIGraphicsGetCurrentContext()
-//    
-//    context!.setLineWidth(2.0)
-//    context!.setStrokeColor(UIColor.white.cgColor)
-//    
-//    context!.move(to: from)
-//    context!.addLine(to: to)
-//    
-//    context!.strokePath()
-//    
-//    let resultImage = UIGraphicsGetImageFromCurrentImageContext()
-//    
-//    UIGraphicsEndImageContext()
-//    
-//    return resultImage!
-//  }
-
   
 }

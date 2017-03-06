@@ -31,7 +31,7 @@ class BuzzedTests: XCTestCase {
     XCTAssert(source.volume == 16.0)
     XCTAssert(source.mgCaffeinePerVolume == 15.0)
     XCTAssert(source.totalCaffeineContent == 240.0)
-    XCTAssert(source.associatedImageURL == nil)
+    XCTAssert(source.associatedImageName == "16oz Cup - Brown")
     
     source.toggleMetricOrCustomary()
     XCTAssert(source.baseUnit == UnitVolume.milliliters)

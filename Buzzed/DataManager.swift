@@ -30,6 +30,24 @@ class DataManager {
     defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
+  func getLastOpen() -> Date {
+    let defaults = UserDefaults.standard
+    if let lastOpen = defaults.object(forKey: defaultKeys.lastOpen.rawValue) {
+      let formatter = DateFormatter()
+      formatter.dateFormat = Constants.Globals.dateFormat.value()
+      return formatter.date(from: lastOpen as! String)!
+    }
+    
+    return Date()
+  }
+  
+  func setLastOpen() {
+    let defaults = UserDefaults.standard
+    let formatter = DateFormatter()
+    formatter.dateFormat = Constants.Globals.dateFormat.value()
+    defaults.set(formatter.string(from: Date()), forKey: defaultKeys.lastOpen.rawValue)
+  }
+  
   func setDailyIntake(limit: Double) {
     let defaults = UserDefaults.standard
     defaults.set(limit, forKey: defaultKeys.dailyIntakeLimit.rawValue)
@@ -89,6 +107,7 @@ class DataManager {
     defaults.removeObject(forKey: defaultKeys.favoriteDrinkVolume.rawValue)
     defaults.removeObject(forKey: defaultKeys.defaultUnits.rawValue)
     defaults.removeObject(forKey: defaultKeys.dailyIntakeLimit.rawValue)
+    defaults.removeObject(forKey: defaultKeys.lastOpen.rawValue)
   }
   
 }

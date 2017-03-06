@@ -21,12 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="105" height="51"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="J8z-HX-Kcy">
-                    <rect key="frame" x="0.0" y="0.0" width="105" height="102"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="sC2-Ro-V3b">
                     <rect key="frame" x="0.0" y="0.0" width="105" height="51"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="J8z-HX-Kcy">
+                    <rect key="frame" x="0.0" y="-1" width="105" height="102"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
@@ -34,8 +34,8 @@
                 <constraint firstItem="sC2-Ro-V3b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Nk-HJ-O7O"/>
                 <constraint firstItem="J8z-HX-Kcy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Btg-WL-ySc"/>
                 <constraint firstItem="sC2-Ro-V3b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LfE-Nh-rWS"/>
-                <constraint firstAttribute="bottom" secondItem="J8z-HX-Kcy" secondAttribute="bottom" constant="-51" id="XvM-eZ-gWn"/>
-                <constraint firstItem="J8z-HX-Kcy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZHX-xf-Qhy"/>
+                <constraint firstAttribute="bottom" secondItem="J8z-HX-Kcy" secondAttribute="bottom" constant="-50" id="XvM-eZ-gWn"/>
+                <constraint firstItem="J8z-HX-Kcy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-1" id="ZHX-xf-Qhy"/>
                 <constraint firstAttribute="trailing" secondItem="sC2-Ro-V3b" secondAttribute="trailing" id="jOJ-MM-Wih"/>
                 <constraint firstAttribute="bottom" secondItem="sC2-Ro-V3b" secondAttribute="bottom" id="t7I-f4-HKx"/>
                 <constraint firstAttribute="trailing" secondItem="J8z-HX-Kcy" secondAttribute="trailing" id="y8u-wk-FaC"/>

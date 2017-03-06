@@ -18,6 +18,7 @@ class CurrentDrinkVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     initialSetup()
+    topNav.meter.setLevel(to: 400)
     // Do any additional setup after loading the view.
   }
   
@@ -37,12 +38,24 @@ class CurrentDrinkVC: UIViewController {
   
   private func presentNewDrinkOptions() {
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    let defaultDrink = UIAlertAction(title: "Default", style: .default) { (action) in
+    let dm = DataManager()
+    
+    let title: String
+    if let favorite = dm.getFavoriteDrink() {
+      title = favorite.sourceName
+    } else {
+      title = "No favorite selected"
+    }
+    let defaultDrink = UIAlertAction(title: title, style: .default) { (action) in
       print("picking default drink")
     }
+    
+    // TODO: pull last drink from actual last drink in core data
     let lastDrink = UIAlertAction(title: "Last drink", style: .default) { (action) in
       print("picking last drink")
     }
+    
+    // TODO: goes to drink pinker
     let choose = UIAlertAction(title: "Choose...", style: .default) { (action) in
       print("choosing another drink")
     }
