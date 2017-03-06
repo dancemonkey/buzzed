@@ -99,6 +99,19 @@ class DataManager {
     }
   }
   
+  func setCurrentCaff(to level: Double) {
+    let defaults = UserDefaults.standard
+    defaults.set(level, forKey: defaultKeys.currentCaffLevel.rawValue)
+  }
+  
+  func getCurrentCaff() -> Double {
+    let defaults = UserDefaults.standard
+    if let currentCaff = defaults.object(forKey: defaultKeys.currentCaffLevel.rawValue) as? Double {
+      return currentCaff
+    }
+    return 0
+  }
+  
   func clearUserDefaults() {
     let defaults = UserDefaults.standard
     defaults.removeObject(forKey: defaultKeys.favoriteDrinkType.rawValue)
@@ -108,6 +121,7 @@ class DataManager {
     defaults.removeObject(forKey: defaultKeys.defaultUnits.rawValue)
     defaults.removeObject(forKey: defaultKeys.dailyIntakeLimit.rawValue)
     defaults.removeObject(forKey: defaultKeys.lastOpen.rawValue)
+    defaults.removeObject(forKey: defaultKeys.currentCaffLevel.rawValue)
   }
   
 }

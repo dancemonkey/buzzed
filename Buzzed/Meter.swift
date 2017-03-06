@@ -21,10 +21,9 @@ class Meter: UIView {
     self.addSubview(view)
     view.frame = self.bounds
     
-    // TODO: this should eventually call core data for current daily caffeine level, not minLevel
     let dm = DataManager()
     _maxIntake = dm.getDailyIntake()
-    setLevel(to: startAngle)
+    setLevel(to: dm.getCurrentCaff())
   }
   
   private var _level: Double = 0
