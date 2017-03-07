@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class CaffeineSource {
   let ozToMl = 29.57
@@ -75,6 +76,22 @@ class CaffeineSource {
     self._associatedImageName = _sourceType.getAssociatedImageName()
     self._creation = Date()
     consume(percentage: _percentageConsumed)
+  }
+  
+  func initSource(fromEntity entity: CaffeineSourceCD) -> CaffeineSource {
+    
+    self._sourceName = entity.sourceName!
+    self._sourceDescription = entity.sourceDescription!
+    self._mgCaffeinePerVolume = entity.mgCaffeinePerVolume
+    self._creation = entity.creation! as Date
+    
+    return self
+  }
+  
+  func createEntity(fromSource source: CaffeineSource) -> CaffeineSourceCD {
+    let dm = DataManager()
+    let entity = NSEntityDescription.insertNewObject(forEntityName: Constants.Entity.caffeineSourceEntity.name(), into: dm.context)
+    return entity as! CaffeineSourceCD
   }
   
   func toggleMetricOrCustomary() {

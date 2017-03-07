@@ -12,6 +12,7 @@ class CurrentDrinkVC: UIViewController {
   
   @IBOutlet weak var topNav: TopNav!
   @IBOutlet weak var newDrinkBtn: NewDrinkBtn!
+  @IBOutlet weak var buttonStack: UIStackView!
   
   var currentSource: CaffeineSource? = nil
   

@@ -6,7 +6,8 @@
 //  Copyright © 2017 Drew Lanning. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 class DataManager {
   
@@ -15,6 +16,8 @@ class DataManager {
   
   //  static let instance = DataManager()
   
+  lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
   func saveFavorite(drink: CaffeineSource?) {
     let defaults = UserDefaults.standard
     guard let source = drink else {

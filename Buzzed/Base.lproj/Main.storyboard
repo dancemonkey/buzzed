@@ -25,13 +25,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PQ-ed-h6b">
-                                        <rect key="frame" x="312" y="16" width="47" height="29"/>
+                                        <rect key="frame" x="312.5" y="16" width="46.5" height="29"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILi-ww-l2b" customClass="Meter" customModule="Buzzed" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="22.5" width="105" height="51"/>
+                                        <rect key="frame" x="8" y="23" width="105" height="51"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="51" id="R9D-Tk-TTF"/>
@@ -39,19 +39,19 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="max: XXXmg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu8-xb-KrJ">
-                                        <rect key="frame" x="18.5" y="73.5" width="83.5" height="17"/>
+                                        <rect key="frame" x="18.5" y="74" width="83.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-Lm-Awx">
-                                        <rect key="frame" x="121" y="22.5" width="65" height="29"/>
+                                        <rect key="frame" x="121" y="23" width="65" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXmg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmB-v4-4yF">
-                                        <rect key="frame" x="121" y="52.5" width="61.5" height="21"/>
+                                        <rect key="frame" x="121" y="53" width="61.5" height="21.5"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -99,6 +99,33 @@
                                     <action selector="newDrinkPressedWithSender:" destination="BJA-iL-HUM" eventType="touchUpInside" id="lUf-LH-s7Z"/>
                                 </connections>
                             </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-nI-x9a" userLabel="ButtonStack">
+                                <rect key="frame" x="64" y="121" width="247" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcN-mH-9k3" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="BdW-XJ-1ke"/>
+                                            <constraint firstAttribute="height" constant="44" id="IQL-aH-eM2"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="cancel"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyS-gU-hG8" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
+                                        <rect key="frame" x="103" y="0.0" width="144" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="3S3-f2-HLR"/>
+                                            <constraint firstAttribute="width" constant="144" id="Nyt-uO-5g9"/>
+                                        </constraints>
+                                        <state key="normal" title="DONE"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="done"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="0.2274509804" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -107,13 +134,16 @@
                             <constraint firstItem="OTv-RO-sBE" firstAttribute="centerX" secondItem="lLI-gs-0pY" secondAttribute="centerX" id="PXk-2R-Onb"/>
                             <constraint firstItem="OTv-RO-sBE" firstAttribute="centerY" secondItem="lLI-gs-0pY" secondAttribute="centerY" id="WQu-u9-htq"/>
                             <constraint firstItem="dIb-43-TiQ" firstAttribute="leading" secondItem="lLI-gs-0pY" secondAttribute="leading" id="anZ-RV-Jxu"/>
+                            <constraint firstItem="OTv-RO-sBE" firstAttribute="top" secondItem="IJ7-nI-x9a" secondAttribute="bottom" constant="24" id="iwa-n3-gQu"/>
                             <constraint firstItem="GKy-iv-Jqn" firstAttribute="centerY" secondItem="lLI-gs-0pY" secondAttribute="centerY" id="lEx-sl-pGI"/>
                             <constraint firstAttribute="trailing" secondItem="dIb-43-TiQ" secondAttribute="trailing" id="m6a-Tq-eXJ"/>
+                            <constraint firstItem="IJ7-nI-x9a" firstAttribute="centerX" secondItem="lLI-gs-0pY" secondAttribute="centerX" id="v01-SG-zh3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nJp-uS-Ksn"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="buttonStack" destination="IJ7-nI-x9a" id="KwF-6a-fU4"/>
                         <outlet property="newDrinkBtn" destination="OTv-RO-sBE" id="KFE-o7-rwv"/>
                         <outlet property="topNav" destination="dIb-43-TiQ" id="Sfe-1z-cGp"/>
                     </connections>
@@ -219,7 +249,7 @@
                                     <segue destination="fel-fc-RG5" kind="embed" id="fIi-2r-MUR"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7L-6f-Uy8" customClass="ShadowBtn" customModule="Buzzed" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7L-6f-Uy8" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
                                 <rect key="frame" x="8" y="554" width="359" height="48"/>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -229,6 +259,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="done"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

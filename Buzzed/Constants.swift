@@ -6,7 +6,7 @@
 //  Copyright © 2017 Drew Lanning. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Constants {
   
@@ -21,6 +21,32 @@ enum Constants {
       switch self {
       case .dateFormat:
         return "yyyy-MM-dd HH:mm:ss"
+      }
+    }
+  }
+  
+  enum Entity: String {
+    case caffeineSourceEntity
+    
+    func name() -> String {
+      switch self {
+      case .caffeineSourceEntity:
+        return "CaffeineSourceCD"
+      }
+    }
+  }
+  
+  enum Color {
+    case doneBtn, cancelBtn, infoBtn
+    
+    func bground() -> UIColor {
+      switch self {
+      case .doneBtn:
+        return UIColor.init(red: 139, green: 87, blue: 42)
+      case .cancelBtn:
+        return UIColor.init(red: 215, green: 146, blue: 87)
+      case .infoBtn:
+        return UIColor.init(red: 42, green: 122, blue: 139)
       }
     }
   }
