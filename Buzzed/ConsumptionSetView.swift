@@ -9,7 +9,7 @@
 import UIKit
 //import QuartzCore
 
-class ConsumptionSetView: UIView {
+class ConsumptionSetView: UIView, Hideable {
   
   @IBOutlet weak var caffeineSourceImg: UIImageView!
   @IBOutlet weak var liquidImg: UIImageView!

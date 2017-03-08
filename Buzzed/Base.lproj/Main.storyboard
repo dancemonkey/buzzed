@@ -78,9 +78,9 @@
                                     <outlet property="totalCaff" destination="fmB-v4-4yF" id="RSZ-KJ-jd3"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKy-iv-Jqn" customClass="ConsumptionSetView" customModule="Buzzed" customModuleProvider="target">
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKy-iv-Jqn" customClass="ConsumptionSetView" customModule="Buzzed" customModuleProvider="target">
                                 <rect key="frame" x="99" y="189" width="176" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="CZO-5w-WnQ"/>
                                     <constraint firstAttribute="width" constant="176" id="UBU-Tm-ujI"/>
@@ -99,7 +99,7 @@
                                     <action selector="newDrinkPressedWithSender:" destination="BJA-iL-HUM" eventType="touchUpInside" id="lUf-LH-s7Z"/>
                                 </connections>
                             </button>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-nI-x9a" userLabel="ButtonStack">
+                            <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-nI-x9a" userLabel="ButtonStack" customClass="HideableStack" customModule="Buzzed" customModuleProvider="target">
                                 <rect key="frame" x="64" y="121" width="247" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcN-mH-9k3" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
@@ -144,6 +144,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="buttonStack" destination="IJ7-nI-x9a" id="KwF-6a-fU4"/>
+                        <outlet property="consumptionControls" destination="GKy-iv-Jqn" id="0gO-VR-daM"/>
                         <outlet property="newDrinkBtn" destination="OTv-RO-sBE" id="KFE-o7-rwv"/>
                         <outlet property="topNav" destination="dIb-43-TiQ" id="Sfe-1z-cGp"/>
                     </connections>

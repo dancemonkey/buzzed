@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class NewDrinkBtn: UIButton {
+class NewDrinkBtn: UIButton, Hideable {
   
   override func awakeFromNib() {
     super.awakeFromNib()

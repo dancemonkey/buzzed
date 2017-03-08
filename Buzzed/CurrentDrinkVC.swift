@@ -8,18 +8,40 @@
 
 import UIKit
 
+enum ScreenMode {
+  case drinking, notDrinking
+}
+
 class CurrentDrinkVC: UIViewController {
   
   @IBOutlet weak var topNav: TopNav!
   @IBOutlet weak var newDrinkBtn: NewDrinkBtn!
-  @IBOutlet weak var buttonStack: UIStackView!
+  @IBOutlet weak var buttonStack: HideableStack!
+  @IBOutlet weak var consumptionControls: ConsumptionSetView!
   
   var currentSource: CaffeineSource? = nil
+  var mode: ScreenMode = .notDrinking {
+    willSet(newValue) {
+      if newValue == .drinking {
+        UIView.animate(withDuration: 1.0, animations: { 
+          self.newDrinkBtn.hide()
+          self.buttonStack.unHide()
+          self.consumptionControls.unHide()
+        })
+      } else {
+        UIView.animate(withDuration: 1.0, animations: { 
+          self.newDrinkBtn.unHide()
+          self.buttonStack.hide()
+          self.consumptionControls.hide()
+        })
+      }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     initialSetup()
-    topNav.meter.setLevel(to: 400)
+    topNav.meter.setLevel(to: 0)
   }
   
   override func didReceiveMemoryWarning() {
@@ -49,6 +71,7 @@ class CurrentDrinkVC: UIViewController {
     }
     let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
       print("picking default drink")
+      self.mode = .drinking
     }
     
     var lastTitle: String = "No prior drinks"
