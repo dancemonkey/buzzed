@@ -28,9 +28,9 @@ class DataManager {
   
   func fetchLastDrink() -> CaffeineSource? {
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
-    var predicate: NSPredicate? = nil
-    predicate = NSPredicate(format: "creation < %@", argumentArray: [Date()])
-    fetch.predicate = predicate
+    let sorter = NSSortDescriptor(key: "creation", ascending: false)
+    fetch.sortDescriptors = [sorter]
+    fetch.fetchLimit = 1
     do {
       let results = try context.fetch(fetch)
       if results.count > 0 {
