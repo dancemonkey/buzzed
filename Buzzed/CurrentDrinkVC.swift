@@ -20,6 +20,27 @@ class CurrentDrinkVC: UIViewController {
     super.viewDidLoad()
     initialSetup()
     topNav.meter.setLevel(to: 400)
+    
+    // testing core data saving and loading
+    let dm = DataManager()
+//    print(dm.clearAllHistory())
+//    let newDrink = CaffeineSource(type: .espresso, volume: 4.0)
+//    let savedDrink = newDrink.createEntity(fromSource: newDrink)
+//    dm.save()
+    
+    // testing that prior save worked
+    if let drinks = dm.fetchAllDrinks() {
+      print("found returned results")
+      for drink in drinks {
+        print("found drink")
+        print(drink.sourceName)
+        print(drink.sourceDescription)
+        print(drink.volume)
+        print(drink.mgCaffeinePerVolume)
+        print(drink.percentageConsumed)
+        print(drink.totalCaffeineContent)
+      }
+    }
   }
   
   override func didReceiveMemoryWarning() {

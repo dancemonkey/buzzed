@@ -29,7 +29,7 @@ class DataManager {
   func fetchLastDrink() -> CaffeineSource? {
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
     var predicate: NSPredicate? = nil
-//    predicate = NSPredicate(format: "creation < %@", argumentArray: [Date()])
+    predicate = NSPredicate(format: "creation < %@", argumentArray: [Date()])
     fetch.predicate = predicate
     do {
       let results = try context.fetch(fetch)
@@ -44,11 +44,27 @@ class DataManager {
     return nil
   }
   
+  func fetchAllDrinks() -> [CaffeineSource]? {
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
+    do {
+      let results = try context.fetch(fetch)
+      var drinksToReturn = [CaffeineSource]()
+      for result in results {
+        drinksToReturn.append((result as! CaffeineSourceCD).getBaseClass())
+      }
+      return drinksToReturn
+    } catch {
+      print("error fetching all drinks")
+      return nil
+    }
+  }
+  
   func clearAllHistory() -> Bool {
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
     let request = NSBatchDeleteRequest(fetchRequest: fetch)
     do {
       try context.execute(request)
+      save()
       return true
     } catch {
       print("error deleting everything")

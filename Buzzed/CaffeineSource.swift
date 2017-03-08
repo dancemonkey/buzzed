@@ -85,7 +85,7 @@ class CaffeineSource {
     self._mgCaffeinePerVolume = entity.mgCaffeinePerVolume
     self._creation = entity.creation! as Date
     
-    return self
+    return self 
   }
   
   func createEntity(fromSource source: CaffeineSource) -> CaffeineSourceCD {
