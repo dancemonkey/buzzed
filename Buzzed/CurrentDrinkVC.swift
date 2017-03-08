@@ -20,7 +20,6 @@ class CurrentDrinkVC: UIViewController {
     super.viewDidLoad()
     initialSetup()
     topNav.meter.setLevel(to: 400)
-    // Do any additional setup after loading the view.
   }
   
   override func didReceiveMemoryWarning() {

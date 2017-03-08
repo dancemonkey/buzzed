@@ -17,6 +17,44 @@ class DataManager {
   //  static let instance = DataManager()
   
   lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+  
+  func save() {
+    do {
+      try context.save()
+    } catch {
+      print("error saving to core data")
+    }
+  }
+  
+  func fetchLastDrink() -> CaffeineSource? {
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
+    var predicate: NSPredicate? = nil
+//    predicate = NSPredicate(format: "creation < %@", argumentArray: [Date()])
+    fetch.predicate = predicate
+    do {
+      let results = try context.fetch(fetch)
+      if results.count > 0 {
+        for drink in results {
+          return (drink as? CaffeineSourceCD)?.getBaseClass()
+        }
+      }
+    } catch {
+      print("error fetching")
+    }
+    return nil
+  }
+  
+  func clearAllHistory() -> Bool {
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
+    let request = NSBatchDeleteRequest(fetchRequest: fetch)
+    do {
+      try context.execute(request)
+      return true
+    } catch {
+      print("error deleting everything")
+      return false
+    }
+  }
     
   func saveFavorite(drink: CaffeineSource?) {
     let defaults = UserDefaults.standard

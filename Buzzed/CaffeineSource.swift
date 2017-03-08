@@ -91,6 +91,7 @@ class CaffeineSource {
   func createEntity(fromSource source: CaffeineSource) -> CaffeineSourceCD {
     let dm = DataManager()
     let entity = NSEntityDescription.insertNewObject(forEntityName: Constants.Entity.caffeineSourceEntity.name(), into: dm.context)
+    (entity as! CaffeineSourceCD).setValues(fromBase: source)
     return entity as! CaffeineSourceCD
   }
   
