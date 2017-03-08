@@ -37,21 +37,25 @@ class CurrentDrinkVC: UIViewController {
   }
   
   private func presentNewDrinkOptions() {
+    // TODO: final form - buttons without values will not show up. 
+    // if no favorite or last drink, tapping goes straight to drink picker
+    
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     let dm = DataManager()
     
-    let title: String
+    var favTitle: String = "No favorite selected"
     if let favorite = dm.getFavoriteDrink() {
-      title = favorite.sourceName
-    } else {
-      title = "No favorite selected"
+      favTitle = favorite.sourceName
     }
-    let defaultDrink = UIAlertAction(title: title, style: .default) { (action) in
+    let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
       print("picking default drink")
     }
     
-    // TODO: pull last drink from actual last drink in core data
-    let lastDrink = UIAlertAction(title: "Last drink", style: .default) { (action) in
+    var lastTitle: String = "No prior drinks"
+    if let lastDrink = dm.fetchLastDrink() {
+      lastTitle = "\(lastDrink.sourceName) - \(lastDrink.volume) \(dm.getDefaultUnits().symbol)"
+    }
+    let lastDrink = UIAlertAction(title: lastTitle, style: .default) { (action) in
       print("picking last drink")
     }
     
