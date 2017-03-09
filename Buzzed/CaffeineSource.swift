@@ -79,11 +79,15 @@ class CaffeineSource {
   }
   
   func initSource(fromEntity entity: CaffeineSourceCD) -> CaffeineSource {
-    
+    let dm = DataManager()
     self._sourceName = entity.sourceName!
     self._sourceDescription = entity.sourceDescription!
     self._mgCaffeinePerVolume = entity.mgCaffeinePerVolume
     self._creation = entity.creation! as Date
+    self._percentageConsumed = entity.percentageConsumed
+    self._associatedImageName = entity.imageName
+    self._baseUnit = dm.getDefaultUnits()
+    self._sourceType = CaffeineSourceType(rawValue: entity.sourceType!)!
     
     return self 
   }

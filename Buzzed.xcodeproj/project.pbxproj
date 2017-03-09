@@ -43,6 +43,8 @@
 		10E0A7281E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0A7251E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift */; };
 		10E0A7291E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0A7251E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift */; };
 		10E0A72B1E6F0D77000FB79F /* SystemBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0A72A1E6F0D76000FB79F /* SystemBtn.swift */; };
+		10E5F0F81E71925900F5CBED /* DrinkSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */; };
+		10E5F0FA1E71987500F5CBED /* DrinkSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5F0F91E71987500F5CBED /* DrinkSelectCell.swift */; };
 		10E6BBD61E68621700E5A50F /* ColorGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBD51E68621700E5A50F /* ColorGradient.swift */; };
 		10E6BBDA1E686DF900E5A50F /* TopNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBD91E686DF900E5A50F /* TopNav.swift */; };
 		10E6BBDC1E68709400E5A50F /* NewDrinkBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBDB1E68709400E5A50F /* NewDrinkBtn.swift */; };
@@ -93,6 +95,8 @@
 		10E0A7241E6F067C000FB79F /* CaffeineSourceCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaffeineSourceCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10E0A7251E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaffeineSourceCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10E0A72A1E6F0D76000FB79F /* SystemBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemBtn.swift; sourceTree = "<group>"; };
+		10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSelectVC.swift; sourceTree = "<group>"; };
+		10E5F0F91E71987500F5CBED /* DrinkSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSelectCell.swift; sourceTree = "<group>"; };
 		10E6BBD51E68621700E5A50F /* ColorGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGradient.swift; sourceTree = "<group>"; };
 		10E6BBD91E686DF900E5A50F /* TopNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNav.swift; sourceTree = "<group>"; };
 		10E6BBDB1E68709400E5A50F /* NewDrinkBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDrinkBtn.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				10E6BBDD1E68729600E5A50F /* CurrentDrinkVC.swift */,
 				1067546E1E68E4C30023D470 /* SettingsVC.swift */,
 				10DF0C1E1E69A16D00AC440D /* SettingsTableVC.swift */,
+				10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				10724AE31E68F98E005B4808 /* SettingsCell.swift */,
 				10E0A72A1E6F0D76000FB79F /* SystemBtn.swift */,
 				10911F401E7053A4004F5077 /* HideableStack.swift */,
+				10E5F0F91E71987500F5CBED /* DrinkSelectCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				10E0A7281E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift in Sources */,
 				10E6BBDC1E68709400E5A50F /* NewDrinkBtn.swift in Sources */,
 				10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */,
+				10E5F0FA1E71987500F5CBED /* DrinkSelectCell.swift in Sources */,
 				10011ACB1E592A460096F426 /* AppDelegate.swift in Sources */,
 				10DB0ACD1E671B3700804C50 /* DefaultValueEnums.swift in Sources */,
 				100F91221E5FDA9B007E74CA /* CaffeineSource.swift in Sources */,
@@ -365,6 +372,7 @@
 				10911F3F1E704D2A004F5077 /* Protocols.swift in Sources */,
 				10E6BBDA1E686DF900E5A50F /* TopNav.swift in Sources */,
 				10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */,
+				10E5F0F81E71925900F5CBED /* DrinkSelectVC.swift in Sources */,
 				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,

@@ -23,7 +23,7 @@ class CurrentDrinkVC: UIViewController {
   var mode: ScreenMode = .notDrinking {
     willSet(newValue) {
       if newValue == .drinking {
-        UIView.animate(withDuration: 1.0, animations: { 
+        UIView.animate(withDuration: 1.0, animations: {
           self.newDrinkBtn.hide()
           self.buttonStack.unHide()
           self.consumptionControls.unHide()
@@ -41,7 +41,7 @@ class CurrentDrinkVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     initialSetup()
-    topNav.meter.setLevel(to: 0)
+    topNav.meter?.setLevel(to: 0) // TODO: fetch current caffeine from DataManager
   }
   
   override func didReceiveMemoryWarning() {
@@ -71,7 +71,8 @@ class CurrentDrinkVC: UIViewController {
     }
     let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
       print("picking default drink")
-      self.mode = .drinking
+      self.performSegue(withIdentifier: "drinkSelect", sender: self)
+//      self.mode = .drinking
     }
     
     var lastTitle: String = "No prior drinks"
@@ -92,6 +93,20 @@ class CurrentDrinkVC: UIViewController {
     alert.addAction(choose)
     alert.addAction(cancel)
     present(alert, animated: true, completion: nil)
+  }
+  
+  @IBAction func donePressed(sender: SystemBtn) {
+    // TODO: dismiss consumed drink differently than canceled drink
+    
+    if let drink = consumptionControls.source {
+      _ = drink.createEntity(fromSource: drink)
+      DataManager().save()
+    }
+    mode = .notDrinking
+  }
+  
+  @IBAction func cancelPressed(sender: SystemBtn) {
+    mode = .notDrinking
   }
   
   

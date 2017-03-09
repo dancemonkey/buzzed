@@ -10,7 +10,28 @@ import Foundation
 
 enum CaffeineSourceType: String {
   
+  // TODO: add single and double espresso types
+  
   case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea, custom
+  
+  func getSizes() -> [Double] {
+    switch self {
+    case .dripCoffee:
+      return [8, 12, 16, 20]
+    case .espresso:
+      return [1, 2]
+    case .soda:
+      return [12, 20]
+    case .energyDrink:
+      return [8.4, 12, 20, 24]
+    case .blackTea:
+      return [8, 12, 16, 20]
+    case .greenTea:
+      return [8, 12, 16, 20]
+    case .custom:
+      return [8, 12, 16, 20]
+    }
+  }
   
   func getName() -> String {
     switch self {
@@ -27,7 +48,7 @@ enum CaffeineSourceType: String {
     case .greenTea:
       return "Green Tea"
     case .custom:
-      return "Source name"
+      return "Custom Drink"
     }
   }
   

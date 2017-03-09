@@ -21,5 +21,5 @@ public extension Hideable where Self: UIView {
     self.isHidden = false
     self.alpha = 1.0
   }
-
+  
 }

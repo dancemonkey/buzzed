@@ -18,9 +18,9 @@ class TopNav: UIView {
   // - METER: total current caff from CD
   
   @IBOutlet weak var title: UILabel!
-  @IBOutlet weak var maxCaff: UILabel!
+  @IBOutlet weak var maxCaff: UILabel?
   @IBOutlet weak var totalCaff: UILabel!
-  @IBOutlet weak var meter: Meter!
+  @IBOutlet weak var meter: Meter?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -29,9 +29,16 @@ class TopNav: UIView {
   
   func configure(title: String) {
     let data = DataManager()
-    self.maxCaff.text = String(data.getDailyIntake()) + "mg max"
+    
     self.title.text = title
-    setMeter()
+    
+    if let caffLbl = maxCaff {
+      caffLbl.text = String(data.getDailyIntake()) + "mg max"
+    }
+    
+    if meter != nil {
+      setMeter()
+    }
     // totalCaff.text from Core Data (total intake for current day)
   }
   

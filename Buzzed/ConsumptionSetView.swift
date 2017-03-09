@@ -38,7 +38,6 @@ class ConsumptionSetView: UIView, Hideable {
       return
     }
     // end testing
-
   }
   
   func setLevel(to level: Double) {
@@ -47,11 +46,11 @@ class ConsumptionSetView: UIView, Hideable {
     setDrinkLevel()
     
     // TESTING: Label is just for testing until I get rest of UI implemented
-    if let source = self.source {
-      caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
-    } else {
-      caffeineConsumptionLbl.text = ""
-    }
+//    if let source = self.source {
+//      caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
+//    } else {
+//      caffeineConsumptionLbl.text = ""
+//    }
   }
   
   func setSource(to source: CaffeineSource) {
