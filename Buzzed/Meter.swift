@@ -54,7 +54,7 @@ class Meter: UIView {
   private func rotateNeedle() {
     UIView.animate(withDuration: 0.5) {
       let angle = CGFloat(self._level) * CGFloat.pi / 180
-      self.needleImg.transform = CGAffineTransform(rotationAngle: angle) //CGFloat(self._level) * CGFloat.pi / 180)
+      self.needleImg.transform = CGAffineTransform(rotationAngle: angle) 
     }
   }
   

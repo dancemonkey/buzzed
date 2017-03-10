@@ -14,5 +14,7 @@ extension DrinkSelectDelegate where Self: CurrentDrinkVC {
   func setSelected(drink: CaffeineSource) {
     self.currentSource = drink
     self.mode = .drinking
+    self.consumptionControls.setSource(to: drink)
+    topNav.configure(title: "\(drink.sourceName)")
   }
 }

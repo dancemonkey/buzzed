@@ -41,7 +41,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     initialSetup()
-    topNav.meter?.setLevel(to: 0) // TODO: fetch current caffeine from DataManager
   }
   
   override func didReceiveMemoryWarning() {
@@ -51,7 +50,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
-    topNav.configure(title: "New drink")
+    topNav.configure(title: "")
   }
   
   @IBAction func newDrinkPressed(sender: NewDrinkBtn) {
@@ -71,7 +70,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     }
     let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
       self.performSegue(withIdentifier: "drinkSelect", sender: self)
-      //      self.mode = .drinking
     }
     
     var lastTitle: String = "No prior drinks"
@@ -98,8 +96,11 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     // TODO: dismiss consumed drink differently than canceled drink
     
     if let drink = consumptionControls.source {
+      let dm = DataManager()
       _ = drink.createEntity(fromSource: drink)
-      DataManager().save()
+      dm.save()
+      dm.setCurrentCaff(to: dm.getCurrentCaff() + drink.totalCaffeineConsumed())
+      topNav.configure(title: "")
     }
     mode = .notDrinking
   }
