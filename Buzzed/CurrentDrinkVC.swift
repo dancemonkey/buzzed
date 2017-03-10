@@ -70,7 +70,6 @@ class CurrentDrinkVC: UIViewController {
       favTitle = favorite.sourceName
     }
     let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
-      print("picking default drink")
       self.performSegue(withIdentifier: "drinkSelect", sender: self)
 //      self.mode = .drinking
     }
@@ -83,7 +82,7 @@ class CurrentDrinkVC: UIViewController {
       print("picking last drink")
     }
     
-    // TODO: goes to drink pinker
+    // TODO: goes to drink picker
     let choose = UIAlertAction(title: "Choose...", style: .default) { (action) in
       print("choosing another drink")
     }

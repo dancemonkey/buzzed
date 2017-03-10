@@ -20,14 +20,8 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     // Do any additional setup after loading the view.
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   @IBAction func backPressed(sender: SystemBtn) {
-//    dismiss(animated: true, completion: nil)
-    navigationController?.popViewController(animated: true)
+    _ = navigationController?.popViewController(animated: true)
   }
   
   // MARK: Tableview methods
@@ -51,14 +45,17 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     return cell
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "sizeSelect", sender: self)
+  }
+  
+  // MARK: - Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let dest = segue.destination as? SizeSelectVC {
+      // TODO: implement all other drink types and select based on tapped cell
+      dest.drinkType = .dripCoffee
+    }
+  }
   
 }
