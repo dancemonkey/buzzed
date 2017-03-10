@@ -87,18 +87,17 @@ class DataManager {
     defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
-  func getLastOpen() -> Date {
+  private func getLastOpen() -> Date {
     let defaults = UserDefaults.standard
     if let lastOpen = defaults.object(forKey: defaultKeys.lastOpen.rawValue) {
       let formatter = DateFormatter()
       formatter.dateFormat = Constants.Globals.dateFormat.value()
       return formatter.date(from: lastOpen as! String)!
     }
-    
     return Date()
   }
   
-  func setLastOpen() {
+  private func setLastOpen() {
     let defaults = UserDefaults.standard
     let formatter = DateFormatter()
     formatter.dateFormat = Constants.Globals.dateFormat.value()
@@ -167,6 +166,31 @@ class DataManager {
       return currentCaff
     }
     return 0
+  }
+  
+  func decay() {
+    // get ratio of last open to current time
+    // deplete caffeine in system based on time since last open
+    
+    let formatter = DateFormatter()
+    formatter.dateFormat = Constants.Globals.dateFormat.value()
+    let currentDate = Date()
+    let priorDate = getLastOpen()
+    
+    print(currentDate)
+    print(getLastOpen())
+    print(minutesBetween(earlierDate: priorDate, andLaterDate: currentDate))
+    
+    setLastOpen()
+  }
+  
+  private func minutesBetween(earlierDate earlier: Date, andLaterDate later: Date) -> Int {
+    
+    let currentCalendar = Calendar.current
+    guard let start = currentCalendar.ordinality(of: .minute, in: .era, for: earlier) else { return 0 }
+    guard let end = currentCalendar.ordinality(of: .minute, in: .era, for: later) else { return 0 }
+    
+    return end - start
   }
   
   func clearUserDefaults() {

@@ -33,10 +33,10 @@ class TopNav: UIView {
     self.title.text = title
     
     if let caffLbl = maxCaff {
-      caffLbl.text = String(describing: data.getDailyIntake()) + "mg max"
+      caffLbl.text = String(describing: data.getDailyIntake().roundTo(places: 0)) + "mg max"
     }
     if let totalLbl = totalCaff {
-      totalLbl.text = "\(data.getCurrentCaff()) mg"
+      totalLbl.text = "\(data.getCurrentCaff().roundTo(places: 0)) mg"
     }
     
     if meter != nil {
