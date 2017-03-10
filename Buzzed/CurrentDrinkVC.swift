@@ -12,7 +12,7 @@ enum ScreenMode {
   case drinking, notDrinking
 }
 
-class CurrentDrinkVC: UIViewController {
+class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   
   @IBOutlet weak var topNav: TopNav!
   @IBOutlet weak var newDrinkBtn: NewDrinkBtn!
@@ -29,7 +29,7 @@ class CurrentDrinkVC: UIViewController {
           self.consumptionControls.unHide()
         })
       } else {
-        UIView.animate(withDuration: 1.0, animations: { 
+        UIView.animate(withDuration: 1.0, animations: {
           self.newDrinkBtn.unHide()
           self.buttonStack.hide()
           self.consumptionControls.hide()
@@ -59,7 +59,7 @@ class CurrentDrinkVC: UIViewController {
   }
   
   private func presentNewDrinkOptions() {
-    // TODO: final form - buttons without values will not show up. 
+    // TODO: final form - buttons without values will not show up.
     // if no favorite or last drink, tapping goes straight to drink picker
     
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -71,7 +71,7 @@ class CurrentDrinkVC: UIViewController {
     }
     let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
       self.performSegue(withIdentifier: "drinkSelect", sender: self)
-//      self.mode = .drinking
+      //      self.mode = .drinking
     }
     
     var lastTitle: String = "No prior drinks"
@@ -108,15 +108,12 @@ class CurrentDrinkVC: UIViewController {
     mode = .notDrinking
   }
   
+  // MARK: - Navigation
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let dest = segue.destination as? DrinkSelectVC {
+      dest.passThroughDelegate = self
+    }
+  }
   
 }

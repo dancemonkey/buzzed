@@ -14,6 +14,8 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   @IBOutlet weak var viewTitle: UILabel!
   @IBOutlet weak var topNav: TopNav!
   
+  var passThroughDelegate: DrinkSelectDelegate?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     topNav.configure(title: "Select a drink")
@@ -55,6 +57,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     if let dest = segue.destination as? SizeSelectVC {
       // TODO: implement all other drink types and select based on tapped cell
       dest.drinkType = .dripCoffee
+      dest.delegate = passThroughDelegate
     }
   }
   

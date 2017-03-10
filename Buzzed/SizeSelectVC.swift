@@ -15,6 +15,7 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   var drinkType: CaffeineSourceType?
   var sizes = [Double]()
+  var delegate: DrinkSelectDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -54,6 +55,16 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if let delegate = self.delegate as? CurrentDrinkVC {
+      let source = CaffeineSource(type: drinkType!, volume: sizes[indexPath.row])
+      delegate.setSelected(drink: source)
+      _ = navigationController?.popToRootViewController(animated: true)
+      
+    }
+  }
+  
   /*
    // MARK: - Navigation
    
