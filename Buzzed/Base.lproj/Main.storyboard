@@ -24,12 +24,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-43-TiQ" customClass="TopNav" customModule="Buzzed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PQ-ed-h6b">
-                                        <rect key="frame" x="312.5" y="20" width="46.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILi-ww-l2b" customClass="Meter" customModule="Buzzed" customModuleProvider="target">
                                         <rect key="frame" x="8" y="23" width="105" height="51"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,30 +45,27 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXmg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmB-v4-4yF">
-                                        <rect key="frame" x="121" y="53" width="61.5" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                        <rect key="frame" x="121" y="56" width="48.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="0PQ-ed-h6b" firstAttribute="top" secondItem="dIb-43-TiQ" secondAttribute="top" constant="20" id="0XM-O3-HG1"/>
                                     <constraint firstItem="hu8-xb-KrJ" firstAttribute="top" secondItem="ILi-ww-l2b" secondAttribute="bottom" id="4Wk-rb-3mq"/>
                                     <constraint firstItem="ILi-ww-l2b" firstAttribute="centerY" secondItem="dIb-43-TiQ" secondAttribute="centerY" id="Abi-6K-Np7"/>
                                     <constraint firstAttribute="height" constant="96" id="Axe-rg-Dws"/>
                                     <constraint firstItem="ILi-ww-l2b" firstAttribute="leading" secondItem="dIb-43-TiQ" secondAttribute="leading" constant="8" id="BSW-L9-5Y6"/>
-                                    <constraint firstItem="fmB-v4-4yF" firstAttribute="top" secondItem="9Xk-Lm-Awx" secondAttribute="bottom" constant="1" id="ENC-aL-VhN"/>
+                                    <constraint firstItem="9Xk-Lm-Awx" firstAttribute="leading" secondItem="ILi-ww-l2b" secondAttribute="trailing" constant="8" id="BWn-4Q-ncZ"/>
+                                    <constraint firstItem="9Xk-Lm-Awx" firstAttribute="top" secondItem="ILi-ww-l2b" secondAttribute="top" id="KOh-8D-Asz"/>
                                     <constraint firstItem="hu8-xb-KrJ" firstAttribute="centerX" secondItem="ILi-ww-l2b" secondAttribute="centerX" id="RaU-ib-Lon"/>
-                                    <constraint firstItem="9Xk-Lm-Awx" firstAttribute="leading" secondItem="ILi-ww-l2b" secondAttribute="trailing" constant="8" id="SnW-Lb-6th"/>
-                                    <constraint firstAttribute="trailing" secondItem="0PQ-ed-h6b" secondAttribute="trailing" constant="16" id="fRf-Up-UJ4"/>
-                                    <constraint firstItem="fmB-v4-4yF" firstAttribute="leading" secondItem="9Xk-Lm-Awx" secondAttribute="leading" id="jvM-5e-Wm1"/>
-                                    <constraint firstItem="9Xk-Lm-Awx" firstAttribute="top" secondItem="ILi-ww-l2b" secondAttribute="top" id="kso-xv-ygI"/>
+                                    <constraint firstItem="fmB-v4-4yF" firstAttribute="leading" secondItem="9Xk-Lm-Awx" secondAttribute="leading" id="ZJS-ek-dC3"/>
+                                    <constraint firstItem="fmB-v4-4yF" firstAttribute="top" secondItem="9Xk-Lm-Awx" secondAttribute="bottom" constant="4" id="zt3-Bi-d7H"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="maxCaff" destination="hu8-xb-KrJ" id="2fc-6d-5eL"/>
                                     <outlet property="meter" destination="ILi-ww-l2b" id="sJH-XJ-b2Q"/>
-                                    <outlet property="title" destination="0PQ-ed-h6b" id="iVj-PH-I2W"/>
+                                    <outlet property="meterCaffLbl" destination="hu8-xb-KrJ" id="fYr-nL-MG3"/>
                                     <outlet property="totalCaff" destination="fmB-v4-4yF" id="RSZ-KJ-jd3"/>
                                 </connections>
                             </view>
@@ -361,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-N6-9Y0">
-                                        <rect key="frame" x="312" y="16" width="47" height="29"/>
+                                        <rect key="frame" x="312" y="23" width="47" height="29"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -387,8 +378,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXmg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxn-uU-y3g">
-                                        <rect key="frame" x="121" y="53" width="62" height="22"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                        <rect key="frame" x="121" y="56" width="48.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -399,8 +390,8 @@
                                     <constraint firstAttribute="trailing" secondItem="Uuz-N6-9Y0" secondAttribute="trailing" constant="16" id="7Ih-Rb-QpK"/>
                                     <constraint firstItem="eul-UZ-idc" firstAttribute="top" secondItem="Bob-V1-3vn" secondAttribute="bottom" id="N60-iV-ULS"/>
                                     <constraint firstItem="BAu-qI-heP" firstAttribute="leading" secondItem="Bob-V1-3vn" secondAttribute="trailing" constant="8" id="O0p-vW-FkK"/>
-                                    <constraint firstItem="Uuz-N6-9Y0" firstAttribute="top" secondItem="Fkh-cn-ehp" secondAttribute="top" constant="16" id="WGo-lx-zoA"/>
-                                    <constraint firstItem="mxn-uU-y3g" firstAttribute="top" secondItem="BAu-qI-heP" secondAttribute="bottom" constant="1" id="bwe-aj-HUZ"/>
+                                    <constraint firstItem="Uuz-N6-9Y0" firstAttribute="top" secondItem="BAu-qI-heP" secondAttribute="top" id="W4O-IP-GOo"/>
+                                    <constraint firstItem="mxn-uU-y3g" firstAttribute="top" secondItem="BAu-qI-heP" secondAttribute="bottom" constant="4" id="bwe-aj-HUZ"/>
                                     <constraint firstAttribute="height" constant="96" id="lba-xG-nD1"/>
                                     <constraint firstItem="Bob-V1-3vn" firstAttribute="leading" secondItem="Fkh-cn-ehp" secondAttribute="leading" constant="8" id="muz-cA-AHY"/>
                                     <constraint firstItem="BAu-qI-heP" firstAttribute="top" secondItem="Bob-V1-3vn" secondAttribute="top" id="oyU-gH-jM8"/>
@@ -408,8 +399,8 @@
                                     <constraint firstItem="Bob-V1-3vn" firstAttribute="centerY" secondItem="Fkh-cn-ehp" secondAttribute="centerY" id="uJT-4f-xuD"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="maxCaff" destination="eul-UZ-idc" id="eHh-pa-fOC"/>
                                     <outlet property="meter" destination="Bob-V1-3vn" id="1jM-uZ-rYn"/>
+                                    <outlet property="meterCaffLbl" destination="eul-UZ-idc" id="Ozy-94-UMj"/>
                                     <outlet property="title" destination="Uuz-N6-9Y0" id="dxa-Et-hfM"/>
                                     <outlet property="totalCaff" destination="mxn-uU-y3g" id="ExX-55-2wA"/>
                                 </connections>

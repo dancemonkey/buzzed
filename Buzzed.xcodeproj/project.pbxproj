@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		10011ACB1E592A460096F426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10011ACA1E592A460096F426 /* AppDelegate.swift */; };
-		10011ACD1E592A460096F426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10011ACC1E592A460096F426 /* ViewController.swift */; };
 		10011AD01E592A460096F426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10011ACE1E592A460096F426 /* Main.storyboard */; };
 		10011AD31E592A460096F426 /* Buzzed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10011AD11E592A460096F426 /* Buzzed.xcdatamodeld */; };
 		10011AD51E592A460096F426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10011AD41E592A460096F426 /* Assets.xcassets */; };
@@ -19,6 +18,28 @@
 		10011AF61E592DE30096F426 /* Meter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10011AF41E592DE30096F426 /* Meter.xib */; };
 		100F91221E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
 		100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
+		104B52741E75FF99002B8B80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
+		104B52751E75FF9E002B8B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10011ACA1E592A460096F426 /* AppDelegate.swift */; };
+		104B52761E75FFB0002B8B80 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */; };
+		104B52771E75FFB6002B8B80 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10911F3E1E704D2A004F5077 /* Protocols.swift */; };
+		104B52781E75FFB9002B8B80 /* DrinkSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC525A1E72EB01008E8804 /* DrinkSelectDelegate.swift */; };
+		104B52791E75FFC7002B8B80 /* CurrentDrinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBDD1E68729600E5A50F /* CurrentDrinkVC.swift */; };
+		104B527A1E75FFD1002B8B80 /* TopNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBD91E686DF900E5A50F /* TopNav.swift */; };
+		104B527B1E75FFE5002B8B80 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109362ED1E5B399C0056C54B /* HealthManager.swift */; };
+		104B527C1E75FFED002B8B80 /* ColorGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBD51E68621700E5A50F /* ColorGradient.swift */; };
+		104B527D1E75FFF2002B8B80 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10011AF11E592A790096F426 /* Meter.swift */; };
+		104B527E1E75FFF7002B8B80 /* ConsumptionSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */; };
+		104B527F1E75FFFA002B8B80 /* CaffeineTodayLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */; };
+		104B52801E75FFFE002B8B80 /* NewDrinkBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6BBDB1E68709400E5A50F /* NewDrinkBtn.swift */; };
+		104B52811E760001002B8B80 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10724AE31E68F98E005B4808 /* SettingsCell.swift */; };
+		104B52821E760006002B8B80 /* SystemBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0A72A1E6F0D76000FB79F /* SystemBtn.swift */; };
+		104B52831E760009002B8B80 /* HideableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10911F401E7053A4004F5077 /* HideableStack.swift */; };
+		104B52841E76000B002B8B80 /* DrinkSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5F0F91E71987500F5CBED /* DrinkSelectCell.swift */; };
+		104B52851E76000D002B8B80 /* SizeSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFBC8A1E72332D00133041 /* SizeSelectCell.swift */; };
+		104B52861E76001F002B8B80 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546E1E68E4C30023D470 /* SettingsVC.swift */; };
+		104B52871E760022002B8B80 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF0C1E1E69A16D00AC440D /* SettingsTableVC.swift */; };
+		104B52881E760025002B8B80 /* DrinkSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */; };
+		104B52891E760027002B8B80 /* SizeSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFBC881E72331C00133041 /* SizeSelectVC.swift */; };
 		1067546D1E68E2B50023D470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
 		1067546F1E68E4C30023D470 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546E1E68E4C30023D470 /* SettingsVC.swift */; };
 		10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10724AE31E68F98E005B4808 /* SettingsCell.swift */; };
@@ -35,7 +56,6 @@
 		10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFC1E5C85A500B9AFB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */; };
 		10B4BD9A1E6DA3A000A5E316 /* DefaultValueEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */; };
-		10B4BD9B1E6DA3B600A5E316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
 		10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C523FC1E67583B0091746E /* CaffeineTodayLbl.swift */; };
 		10CFBC891E72331C00133041 /* SizeSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFBC881E72331C00133041 /* SizeSelectVC.swift */; };
 		10CFBC8B1E72332D00133041 /* SizeSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFBC8A1E72332D00133041 /* SizeSelectCell.swift */; };
@@ -67,7 +87,6 @@
 /* Begin PBXFileReference section */
 		10011AC71E592A460096F426 /* Buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10011ACA1E592A460096F426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10011ACC1E592A460096F426 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10011ACF1E592A460096F426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10011AD21E592A460096F426 /* Buzzed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Buzzed.xcdatamodel; sourceTree = "<group>"; };
 		10011AD41E592A460096F426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,7 +196,6 @@
 		10011AED1E592A4C0096F426 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				10011ACC1E592A460096F426 /* ViewController.swift */,
 				10E6BBDD1E68729600E5A50F /* CurrentDrinkVC.swift */,
 				1067546E1E68E4C30023D470 /* SettingsVC.swift */,
 				10DF0C1E1E69A16D00AC440D /* SettingsTableVC.swift */,
@@ -362,7 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				10911F411E7053A4004F5077 /* HideableStack.swift in Sources */,
-				10011ACD1E592A460096F426 /* ViewController.swift in Sources */,
 				10E0A72B1E6F0D77000FB79F /* SystemBtn.swift in Sources */,
 				1067546D1E68E2B50023D470 /* Constants.swift in Sources */,
 				109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */,
@@ -398,14 +415,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104B52841E76000B002B8B80 /* DrinkSelectCell.swift in Sources */,
+				104B52851E76000D002B8B80 /* SizeSelectCell.swift in Sources */,
 				10E0A7291E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift in Sources */,
+				104B52881E760025002B8B80 /* DrinkSelectVC.swift in Sources */,
 				10011AE31E592A460096F426 /* BuzzedTests.swift in Sources */,
 				10B4BD9A1E6DA3A000A5E316 /* DefaultValueEnums.swift in Sources */,
+				104B52771E75FFB6002B8B80 /* Protocols.swift in Sources */,
+				104B527B1E75FFE5002B8B80 /* HealthManager.swift in Sources */,
+				104B52751E75FF9E002B8B80 /* AppDelegate.swift in Sources */,
+				104B52801E75FFFE002B8B80 /* NewDrinkBtn.swift in Sources */,
+				104B527F1E75FFFA002B8B80 /* CaffeineTodayLbl.swift in Sources */,
 				100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */,
+				104B52761E75FFB0002B8B80 /* Extensions.swift in Sources */,
+				104B52781E75FFB9002B8B80 /* DrinkSelectDelegate.swift in Sources */,
+				104B52871E760022002B8B80 /* SettingsTableVC.swift in Sources */,
+				104B52861E76001F002B8B80 /* SettingsVC.swift in Sources */,
 				10E0A7271E6F067C000FB79F /* CaffeineSourceCD+CoreDataClass.swift in Sources */,
 				108023071E5DD17300D948C1 /* DataManager.swift in Sources */,
+				104B52891E760027002B8B80 /* SizeSelectVC.swift in Sources */,
+				104B52821E760006002B8B80 /* SystemBtn.swift in Sources */,
+				104B527E1E75FFF7002B8B80 /* ConsumptionSetView.swift in Sources */,
+				104B52811E760001002B8B80 /* SettingsCell.swift in Sources */,
+				104B527C1E75FFED002B8B80 /* ColorGradient.swift in Sources */,
 				10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */,
-				10B4BD9B1E6DA3B600A5E316 /* Constants.swift in Sources */,
+				104B52791E75FFC7002B8B80 /* CurrentDrinkVC.swift in Sources */,
+				104B527D1E75FFF2002B8B80 /* Meter.swift in Sources */,
+				104B52831E760009002B8B80 /* HideableStack.swift in Sources */,
+				104B52741E75FF99002B8B80 /* Constants.swift in Sources */,
+				104B527A1E75FFD1002B8B80 /* TopNav.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

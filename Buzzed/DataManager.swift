@@ -168,24 +168,31 @@ class DataManager {
     return 0
   }
   
+  func getTotalCaff() -> Double {
+    let cal = Calendar(identifier: .gregorian)
+    let drinks = fetchAllDrinks()?.filter({ (drink) -> Bool in
+      let drinkDate = cal.date(bySetting: .hour, value: 0, of: drink.creation)
+      return drinkDate == cal.date(bySetting: .hour, value: 0, of: Date())
+    })
+    return drinks?.reduce(0, { (results, drink) -> Double in
+      return (results + drink.totalCaffeineConsumed()).roundTo(places: 0)
+    }) ?? 0
+  }
+  
   func decay() {
-    // get ratio of last open to current time
-    // deplete caffeine in system based on time since last open
-    
-    let formatter = DateFormatter()
-    formatter.dateFormat = Constants.Globals.dateFormat.value()
+    let decayFactorPerMin: Double = (1 - (0.10/60))
     let currentDate = Date()
     let priorDate = getLastOpen()
-    
-    print(currentDate)
-    print(getLastOpen())
-    print(minutesBetween(earlierDate: priorDate, andLaterDate: currentDate))
-    
+    let totalDecay = Double(minutesBetween(earlierDate: priorDate, andLaterDate: currentDate)) * decayFactorPerMin
+    if getCurrentCaff() > 0 {
+      setCurrentCaff(to: getCurrentCaff() * totalDecay)
+    } else {
+      setCurrentCaff(to: 0)
+    }
     setLastOpen()
   }
   
   private func minutesBetween(earlierDate earlier: Date, andLaterDate later: Date) -> Int {
-    
     let currentCalendar = Calendar.current
     guard let start = currentCalendar.ordinality(of: .minute, in: .era, for: earlier) else { return 0 }
     guard let end = currentCalendar.ordinality(of: .minute, in: .era, for: later) else { return 0 }

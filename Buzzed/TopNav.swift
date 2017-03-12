@@ -17,8 +17,8 @@ class TopNav: UIView {
   // - CURRENT Caff: total current caff from CD
   // - METER: total current caff from CD
   
-  @IBOutlet weak var title: UILabel!
-  @IBOutlet weak var maxCaff: UILabel?
+  @IBOutlet weak var title: UILabel?
+  @IBOutlet weak var meterCaffLbl: UILabel?
   @IBOutlet weak var totalCaff: UILabel!
   @IBOutlet weak var meter: Meter?
   
@@ -30,13 +30,18 @@ class TopNav: UIView {
   }
   
   func configure(title: String) {
-    self.title.text = title
     
-    if let caffLbl = maxCaff {
-      caffLbl.text = String(describing: data.getDailyIntake().roundTo(places: 0)) + "mg max"
+    if let currentTitle = self.title {
+      currentTitle.text = title
+    }
+    
+    if let caffLbl = meterCaffLbl {
+      caffLbl.text = String(describing: data.getCurrentCaff().roundTo(places: 0)) + "mg total"
     }
     if let totalLbl = totalCaff {
-      totalLbl.text = "\(data.getCurrentCaff().roundTo(places: 0)) mg"
+      // TODO: this should be set to total caff all day, un-decayed value
+      // currentCaff will decay
+      totalLbl.text = "\(data.getTotalCaff())/\(data.getDailyIntake())mg"
     }
     
     if meter != nil {
