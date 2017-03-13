@@ -8,14 +8,33 @@
 
 import UIKit
 
-class HistoryVC: UIViewController {
+class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var topNav: TopNav!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    topNav.configure(title: "History")
+    
+  }
+  
+  // MARK: Tableview methods
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 10
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryCell else {
+      return HistoryCell()
+    }
+    
   }
   
   /*

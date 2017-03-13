@@ -778,24 +778,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-h0-QjZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-h0-QjZ" customClass="TopNav" customModule="Buzzed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-Fn-AHA">
+                                        <rect key="frame" x="312.5" y="20" width="46.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eI-Ya-QSY" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="28" width="70" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="GQI-0b-Z7T"/>
+                                            <constraint firstAttribute="width" constant="70" id="qX3-4F-uEr"/>
+                                        </constraints>
+                                        <state key="normal" title="back"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="cancel"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backPressedWithSender:" destination="2ca-d7-zzo" eventType="touchUpInside" id="gYP-db-7xO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="1I4-nV-MLt"/>
+                                    <constraint firstItem="2eI-Ya-QSY" firstAttribute="leading" secondItem="Rie-h0-QjZ" secondAttribute="leading" constant="16" id="BGn-yK-6kV"/>
+                                    <constraint firstItem="2eI-Ya-QSY" firstAttribute="centerY" secondItem="Rie-h0-QjZ" secondAttribute="centerY" id="Q5E-GW-tob"/>
+                                    <constraint firstAttribute="trailing" secondItem="w1a-Fn-AHA" secondAttribute="trailing" constant="16" id="T7S-8n-ap0"/>
+                                    <constraint firstItem="w1a-Fn-AHA" firstAttribute="top" secondItem="Rie-h0-QjZ" secondAttribute="top" constant="20" id="ZRH-nc-Rzr"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-Fn-AHA">
-                                <rect key="frame" x="312.5" y="20" width="46.5" height="29"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cBz-7X-Yoe">
                                 <rect key="frame" x="8" y="96" width="359" height="514"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bC3-dy-R2U" customClass="HistoryCell" customModule="Buzzed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" id="bC3-dy-R2U" customClass="HistoryCell" customModule="Buzzed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="359" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bC3-dy-R2U" id="w69-5L-FD7">
@@ -822,7 +842,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MVO-91-tuH" userLabel="Drink/Label stacks">
                                                     <rect key="frame" x="176" y="8" width="175" height="69.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fBO-X3-r14">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fBO-X3-r14" customClass="DrinkStack" customModule="Buzzed" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="55.5" height="68.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz2-3q-O3d">
@@ -838,8 +858,12 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
+                                                            <connections>
+                                                                <outlet property="drinkImg" destination="PNQ-Qo-py7" id="qNw-Qr-Q7D"/>
+                                                                <outlet property="timeLbl" destination="Kz2-3q-O3d" id="031-PO-rN9"/>
+                                                            </connections>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FkN-nC-Nck">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FkN-nC-Nck" customClass="DrinkStack" customModule="Buzzed" customModuleProvider="target">
                                                             <rect key="frame" x="59.5" y="0.0" width="56" height="68.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sru-tk-OEG">
@@ -855,8 +879,12 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
+                                                            <connections>
+                                                                <outlet property="drinkImg" destination="w2v-JM-GxP" id="Pzw-6O-gPq"/>
+                                                                <outlet property="timeLbl" destination="sru-tk-OEG" id="Ehz-wG-9qg"/>
+                                                            </connections>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-zH-PnS">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-zH-PnS" customClass="DrinkStack" customModule="Buzzed" customModuleProvider="target">
                                                             <rect key="frame" x="119.5" y="0.0" width="55.5" height="68.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-c4-U6J">
@@ -872,6 +900,10 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
+                                                            <connections>
+                                                                <outlet property="drinkImg" destination="gOO-LB-bGu" id="brh-xx-c6X"/>
+                                                                <outlet property="timeLbl" destination="fAq-c4-U6J" id="dIH-4Q-ofO"/>
+                                                            </connections>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
@@ -890,6 +922,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="caffLbl" destination="dl0-n7-t8K" id="fxv-OY-gSb"/>
+                                            <outlet property="dateLbl" destination="PBu-kz-FvN" id="4rx-Jk-K4m"/>
+                                            <outlet property="drinkStack1" destination="fBO-X3-r14" id="TOp-Z2-hMn"/>
+                                            <outlet property="drinkStack2" destination="FkN-nC-Nck" id="hcc-RK-dpL"/>
+                                            <outlet property="drinkStack3" destination="vY8-zH-PnS" id="dTz-6y-e99"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -901,12 +940,10 @@
                         <color key="backgroundColor" red="0.34509803919999998" green="0.2274509804" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="Rie-h0-QjZ" firstAttribute="leading" secondItem="vPE-53-5IL" secondAttribute="leading" id="2UD-DM-5c6"/>
-                            <constraint firstItem="w1a-Fn-AHA" firstAttribute="top" secondItem="vPE-53-5IL" secondAttribute="top" constant="20" id="3Xr-WS-xFr"/>
                             <constraint firstItem="Rie-h0-QjZ" firstAttribute="top" secondItem="vPE-53-5IL" secondAttribute="top" id="3hk-vU-sEc"/>
                             <constraint firstAttribute="trailing" secondItem="cBz-7X-Yoe" secondAttribute="trailing" constant="8" id="7We-9x-YuP"/>
                             <constraint firstItem="cBz-7X-Yoe" firstAttribute="top" secondItem="Rie-h0-QjZ" secondAttribute="bottom" id="PZp-tO-DQB"/>
                             <constraint firstAttribute="trailing" secondItem="Rie-h0-QjZ" secondAttribute="trailing" id="n0Z-Vu-MqB"/>
-                            <constraint firstAttribute="trailing" secondItem="w1a-Fn-AHA" secondAttribute="trailing" constant="16" id="pvn-WE-jOF"/>
                             <constraint firstItem="cBz-7X-Yoe" firstAttribute="leading" secondItem="vPE-53-5IL" secondAttribute="leading" constant="8" id="vtP-vp-TDE"/>
                             <constraint firstItem="s05-36-hmQ" firstAttribute="top" secondItem="cBz-7X-Yoe" secondAttribute="bottom" constant="8" id="yCG-zo-UQf"/>
                         </constraints>
@@ -914,6 +951,7 @@
                     <navigationItem key="navigationItem" id="nfj-BZ-XV8"/>
                     <connections>
                         <outlet property="tableView" destination="cBz-7X-Yoe" id="nuV-cq-Hcj"/>
+                        <outlet property="topNav" destination="Rie-h0-QjZ" id="f1O-e2-Hdi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GV8-Xf-H90" userLabel="First Responder" sceneMemberID="firstResponder"/>

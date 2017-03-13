@@ -55,6 +55,8 @@
 		10962B991E76CE3200E12794 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B971E76CE3200E12794 /* HistoryVC.swift */; };
 		10962B9B1E76CE5000E12794 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B9A1E76CE5000E12794 /* HistoryCell.swift */; };
 		10962B9C1E76CE5000E12794 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B9A1E76CE5000E12794 /* HistoryCell.swift */; };
+		10962B9E1E76D5C700E12794 /* DrinkStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B9D1E76D5C700E12794 /* DrinkStack.swift */; };
+		10962B9F1E76D5C700E12794 /* DrinkStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B9D1E76D5C700E12794 /* DrinkStack.swift */; };
 		10AC525B1E72EB01008E8804 /* DrinkSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC525A1E72EB01008E8804 /* DrinkSelectDelegate.swift */; };
 		10AE2EF91E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
@@ -115,6 +117,7 @@
 		109362ED1E5B399C0056C54B /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		10962B971E76CE3200E12794 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		10962B9A1E76CE5000E12794 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		10962B9D1E76D5C700E12794 /* DrinkStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkStack.swift; sourceTree = "<group>"; };
 		10AC525A1E72EB01008E8804 /* DrinkSelectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSelectDelegate.swift; sourceTree = "<group>"; };
 		10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSourceTypeEnum.swift; sourceTree = "<group>"; };
 		10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -229,6 +232,7 @@
 				10E5F0F91E71987500F5CBED /* DrinkSelectCell.swift */,
 				10CFBC8A1E72332D00133041 /* SizeSelectCell.swift */,
 				10962B9A1E76CE5000E12794 /* HistoryCell.swift */,
+				10962B9D1E76D5C700E12794 /* DrinkStack.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -412,6 +416,7 @@
 				10CFBC891E72331C00133041 /* SizeSelectVC.swift in Sources */,
 				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
+				10962B9E1E76D5C700E12794 /* DrinkStack.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
 				10AC525B1E72EB01008E8804 /* DrinkSelectDelegate.swift in Sources */,
 				10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */,
@@ -450,6 +455,7 @@
 				104B527E1E75FFF7002B8B80 /* ConsumptionSetView.swift in Sources */,
 				104B52811E760001002B8B80 /* SettingsCell.swift in Sources */,
 				104B527C1E75FFED002B8B80 /* ColorGradient.swift in Sources */,
+				10962B9F1E76D5C700E12794 /* DrinkStack.swift in Sources */,
 				10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */,
 				104B52791E75FFC7002B8B80 /* CurrentDrinkVC.swift in Sources */,
 				104B527D1E75FFF2002B8B80 /* Meter.swift in Sources */,
