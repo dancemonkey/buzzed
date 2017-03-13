@@ -87,7 +87,7 @@ class DataManager {
     defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
-  private func getLastOpen() -> Date {
+  private func getLastDecay() -> Date {
     let defaults = UserDefaults.standard
     if let lastOpen = defaults.object(forKey: defaultKeys.lastOpen.rawValue) {
       let formatter = DateFormatter()
@@ -181,15 +181,16 @@ class DataManager {
   
   func decay() {
     let decayFactorPerMin: Double = (1 - (0.10/60))
-    let currentDate = Date()
-    let priorDate = getLastOpen()
-    let totalDecay = Double(minutesBetween(earlierDate: priorDate, andLaterDate: currentDate)) * decayFactorPerMin
-    if getCurrentCaff() > 0 {
-      setCurrentCaff(to: getCurrentCaff() - totalDecay)
-    } else {
-      setCurrentCaff(to: 0)
+    let minutesToLastDecay = minutesBetween(earlierDate: getLastDecay(), andLaterDate: Date())
+    if minutesToLastDecay > 15 {
+      let totalDecay = Double(minutesToLastDecay) * decayFactorPerMin
+      if getCurrentCaff() > 0 {
+        setCurrentCaff(to: getCurrentCaff() - totalDecay)
+      } else {
+        setCurrentCaff(to: 0)
+      }
+      setLastOpen()
     }
-    setLastOpen()
   }
   
   private func minutesBetween(earlierDate earlier: Date, andLaterDate later: Date) -> Int {

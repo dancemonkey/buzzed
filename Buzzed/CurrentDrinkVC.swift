@@ -41,8 +41,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     initialSetup()
-    let dm = DataManager()
-    dm.decay()
   }
   
   override func didReceiveMemoryWarning() {

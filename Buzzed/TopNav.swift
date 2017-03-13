@@ -36,11 +36,10 @@ class TopNav: UIView {
     }
     
     if let caffLbl = meterCaffLbl {
+      data.decay()
       caffLbl.text = String(describing: data.getCurrentCaff().roundTo(places: 0)) + "mg total"
     }
     if let totalLbl = totalCaff {
-      // TODO: this should be set to total caff all day, un-decayed value
-      // currentCaff will decay
       totalLbl.text = "\(data.getTotalCaff())/\(data.getDailyIntake())mg"
     }
     
