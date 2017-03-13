@@ -185,7 +185,7 @@ class DataManager {
     let priorDate = getLastOpen()
     let totalDecay = Double(minutesBetween(earlierDate: priorDate, andLaterDate: currentDate)) * decayFactorPerMin
     if getCurrentCaff() > 0 {
-      setCurrentCaff(to: getCurrentCaff() * totalDecay)
+      setCurrentCaff(to: getCurrentCaff() - totalDecay)
     } else {
       setCurrentCaff(to: 0)
     }
