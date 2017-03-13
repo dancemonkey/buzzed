@@ -51,6 +51,10 @@
 		10911F411E7053A4004F5077 /* HideableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10911F401E7053A4004F5077 /* HideableStack.swift */; };
 		109362EA1E5B35DA0056C54B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109362E91E5B35DA0056C54B /* HealthKit.framework */; };
 		109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109362ED1E5B399C0056C54B /* HealthManager.swift */; };
+		10962B981E76CE3200E12794 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B971E76CE3200E12794 /* HistoryVC.swift */; };
+		10962B991E76CE3200E12794 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B971E76CE3200E12794 /* HistoryVC.swift */; };
+		10962B9B1E76CE5000E12794 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B9A1E76CE5000E12794 /* HistoryCell.swift */; };
+		10962B9C1E76CE5000E12794 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10962B9A1E76CE5000E12794 /* HistoryCell.swift */; };
 		10AC525B1E72EB01008E8804 /* DrinkSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC525A1E72EB01008E8804 /* DrinkSelectDelegate.swift */; };
 		10AE2EF91E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
 		10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */; };
@@ -109,6 +113,8 @@
 		109362E71E5B35DA0056C54B /* Buzzed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Buzzed.entitlements; sourceTree = "<group>"; };
 		109362E91E5B35DA0056C54B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		109362ED1E5B399C0056C54B /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		10962B971E76CE3200E12794 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		10962B9A1E76CE5000E12794 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		10AC525A1E72EB01008E8804 /* DrinkSelectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSelectDelegate.swift; sourceTree = "<group>"; };
 		10AE2EF81E5C7CFA00B9AFB4 /* CaffeineSourceTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSourceTypeEnum.swift; sourceTree = "<group>"; };
 		10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 				10DF0C1E1E69A16D00AC440D /* SettingsTableVC.swift */,
 				10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */,
 				10CFBC881E72331C00133041 /* SizeSelectVC.swift */,
+				10962B971E76CE3200E12794 /* HistoryVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 				10911F401E7053A4004F5077 /* HideableStack.swift */,
 				10E5F0F91E71987500F5CBED /* DrinkSelectCell.swift */,
 				10CFBC8A1E72332D00133041 /* SizeSelectCell.swift */,
+				10962B9A1E76CE5000E12794 /* HistoryCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -380,9 +388,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10911F411E7053A4004F5077 /* HideableStack.swift in Sources */,
+				10962B981E76CE3200E12794 /* HistoryVC.swift in Sources */,
 				10E0A72B1E6F0D77000FB79F /* SystemBtn.swift in Sources */,
 				1067546D1E68E2B50023D470 /* Constants.swift in Sources */,
 				109362EE1E5B399C0056C54B /* HealthManager.swift in Sources */,
+				10962B9B1E76CE5000E12794 /* HistoryCell.swift in Sources */,
 				10DF0C1F1E69A16D00AC440D /* SettingsTableVC.swift in Sources */,
 				10E0A7281E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift in Sources */,
 				10E6BBDC1E68709400E5A50F /* NewDrinkBtn.swift in Sources */,
@@ -416,9 +426,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				104B52841E76000B002B8B80 /* DrinkSelectCell.swift in Sources */,
+				10962B991E76CE3200E12794 /* HistoryVC.swift in Sources */,
 				104B52851E76000D002B8B80 /* SizeSelectCell.swift in Sources */,
 				10E0A7291E6F067C000FB79F /* CaffeineSourceCD+CoreDataProperties.swift in Sources */,
 				104B52881E760025002B8B80 /* DrinkSelectVC.swift in Sources */,
+				10962B9C1E76CE5000E12794 /* HistoryCell.swift in Sources */,
 				10011AE31E592A460096F426 /* BuzzedTests.swift in Sources */,
 				10B4BD9A1E6DA3A000A5E316 /* DefaultValueEnums.swift in Sources */,
 				104B52771E75FFB6002B8B80 /* Protocols.swift in Sources */,
