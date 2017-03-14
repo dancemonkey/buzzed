@@ -18,13 +18,29 @@ class HistoryCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+    hideDrinkStacks()
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
     
     // Configure the view for the selected state
+  }
+  
+  func hideDrinkStacks() {
+    drinkStack1.isHidden = true
+    drinkStack2.isHidden = true
+    drinkStack3.isHidden = true
+  }
+  
+  func configure(withDrinks drinks: [CaffeineSourceCD]) {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM dd yy"
+    dateLbl.text = formatter.string(from: drinks.first!.creation! as Date)
+    caffLbl.text = String(drinks.reduce(0, { (result, drink) -> Double in
+      let consumed: Double = (drink.volume * drink.mgCaffeinePerVolume) * drink.percentageConsumed
+      return result + consumed
+    }))
   }
   
 }

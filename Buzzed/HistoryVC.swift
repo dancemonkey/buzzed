@@ -60,9 +60,13 @@ class HistoryVC: UIViewController, NSFetchedResultsControllerDelegate, UITableVi
       return HistoryCell()
     }
     
+    var drinks = [CaffeineSourceCD]()
     let drink = fetchedResultsController.object(at: indexPath)
-    cell.caffLbl.text = drink.sourceName!
-    
+    if indexPath.item == 0 {
+      drinks.append(drink)
+      cell.configure(withDrinks: drinks)
+    }
+
     return cell
     
   }

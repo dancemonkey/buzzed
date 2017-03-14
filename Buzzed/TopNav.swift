@@ -36,7 +36,6 @@ class TopNav: UIView {
     }
     
     if let caffLbl = meterCaffLbl {
-      data.decay()
       caffLbl.text = String(describing: data.getCurrentCaff().roundTo(places: 0)) + "mg total"
     }
     if let totalLbl = totalCaff {
@@ -49,6 +48,7 @@ class TopNav: UIView {
   }
   
   func setMeter() {
+    data.decay()
     meter?.setLevel(to: data.getCurrentCaff())
   }
   

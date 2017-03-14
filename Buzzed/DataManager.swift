@@ -87,17 +87,17 @@ class DataManager {
     defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
-  private func getLastDecay() -> Date {
+  private func getLastDecay() -> Date? {
     let defaults = UserDefaults.standard
     if let lastOpen = defaults.object(forKey: defaultKeys.lastOpen.rawValue) {
       let formatter = DateFormatter()
       formatter.dateFormat = Constants.Globals.dateFormat.value()
       return formatter.date(from: lastOpen as! String)!
     }
-    return Date()
+    return nil
   }
   
-  private func setLastOpen() {
+  private func setLastDecay() {
     let defaults = UserDefaults.standard
     let formatter = DateFormatter()
     formatter.dateFormat = Constants.Globals.dateFormat.value()
@@ -181,7 +181,10 @@ class DataManager {
   
   func decay() {
     let decayFactorPerMin: Double = (1 - (0.10/60))
-    let minutesToLastDecay = minutesBetween(earlierDate: getLastDecay(), andLaterDate: Date())
+    if getLastDecay() == nil {
+      setLastDecay()
+    }
+    let minutesToLastDecay = minutesBetween(earlierDate: getLastDecay()!, andLaterDate: Date())
     if minutesToLastDecay > 15 {
       let totalDecay = Double(minutesToLastDecay) * decayFactorPerMin
       if getCurrentCaff() > 0 {
@@ -189,7 +192,7 @@ class DataManager {
       } else {
         setCurrentCaff(to: 0)
       }
-      setLastOpen()
+      setLastDecay()
     }
   }
   
@@ -197,7 +200,6 @@ class DataManager {
     let currentCalendar = Calendar.current
     guard let start = currentCalendar.ordinality(of: .minute, in: .era, for: earlier) else { return 0 }
     guard let end = currentCalendar.ordinality(of: .minute, in: .era, for: later) else { return 0 }
-    
     return end - start
   }
   
