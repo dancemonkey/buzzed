@@ -25,13 +25,13 @@ class HistoryVC: UIViewController, NSFetchedResultsControllerDelegate, UITableVi
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    initialSetup()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     do {
       try fetchedResultsController.performFetch()
+      initialSetup()
     } catch {
       print("could not perform fetch")
     }
@@ -40,6 +40,32 @@ class HistoryVC: UIViewController, NSFetchedResultsControllerDelegate, UITableVi
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
     topNav.configure(title: "History")
+    // create arrays that will be used in tableView
+    print(makeDateGroupings())
+  }
+  
+  func makeDateGroupings() -> [[CaffeineSourceCD]] {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM dd yy"
+    var drinksByDate = [[CaffeineSourceCD]]()
+    if let drinks = fetchedResultsController.fetchedObjects {
+      var currentDrinks = [CaffeineSourceCD]()
+      for drink in drinks {
+        if currentDrinks.count == 0 {
+          currentDrinks.append(drink)
+        } else {
+          if formatter.string(from: drink.creation! as Date) == formatter.string(from: currentDrinks[currentDrinks.count-1].creation! as Date) {
+            currentDrinks.append(drink)
+          } else {
+            drinksByDate.append(currentDrinks)
+            currentDrinks.removeAll()
+            currentDrinks.append(drink)
+          }
+        }
+      }
+      drinksByDate.append(currentDrinks)
+    }
+    return drinksByDate
   }
   
   // MARK: Tableview methods
@@ -66,7 +92,7 @@ class HistoryVC: UIViewController, NSFetchedResultsControllerDelegate, UITableVi
       drinks.append(drink)
       cell.configure(withDrinks: drinks)
     }
-
+    
     return cell
     
   }
