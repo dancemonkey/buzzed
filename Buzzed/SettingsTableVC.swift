@@ -12,7 +12,7 @@ class SettingsTableVC: UITableViewController {
   
   @IBOutlet weak var defaultDrinkLbl: UILabel!
   @IBOutlet weak var dailyLimitFld: UITextField!
-  @IBOutlet weak var defaultUnitsCtl: UISegmentedControl!
+  @IBOutlet weak var defaultUnitsCtl: DefaultUnitControl!
   @IBOutlet weak var healthConnectImg: UIImageView!
   
   var dm: DataManager!
@@ -24,7 +24,7 @@ class SettingsTableVC: UITableViewController {
   
   func setupViews() {
     dm = DataManager()
-    dailyLimitFld.text = String(dm.getDailyIntake()) + "mg"
+    dailyLimitFld.text = String(dm.getDailyIntake())
     defaultDrinkLbl.text = "Favorite drink - " + (dm.getFavoriteDrink()?.sourceName ?? "(none selected)")
     switch dm.getDefaultUnits() {
     case UnitVolume.milliliters:

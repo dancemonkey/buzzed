@@ -32,6 +32,26 @@ extension UIColor {
   }
 }
 
+extension UITextField {
+  func numbersOnly() -> Bool {
+    guard let text = self.text else {
+      return false
+    }
+    let allowed = CharacterSet.decimalDigits
+    let textSet = CharacterSet(charactersIn: text)
+    return allowed.isSuperset(of: textSet)
+  }
+  
+  func invalidEntryDisplay() {
+    self.borderColor = UIColor.red
+    self.borderWidth = 1.0
+  }
+  
+  func clearBorder() {
+    self.borderColor = UIColor.clear
+  }
+}
+
 extension UIView {
   
   @IBInspectable var cornerRadius: CGFloat {

@@ -40,6 +40,10 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     initialSetup()
   }
   
@@ -59,8 +63,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   }
   
   private func presentNewDrinkOptions() {
-    // TODO: final form - buttons without values will not show up.
-    // if no favorite or last drink, tapping goes straight to drink picker
     
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     let dm = DataManager()

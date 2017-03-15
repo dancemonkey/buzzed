@@ -12,6 +12,8 @@ class SettingsVC: UIViewController {
   
   @IBOutlet weak var topNav: TopNav!
   
+  var settingsContainer: SettingsTableVC!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
@@ -27,14 +29,25 @@ class SettingsVC: UIViewController {
     topNav.configure(title: "Settings")
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  @IBAction func savePressed(sender: UIButton) {
+    let dm = DataManager()
+    if settingsContainer.dailyLimitFld.numbersOnly() {
+      dm.setDailyIntake(limit: Double(settingsContainer.dailyLimitFld.text!)!)
+      settingsContainer.dailyLimitFld.clearBorder()
+      dm.setDefaultMeasurement(unit: settingsContainer.defaultUnitsCtl.getDefaultUnit())
+    } else {
+      settingsContainer.dailyLimitFld.invalidEntryDisplay()
+    }
+  }
+  
+  // MARK: - Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "settingsContainer" {
+      if let child = segue.destination as? SettingsTableVC {
+        settingsContainer = child
+      }
+    }
+  }
   
 }

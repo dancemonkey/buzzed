@@ -14,6 +14,8 @@ enum CaffeineSourceType: String {
   
   case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea, custom
   
+  // TODO: also sub-switch on default units (oz/ml) so proper size is returned
+  // see getmgcaffeine for reference
   func getSizes() -> [Double] {
     switch self {
     case .dripCoffee:
