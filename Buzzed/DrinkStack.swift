@@ -12,6 +12,19 @@ class DrinkStack: UIStackView {
   
   @IBOutlet weak var timeLbl: UILabel!
   @IBOutlet weak var drinkImg: UIImageView!
+  
+  func configure(withDrink drink: CaffeineSourceCD) {
+    self.isHidden = false
+    if let imgName = drink.imageName {
+      drinkImg.image = UIImage(named: imgName)
+    }
+    if let date = drink.creation {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "HH:mm"
+      timeLbl.text = formatter.string(from: date as Date)
+      timeLbl.textColor = UIColor.white
+    }
+  }
 
     /*
     // Only override draw() if you perform custom drawing.

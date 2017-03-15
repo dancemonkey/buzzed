@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HistoryVC: UIViewController, UITableViewDataSource {
+class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
@@ -21,7 +21,6 @@ class HistoryVC: UIViewController, UITableViewDataSource {
     let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest()
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
     let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
-//    frc.delegate = self
     return frc
   }()
   
@@ -43,6 +42,7 @@ class HistoryVC: UIViewController, UITableViewDataSource {
     _ = ColorGradient(withView: self.view)
     topNav.configure(title: "History")
     drinksByDate = makeDateGroupings()
+    tableView.reloadData()
   }
   
   func makeDateGroupings() -> [[CaffeineSourceCD]] {
@@ -94,38 +94,8 @@ class HistoryVC: UIViewController, UITableViewDataSource {
       cell.textLabel?.text = "No date temp label"
     }
     
-//    var drinks = [CaffeineSourceCD]()
-//    let drink = fetchedResultsController.object(at: indexPath)
-//    if indexPath.item == 0 {
-//      drinks.append(drink)
-//      cell.configure(withDrinks: drinks)
-//    }
-    
     return cell
-    
   }
-  
-  // MARK: NS FRC Methods
-  
-//  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//    tableView.beginUpdates()
-//  }
-//  
-//  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//    tableView.endUpdates()
-//  }
-//  
-//  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//    switch type {
-//    case .insert:
-//      if let indexPath = newIndexPath {
-//        tableView.insertRows(at: [indexPath], with: .fade)
-//      }
-//      break
-//    default:
-//      break
-//    }
-//  }
   
   /*
    // MARK: - Navigation

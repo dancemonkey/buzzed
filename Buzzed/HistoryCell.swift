@@ -16,6 +16,8 @@ class HistoryCell: UITableViewCell {
   @IBOutlet weak var drinkStack2: DrinkStack!
   @IBOutlet weak var drinkStack3: DrinkStack!
   
+  var drinkStacks = [DrinkStack]()
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     hideDrinkStacks()
@@ -34,13 +36,18 @@ class HistoryCell: UITableViewCell {
   }
   
   func configure(withDrinks drinks: [CaffeineSourceCD]) {
+    drinkStacks = [drinkStack1, drinkStack2, drinkStack3]
     let formatter = DateFormatter()
-    formatter.dateFormat = "MM dd yy"
+    formatter.dateFormat = "MM-dd-yy"
     dateLbl.text = formatter.string(from: drinks.first!.creation! as Date)
     caffLbl.text = String(drinks.reduce(0, { (result, drink) -> Double in
       let consumed: Double = (drink.volume * drink.mgCaffeinePerVolume) * drink.percentageConsumed
       return result + consumed
     }))
+    
+    for (index, drink) in drinks.enumerated() where index < 3 {
+      drinkStacks[index].configure(withDrink: drink)
+    }
   }
   
 }
