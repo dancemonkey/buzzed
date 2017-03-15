@@ -40,6 +40,10 @@
 		104B52871E760022002B8B80 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF0C1E1E69A16D00AC440D /* SettingsTableVC.swift */; };
 		104B52881E760025002B8B80 /* DrinkSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */; };
 		104B52891E760027002B8B80 /* SizeSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFBC881E72331C00133041 /* SizeSelectVC.swift */; };
+		10587D811E7972660053701D /* CustomDrinkBuildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10587D801E7972660053701D /* CustomDrinkBuildVC.swift */; };
+		10587D821E7972660053701D /* CustomDrinkBuildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10587D801E7972660053701D /* CustomDrinkBuildVC.swift */; };
+		10587D871E7975860053701D /* CustomDrinkTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10587D861E7975860053701D /* CustomDrinkTableVC.swift */; };
+		10587D881E7975860053701D /* CustomDrinkTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10587D861E7975860053701D /* CustomDrinkTableVC.swift */; };
 		1067546D1E68E2B50023D470 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
 		1067546F1E68E4C30023D470 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546E1E68E4C30023D470 /* SettingsVC.swift */; };
 		10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10724AE31E68F98E005B4808 /* SettingsCell.swift */; };
@@ -104,6 +108,8 @@
 		10011AF11E592A790096F426 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		10011AF41E592DE30096F426 /* Meter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meter.xib; sourceTree = "<group>"; };
 		100F91211E5FDA9B007E74CA /* CaffeineSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSource.swift; sourceTree = "<group>"; };
+		10587D801E7972660053701D /* CustomDrinkBuildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkBuildVC.swift; sourceTree = "<group>"; };
+		10587D861E7975860053701D /* CustomDrinkTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkTableVC.swift; sourceTree = "<group>"; };
 		1067546C1E68E2B50023D470 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1067546E1E68E4C30023D470 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		10724AE31E68F98E005B4808 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 				10E5F0F71E71925900F5CBED /* DrinkSelectVC.swift */,
 				10CFBC881E72331C00133041 /* SizeSelectVC.swift */,
 				10962B971E76CE3200E12794 /* HistoryVC.swift */,
+				10587D801E7972660053701D /* CustomDrinkBuildVC.swift */,
+				10587D861E7975860053701D /* CustomDrinkTableVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -412,10 +420,12 @@
 				10911F3F1E704D2A004F5077 /* Protocols.swift in Sources */,
 				10E6BBDA1E686DF900E5A50F /* TopNav.swift in Sources */,
 				10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */,
+				10587D871E7975860053701D /* CustomDrinkTableVC.swift in Sources */,
 				10E5F0F81E71925900F5CBED /* DrinkSelectVC.swift in Sources */,
 				10CFBC891E72331C00133041 /* SizeSelectVC.swift in Sources */,
 				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
 				108023061E5DD17000D948C1 /* DataManager.swift in Sources */,
+				10587D811E7972660053701D /* CustomDrinkBuildVC.swift in Sources */,
 				10962B9E1E76D5C700E12794 /* DrinkStack.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
 				10AC525B1E72EB01008E8804 /* DrinkSelectDelegate.swift in Sources */,
@@ -451,10 +461,12 @@
 				10E0A7271E6F067C000FB79F /* CaffeineSourceCD+CoreDataClass.swift in Sources */,
 				108023071E5DD17300D948C1 /* DataManager.swift in Sources */,
 				104B52891E760027002B8B80 /* SizeSelectVC.swift in Sources */,
+				10587D881E7975860053701D /* CustomDrinkTableVC.swift in Sources */,
 				104B52821E760006002B8B80 /* SystemBtn.swift in Sources */,
 				104B527E1E75FFF7002B8B80 /* ConsumptionSetView.swift in Sources */,
 				104B52811E760001002B8B80 /* SettingsCell.swift in Sources */,
 				104B527C1E75FFED002B8B80 /* ColorGradient.swift in Sources */,
+				10587D821E7972660053701D /* CustomDrinkBuildVC.swift in Sources */,
 				10962B9F1E76D5C700E12794 /* DrinkStack.swift in Sources */,
 				10AE2EFA1E5C80C600B9AFB4 /* CaffeineSourceTypeEnum.swift in Sources */,
 				104B52791E75FFC7002B8B80 /* CurrentDrinkVC.swift in Sources */,

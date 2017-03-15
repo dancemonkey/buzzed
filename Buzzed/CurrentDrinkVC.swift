@@ -45,7 +45,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   
   @IBAction func tempDeleteAllDataPressed(sender: UIButton) {
     let dm = DataManager()
-    dm.clearAllHistory()
+    _ = dm.clearAllHistory()
     dm.clearUserDefaults()
   }
   
@@ -69,7 +69,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     
     let lastDrinkAction = getLastDrinkAction(fromDrink: dm.fetchLastDrink())
     
-    // TODO: goes to drink picker
     let choose = UIAlertAction(title: "Choose a drink...", style: .default) { (action) in
       self.performSegue(withIdentifier: "drinkSelect", sender: self)
     }
