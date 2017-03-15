@@ -65,21 +65,9 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     let dm = DataManager()
     
-    var favTitle: String = "No favorite selected"
-    if let favorite = dm.getFavoriteDrink() {
-      favTitle = favorite.sourceName
-    }
-    let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
-      // TODO: load up screen with favorite drink directly
-    }
+    let favoriteDrinkAction = getFavoriteDrinkAction(fromDrink: dm.getFavoriteDrink())
     
-    var lastTitle: String = "No prior drinks"
-    if let lastDrink = dm.fetchLastDrink() {
-      lastTitle = "Recent: \(lastDrink.sourceName) - \(lastDrink.volume) \(dm.getDefaultUnits().symbol)"
-    }
-    let lastDrink = UIAlertAction(title: lastTitle, style: .default) { (action) in
-      print("picking last drink")
-    }
+    let lastDrinkAction = getLastDrinkAction(fromDrink: dm.fetchLastDrink())
     
     // TODO: goes to drink picker
     let choose = UIAlertAction(title: "Choose a drink...", style: .default) { (action) in
@@ -87,11 +75,33 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     }
     
     let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    alert.addAction(defaultDrink)
-    alert.addAction(lastDrink)
+    alert.addAction(favoriteDrinkAction)
+    alert.addAction(lastDrinkAction)
     alert.addAction(choose)
     alert.addAction(cancel)
     present(alert, animated: true, completion: nil)
+  }
+  
+  private func getLastDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
+    guard drink != nil else {
+      return UIAlertAction(title: "No recent drinks", style: .default, handler: nil)
+    }
+    let dm = DataManager()
+    let title = "Recent: \(drink!.sourceName) - \(drink!.volume) \(dm.getDefaultUnits().symbol)"
+    return UIAlertAction(title: title, style: .default, handler: { (action) in
+      let source = CaffeineSource(type: drink!.sourceType, volume: drink!.volume)
+      self.setSelected(drink: source)
+    })
+  }
+  
+  private func getFavoriteDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
+    guard drink != nil else {
+      return UIAlertAction(title: "No favorite drinks", style: .default, handler: nil)
+    }
+    return UIAlertAction(title: drink!.sourceName, style: .default, handler: { (action) in
+      let source = CaffeineSource(type: drink!.sourceType, volume: drink!.volume)
+      self.setSelected(drink: source)
+    })
   }
   
   @IBAction func donePressed(sender: SystemBtn) {
