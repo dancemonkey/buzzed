@@ -36,6 +36,14 @@ class HistoryCell: UITableViewCell {
   }
   
   func configure(withDrinks drinks: [CaffeineSourceCD]) {
+    guard drinks.count > 0 else {
+      dateLbl.text = "No history"
+      caffLbl.text = ""
+      self.accessoryType = .none
+      self.selectionStyle = .none
+      return
+    }
+    
     drinkStacks = [drinkStack1, drinkStack2, drinkStack3]
     let formatter = DateFormatter()
     formatter.dateFormat = "MM-dd-yy"
@@ -43,7 +51,7 @@ class HistoryCell: UITableViewCell {
     caffLbl.text = String(drinks.reduce(0, { (result, drink) -> Double in
       let consumed: Double = (drink.volume * drink.mgCaffeinePerVolume) * drink.percentageConsumed
       return result + consumed
-    }))
+    })) + "mg"
     
     for (index, drink) in drinks.enumerated() where index < 3 {
       drinkStacks[index].configure(withDrink: drink)

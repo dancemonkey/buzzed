@@ -43,9 +43,10 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     initialSetup()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  @IBAction func tempDeleteAllDataPressed(sender: UIButton) {
+    let dm = DataManager()
+    dm.clearAllHistory()
+    dm.clearUserDefaults()
   }
   
   func initialSetup() {
@@ -69,21 +70,22 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
       favTitle = favorite.sourceName
     }
     let defaultDrink = UIAlertAction(title: favTitle, style: .default) { (action) in
-      self.performSegue(withIdentifier: "drinkSelect", sender: self)
+      // TODO: load up screen with favorite drink directly
     }
     
     var lastTitle: String = "No prior drinks"
     if let lastDrink = dm.fetchLastDrink() {
-      lastTitle = "\(lastDrink.sourceName) - \(lastDrink.volume) \(dm.getDefaultUnits().symbol)"
+      lastTitle = "Recent: \(lastDrink.sourceName) - \(lastDrink.volume) \(dm.getDefaultUnits().symbol)"
     }
     let lastDrink = UIAlertAction(title: lastTitle, style: .default) { (action) in
       print("picking last drink")
     }
     
     // TODO: goes to drink picker
-    let choose = UIAlertAction(title: "Choose...", style: .default) { (action) in
-      print("choosing another drink")
+    let choose = UIAlertAction(title: "Choose a drink...", style: .default) { (action) in
+      self.performSegue(withIdentifier: "drinkSelect", sender: self)
     }
+    
     let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     alert.addAction(defaultDrink)
     alert.addAction(lastDrink)

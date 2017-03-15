@@ -14,8 +14,12 @@ class SettingsVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    initialSetup()
     // Do any additional setup after loading the view.
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    initialSetup()
   }
   
   func initialSetup() {
