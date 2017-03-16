@@ -99,7 +99,8 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     guard drink != nil else {
       return UIAlertAction(title: "No favorite drinks", style: .default, handler: nil)
     }
-    return UIAlertAction(title: drink!.sourceName, style: .default, handler: { (action) in
+    let dm = DataManager()
+    return UIAlertAction(title: "Favorite: \(drink!.sourceName) - \(drink!.volume) \(dm.getDefaultUnits().symbol)", style: .default, handler: { (action) in
       let source = CaffeineSource(type: drink!.sourceType, volume: drink!.volume)
       self.setSelected(drink: source)
     })

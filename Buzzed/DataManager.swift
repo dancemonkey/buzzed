@@ -71,7 +71,18 @@ class DataManager {
       return false
     }
   }
-    
+  
+  func saveCustom(drink: CaffeineSource) {
+    let entity = NSEntityDescription.insertNewObject(forEntityName: Constants.Entity.customDrinkEntity.name(), into: self.context) as! CustomDrink
+    entity.sourceName = drink.sourceName
+    entity.sourceDescription = drink.sourceDescription
+    entity.imageName = CaffeineSourceType.custom.getAssociatedImageName()
+    entity.mgCaffeinePerVolume = drink.mgCaffeinePerVolume
+    entity.volume = drink.volume
+    entity.creation = Date() as NSDate?
+    self.save()
+  }
+  
   func saveFavorite(drink: CaffeineSource?) {
     let defaults = UserDefaults.standard
     guard let source = drink else {

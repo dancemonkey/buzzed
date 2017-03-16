@@ -14,14 +14,13 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
   
-  var customDrinks: [CaffeineSourceCD]?
+  var customDrinks: [CustomDrink]?
   
-  private lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
+  private lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
     let dm = DataManager()
-    let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest()
+    let fetchReq: NSFetchRequest<CustomDrink> = CustomDrink.fetchRequest()
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
-    let predicate = NSPredicate(format: "sourceType == custom", argumentArray: nil)
-    let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
+    let frc = NSFetchedResultsController<CustomDrink>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
     return frc
   }()
   

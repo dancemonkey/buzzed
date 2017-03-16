@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DrinkSelectDelegate { }
+protocol DrinkSelectDelegate: class { }
 
 extension DrinkSelectDelegate where Self: CurrentDrinkVC {
   func setSelected(drink: CaffeineSource) {

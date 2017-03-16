@@ -15,7 +15,7 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   var drinkType: CaffeineSourceType?
   var sizes = [Double]()
-  var delegate: DrinkSelectDelegate?
+  weak var delegate: DrinkSelectDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()

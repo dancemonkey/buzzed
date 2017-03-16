@@ -14,7 +14,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   @IBOutlet weak var viewTitle: UILabel!
   @IBOutlet weak var topNav: TopNav!
   
-  var passThroughDelegate: DrinkSelectDelegate?
+  weak var passThroughDelegate: DrinkSelectDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()

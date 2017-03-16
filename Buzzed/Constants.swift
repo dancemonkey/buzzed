@@ -26,12 +26,14 @@ enum Constants {
   }
   
   enum Entity: String {
-    case caffeineSourceEntity
+    case caffeineSourceEntity, customDrinkEntity
     
     func name() -> String {
       switch self {
       case .caffeineSourceEntity:
         return "CaffeineSourceCD"
+      case .customDrinkEntity:
+        return "CustomDrink"
       }
     }
   }

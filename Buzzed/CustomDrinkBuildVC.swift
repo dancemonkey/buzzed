@@ -11,6 +11,7 @@ import UIKit
 class CustomDrinkBuildVC: UIViewController {
   
   @IBOutlet weak var topNav: TopNav!
+  var customDrinkContainer: CustomDrinkBuildTableVC!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,24 +22,31 @@ class CustomDrinkBuildVC: UIViewController {
     topNav.configure(title: "Custom Drink")
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   @IBAction func backPressed(sender: UIButton) {
     _ = navigationController?.popViewController(animated: true)
   }
   
+  @IBAction func savePressed(sender: UIButton) {
+    let dm = DataManager()
+    if customDrinkContainer.allEntriesValid() == true {
+      let tempDrink = customDrinkContainer.getDrink()
+      dm.saveCustom(drink: tempDrink)
+      if customDrinkContainer.isFavorite() {
+        // save drink as favorite drink too
+      }
+    }
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  
+  // MARK: - Navigation
+  
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "customDrinkBuildContainer" {
+      if let child = segue.destination as? CustomDrinkBuildTableVC {
+        customDrinkContainer = child
+      }
+    }
+  }
   
 }
