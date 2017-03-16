@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -14,6 +15,15 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   @IBOutlet weak var topNav: TopNav!
   
   var customDrinks: [CaffeineSourceCD]?
+  
+  private lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
+    let dm = DataManager()
+    let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest()
+    fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
+    let predicate = NSPredicate(format: "sourceType == custom", argumentArray: nil)
+    let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
+    return frc
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,6 +34,12 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     topNav.configure(title: "Custom drinks")
+    do {
+      try fetchedResultsController.performFetch()
+      customDrinks = fetchedResultsController.fetchedObjects
+    } catch {
+      print("didn't fetch no custom drinks")
+    }
   }
   
   override func didReceiveMemoryWarning() {
