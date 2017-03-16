@@ -18,3 +18,11 @@ extension DrinkSelectDelegate where Self: CurrentDrinkVC {
     topNav.configure(title: "\(drink.sourceName)")
   }
 }
+
+extension DrinkSelectDelegate where Self: SettingsTableVC {
+  func setFavorite(drink: CaffeineSource) {
+    let dm = DataManager()
+    dm.saveFavorite(drink: drink)
+    self.setupViews()
+  }
+}

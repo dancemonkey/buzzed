@@ -18,6 +18,8 @@
 		10011AF61E592DE30096F426 /* Meter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10011AF41E592DE30096F426 /* Meter.xib */; };
 		100F91221E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
 		100F91231E5FDA9B007E74CA /* CaffeineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F91211E5FDA9B007E74CA /* CaffeineSource.swift */; };
+		10162F8D1E7ABAD8000709D3 /* CustomDrinkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10162F8C1E7ABAD8000709D3 /* CustomDrinkListVC.swift */; };
+		10162F8E1E7ABAD8000709D3 /* CustomDrinkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10162F8C1E7ABAD8000709D3 /* CustomDrinkListVC.swift */; };
 		104B52741E75FF99002B8B80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1067546C1E68E2B50023D470 /* Constants.swift */; };
 		104B52751E75FF9E002B8B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10011ACA1E592A460096F426 /* AppDelegate.swift */; };
 		104B52761E75FFB0002B8B80 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE2EFB1E5C85A500B9AFB4 /* Extensions.swift */; };
@@ -110,6 +112,7 @@
 		10011AF11E592A790096F426 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		10011AF41E592DE30096F426 /* Meter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meter.xib; sourceTree = "<group>"; };
 		100F91211E5FDA9B007E74CA /* CaffeineSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineSource.swift; sourceTree = "<group>"; };
+		10162F8C1E7ABAD8000709D3 /* CustomDrinkListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkListVC.swift; sourceTree = "<group>"; };
 		10587D801E7972660053701D /* CustomDrinkBuildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkBuildVC.swift; sourceTree = "<group>"; };
 		10587D861E7975860053701D /* CustomDrinkTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkTableVC.swift; sourceTree = "<group>"; };
 		10587D891E7981AC0053701D /* DefaultUnitControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUnitControl.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 				10962B971E76CE3200E12794 /* HistoryVC.swift */,
 				10587D801E7972660053701D /* CustomDrinkBuildVC.swift */,
 				10587D861E7975860053701D /* CustomDrinkTableVC.swift */,
+				10162F8C1E7ABAD8000709D3 /* CustomDrinkListVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -425,6 +429,7 @@
 				10E6BBDA1E686DF900E5A50F /* TopNav.swift in Sources */,
 				10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */,
 				10587D871E7975860053701D /* CustomDrinkTableVC.swift in Sources */,
+				10162F8D1E7ABAD8000709D3 /* CustomDrinkListVC.swift in Sources */,
 				10E5F0F81E71925900F5CBED /* DrinkSelectVC.swift in Sources */,
 				10CFBC891E72331C00133041 /* SizeSelectVC.swift in Sources */,
 				108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */,
@@ -467,6 +472,7 @@
 				108023071E5DD17300D948C1 /* DataManager.swift in Sources */,
 				104B52891E760027002B8B80 /* SizeSelectVC.swift in Sources */,
 				10587D881E7975860053701D /* CustomDrinkTableVC.swift in Sources */,
+				10162F8E1E7ABAD8000709D3 /* CustomDrinkListVC.swift in Sources */,
 				104B52821E760006002B8B80 /* SystemBtn.swift in Sources */,
 				104B527E1E75FFF7002B8B80 /* ConsumptionSetView.swift in Sources */,
 				104B52811E760001002B8B80 /* SettingsCell.swift in Sources */,

@@ -14,6 +14,10 @@ public extension Double {
     let divisor = pow(10.0, Double(places))
     return (self * divisor).rounded() / divisor
   }
+  
+  var cleanValue: String {
+    return self.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(self)) : String(self)
+  }
 }
 
 extension Comparable {

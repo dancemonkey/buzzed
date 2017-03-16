@@ -57,12 +57,13 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let source = CaffeineSource(type: drinkType!, volume: sizes[indexPath.row])
     if let delegate = self.delegate as? CurrentDrinkVC {
-      let source = CaffeineSource(type: drinkType!, volume: sizes[indexPath.row])
       delegate.setSelected(drink: source)
-      _ = navigationController?.popToRootViewController(animated: true)
-      
+    } else if let delegate = self.delegate as? SettingsTableVC {
+      delegate.setFavorite(drink: source)
     }
+    _ = navigationController?.popToRootViewController(animated: true)
   }
   
   /*
