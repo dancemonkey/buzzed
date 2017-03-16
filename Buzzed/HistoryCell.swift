@@ -51,7 +51,7 @@ class HistoryCell: UITableViewCell {
     caffLbl.text = String(drinks.reduce(0, { (result, drink) -> Double in
       let consumed: Double = (drink.volume * drink.mgCaffeinePerVolume) * drink.percentageConsumed
       return result + consumed
-    })) + "mg"
+    }).roundTo(places: 0)) + "mg"
     
     for (index, drink) in drinks.enumerated() where index < 3 {
       drinkStacks[index].configure(withDrink: drink)

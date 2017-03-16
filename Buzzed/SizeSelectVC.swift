@@ -19,7 +19,8 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    if let sizes = drinkType?.getSizes() {
+    let dm = DataManager()
+    if let sizes = drinkType?.getSize(inVolumeUnit: dm.getDefaultUnits()) {
       self.sizes = sizes
     }
     topNav.configure(title: "Select a size")

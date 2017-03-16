@@ -16,7 +16,16 @@ enum CaffeineSourceType: String {
   
   // TODO: also sub-switch on default units (oz/ml) so proper size is returned
   // see getmgcaffeine for reference
-  func getSizes() -> [Double] {
+  
+  func getSize(inVolumeUnit volumeUnit: UnitVolume) -> [Double] {
+    if volumeUnit == .milliliters {
+      return getSizeInMilliliters()
+    } else {
+      return getSizeInOunces()
+    }
+  }
+  
+  private func getSizeInOunces() -> [Double] {
     switch self {
     case .dripCoffee:
       return [8, 12, 16, 20]
@@ -32,6 +41,25 @@ enum CaffeineSourceType: String {
       return [8, 12, 16, 20]
     case .custom:
       return [8, 12, 16, 20]
+    }
+  }
+  
+  private func getSizeInMilliliters() -> [Double] {
+    switch self {
+    case .dripCoffee:
+      return [240, 350, 470, 590]
+    case .espresso:
+      return [30, 60]
+    case .soda:
+      return [350, 590]
+    case .energyDrink:
+      return [250, 350, 590, 700]
+    case .blackTea:
+      return [240, 350, 470, 590]
+    case .greenTea:
+      return [240, 350, 470, 590]
+    case .custom:
+      return [240, 350, 470, 590]
     }
   }
   
