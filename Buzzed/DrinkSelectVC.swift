@@ -33,7 +33,8 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    // TODO: still need actual datasource
+    return DataManager().fetchDrinkTypes().count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,12 +44,12 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     // TODO: pull values from array of all coffee types
     // TODO: configure cell so tapping takes you to size select screen
     
-    cell.configure(with: .dripCoffee)
+    cell.configure(with: DataManager().fetchDrinkTypes()[indexPath.row])
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "sizeSelect", sender: self)
+    performSegue(withIdentifier: "sizeSelect", sender: indexPath)
   }
   
   // MARK: - Navigation
@@ -56,7 +57,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let dest = segue.destination as? SizeSelectVC {
       // TODO: implement all other drink types and select based on tapped cell
-      dest.drinkType = .dripCoffee
+      dest.drinkType = DataManager().fetchDrinkTypes()[(sender as! IndexPath).row]
       dest.delegate = passThroughDelegate
     }
   }

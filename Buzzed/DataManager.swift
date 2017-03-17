@@ -59,6 +59,10 @@ class DataManager {
     }
   }
   
+  func fetchDrinkTypes() -> [CaffeineSourceType] {
+    return [.dripCoffee, .espresso, .soda, .energyDrink, .blackTea, .greenTea]
+  }
+  
   func clearAllHistory() -> Bool {
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
     let request = NSBatchDeleteRequest(fetchRequest: fetch)
