@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
@@ -16,10 +17,30 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   
   weak var passThroughDelegate: DrinkSelectDelegate?
   
+  let sections = ["Custom drinks", "Standard drinks"]
+  var customDrinks: [CustomDrink]?
+  
+  private lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
+    let dm = DataManager()
+    let fetchReq: NSFetchRequest<CustomDrink> = CustomDrink.fetchRequest()
+    fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
+    let frc = NSFetchedResultsController<CustomDrink>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
+    return frc
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     topNav.configure(title: "Select a drink")
-    // Do any additional setup after loading the view.
+    do {
+      try fetchedResultsController.performFetch()
+      customDrinks = fetchedResultsController.fetchedObjects
+    } catch {
+      print("didn't fetch no custom drinks")
+    }
   }
   
   @IBAction func backPressed(sender: SystemBtn) {
@@ -29,22 +50,41 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   // MARK: Tableview methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return sections.count
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return self.sections[section]
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // TODO: still need actual datasource
-    return DataManager().fetchDrinkTypes().count
+    switch section {
+    case 0:
+      if let drinks = customDrinks {
+        return drinks.count
+      } else {
+        return 0
+      }
+    case 1:
+      return DataManager().fetchDrinkTypes().count
+    default:
+      return 0
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkSelectCell") as? DrinkSelectCell else {
       return UITableViewCell()
     }
-    // TODO: pull values from array of all coffee types
-    // TODO: configure cell so tapping takes you to size select screen
+    switch indexPath.section {
+    case 0:
+      // configure custom drink cell
+    case 1:
+      cell.configure(with: DataManager().fetchDrinkTypes()[indexPath.row])
+    default:
+      
+    }
     
-    cell.configure(with: DataManager().fetchDrinkTypes()[indexPath.row])
     return cell
   }
   
@@ -56,7 +96,6 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let dest = segue.destination as? SizeSelectVC {
-      // TODO: implement all other drink types and select based on tapped cell
       dest.drinkType = DataManager().fetchDrinkTypes()[(sender as! IndexPath).row]
       dest.delegate = passThroughDelegate
     }
