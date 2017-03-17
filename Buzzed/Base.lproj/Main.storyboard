@@ -282,6 +282,75 @@
                                             <outlet property="drinkName" destination="bIE-wx-79g" id="Y8P-oi-A3V"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customDrinkCell" rowHeight="86" id="XAP-ef-e2t" customClass="CustomDrinkCell" customModule="Buzzed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="114" width="343" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XAP-ef-e2t" id="Yj9-26-AWA">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5U-LF-cvg">
+                                                    <rect key="frame" x="0.0" y="4" width="310" height="78"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-v7-PWC">
+                                                            <rect key="frame" x="8" y="18" width="92" height="42.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifw-bd-xfs">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-vZ-HOI">
+                                                                    <rect key="frame" x="0.0" y="25.5" width="62" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Drink" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-T3-GY4">
+                                                            <rect key="frame" x="262" y="0.0" width="40" height="78"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="mm6-ws-pjL"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="1rh-T3-GY4" secondAttribute="bottom" id="8fO-kP-tzM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1rh-T3-GY4" secondAttribute="trailing" constant="8" id="Jom-F1-e8i"/>
+                                                        <constraint firstItem="yKK-v7-PWC" firstAttribute="centerY" secondItem="n5U-LF-cvg" secondAttribute="centerY" id="M76-Mi-SS5"/>
+                                                        <constraint firstItem="yKK-v7-PWC" firstAttribute="leading" secondItem="n5U-LF-cvg" secondAttribute="leading" constant="8" id="PKW-eq-Gdo"/>
+                                                        <constraint firstItem="1rh-T3-GY4" firstAttribute="top" secondItem="n5U-LF-cvg" secondAttribute="top" id="qQy-H8-Qhu"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="n5U-LF-cvg" secondAttribute="bottom" constant="4" id="K3q-LG-Y29"/>
+                                                <constraint firstAttribute="trailing" secondItem="n5U-LF-cvg" secondAttribute="trailing" id="OwZ-TO-RzZ"/>
+                                                <constraint firstItem="n5U-LF-cvg" firstAttribute="top" secondItem="Yj9-26-AWA" secondAttribute="top" constant="4" id="nxJ-tr-Qsh"/>
+                                                <constraint firstItem="n5U-LF-cvg" firstAttribute="leading" secondItem="Yj9-26-AWA" secondAttribute="leading" id="xXP-CM-7R5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="drinkImg" destination="1rh-T3-GY4" id="Fbu-3C-lDn"/>
+                                            <outlet property="drinkInfoLbl" destination="a1a-vZ-HOI" id="Xt7-bW-kfz"/>
+                                            <outlet property="drinkNameLbl" destination="ifw-bd-xfs" id="jxb-NY-VXj"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="2ca-d7-zzo" id="E56-Wv-Knc"/>

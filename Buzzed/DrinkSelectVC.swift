@@ -73,23 +73,41 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkSelectCell") as? DrinkSelectCell else {
-      return UITableViewCell()
-    }
+    
     switch indexPath.section {
     case 0:
-      // configure custom drink cell
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "customDrinkCell") as? CustomDrinkCell else {
+        return UITableViewCell()
+      }
+      cell.config(withDrink: fetchedResultsController.fetchedObjects![indexPath.row])
+      return cell
     case 1:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkSelectCell") as? DrinkSelectCell else {
+        return UITableViewCell()
+      }
       cell.configure(with: DataManager().fetchDrinkTypes()[indexPath.row])
+      return cell
     default:
-      
+      return UITableViewCell()
     }
     
-    return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "sizeSelect", sender: indexPath)
+    switch indexPath.section {
+    case 0:
+      if let delegate = self.passThroughDelegate as? CurrentDrinkVC {
+        let customDrink = fetchedResultsController.fetchedObjects![indexPath.row]
+        let source = CaffeineSource(type: .custom, volume: customDrink.volume)
+        source.initFromCustom(drink: customDrink)
+        delegate.setSelected(drink: source)
+        _ = navigationController?.popToRootViewController(animated: true)
+      }
+    case 1:
+      performSegue(withIdentifier: "sizeSelect", sender: indexPath)
+    default:
+      print("this should not be happening")
+    }
   }
   
   // MARK: - Navigation

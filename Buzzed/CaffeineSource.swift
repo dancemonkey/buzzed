@@ -92,6 +92,14 @@ class CaffeineSource {
     return self 
   }
   
+  func initFromCustom(drink: CustomDrink) {
+    self._mgCaffeinePerVolume = drink.mgCaffeinePerVolume
+    self._sourceName = drink.sourceName!
+    self._sourceDescription = drink.sourceDescription!
+    self._creation = Date()
+    self._associatedImageName = _sourceType.getAssociatedImageName()
+  }
+  
   func createEntity(fromSource source: CaffeineSource) -> CaffeineSourceCD {
     let dm = DataManager()
     let entity = NSEntityDescription.insertNewObject(forEntityName: Constants.Entity.caffeineSourceEntity.name(), into: dm.context)
