@@ -1130,10 +1130,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbn-U5-REt">
-                                                    <rect key="frame" x="177" y="2" width="150" height="48"/>
+                                                    <rect key="frame" x="127" y="2" width="200" height="48"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="jF0-3W-2jQ"/>
+                                                        <constraint firstAttribute="width" constant="200" id="ibK-Yv-PdB"/>
                                                         <constraint firstAttribute="height" constant="48" id="oxW-y8-oJr"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
@@ -1164,11 +1164,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L24-Mi-n17">
-                                                    <rect key="frame" x="177" y="2" width="150" height="48"/>
+                                                    <rect key="frame" x="127" y="2" width="200" height="48"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="PIW-eG-sjd"/>
-                                                        <constraint firstAttribute="width" constant="150" id="sAg-jy-g7l"/>
+                                                        <constraint firstAttribute="width" constant="200" id="emg-Mq-wib"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1198,10 +1198,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-jY-PiZ">
-                                                    <rect key="frame" x="177" y="2" width="150" height="48"/>
+                                                    <rect key="frame" x="227" y="2" width="100" height="48"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Xou-K6-OPa"/>
+                                                        <constraint firstAttribute="width" constant="100" id="Xou-K6-OPa"/>
                                                         <constraint firstAttribute="height" constant="48" id="z3w-fn-hhc"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
@@ -1232,11 +1232,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAo-9Q-t5m">
-                                                    <rect key="frame" x="177" y="2" width="150" height="48"/>
+                                                    <rect key="frame" x="227" y="2" width="100" height="48"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="Cb1-VF-Y2u"/>
-                                                        <constraint firstAttribute="width" constant="150" id="XjS-45-anJ"/>
+                                                        <constraint firstAttribute="width" constant="100" id="XjS-45-anJ"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1523,7 +1523,7 @@
                                 <rect key="frame" x="8" y="96" width="343" height="330"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drinkSelectCell" rowHeight="86" id="8pO-xT-eB5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customDrinkCell" rowHeight="86" id="8pO-xT-eB5" customClass="CustomDrinkCell" customModule="Buzzed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8pO-xT-eB5" id="ilb-08-WZe">
@@ -1588,8 +1588,8 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="drinkImg" destination="SRF-OX-pq1" id="UhV-Vr-h1L"/>
-                                            <outlet property="drinkInfo" destination="Q9D-f7-nRK" id="dxg-p2-1CE"/>
-                                            <outlet property="drinkName" destination="Mif-xq-PQG" id="bp8-x9-mMC"/>
+                                            <outlet property="drinkInfoLbl" destination="Q9D-f7-nRK" id="EUQ-Z5-S37"/>
+                                            <outlet property="drinkNameLbl" destination="Mif-xq-PQG" id="ORy-3B-rWG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

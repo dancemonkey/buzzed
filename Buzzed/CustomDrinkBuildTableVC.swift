@@ -22,9 +22,15 @@ class CustomDrinkBuildTableVC: UITableViewController {
     super.viewDidLoad()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setupViews()
+  }
+  
   func setupViews() {
     let dm = DataManager()
-    
+    sizeInLbl.text = "Size in \(dm.getDefaultUnits().symbol)"
+    mgCaffPerLbl.text = "Mg caffeine per \(dm.getDefaultUnits().symbol)"
   }
   
   func allEntriesValid() -> Bool {

@@ -27,7 +27,6 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +60,13 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "customDrinkCell") as? CustomDrinkCell else {
+      return CustomDrinkCell()
+    }
+    
+    cell.config(withDrink: customDrinks![indexPath.row])
+    
+    return cell
   }
   
   
