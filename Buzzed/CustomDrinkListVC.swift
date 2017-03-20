@@ -48,6 +48,11 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
     _ = navigationController?.popViewController(animated: true)
   }
   
+  func configure(cell: CustomDrinkCell, at indexPath: IndexPath) {
+    let drink = fetchedResultsController.object(at: indexPath)
+    cell.config(withDrink: drink)
+  }
+  
   // FRC Methods
   
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -59,7 +64,27 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-    
+    switch type {
+    case .insert:
+      if let indexPath = newIndexPath {
+        tableView.insertRows(at: [indexPath], with: .fade)
+      }
+      break
+    case .delete:
+      print("case delete")
+      if let indexPath = indexPath {
+        print("found indexPath and deleting")
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+      break
+    case .update:
+      if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? CustomDrinkCell {
+        configure(cell: cell, at: indexPath)
+      }
+      break
+    default:
+      print("whoops")
+    }
   }
   
   // MARK: TableView methods
@@ -77,13 +102,26 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
       return CustomDrinkCell()
     }
     
-    cell.config(withDrink: fetchedResultsController.fetchedObjects![indexPath.row])
+    configure(cell: cell, at: indexPath)
     
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "editCustomDrink", sender: indexPath)
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let drink = fetchedResultsController.object(at: indexPath)
+      let dm = DataManager()
+      dm.context.delete(drink)
+      dm.save()
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
   }
   
   // MARK: - Navigation

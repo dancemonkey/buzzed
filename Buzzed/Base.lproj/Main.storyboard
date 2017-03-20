@@ -367,7 +367,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="style" value="info"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="6sZ-aq-sZx" kind="show" id="IpU-UW-BuW"/>
+                                    <segue destination="6sZ-aq-sZx" kind="show" identifier="customDrinkBuild" id="IpU-UW-BuW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1168,6 +1168,7 @@
                     </view>
                     <connections>
                         <outlet property="topNav" destination="XRg-VC-ElI" id="Slm-Fm-dqU"/>
+                        <segue destination="h6i-kf-s3y" kind="show" identifier="customToSizeSelect" id="bna-Nl-Tfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iK3-Hx-XAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1696,6 +1697,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ezI-tu-dxS"/>
-        <segue reference="9yi-gA-VMY"/>
+        <segue reference="IpU-UW-BuW"/>
+        <segue reference="N2h-zR-7H3"/>
     </inferredMetricsTieBreakers>
 </document>

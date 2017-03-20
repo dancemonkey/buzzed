@@ -43,6 +43,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     } catch {
       print("didn't fetch no custom drinks")
     }
+    tableView.reloadData()
   }
   
   @IBAction func backPressed(sender: SystemBtn) {

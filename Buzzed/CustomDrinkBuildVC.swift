@@ -35,9 +35,7 @@ class CustomDrinkBuildVC: UIViewController {
   @IBAction func savePressed(sender: UIButton) {
     let dm = DataManager()
     if customDrinkContainer.allEntriesValid() == true {
-      print("valid entries")
       if let drink = existingDrink {
-        print("saving existing drink")
         drink.sourceName = customDrinkContainer.drinkName.text!
         drink.sourceDescription = customDrinkContainer.drinkDesc.text!
         drink.mgCaffeinePerVolume = Double(customDrinkContainer.drinkCaffPer.text!)!
@@ -47,21 +45,19 @@ class CustomDrinkBuildVC: UIViewController {
           // save this drink as favorite or not
         }
       } else {
-        print("saving new drink")
         let tempDrink = customDrinkContainer.getDrink()
         dm.saveCustom(drink: tempDrink)
-        _ = navigationController?.popViewController(animated: true)
         if customDrinkContainer.isFavorite() {
           // save drink as favorite drink too
         }
       }
+      _ = navigationController?.popViewController(animated: true)
     }
   }
   
   
   // MARK: - Navigation
   
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "customDrinkBuildContainer" {
       if let child = segue.destination as? CustomDrinkBuildTableVC {
