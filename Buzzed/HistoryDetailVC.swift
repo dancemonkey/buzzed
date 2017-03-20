@@ -9,25 +9,20 @@
 import UIKit
 import CoreData
 
-class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var topNav: TopNav!
   @IBOutlet weak var tableView: UITableView!
   
+  var drinksByDate: [CaffeineSourceCD]?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     topNav.configure(title: "History Detail")
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   @IBAction func backPressed(sender: UIButton) {
@@ -41,7 +36,10 @@ class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 6
+    guard let drinks = drinksByDate else {
+      return 0
+    }
+    return drinks.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,6 +48,19 @@ class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let dm = DataManager()
+      let drinkToRemove = drinksByDate![indexPath.row]
+      dm.context.delete(drinkToRemove)
+      dm.save()
+      drinksByDate?.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+      
+      // TODO: must also delete record from HealthKit?
+    }
   }
   
   

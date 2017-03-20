@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
@@ -26,6 +26,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    fetchedResultsController.delegate = self
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +93,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     } else {
       // hide cell and activate "no data" label?
       cell.textLabel?.text = "No date temp label"
+      cell.hideDrinkStacks()
     }
     
     return cell
@@ -101,12 +103,22 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     performSegue(withIdentifier: "historyToDetail", sender: indexPath)
   }
   
+  // MARK: NS FRC methods
+  
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.beginUpdates()
+  }
+  
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.endUpdates()
+  }
+  
   // MARK: - Navigation
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "historyDetailCell" {
+    if segue.identifier == "historyToDetail" {
       if let dest = segue.destination as? HistoryDetailVC {
-        // set up data in destination
+        dest.drinksByDate = self.drinksByDate![(sender as! IndexPath).row]
       }
     }
   }

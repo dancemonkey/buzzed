@@ -1694,7 +1694,7 @@
         <!--History DetailVC-->
         <scene sceneID="DDd-Ea-EUk">
             <objects>
-                <viewController id="5YC-TG-2Fk" customClass="HistoryDetailVC" customModule="Buzzed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="historyDetail" id="5YC-TG-2Fk" customClass="HistoryDetailVC" customModule="Buzzed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ysw-lp-QKD"/>
                         <viewControllerLayoutGuide type="bottom" id="iML-oR-6sg"/>
