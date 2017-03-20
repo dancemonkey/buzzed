@@ -1682,6 +1682,7 @@
                     <connections>
                         <outlet property="tableView" destination="uxd-NX-ZHu" id="gNr-jY-GdF"/>
                         <outlet property="topNav" destination="5tk-Pk-kub" id="Eaz-jn-i26"/>
+                        <segue destination="6sZ-aq-sZx" kind="show" identifier="editCustomDrink" id="9yi-gA-VMY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXo-T5-gcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1695,5 +1696,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ezI-tu-dxS"/>
+        <segue reference="9yi-gA-VMY"/>
     </inferredMetricsTieBreakers>
 </document>

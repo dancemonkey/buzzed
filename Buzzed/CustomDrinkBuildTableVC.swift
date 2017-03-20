@@ -54,6 +54,13 @@ class CustomDrinkBuildTableVC: UITableViewController {
     return drink
   }
   
+  func editExisting(drink: CustomDrink) {
+    self.drinkName.text = drink.sourceName!
+    self.drinkDesc.text = drink.sourceDescription!
+    self.drinkSize.text = drink.volume.cleanValue
+    self.drinkCaffPer.text = drink.mgCaffeinePerVolume.cleanValue
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {

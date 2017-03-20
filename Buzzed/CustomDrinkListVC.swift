@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
@@ -26,7 +26,6 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +48,20 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
     _ = navigationController?.popViewController(animated: true)
   }
   
+  // FRC Methods
+  
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.endUpdates()
+  }
+  
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.beginUpdates()
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    
+  }
+  
   // MARK: TableView methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,7 +69,7 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return customDrinks?.count ?? 0
+    return fetchedResultsController.fetchedObjects?.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,20 +77,23 @@ class CustomDrinkListVC: UIViewController, UITableViewDelegate, UITableViewDataS
       return CustomDrinkCell()
     }
     
-    cell.config(withDrink: customDrinks![indexPath.row])
+    cell.config(withDrink: fetchedResultsController.fetchedObjects![indexPath.row])
     
     return cell
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "editCustomDrink", sender: indexPath)
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  // MARK: - Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "editCustomDrink" {
+      if let dest = segue.destination as? CustomDrinkBuildVC {
+        dest.existingDrink = fetchedResultsController.fetchedObjects![(sender as! IndexPath).row]
+      }
+    }
+  }
   
 }

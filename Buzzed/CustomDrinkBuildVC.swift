@@ -13,8 +13,14 @@ class CustomDrinkBuildVC: UIViewController {
   @IBOutlet weak var topNav: TopNav!
   var customDrinkContainer: CustomDrinkBuildTableVC!
   
+  var existingDrink: CustomDrink?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    if let drinkToEdit = existingDrink {
+      // populate the container with this drink's data
+      customDrinkContainer.editExisting(drink: drinkToEdit)
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -29,10 +35,25 @@ class CustomDrinkBuildVC: UIViewController {
   @IBAction func savePressed(sender: UIButton) {
     let dm = DataManager()
     if customDrinkContainer.allEntriesValid() == true {
-      let tempDrink = customDrinkContainer.getDrink()
-      dm.saveCustom(drink: tempDrink)
-      if customDrinkContainer.isFavorite() {
-        // save drink as favorite drink too
+      print("valid entries")
+      if let drink = existingDrink {
+        print("saving existing drink")
+        drink.sourceName = customDrinkContainer.drinkName.text!
+        drink.sourceDescription = customDrinkContainer.drinkDesc.text!
+        drink.mgCaffeinePerVolume = Double(customDrinkContainer.drinkCaffPer.text!)!
+        drink.volume = Double(customDrinkContainer.drinkSize.text!)!
+        dm.save()
+        if customDrinkContainer.isFavorite() {
+          // save this drink as favorite or not
+        }
+      } else {
+        print("saving new drink")
+        let tempDrink = customDrinkContainer.getDrink()
+        dm.saveCustom(drink: tempDrink)
+        _ = navigationController?.popViewController(animated: true)
+        if customDrinkContainer.isFavorite() {
+          // save drink as favorite drink too
+        }
       }
     }
   }
