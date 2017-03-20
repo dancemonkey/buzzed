@@ -97,14 +97,18 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     return cell
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "historyToDetail", sender: indexPath)
+  }
+  
+  // MARK: - Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "historyDetailCell" {
+      if let dest = segue.destination as? HistoryDetailVC {
+        // set up data in destination
+      }
+    }
+  }
   
 }
