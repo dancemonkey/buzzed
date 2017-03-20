@@ -26,6 +26,7 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    fetchedResultsController.delegate = self
   }
   
   override func viewWillAppear(_ animated: Bool) {

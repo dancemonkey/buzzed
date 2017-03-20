@@ -57,17 +57,25 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return self.sections[section]
+    switch section {
+    case 0:
+      if fetchedResultsController.fetchedObjects != nil, fetchedResultsController.fetchedObjects!.count > 0 {
+        return self.sections[section]
+      } else {
+        return nil
+      }
+    case 1:
+      return self.sections[section]
+    default:
+      print("this should never be reached")
+    }
+    return nil
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
     case 0:
-      if let drinks = customDrinks {
-        return drinks.count
-      } else {
-        return 0
-      }
+      return fetchedResultsController.fetchedObjects!.count
     case 1:
       return DataManager().fetchDrinkTypes().count
     default:
