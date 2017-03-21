@@ -33,6 +33,7 @@ class HistoryCell: UITableViewCell {
     drinkStack1.isHidden = true
     drinkStack2.isHidden = true
     drinkStack3.isHidden = true
+    isUserInteractionEnabled = false
   }
   
   func configure(withDrinks drinks: [CaffeineSourceCD]) {
@@ -43,6 +44,8 @@ class HistoryCell: UITableViewCell {
       self.selectionStyle = .none
       return
     }
+    
+    isUserInteractionEnabled = true
     
     drinkStacks = [drinkStack1, drinkStack2, drinkStack3]
     let formatter = DateFormatter()

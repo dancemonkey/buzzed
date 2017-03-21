@@ -14,7 +14,7 @@ class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
   @IBOutlet weak var topNav: TopNav!
   @IBOutlet weak var tableView: UITableView!
   
-  var drinksByDate: [CaffeineSourceCD]?
+  var drinksByDate: [CaffeineSourceCD]!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,11 +22,20 @@ class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    topNav.configure(title: "History Detail")
+    if let date = drinksByDate[0].creation as? Date {
+      topNav.configure(title: "History for \(extractDate(from: date))")
+    }
   }
   
   @IBAction func backPressed(sender: UIButton) {
     _ = navigationController?.popViewController(animated: true)
+  }
+  
+  func extractDate(from date: Date) -> String {
+    let cal = Calendar.current
+    let month = cal.component(.month, from: date)
+    let day = cal.component(.day, from: date)
+    return "\(month)-\(day)"
   }
   
   // MARK: Tableview methods
@@ -46,20 +55,21 @@ class HistoryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "historyDetailCell") as? HistoryDetailCell else {
       return HistoryDetailCell()
     }
-    
+    cell.configCell(with: drinksByDate[indexPath.row])
     return cell
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       let dm = DataManager()
-      let drinkToRemove = drinksByDate![indexPath.row]
+      let drinkToRemove = drinksByDate[indexPath.row]
       dm.context.delete(drinkToRemove)
-      dm.save()
-      drinksByDate?.remove(at: indexPath.row)
+      drinksByDate.remove(at: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .fade)
+      dm.save()
       
       // TODO: must also delete record from HealthKit?
+      // TODO: must also remove caffeine from total
     }
   }
   

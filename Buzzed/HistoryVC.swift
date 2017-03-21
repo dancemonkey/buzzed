@@ -14,7 +14,11 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
   
-  var drinksByDate: [[CaffeineSourceCD]]?
+  private var selected: IndexPath? = nil {
+    didSet {
+      print(selected)
+    }
+  }
   
   private lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
     let dm = DataManager()
@@ -27,30 +31,29 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   override func viewDidLoad() {
     super.viewDidLoad()
     fetchedResultsController.delegate = self
+    initialSetup()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     do {
       try fetchedResultsController.performFetch()
-      initialSetup()
     } catch {
       print("could not perform fetch")
     }
+    tableView.reloadData()
   }
   
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
     topNav.configure(title: "History")
-    drinksByDate = makeDateGroupings()
-    tableView.reloadData()
   }
   
-  func makeDateGroupings() -> [[CaffeineSourceCD]] {
+  func dateGroupings(from results: NSFetchedResultsController<CaffeineSourceCD>) -> [[CaffeineSourceCD]]? {
     let formatter = DateFormatter()
     formatter.dateFormat = "MM dd yy"
     var drinksByDate = [[CaffeineSourceCD]]()
-    if let drinks = fetchedResultsController.fetchedObjects {
+    if let drinks = results.fetchedObjects {
       var currentDrinks = [CaffeineSourceCD]()
       for drink in drinks {
         if currentDrinks.count == 0 {
@@ -77,7 +80,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    guard let drinks = drinksByDate else {
+    guard let drinks = dateGroupings(from: fetchedResultsController) else {
       return 0
     }
     return drinks.count
@@ -88,10 +91,9 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       return HistoryCell()
     }
     
-    if let drinks = drinksByDate {
+    if let drinks = dateGroupings(from: fetchedResultsController) {
       cell.configure(withDrinks: drinks[indexPath.row])
     } else {
-      // hide cell and activate "no data" label?
       cell.textLabel?.text = "No date temp label"
       cell.hideDrinkStacks()
     }
@@ -101,6 +103,12 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "historyToDetail", sender: indexPath)
+    self.selected = indexPath
+  }
+  
+  func configure(cell: HistoryCell, at indexPath: IndexPath) {
+    let drinksByDate = dateGroupings(from: fetchedResultsController)
+    cell.configure(withDrinks: drinksByDate![indexPath.row])
   }
   
   // MARK: NS FRC methods
@@ -113,12 +121,31 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     tableView.endUpdates()
   }
   
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    switch type {
+    case .update:
+      print("updating")
+    case .insert:
+      print("inserting")
+    case .delete:
+      print("deleting")
+      // working the first time only?
+      if dateGroupings(from: fetchedResultsController)![selected!.row].isEmpty {
+        tableView.deleteRows(at: [selected!], with: .fade)
+      } else {
+        tableView.reloadRows(at: [selected!], with: .fade)
+      }
+    case .move:
+      print("moving")
+    }
+  }
+  
   // MARK: - Navigation
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "historyToDetail" {
       if let dest = segue.destination as? HistoryDetailVC {
-        dest.drinksByDate = self.drinksByDate![(sender as! IndexPath).row]
+        dest.drinksByDate = dateGroupings(from: fetchedResultsController)![(sender as! IndexPath).row]
       }
     }
   }

@@ -1744,15 +1744,70 @@
                                 <rect key="frame" x="8" y="96" width="359" height="514"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyDetailCell" id="dmJ-fi-nol" customClass="HistoryDetailCell" customModule="Buzzed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyDetailCell" id="dmJ-fi-nol" customClass="HistoryDetailCell" customModule="Buzzed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="359" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dmJ-fi-nol" id="2Ob-AK-CwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="86"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Byr-IZ-lxR" customClass="DrinkStack" customModule="Buzzed" customModuleProvider="target">
+                                                    <rect key="frame" x="311" y="8" width="40" height="69"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNL-Ah-OZS">
+                                                            <rect key="frame" x="4.5" y="0.0" width="31" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Drink" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-lF-wFb">
+                                                            <rect key="frame" x="0.0" y="19" width="40" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="2wJ-UR-vJa"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="69" id="IRK-PQ-fCB"/>
+                                                        <constraint firstAttribute="width" constant="40" id="wPO-0Z-7R6"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="drinkImg" destination="5Da-lF-wFb" id="zdx-wx-5fQ"/>
+                                                        <outlet property="timeLbl" destination="MNL-Ah-OZS" id="CWd-HH-pd4"/>
+                                                    </connections>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BxD-Ns-PiM" userLabel="Labels">
+                                                    <rect key="frame" x="8" y="22" width="92" height="42.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvq-tK-MLo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="92" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Caff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOi-Vr-4i8">
+                                                            <rect key="frame" x="0.0" y="25.5" width="92" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Byr-IZ-lxR" secondAttribute="trailing" constant="8" id="Cp1-CQ-ykq"/>
+                                                <constraint firstItem="BxD-Ns-PiM" firstAttribute="leading" secondItem="2Ob-AK-CwB" secondAttribute="leading" constant="8" id="GUR-rt-JM3"/>
+                                                <constraint firstItem="BxD-Ns-PiM" firstAttribute="centerY" secondItem="2Ob-AK-CwB" secondAttribute="centerY" id="J86-kz-zbJ"/>
+                                                <constraint firstItem="Byr-IZ-lxR" firstAttribute="centerY" secondItem="2Ob-AK-CwB" secondAttribute="centerY" id="R23-5s-xoe"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="caffTotal" destination="rOi-Vr-4i8" id="eLe-qj-uOX"/>
+                                            <outlet property="drinkName" destination="fvq-tK-MLo" id="vbB-hH-gbF"/>
+                                            <outlet property="drinkStack" destination="Byr-IZ-lxR" id="ZLi-KL-iVr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

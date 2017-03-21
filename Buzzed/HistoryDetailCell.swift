@@ -9,16 +9,25 @@
 import UIKit
 
 class HistoryDetailCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+  
+  @IBOutlet weak var drinkName: UILabel!
+  @IBOutlet weak var caffTotal: UILabel!
+  @IBOutlet weak var drinkStack: DrinkStack!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+  
+  func configCell(with drink: CaffeineSourceCD) {
+    drinkName.text = drink.sourceName!
+    let totalCaffAvailable = drink.mgCaffeinePerVolume * drink.volume
+    caffTotal.text = (totalCaffAvailable * drink.percentageConsumed).cleanValue + " mg"
+    drinkStack.configure(withDrink: drink)
+  }
+  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    
+  }
+  
 }
