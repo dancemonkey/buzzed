@@ -18,7 +18,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     let dm = DataManager()
     let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest()
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
-    let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: #keyPath(CaffeineSourceCD.creation), cacheName: nil)
+    let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: #keyPath(CaffeineSourceCD.sectionNameFromDate), cacheName: nil)
     return frc
   }()
   
@@ -42,30 +42,6 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     _ = ColorGradient(withView: self.view)
     topNav.configure(title: "History")
   }
-  
-//  func dateGroupings(from results: NSFetchedResultsController<CaffeineSourceCD>) -> [[CaffeineSourceCD]]? {
-//    let formatter = DateFormatter()
-//    formatter.dateFormat = "MM dd yy"
-//    var drinksByDate = [[CaffeineSourceCD]]()
-//    if let drinks = results.fetchedObjects {
-//      var currentDrinks = [CaffeineSourceCD]()
-//      for drink in drinks {
-//        if currentDrinks.count == 0 {
-//          currentDrinks.append(drink)
-//        } else {
-//          if formatter.string(from: drink.creation! as Date) == formatter.string(from: currentDrinks[currentDrinks.count-1].creation! as Date) {
-//            currentDrinks.append(drink)
-//          } else {
-//            drinksByDate.append(currentDrinks)
-//            currentDrinks.removeAll()
-//            currentDrinks.append(drink)
-//          }
-//        }
-//      }
-//      drinksByDate.append(currentDrinks)
-//    }
-//    return drinksByDate
-//  }
   
   func configure(cell: HistoryDetailCell, at indexPath: IndexPath) {
     let drink = fetchedResultsController.object(at: indexPath)
@@ -113,10 +89,6 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       record.managedObjectContext?.delete(record)
     }
   }
-  
-//  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//  }
   
   // MARK: NS FRC methods
   
