@@ -111,8 +111,11 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     
     if let drink = consumptionControls.source {
       let dm = DataManager()
+      let hm = HealthManager()
       _ = drink.createEntity(fromSource: drink)
       dm.save()
+      hm.storeSample(mgCaffeine: drink.totalCaffeineConsumed())
+      
       dm.setCurrentCaff(to: dm.getCurrentCaff() + drink.totalCaffeineConsumed())
       topNav.configure(title: "")
     }

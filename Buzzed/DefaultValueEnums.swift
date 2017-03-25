@@ -33,7 +33,7 @@ enum LargeDrink {
       case .radius:
         return CGFloat(4.0)
       case .offset:
-        return CGSize(width: 0, height: 4.0)
+        return CGSize(width: 0, height: 2.0)
       case .opacity:
         return Float(1.0)
       }
@@ -52,7 +52,7 @@ enum Button {
       case .radius:
         return CGFloat(2.0)
       case .offset:
-        return CGSize(width: 0, height: 2.0)
+        return CGSize(width: 0, height: 1.0)
       case .opacity:
         return Float(1.0)
       }

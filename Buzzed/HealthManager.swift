@@ -43,7 +43,7 @@ class HealthManager {
     healthStore?.requestAuthorization(toShare: healthKitTypesToWrite, read: nil, completion: completion)
   }
   
-  func storeSample() {
+  func storeSample(mgCaffeine: Double) {
     // TODO: throw errors
     guard let hs = healthStore else {
       // TODO: some more meaningful error throw or something here
@@ -53,7 +53,7 @@ class HealthManager {
     
     if hs.authorizationStatus(for: HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!) == .sharingAuthorized {
       let sampleType = HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)
-      let sampleQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .milli), doubleValue: 25.0)
+      let sampleQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .milli), doubleValue: mgCaffeine)
       let sample = HKQuantitySample(type: sampleType!, quantity: sampleQuantity, start: Date(), end: Date())
       hs.save(sample, withCompletion: { (success, error) in
         if error != nil {
@@ -67,37 +67,6 @@ class HealthManager {
       // that tells the calling view to load some notification that you don't have authorization?
       print("you can't store caffeine intake sample")
     }
-  }
-  
-//  func getHeight() {
-//    // TODO: parameter for what units you want the height in (feet/meters), then switch returned result
-//    // TODO: handle return of empty array (lack of permission to read or no data)
-//    guard let hs = healthStore else {
-//      // TODO: some more meaningful error throw or something here
-//      print("you have no HK on this device")
-//      return
-//    }
-//    
-//    if hs.authorizationStatus(for: HKSampleType.quantityType(forIdentifier: .height)!) == .sharingDenied {
-//      // TODO: throw error so calling view can popup or show a banner
-//      print("not authorized for height")
-//    }
-//    
-//    let height = HKQuantityType.quantityType(forIdentifier: .height)!
-//    let heightQuery = HKSampleQuery(sampleType: height, predicate: nil, limit: 1, sortDescriptors: nil, resultsHandler: { (query, results, error) in
-//      if let results = results as? [HKQuantitySample] {
-//        let customaryUnits = HKUnit(from: LengthFormatter.Unit.inch)
-//        let queryResults = results.first!.quantity.doubleValue(for: customaryUnits)
-//        let heightInFeet =  (queryResults / 12).rounded(FloatingPointRoundingRule.down)
-//        let heightInInches = queryResults.truncatingRemainder(dividingBy: 12).roundTo(places: 0)
-//        print("height = \(heightInFeet) ft., \(heightInInches) in.")
-//      }
-//    })
-//    hs.execute(heightQuery)
-//  }
-  
-  func getTodaysCaffeineIntake() -> Double {
-    return 126.0
   }
   
 }

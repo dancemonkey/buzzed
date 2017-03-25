@@ -44,13 +44,7 @@ class ConsumptionSetView: UIView, Hideable {
     self.level = level
     source?.consume(percentage: self.level)
     setDrinkLevel()
-    
-    // TESTING: Label is just for testing until I get rest of UI implemented
-//    if let source = self.source {
-//      caffeineConsumptionLbl.text = "Consumed \(source.totalCaffeineConsumed())mg"
-//    } else {
-//      caffeineConsumptionLbl.text = ""
-//    }
+  
   }
   
   func setSource(to source: CaffeineSource) {
@@ -118,13 +112,5 @@ class ConsumptionSetView: UIView, Hideable {
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     settingLevel = false
   }
-  
-  /*
-   // Only override draw() if you perform custom drawing.
-   // An empty implementation adversely affects performance during animation.
-   override func draw(_ rect: CGRect) {
-   // Drawing code
-   }
-   */
   
 }

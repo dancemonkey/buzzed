@@ -20,7 +20,10 @@ class Meter: UIView {
     view = Bundle.main.loadNibNamed("Meter", owner: self, options: nil)?[0] as! UIView
     self.addSubview(view)
     view.frame = self.bounds
-    
+  }
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
     let dm = DataManager()
     _maxIntake = dm.getDailyIntake()
     setLevel(to: dm.getCurrentCaff())
