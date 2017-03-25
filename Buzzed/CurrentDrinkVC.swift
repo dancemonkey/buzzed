@@ -113,13 +113,14 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
       let dm = DataManager()
       let hm = HealthManager()
       _ = drink.createEntity(fromSource: drink)
+      hm.storeSample(fromDrink: drink)
       dm.save()
-      hm.storeSample(mgCaffeine: drink.totalCaffeineConsumed())
       
       dm.setCurrentCaff(to: dm.getCurrentCaff() + drink.totalCaffeineConsumed())
       topNav.configure(title: "")
     }
     mode = .notDrinking
+    
   }
   
   @IBAction func cancelPressed(sender: SystemBtn) {

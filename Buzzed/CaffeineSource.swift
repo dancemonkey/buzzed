@@ -18,6 +18,11 @@ class CaffeineSource {
     return _creation
   }
   
+  private var _hkUUID: String?
+  var hkUUID: String? {
+    return _hkUUID
+  }
+  
   private var _sourceType: CaffeineSourceType
   var sourceType: CaffeineSourceType {
     return _sourceType
@@ -88,7 +93,7 @@ class CaffeineSource {
     self._associatedImageName = entity.imageName
     self._baseUnit = dm.getDefaultUnits()
     self._sourceType = CaffeineSourceType(rawValue: entity.sourceType!)!
-    
+    self._hkUUID = entity.hkUUID
     return self 
   }
   
@@ -145,6 +150,10 @@ class CaffeineSource {
   
   func totalCaffeineConsumed() -> Double {
     return (totalCaffeineContent * percentageConsumed).roundTo(places: 2)
+  }
+  
+  func setUUID(to uuid: String) {
+    self._hkUUID = uuid
   }
 
 }

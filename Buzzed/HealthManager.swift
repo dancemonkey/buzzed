@@ -43,7 +43,7 @@ class HealthManager {
     healthStore?.requestAuthorization(toShare: healthKitTypesToWrite, read: nil, completion: completion)
   }
   
-  func storeSample(mgCaffeine: Double) {
+  func storeSample(fromDrink drink: CaffeineSource) {
     // TODO: throw errors
     guard let hs = healthStore else {
       // TODO: some more meaningful error throw or something here
@@ -53,12 +53,13 @@ class HealthManager {
     
     if hs.authorizationStatus(for: HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!) == .sharingAuthorized {
       let sampleType = HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)
-      let sampleQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .milli), doubleValue: mgCaffeine)
+      let sampleQuantity = HKQuantity(unit: HKUnit.gramUnit(with: .milli), doubleValue: drink.totalCaffeineConsumed())
       let sample = HKQuantitySample(type: sampleType!, quantity: sampleQuantity, start: Date(), end: Date())
       hs.save(sample, withCompletion: { (success, error) in
         if error != nil {
           print("Error saving sample")
         } else {
+          drink.setUUID(to: sample.uuid.uuidString)
           print("Caffeine sample saved")
         }
       })

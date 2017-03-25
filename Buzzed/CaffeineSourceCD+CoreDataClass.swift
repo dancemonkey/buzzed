@@ -38,6 +38,7 @@ public class CaffeineSourceCD: NSManagedObject {
     self.volume = base.volume
     self.imageName = base.associatedImageName
     self.percentageConsumed = base.percentageConsumed
+    self.hkUUID = base.hkUUID
   }
   
 }
