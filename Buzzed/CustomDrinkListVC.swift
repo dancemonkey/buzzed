@@ -54,6 +54,10 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
     cell.config(withDrink: drink)
   }
   
+  @IBAction func newCustomDrinkPressed(sender: UIButton) {
+    performSegue(withIdentifier: "editCustomDrink", sender: self)
+  }
+  
   // FRC Methods
   
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -130,7 +134,11 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "editCustomDrink" {
       if let dest = segue.destination as? CustomDrinkBuildVC {
-        dest.existingDrink = fetchedResultsController.fetchedObjects![(sender as! IndexPath).row]
+        if let indexPath = sender as? IndexPath {
+          dest.existingDrink = fetchedResultsController.fetchedObjects![indexPath.row]
+        } else {
+          dest.existingDrink = nil
+        }
       }
     }
   }
