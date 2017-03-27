@@ -54,10 +54,6 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
     cell.config(withDrink: drink)
   }
   
-  @IBAction func newCustomDrinkPressed(sender: UIButton) {
-    performSegue(withIdentifier: "editCustomDrink", sender: self)
-  }
-  
   // FRC Methods
   
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
