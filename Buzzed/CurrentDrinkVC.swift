@@ -112,8 +112,8 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     if let drink = consumptionControls.source {
       let dm = DataManager()
       let hm = HealthManager()
-      hm.storeSample(fromDrink: drink)
-      _ = drink.createEntity(fromSource: drink)
+      let drinkEntity = drink.createEntity(fromSource: drink)
+      hm.storeSample(fromDrink: drinkEntity)
       dm.save()
       
       dm.setCurrentCaff(to: dm.getCurrentCaff() + drink.totalCaffeineConsumed())

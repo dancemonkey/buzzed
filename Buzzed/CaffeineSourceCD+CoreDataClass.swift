@@ -29,6 +29,10 @@ public class CaffeineSourceCD: NSManagedObject {
     }
   }
   
+  func setUUID(to uuid: String) {
+    self.hkUUID = uuid
+  }
+  
   func setValues(fromBase base: CaffeineSource) {
     self.creation = base.creation as NSDate?
     self.sourceType = base.sourceType.rawValue
@@ -39,6 +43,7 @@ public class CaffeineSourceCD: NSManagedObject {
     self.imageName = base.associatedImageName
     self.percentageConsumed = base.percentageConsumed
     self.hkUUID = base.hkUUID
+    print("entity uuid set as \(self.hkUUID)")
   }
   
 }

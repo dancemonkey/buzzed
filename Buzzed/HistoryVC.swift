@@ -85,8 +85,13 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
+      let dm = DataManager()
       let record = fetchedResultsController.object(at: indexPath)
-      record.managedObjectContext?.delete(record)
+      let uuidToDelete = record.hkUUID
+      let hm = HealthManager()
+      hm.deleteSample(withUUID: uuidToDelete)
+      dm.context.delete(record)
+      dm.save()
     }
   }
   
@@ -103,7 +108,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
     switch type {
     case .insert:
-      print("inserting section")
+      tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
     case .delete:
       tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
     default:
@@ -118,6 +123,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     case .insert:
       tableView.insertRows(at: [newIndexPath!], with: .fade)
     case .delete:
+      tableView.deleteRows(at: [indexPath!], with: .fade)
       print("deleting")
     case .move:
       print("moving")
