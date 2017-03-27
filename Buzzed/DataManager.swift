@@ -195,17 +195,20 @@ class DataManager {
   }
   
   func decay() {
-    let decayFactorPerMin: Double = (1 - (0.10/60))
+    let decayFactorPer15m: Double = (1 - (0.10/15))
     if getLastDecay() == nil {
       setLastDecay()
     }
     let minutesToLastDecay = minutesBetween(earlierDate: getLastDecay()!, andLaterDate: Date())
     if minutesToLastDecay > 15 {
-      let totalDecay = Double(minutesToLastDecay) * decayFactorPerMin
-      if (getCurrentCaff() - totalDecay) > 0 {
-        setCurrentCaff(to: getCurrentCaff() - totalDecay)
-      } else {
-        setCurrentCaff(to: 0)
+      let quarterHours = minutesToLastDecay / 15
+      decayCalcLoop: for _ in 0 ..< quarterHours {
+        let thisDecay = getCurrentCaff() - (getCurrentCaff() * decayFactorPer15m)
+        setCurrentCaff(to: getCurrentCaff() - thisDecay)
+        if getCurrentCaff() <= 0 {
+          setCurrentCaff(to: 0)
+          break decayCalcLoop
+        }
       }
       setLastDecay()
     }

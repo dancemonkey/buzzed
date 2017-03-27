@@ -40,6 +40,10 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    let hm = HealthManager()
+    hm.authorizeHealthkit { (success, error) in
+      print("health kit authorized: \(success)")
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
