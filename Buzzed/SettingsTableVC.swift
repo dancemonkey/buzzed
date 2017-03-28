@@ -20,6 +20,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViews()
+    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
   }
   
   func setupViews() {

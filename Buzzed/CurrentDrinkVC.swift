@@ -19,6 +19,8 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   @IBOutlet weak var buttonStack: HideableStack!
   @IBOutlet weak var consumptionControls: ConsumptionSetView!
   
+  @IBOutlet weak var tempTestLogField: UITextView!
+  
   var currentSource: CaffeineSource? = nil
   var mode: ScreenMode = .notDrinking {
     willSet(newValue) {
@@ -44,6 +46,8 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     hm.authorizeHealthkit { (success, error) in
       print("health kit authorized: \(success)")
     }
+    
+    tempTestUpdateLogField()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -125,6 +129,13 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     }
     mode = .notDrinking
     
+    tempTestUpdateLogField()
+  }
+  
+  func tempTestUpdateLogField() {
+    let sl = SimpleLogger()
+//    sl.clearLog()
+    tempTestLogField.text = sl.readLog()
   }
   
   @IBAction func cancelPressed(sender: SystemBtn) {

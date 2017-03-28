@@ -61,6 +61,8 @@
 		10724AE41E68F98E005B4808 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10724AE31E68F98E005B4808 /* SettingsCell.swift */; };
 		108023061E5DD17000D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
 		108023071E5DD17300D948C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108023051E5DD17000D948C1 /* DataManager.swift */; };
+		1080E6941E89FD9B001D9C68 /* SimpleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080E6931E89FD9B001D9C68 /* SimpleLogger.swift */; };
+		1080E6961E8A00CF001D9C68 /* decayLog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1080E6951E8A00CF001D9C68 /* decayLog.txt */; };
 		108EE97B1E632A6D006FDCFC /* ConsumptionSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */; };
 		108EE97F1E6330F7006FDCFC /* ConsumptionSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */; };
 		10911F3F1E704D2A004F5077 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10911F3E1E704D2A004F5077 /* Protocols.swift */; };
@@ -134,6 +136,8 @@
 		1067546E1E68E4C30023D470 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		10724AE31E68F98E005B4808 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		108023051E5DD17000D948C1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1080E6931E89FD9B001D9C68 /* SimpleLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogger.swift; sourceTree = "<group>"; };
+		1080E6951E8A00CF001D9C68 /* decayLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = decayLog.txt; sourceTree = "<group>"; };
 		108EE97A1E632A6D006FDCFC /* ConsumptionSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionSetView.swift; sourceTree = "<group>"; };
 		108EE97E1E6330F7006FDCFC /* ConsumptionSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionSetView.xib; sourceTree = "<group>"; };
 		10911F3E1E704D2A004F5077 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 				10DB0ACC1E671B3700804C50 /* DefaultValueEnums.swift */,
 				10911F3E1E704D2A004F5077 /* Protocols.swift */,
 				10AC525A1E72EB01008E8804 /* DrinkSelectDelegate.swift */,
+				1080E6951E8A00CF001D9C68 /* decayLog.txt */,
+				1080E6931E89FD9B001D9C68 /* SimpleLogger.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				10011AD51E592A460096F426 /* Assets.xcassets in Resources */,
 				10011AD01E592A460096F426 /* Main.storyboard in Resources */,
 				108EE97F1E6330F7006FDCFC /* ConsumptionSetView.xib in Resources */,
+				1080E6961E8A00CF001D9C68 /* decayLog.txt in Resources */,
 				10011AF51E592DE30096F426 /* Meter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +487,7 @@
 				10962B9E1E76D5C700E12794 /* DrinkStack.swift in Sources */,
 				10011AF21E592A790096F426 /* Meter.swift in Sources */,
 				10AC525B1E72EB01008E8804 /* DrinkSelectDelegate.swift in Sources */,
+				1080E6941E89FD9B001D9C68 /* SimpleLogger.swift in Sources */,
 				10162F901E7AD57A000709D3 /* CustomDrinkBuildTableVC.swift in Sources */,
 				10C523FD1E67583B0091746E /* CaffeineTodayLbl.swift in Sources */,
 				10587D8A1E7981AC0053701D /* DefaultUnitControl.swift in Sources */,

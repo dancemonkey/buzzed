@@ -36,7 +36,7 @@ class TopNav: UIView {
     }
     
     if let caffLbl = meterCaffLbl {
-      caffLbl.text = String(describing: data.getCurrentCaff().roundTo(places: 0)) + "mg total"
+      caffLbl.text = String(describing: data.getCurrentCaff().roundTo(places: 0)) + "mg currently"
     }
     if let totalLbl = totalCaff {
       totalLbl.text = "\(data.getTotalCaff())/\(data.getDailyIntake())mg"

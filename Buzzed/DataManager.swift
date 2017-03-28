@@ -195,22 +195,24 @@ class DataManager {
   }
   
   func decay() {
-    let decayFactorPer15m: Double = (1 - (0.10/15))
+    let decayPerMin: Double = (getCurrentCaff() * 0.90) / 60
     if getLastDecay() == nil {
       setLastDecay()
     }
+    
+    let sl = SimpleLogger()
+    sl.log(data: "\(Date()) - starting caff @: \(getCurrentCaff())\n")
+    
     let minutesToLastDecay = minutesBetween(earlierDate: getLastDecay()!, andLaterDate: Date())
     if minutesToLastDecay > 15 {
-      let quarterHours = minutesToLastDecay / 15
-      decayCalcLoop: for _ in 0 ..< quarterHours {
-        let thisDecay = getCurrentCaff() - (getCurrentCaff() * decayFactorPer15m)
-        setCurrentCaff(to: getCurrentCaff() - thisDecay)
-        if getCurrentCaff() <= 0 {
-          setCurrentCaff(to: 0)
-          break decayCalcLoop
-        }
-      }
+      let totalDecay = Double(minutesToLastDecay) * decayPerMin
+      setCurrentCaff(to: getCurrentCaff() - totalDecay)
       setLastDecay()
+      
+      sl.log(data: "decayPerMin: \(decayPerMin)\n")
+      sl.log(data: "minutesToLastDecay: \(minutesToLastDecay)\n")
+      sl.log(data: "totalDecay: \(Double(minutesToLastDecay) * decayPerMin)\n")
+      sl.log(data: "ending caff: \(getCurrentCaff())\n\n\n")
     }
   }
   
