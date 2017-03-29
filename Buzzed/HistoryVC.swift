@@ -36,11 +36,11 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       print("could not perform fetch")
     }
     tableView.reloadData()
+    topNav.configure(title: "History")
   }
   
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
-    topNav.configure(title: "History")
   }
   
   func configure(cell: HistoryDetailCell, at indexPath: IndexPath) {
