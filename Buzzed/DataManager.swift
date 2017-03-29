@@ -17,6 +17,9 @@ class DataManager {
   //  static let instance = DataManager()
   
   lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//  var currentCaff: Double {
+//    return getCurrentCaff()
+//  }
   
   func save() {
     do {

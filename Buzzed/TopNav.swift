@@ -27,7 +27,14 @@ class TopNav: UIView {
   override func awakeFromNib() {
     super.awakeFromNib()
     data = DataManager()
+//    addObserver(self, forKeyPath: "data.currentCaff", options: [], context: nil)
   }
+  
+//  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//    if keyPath == "data.currentCaff" {
+//      setMeter()
+//    }
+//  }
   
   func configure(title: String) {
     
@@ -51,13 +58,5 @@ class TopNav: UIView {
     data.decay()
     meter?.setLevel(to: data.getCurrentCaff())
   }
-  
-  /*
-   // Only override draw() if you perform custom drawing.
-   // An empty implementation adversely affects performance during animation.
-   override func draw(_ rect: CGRect) {
-   // Drawing code
-   }
-   */
   
 }
