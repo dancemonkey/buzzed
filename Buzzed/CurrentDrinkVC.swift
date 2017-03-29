@@ -48,6 +48,9 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     }
     
     tempTestUpdateLogField()
+    let tapGest = UITapGestureRecognizer(target: self, action: #selector(CurrentDrinkVC.tempTestUpdateLogField))
+    tapGest.numberOfTapsRequired = 2
+    tempTestLogField.addGestureRecognizer(tapGest)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -127,9 +130,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
       dm.setCurrentCaff(to: dm.getCurrentCaff() + drink.totalCaffeineConsumed())
       topNav.configure(title: "")
     }
-    mode = .notDrinking
-    
-    tempTestUpdateLogField()
+    mode = .notDrinking    
   }
   
   func tempTestUpdateLogField() {
