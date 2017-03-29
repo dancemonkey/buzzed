@@ -11,15 +11,11 @@ import CoreData
 
 class DataManager {
   
-  // read userDefaults for settings like measurement units, max caffeine target/day, favorite drink
-  // if nothing in userSettings, offer up defaults
-  
-  //  static let instance = DataManager()
-  
   lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//  var currentCaff: Double {
-//    return getCurrentCaff()
-//  }
+  
+  var currentCaff: Double {
+    return getCurrentCaff()
+  }
   
   func save() {
     do {
@@ -176,6 +172,7 @@ class DataManager {
   func setCurrentCaff(to level: Double) {
     let defaults = UserDefaults.standard
     defaults.set(level, forKey: defaultKeys.currentCaffLevel.rawValue)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.notificationKeys.decay.rawValue), object: self.currentCaff)
   }
   
   func getCurrentCaff() -> Double {
@@ -198,6 +195,11 @@ class DataManager {
   }
   
   func decay() {
+    
+    guard getCurrentCaff() > 0 else {
+      return
+    }
+    
     let decayPerMin: Double = (getCurrentCaff() * 0.10) / 60
     if getLastDecay() == nil {
       setLastDecay()
@@ -208,7 +210,7 @@ class DataManager {
     sl.log(data: "\(Date()) - starting caff @: \(getCurrentCaff())\n")
     sl.log(data: "minutesToLastDecay: \(minutesToLastDecay)\n")
     sl.log(data: "decayPerMin: \(decayPerMin)\n")
-
+    
     if minutesToLastDecay > 15 {
       let totalDecay = Double(minutesToLastDecay) * decayPerMin
       totalDecay >= getCurrentCaff() ? setCurrentCaff(to: 0.0) : setCurrentCaff(to: getCurrentCaff() - totalDecay)
@@ -217,6 +219,7 @@ class DataManager {
       sl.log(data: "totalDecay: \(Double(minutesToLastDecay) * decayPerMin)\n")
       sl.log(data: "ending caff: \(getCurrentCaff())\n\n\n")
     }
+    
   }
   
   private func minutesBetween(earlierDate earlier: Date, andLaterDate later: Date) -> Int {

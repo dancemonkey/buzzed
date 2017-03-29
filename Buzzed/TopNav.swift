@@ -27,14 +27,14 @@ class TopNav: UIView {
   override func awakeFromNib() {
     super.awakeFromNib()
     data = DataManager()
-//    addObserver(self, forKeyPath: "data.currentCaff", options: [], context: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.setMeter), name: NSNotification.Name(rawValue: Constants.notificationKeys.decay.rawValue), object: nil)
   }
   
-//  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//    if keyPath == "data.currentCaff" {
-//      setMeter()
-//    }
-//  }
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    if keyPath == "data.currentCaff" {
+      setMeter()
+    }
+  }
   
   func configure(title: String) {
     
@@ -55,8 +55,11 @@ class TopNav: UIView {
   }
   
   func setMeter() {
-    data.decay()
     meter?.setLevel(to: data.getCurrentCaff())
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
   
 }

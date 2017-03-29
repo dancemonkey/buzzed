@@ -10,6 +10,10 @@ import UIKit
 
 enum Constants {
   
+  enum notificationKeys: String {
+    case decay
+  }
+  
   enum StoryBoardID: String {
     case drinkSelect, sizeSelect, history, settings, customDrink, main
   }
