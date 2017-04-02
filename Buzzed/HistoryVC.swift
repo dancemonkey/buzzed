@@ -91,6 +91,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       let hm = HealthManager()
       hm.deleteSample(withUUID: uuidToDelete)
       dm.context.delete(record)
+      dm.reduceCaffeineBy(caffReduction: record.totalMgConsumed())
       dm.save()
     }
   }

@@ -46,4 +46,8 @@ open class CaffeineSourceCD: NSManagedObject {
     print("entity uuid set as \(String(describing: self.hkUUID))")
   }
   
+  func totalMgConsumed() -> Double {
+    return (mgCaffeinePerVolume * volume) * percentageConsumed
+  }
+  
 }

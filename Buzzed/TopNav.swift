@@ -28,14 +28,18 @@ class TopNav: UIView {
     super.awakeFromNib()
     data = DataManager()
     NotificationCenter.default.addObserver(self, selector: #selector(self.setMeter), name: NSNotification.Name(rawValue: Constants.notificationKeys.decay.rawValue), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(self.setLabels), name: NSNotification.Name(rawValue: Constants.notificationKeys.dailyIntake.rawValue), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.setLabel), name: NSNotification.Name(rawValue: Constants.notificationKeys.dailyIntake.rawValue), object: nil)
   }
   
-  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-    if keyPath == "data.currentCaff" {
-      setMeter()
-    }
-  }
+//  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//    if keyPath == "data.currentCaff" {
+//      setMeter()
+//    }
+//    if keyPath == "data.dailyIntake" {
+//      print("setting labels from NC call")
+//      setLabels()
+//    }
+//  }
   
   func configure(title: String) {
     
@@ -43,17 +47,14 @@ class TopNav: UIView {
       currentTitle.text = title
     }
     
-    setLabels()
+    setLabel()
     
     if meter != nil {
       setMeter()
     }
   }
   
-  func setLabels() {
-    if let caffLbl = meterCaffLbl {
-      caffLbl.text = String(describing: data.getCurrentCaff().roundTo(0)) + "mg currently"
-    }
+  func setLabel() {
     if let totalLbl = totalCaff {
       totalLbl.text = "\(data.getTotalCaff())/\(data.getDailyIntake())mg"
     }
@@ -62,6 +63,10 @@ class TopNav: UIView {
   func setMeter() {
     if meter != nil {
       meter?.setLevel(to: data.getCurrentCaff())
+      if let caffLbl = meterCaffLbl {
+        caffLbl.text = String(describing: data.getCurrentCaff().roundTo(0)) + "mg currently"
+      }
+      setLabel()
     }
   }
   

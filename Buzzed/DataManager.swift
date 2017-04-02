@@ -122,6 +122,13 @@ class DataManager {
     defaults.set(formatter.string(from: Date()), forKey: defaultKeys.lastOpen.rawValue)
   }
   
+  func reduceCaffeineBy(caffReduction: Double) {
+    let current = getCurrentCaff()
+    let reduced = current - caffReduction
+    let final = reduced > 0 ? reduced : 0
+    setCurrentCaff(to: final)
+  }
+  
   func setDailyIntake(_ limit: Double) {
     let defaults = UserDefaults.standard
     defaults.set(limit, forKey: defaultKeys.dailyIntakeLimit.rawValue)
