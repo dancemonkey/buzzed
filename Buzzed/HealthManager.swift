@@ -82,7 +82,6 @@ class HealthManager {
           print("Error saving sample")
         } else {
           drink.setUUID(to: sample.uuid.uuidString)
-          print("Caffeine sample saved with uuid \(String(describing: drink.hkUUID))")
         }
       })
     } else {

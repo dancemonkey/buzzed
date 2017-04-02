@@ -20,7 +20,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViews()
-    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    //self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
   }
   
   func setupViews() {
@@ -57,6 +57,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
   // MARK: - Navigation
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    print("preparing for segue")
     if let dest = segue.destination as? DrinkSelectVC {
       dest.passThroughDelegate = self
     }

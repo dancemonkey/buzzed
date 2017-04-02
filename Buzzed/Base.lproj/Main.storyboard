@@ -821,8 +821,8 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="fel-fc-RG5" id="4Ml-hx-QrK"/>
-                            <outlet property="delegate" destination="fel-fc-RG5" id="7XX-38-Udd"/>
+                            <outlet property="dataSource" destination="fel-fc-RG5" id="MJj-aS-IKP"/>
+                            <outlet property="delegate" destination="fel-fc-RG5" id="Fqm-MX-piE"/>
                         </connections>
                     </tableView>
                     <connections>
@@ -830,8 +830,8 @@
                         <outlet property="defaultDrinkLbl" destination="uUW-43-93k" id="4Qk-kW-aLU"/>
                         <outlet property="defaultUnitsCtl" destination="wey-O6-MCu" id="6Q1-EY-NPf"/>
                         <outlet property="healthConnectImg" destination="J3E-il-EtO" id="nDt-Rd-cTk"/>
-                        <segue destination="2ca-d7-zzo" kind="show" identifier="drinkSelectVC" id="ezI-tu-dxS"/>
-                        <segue destination="fkm-zF-2wC" kind="show" identifier="customDrinkList" id="fbw-Kw-8S0"/>
+                        <segue destination="fkm-zF-2wC" kind="show" identifier="customDrinkList" id="gPQ-x2-yGs"/>
+                        <segue destination="2ca-d7-zzo" kind="show" identifier="drinkSelectVC" id="mKY-A8-FKV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7E-uY-jRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1648,8 +1648,8 @@
         <image name="Check" width="32" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ezI-tu-dxS"/>
-        <segue reference="9yi-gA-VMY"/>
-        <segue reference="bna-Nl-Tfy"/>
+        <segue reference="mKY-A8-FKV"/>
+        <segue reference="IpU-UW-BuW"/>
+        <segue reference="N2h-zR-7H3"/>
     </inferredMetricsTieBreakers>
 </document>

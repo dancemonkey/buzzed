@@ -23,7 +23,6 @@ class HistoryDetailCell: UITableViewCell {
     let totalCaffAvailable = drink.mgCaffeinePerVolume * drink.volume
     caffTotal.text = (totalCaffAvailable * drink.percentageConsumed).cleanValue + " mg"
     drinkStack.configure(withDrink: drink)
-    print("drink uuid = \(String(describing: drink.hkUUID))")
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {

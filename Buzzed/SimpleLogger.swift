@@ -15,7 +15,6 @@ class SimpleLogger {
   }
   
   func log(data: String) {
-    print(data)
     let fileName = "decayLog.txt"
     if let dir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last {
       let fileURL = dir.appendingPathComponent(fileName)

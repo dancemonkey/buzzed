@@ -59,7 +59,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch section {
     case 0:
-      if fetchedResultsController.fetchedObjects != nil && fetchedResultsController.fetchedObjects!.count > 0 {
+      if fetchedResultsController.fetchedObjects != nil, fetchedResultsController.fetchedObjects!.count > 0 {
         return self.sections[section]
       } else {
         return nil
@@ -105,6 +105,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("row selected")
     switch indexPath.section {
     case 0:
       if let delegate = self.passThroughDelegate as? CurrentDrinkVC {

@@ -43,9 +43,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     let hm = HealthManager()
-    hm.authorizeHealthkit { (success, error) in
-      print("health kit authorized: \(success)")
-    }
+    hm.authorizeHealthkit { (success, error) in }
     
     tempTestUpdateLogField()
     let tapGest = UITapGestureRecognizer(target: self, action: #selector(CurrentDrinkVC.tempTestUpdateLogField))

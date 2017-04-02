@@ -42,20 +42,26 @@ class TopNav: UIView {
       currentTitle.text = title
     }
     
-    if let caffLbl = meterCaffLbl {
-      caffLbl.text = String(describing: data.getCurrentCaff().roundTo(0)) + "mg currently"
-    }
-    if let totalLbl = totalCaff {
-      totalLbl.text = "\(data.getTotalCaff())/\(data.getDailyIntake())mg"
-    }
+    setLabels()
     
     if meter != nil {
       setMeter()
     }
   }
   
+  func setLabels() {
+    if let caffLbl = meterCaffLbl {
+      caffLbl.text = String(describing: data.getCurrentCaff().roundTo(0)) + "mg currently"
+    }
+    if let totalLbl = totalCaff {
+      totalLbl.text = "\(data.getTotalCaff())/\(data.getDailyIntake())mg"
+    }
+  }
+  
   func setMeter() {
-    meter?.setLevel(to: data.getCurrentCaff())
+    if meter != nil {
+      meter?.setLevel(to: data.getCurrentCaff())
+    }
   }
   
   deinit {
