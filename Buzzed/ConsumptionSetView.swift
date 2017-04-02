@@ -33,10 +33,10 @@ class ConsumptionSetView: UIView, Hideable {
     view.frame = self.bounds
     
     // for testing, source will most likely be set from parent or segue
-    guard self.source != nil else {
-      setSource(to: testSource)
-      return
-    }
+//    guard self.source != nil else {
+//      setSource(to: testSource)
+//      return
+//    }
     // end testing
   }
   

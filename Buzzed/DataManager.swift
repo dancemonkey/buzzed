@@ -17,6 +17,10 @@ class DataManager {
     return getCurrentCaff()
   }
   
+  var dailyIntake: Double {
+    return getDailyIntake()
+  }
+  
   func save() {
     do {
       try context.save()
@@ -121,6 +125,7 @@ class DataManager {
   func setDailyIntake(_ limit: Double) {
     let defaults = UserDefaults.standard
     defaults.set(limit, forKey: defaultKeys.dailyIntakeLimit.rawValue)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.notificationKeys.dailyIntake.rawValue), object: self.dailyIntake)
   }
   
   func setDefaultMeasurement(_ unit: UnitVolume) {

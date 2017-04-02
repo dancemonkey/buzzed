@@ -10,8 +10,12 @@ import UIKit
 
 enum Constants {
   
+//  enum notificationKeys: String {
+//    case decay, dailyIntake
+//  }
+  
   enum notificationKeys: String {
-    case decay
+    case decay, dailyIntake
   }
   
   enum StoryBoardID: String {

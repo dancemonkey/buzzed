@@ -28,6 +28,7 @@ class TopNav: UIView {
     super.awakeFromNib()
     data = DataManager()
     NotificationCenter.default.addObserver(self, selector: #selector(self.setMeter), name: NSNotification.Name(rawValue: Constants.notificationKeys.decay.rawValue), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.setLabels), name: NSNotification.Name(rawValue: Constants.notificationKeys.dailyIntake.rawValue), object: nil)
   }
   
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
