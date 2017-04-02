@@ -29,19 +29,19 @@ class Meter: UIView {
     setLevel(to: dm.getCurrentCaff())
   }
   
-  private var _level: Double = 0
+  fileprivate var _level: Double = 0
   var level: Double {
     return _level
   }
-  private let _minLevel: Double = -90.0
+  fileprivate let _minLevel: Double = -90.0
   var minLevel: Double {
     return _minLevel
   }
-  private var _maxLevel: Double = 90.0
+  fileprivate var _maxLevel: Double = 90.0
   var maxLevel: Double {
     return _maxLevel
   }
-  private var _maxIntake: Double = 300.0
+  fileprivate var _maxIntake: Double = 300.0
   
   func setLevel(to level: Double) {
     let levelMod = level / (self._maxIntake / 180) - 90
@@ -49,11 +49,11 @@ class Meter: UIView {
     rotateNeedle()
   }
   
-  private func setMaxLevel(to level: Double) {
+  fileprivate func setMaxLevel(to level: Double) {
     self._maxLevel = level
   }
   
-  private func rotateNeedle() {
+  fileprivate func rotateNeedle() {
     UIView.animate(withDuration: 0.5) {
       let angle = CGFloat(self._level) * CGFloat.pi / 180
       self.needleImg.transform = CGAffineTransform(rotationAngle: angle)

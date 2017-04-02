@@ -75,18 +75,18 @@ class DataManager {
     }
   }
   
-  func saveCustom(drink: CaffeineSource) {
+  func saveCustom(_ drink: CaffeineSource) {
     let entity = NSEntityDescription.insertNewObject(forEntityName: Constants.Entity.customDrinkEntity.name(), into: self.context) as! CustomDrink
     entity.sourceName = drink.sourceName
     entity.sourceDescription = drink.sourceDescription
     entity.imageName = CaffeineSourceType.custom.getAssociatedImageName()
     entity.mgCaffeinePerVolume = drink.mgCaffeinePerVolume
     entity.volume = drink.volume
-    entity.creation = Date() as NSDate?
+    entity.creation = Date()// as NSDate?
     self.save()
   }
   
-  func saveFavorite(drink: CaffeineSource?) {
+  func saveFavorite(_ drink: CaffeineSource?) {
     let defaults = UserDefaults.standard
     guard let source = drink else {
       defaults.removeObject(forKey: defaultKeys.favoriteDrinkType.rawValue)
@@ -101,7 +101,7 @@ class DataManager {
     defaults.set(source.volume, forKey: defaultKeys.favoriteDrinkVolume.rawValue)
   }
   
-  private func getLastDecay() -> Date? {
+  fileprivate func getLastDecay() -> Date? {
     let defaults = UserDefaults.standard
     if let lastOpen = defaults.object(forKey: defaultKeys.lastOpen.rawValue) {
       let formatter = DateFormatter()
@@ -111,19 +111,19 @@ class DataManager {
     return nil
   }
   
-  private func setLastDecay() {
+  fileprivate func setLastDecay() {
     let defaults = UserDefaults.standard
     let formatter = DateFormatter()
     formatter.dateFormat = Constants.Globals.dateFormat.value()
     defaults.set(formatter.string(from: Date()), forKey: defaultKeys.lastOpen.rawValue)
   }
   
-  func setDailyIntake(limit: Double) {
+  func setDailyIntake(_ limit: Double) {
     let defaults = UserDefaults.standard
     defaults.set(limit, forKey: defaultKeys.dailyIntakeLimit.rawValue)
   }
   
-  func setDefaultMeasurement(unit: UnitVolume) {
+  func setDefaultMeasurement(_ unit: UnitVolume) {
     let defaults = UserDefaults.standard
     defaults.set(unit.symbol, forKey: defaultKeys.defaultUnits.rawValue)
   }
@@ -147,7 +147,7 @@ class DataManager {
   func getDailyIntake() -> Double {
     let defaults = UserDefaults.standard
     if let intake = defaults.object(forKey: defaultKeys.dailyIntakeLimit.rawValue) as? Double {
-      return intake.roundTo(places: 0)
+      return intake.roundTo(0)
     } else {
       return 400
     }
@@ -190,7 +190,7 @@ class DataManager {
       return drinkDate == cal.date(bySetting: .hour, value: 0, of: Date())
     })
     return drinks?.reduce(0, { (results, drink) -> Double in
-      return (results + drink.totalCaffeineConsumed()).roundTo(places: 0)
+      return (results + drink.totalCaffeineConsumed()).roundTo(0)
     }) ?? 0
   }
   

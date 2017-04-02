@@ -25,7 +25,7 @@ enum CaffeineSourceType: String {
     }
   }
   
-  private func getSizeInOunces() -> [Double] {
+  fileprivate func getSizeInOunces() -> [Double] {
     switch self {
     case .dripCoffee:
       return [8, 12, 16, 20]
@@ -44,7 +44,7 @@ enum CaffeineSourceType: String {
     }
   }
   
-  private func getSizeInMilliliters() -> [Double] {
+  fileprivate func getSizeInMilliliters() -> [Double] {
     switch self {
     case .dripCoffee:
       return [240, 350, 470, 590]
@@ -120,7 +120,7 @@ enum CaffeineSourceType: String {
     }
   }
   
-  func getMgCaffeinePer(volumeUnit: UnitVolume) -> Double {
+  func getMgCaffeinePer(_ volumeUnit: UnitVolume) -> Double {
     if volumeUnit == .milliliters {
       return getMgCaffeinePerMl()
     } else {
@@ -128,7 +128,7 @@ enum CaffeineSourceType: String {
     }
   }
   
-  private func getMgCaffeinePerOunce() -> Double {
+  fileprivate func getMgCaffeinePerOunce() -> Double {
     switch self {
     case .dripCoffee:
       return 15.0
@@ -147,7 +147,7 @@ enum CaffeineSourceType: String {
     }
   }
   
-  private func getMgCaffeinePerMl() -> Double {
+  fileprivate func getMgCaffeinePerMl() -> Double {
     switch self {
     case .dripCoffee:
       return 0.51

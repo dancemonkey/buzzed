@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class CaffeineSourceCD: NSManagedObject {
+open class CaffeineSourceCD: NSManagedObject {
   
   func getBaseClass() -> CaffeineSource {
     
@@ -25,7 +25,7 @@ public class CaffeineSourceCD: NSManagedObject {
     get {
       let formatter = DateFormatter()
       formatter.dateFormat = "MM-dd-yyyy"
-      return formatter.string(from: self.creation as! Date)
+      return formatter.string(from: self.creation!)
     }
   }
   
@@ -34,7 +34,7 @@ public class CaffeineSourceCD: NSManagedObject {
   }
   
   func setValues(fromBase base: CaffeineSource) {
-    self.creation = base.creation as NSDate?
+    self.creation = base.creation as Date?
     self.sourceType = base.sourceType.rawValue
     self.sourceName = base.sourceName
     self.sourceDescription = base.sourceDescription
@@ -43,7 +43,7 @@ public class CaffeineSourceCD: NSManagedObject {
     self.imageName = base.associatedImageName
     self.percentageConsumed = base.percentageConsumed
     self.hkUUID = base.hkUUID
-    print("entity uuid set as \(self.hkUUID)")
+    print("entity uuid set as \(String(describing: self.hkUUID))")
   }
   
 }

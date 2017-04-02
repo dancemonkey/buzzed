@@ -42,7 +42,7 @@ class ConsumptionSetView: UIView, Hideable {
   
   func setLevel(to level: Double) {
     self.level = level
-    source?.consume(percentage: self.level)
+    source?.consume(self.level)
     setDrinkLevel()
   
   }
@@ -64,21 +64,21 @@ class ConsumptionSetView: UIView, Hideable {
     setDrinkLevel()
   }
   
-  private func setShadow() {
+  fileprivate func setShadow() {
     caffeineSourceImg.layer.shadowColor = (LargeDrink.Shadow.color.value() as! CGColor)
     caffeineSourceImg.layer.shadowRadius = LargeDrink.Shadow.radius.value() as! CGFloat
     caffeineSourceImg.layer.shadowOffset = LargeDrink.Shadow.offset.value() as! CGSize
     caffeineSourceImg.layer.shadowOpacity = LargeDrink.Shadow.opacity.value() as! Float
   }
   
-  private func addMask() {
+  fileprivate func addMask() {
     let drinkMask = UIImageView(image: UIImage(named: "DrinkMask"))
     drinkMask.contentMode = liquidImg.contentMode
     drinkMask.bounds = liquidImg.bounds
     liquidImg.mask = drinkMask
   }
   
-  private func setDrinkLevel() {
+  fileprivate func setDrinkLevel() {
 
     guard let mask = liquidImg.mask else {
       return
@@ -94,7 +94,7 @@ class ConsumptionSetView: UIView, Hideable {
     mask.frame = CGRect(x: 0, y: newY+offset, width: mask.bounds.width, height: mask.bounds.height)
   }
   
-  private func getLevel(fromTouchDiff touchDiff: CGFloat) -> CGFloat {
+  fileprivate func getLevel(fromTouchDiff touchDiff: CGFloat) -> CGFloat {
     return ((touchDiff / caffeineSourceImg.frame.height) * 100).clamped(to: 0...100)
   }
   

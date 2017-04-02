@@ -16,7 +16,7 @@ class NewDrinkBtn: UIButton, Hideable {
     setShadow()
   }
   
-  private func setShadow() {
+  fileprivate func setShadow() {
     layer.shadowColor = (LargeDrink.Shadow.color.value() as! CGColor)
     layer.shadowRadius = LargeDrink.Shadow.radius.value() as! CGFloat
     layer.shadowOffset = LargeDrink.Shadow.offset.value() as! CGSize

@@ -12,15 +12,15 @@ import CoreData
 
 extension CustomDrink {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CustomDrink> {
-        return NSFetchRequest<CustomDrink>(entityName: "CustomDrink");
+    @nonobjc open override class func fetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+        return NSFetchRequest<CustomDrink>(entityName: "CustomDrink") as! NSFetchRequest<NSFetchRequestResult>;
     }
 
     @NSManaged public var imageName: String?
     @NSManaged public var mgCaffeinePerVolume: Double
     @NSManaged public var sourceDescription: String?
     @NSManaged public var sourceName: String?
-    @NSManaged public var creation: NSDate?
+    @NSManaged public var creation: Date?
     @NSManaged public var volume: Double
 
 }

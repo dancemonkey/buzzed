@@ -12,11 +12,11 @@ import CoreData
 
 extension CaffeineSourceCD {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CaffeineSourceCD> {
-        return NSFetchRequest<CaffeineSourceCD>(entityName: "CaffeineSourceCD");
+    @nonobjc open override class func fetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+        return NSFetchRequest<CaffeineSourceCD>(entityName: "CaffeineSourceCD") as! NSFetchRequest<NSFetchRequestResult>;
     }
 
-    @NSManaged public var creation: NSDate?
+    @NSManaged public var creation: Date?
     @NSManaged public var imageName: String?
     @NSManaged public var mgCaffeinePerVolume: Double
     @NSManaged public var percentageConsumed: Double

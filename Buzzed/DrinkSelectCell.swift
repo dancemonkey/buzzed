@@ -1,3 +1,4 @@
+
 //
 //  DrinkSelectCell.swift
 //  Buzzed
@@ -29,7 +30,7 @@ class DrinkSelectCell: UITableViewCell {
     self.drinkImg.image = UIImage(named: "Blank Drink") //UIImage(named: source.getAssociatedImageName())
     self.drinkName.text = source.getName()
     let unit = DataManager().getDefaultUnits()
-    self.drinkInfo.text = "\(source.getMgCaffeinePer(volumeUnit: unit))mg per \(unit.symbol)"
+    self.drinkInfo.text = "\(source.getMgCaffeinePer(unit))mg per \(unit.symbol)"
     drinkName.textColor = UIColor.white
     drinkInfo.textColor = UIColor.white
   }

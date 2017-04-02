@@ -47,7 +47,7 @@ class SimpleLogger {
         let textRead = try String(contentsOf: path, encoding: String.Encoding.utf8)
         return textRead
       } catch {
-        print("couldn't read the file")
+        print("couldn't read the log file")
         return nil
       }
     } else {

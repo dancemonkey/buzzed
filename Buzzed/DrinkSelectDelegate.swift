@@ -11,7 +11,7 @@ import Foundation
 protocol DrinkSelectDelegate: class { }
 
 extension DrinkSelectDelegate where Self: CurrentDrinkVC {
-  func setSelected(drink: CaffeineSource) {
+  func setSelected(_ drink: CaffeineSource) {
     self.currentSource = drink
     self.mode = .drinking
     self.consumptionControls.setSource(to: drink)
@@ -20,9 +20,9 @@ extension DrinkSelectDelegate where Self: CurrentDrinkVC {
 }
 
 extension DrinkSelectDelegate where Self: SettingsTableVC {
-  func setFavorite(drink: CaffeineSource) {
+  func setFavorite(_ drink: CaffeineSource) {
     let dm = DataManager()
-    dm.saveFavorite(drink: drink)
+    dm.saveFavorite(drink)
     self.setupViews()
   }
 }

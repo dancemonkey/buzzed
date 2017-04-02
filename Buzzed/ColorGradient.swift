@@ -20,7 +20,7 @@ class ColorGradient {
     setGradient(withView: view)
   }
   
-  private func setGradient(withView view: UIView) {
+  fileprivate func setGradient(withView view: UIView) {
     gl = CAGradientLayer()
     gl.colors = [colorBottom, colorTop]
     gl.locations = [0.0, 1.0]
@@ -37,7 +37,7 @@ class ColorGradient {
     self.gl.locations![0] = NSNumber(value: value)
   }
   
-  func setColor(top: UIColor?, bottom: UIColor?) {
+  func setColor(_ top: UIColor?, bottom: UIColor?) {
     if let color = top {
       gl.colors![0] = color.cgColor
     }

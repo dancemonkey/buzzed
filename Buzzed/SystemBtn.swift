@@ -14,7 +14,7 @@ enum ButtonStyle: String {
 
 class SystemBtn: UIButton {
   
-  private var _style: ButtonStyle = .done
+  fileprivate var _style: ButtonStyle = .done
   
   @IBInspectable var style: String {
     get {
@@ -41,14 +41,14 @@ class SystemBtn: UIButton {
     setShadow()
   }
   
-  private func setShadow() {
+  fileprivate func setShadow() {
     self.layer.shadowColor = (Button.Shadow.color.value() as! CGColor)
     self.layer.shadowRadius = Button.Shadow.radius.value() as! CGFloat
     self.layer.shadowOffset = Button.Shadow.offset.value() as! CGSize
     self.layer.shadowOpacity = Button.Shadow.opacity.value() as! Float
   }
   
-  private func removeShadow() {
+  fileprivate func removeShadow() {
     self.layer.shadowOpacity = 0.0
   }
   

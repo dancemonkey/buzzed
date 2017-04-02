@@ -18,9 +18,9 @@ class CustomDrinkBuildVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     if let drinkToEdit = existingDrink {
-      // populate the container with this drink's data
-      customDrinkContainer.editExisting(drink: drinkToEdit)
+      customDrinkContainer.editExisting(drinkToEdit)
     }
+    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -28,11 +28,11 @@ class CustomDrinkBuildVC: UIViewController {
     topNav.configure(title: "Custom Drink")
   }
   
-  @IBAction func backPressed(sender: UIButton) {
+  @IBAction func backPressed(_ sender: UIButton) {
     _ = navigationController?.popViewController(animated: true)
   }
   
-  @IBAction func savePressed(sender: UIButton) {
+  @IBAction func savePressed(_ sender: UIButton) {
     let dm = DataManager()
     if customDrinkContainer.allEntriesValid() == true {
       if let drink = existingDrink {
@@ -46,7 +46,7 @@ class CustomDrinkBuildVC: UIViewController {
         }
       } else {
         let tempDrink = customDrinkContainer.getDrink()
-        dm.saveCustom(drink: tempDrink)
+        dm.saveCustom(tempDrink)
         if customDrinkContainer.isFavorite() {
           // save drink as favorite drink too
         }

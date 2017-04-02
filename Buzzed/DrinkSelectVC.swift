@@ -22,9 +22,9 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   let sections = ["Custom drinks", "Standard drinks"]
   var customDrinks: [CustomDrink]?
   
-  private lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
+  fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
     let dm = DataManager()
-    let fetchReq: NSFetchRequest<CustomDrink> = CustomDrink.fetchRequest()
+    let fetchReq: NSFetchRequest<CustomDrink> = CustomDrink.fetchRequest() as! NSFetchRequest<CustomDrink>
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
     let frc = NSFetchedResultsController<CustomDrink>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
     return frc
@@ -46,7 +46,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     tableView.reloadData()
   }
   
-  @IBAction func backPressed(sender: SystemBtn) {
+  @IBAction func backPressed(_ sender: SystemBtn) {
     _ = navigationController?.popViewController(animated: true)
   }
   
@@ -59,7 +59,7 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch section {
     case 0:
-      if fetchedResultsController.fetchedObjects != nil, fetchedResultsController.fetchedObjects!.count > 0 {
+      if fetchedResultsController.fetchedObjects != nil && fetchedResultsController.fetchedObjects!.count > 0 {
         return self.sections[section]
       } else {
         return nil
@@ -110,8 +110,8 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
       if let delegate = self.passThroughDelegate as? CurrentDrinkVC {
         let customDrink = fetchedResultsController.fetchedObjects![indexPath.row]
         let source = CaffeineSource(type: .custom, volume: customDrink.volume)
-        source.initFromCustom(drink: customDrink)
-        delegate.setSelected(drink: source)
+        source.initFromCustom(customDrink)
+        delegate.setSelected(source)
         _ = navigationController?.popToRootViewController(animated: true)
       }
     case 1:

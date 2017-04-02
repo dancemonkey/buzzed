@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class CustomDrink: NSManagedObject {
+open class CustomDrink: NSManagedObject {
 
 }

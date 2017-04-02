@@ -14,9 +14,9 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
   
-  private lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
+  fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
     let dm = DataManager()
-    let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest()
+    let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest() as! NSFetchRequest<CaffeineSourceCD>
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
     let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: #keyPath(CaffeineSourceCD.sectionNameFromDate), cacheName: nil)
     return frc
@@ -43,7 +43,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     _ = ColorGradient(withView: self.view)
   }
   
-  func configure(cell: HistoryDetailCell, at indexPath: IndexPath) {
+  func configure(_ cell: HistoryDetailCell, at indexPath: IndexPath) {
     let drink = fetchedResultsController.object(at: indexPath)
     cell.configCell(with: drink)
   }
@@ -78,7 +78,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       return HistoryCell()
     }
     
-    configure(cell: cell, at: indexPath)
+    configure(cell, at: indexPath)
     
     return cell
   }

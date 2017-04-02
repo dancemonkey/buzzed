@@ -14,7 +14,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
   @IBOutlet weak var dailyLimitFld: UITextField!
   @IBOutlet weak var defaultUnitsCtl: DefaultUnitControl!
   @IBOutlet weak var healthConnectImg: UIImageView!
-  
+
   var dm: DataManager!
   
   override func viewDidLoad() {
@@ -48,11 +48,9 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.item == 0 {
-      performSegue(withIdentifier: "drinkSelectVC", sender: self)
-    }
-    if indexPath.item == 2 {
-      performSegue(withIdentifier: "customDrinkList", sender: self)
+    print("table row selected")
+    if indexPath.item == 0 || indexPath.item == 2 {
+      performSegue(withIdentifier: tableView.cellForRow(at: indexPath)!.reuseIdentifier!, sender: self)
     }
   }
   

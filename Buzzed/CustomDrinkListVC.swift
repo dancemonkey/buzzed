@@ -16,9 +16,9 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   
   var customDrinks: [CustomDrink]?
   
-  private lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
+  fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
     let dm = DataManager()
-    let fetchReq: NSFetchRequest<CustomDrink> = CustomDrink.fetchRequest()
+    let fetchReq: NSFetchRequest<CustomDrink> = CustomDrink.fetchRequest() as! NSFetchRequest<CustomDrink>
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
     let frc = NSFetchedResultsController<CustomDrink>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: nil, cacheName: nil)
     return frc
@@ -45,11 +45,11 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
     // Dispose of any resources that can be recreated.
   }
   
-  @IBAction func backPressed(withSender: UIButton) {
+  @IBAction func backPressed(_ withSender: UIButton) {
     _ = navigationController?.popViewController(animated: true)
   }
   
-  func configure(cell: CustomDrinkCell, at indexPath: IndexPath) {
+  func configure(_ cell: CustomDrinkCell, at indexPath: IndexPath) {
     let drink = fetchedResultsController.object(at: indexPath)
     cell.config(withDrink: drink)
   }
@@ -80,7 +80,7 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
       break
     case .update:
       if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? CustomDrinkCell {
-        configure(cell: cell, at: indexPath)
+        configure(cell, at: indexPath)
       }
       break
     default:
@@ -103,7 +103,7 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
       return CustomDrinkCell()
     }
     
-    configure(cell: cell, at: indexPath)
+    configure(cell, at: indexPath)
     
     return cell
   }

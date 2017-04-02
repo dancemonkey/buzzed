@@ -32,7 +32,7 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     // Dispose of any resources that can be recreated.
   }
   
-  @IBAction func backPressed(sender: SystemBtn) {
+  @IBAction func backPressed(_ sender: SystemBtn) {
     _ = navigationController?.popViewController(animated: true)
   }
   
@@ -60,9 +60,9 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let source = CaffeineSource(type: drinkType!, volume: sizes[indexPath.row])
     if let delegate = self.delegate as? CurrentDrinkVC {
-      delegate.setSelected(drink: source)
+      delegate.setSelected(source)
     } else if let delegate = self.delegate as? SettingsTableVC {
-      delegate.setFavorite(drink: source)
+      delegate.setFavorite(source)
     }
     _ = navigationController?.popToRootViewController(animated: true)
   }

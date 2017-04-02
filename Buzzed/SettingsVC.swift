@@ -29,12 +29,12 @@ class SettingsVC: UIViewController {
     topNav.configure(title: "Settings")
   }
   
-  @IBAction func savePressed(sender: UIButton) {
+  @IBAction func savePressed(_ sender: UIButton) {
     let dm = DataManager()
     if settingsContainer.dailyLimitFld.numbersOnly() {
-      dm.setDailyIntake(limit: Double(settingsContainer.dailyLimitFld.text!)!)
+      dm.setDailyIntake(Double(settingsContainer.dailyLimitFld.text!)!)
       settingsContainer.dailyLimitFld.clearBorder()
-      dm.setDefaultMeasurement(unit: settingsContainer.defaultUnitsCtl.getDefaultUnit())
+      dm.setDefaultMeasurement(settingsContainer.defaultUnitsCtl.getDefaultUnit())
     } else {
       settingsContainer.dailyLimitFld.invalidEntryDisplay()
     }

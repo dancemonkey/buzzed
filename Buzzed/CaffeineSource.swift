@@ -13,59 +13,59 @@ class CaffeineSource {
   let ozToMl = 29.57
   let mlToOz = 1/29.57
   
-  private var _creation: Date
+  fileprivate var _creation: Date
   var creation: Date {
     return _creation
   }
   
-  private var _hkUUID: String?
+  fileprivate var _hkUUID: String?
   var hkUUID: String? {
     return _hkUUID
   }
   
-  private var _sourceType: CaffeineSourceType
+  fileprivate var _sourceType: CaffeineSourceType
   var sourceType: CaffeineSourceType {
     return _sourceType
   }
   
-  private var _volume: Double
+  fileprivate var _volume: Double
   var volume: Double {
     return _volume
   }
   
-  private var _baseUnit: UnitVolume = UnitVolume.fluidOunces
+  fileprivate var _baseUnit: UnitVolume = UnitVolume.fluidOunces
   var baseUnit: UnitVolume {
     return _baseUnit
   }
   
-  private var _mgCaffeinePerVolume: Double = 0.0
+  fileprivate var _mgCaffeinePerVolume: Double = 0.0
   var mgCaffeinePerVolume: Double {
     return _mgCaffeinePerVolume
   }
   
-  private var _totalCaffeineContent: Double {
-    return (_mgCaffeinePerVolume * _volume).roundTo(places: 2)
+  fileprivate var _totalCaffeineContent: Double {
+    return (_mgCaffeinePerVolume * _volume).roundTo(2)
   }
   var totalCaffeineContent: Double {
     return _totalCaffeineContent
   }
   
-  private var _sourceName: String
+  fileprivate var _sourceName: String
   var sourceName: String {
     return _sourceName
   }
   
-  private var _sourceDescription: String
+  fileprivate var _sourceDescription: String
   var sourceDescription: String {
     return _sourceDescription
   }
   
-  private var _percentageConsumed: Double = 0.0
+  fileprivate var _percentageConsumed: Double = 0.0
   var percentageConsumed: Double {
     return _percentageConsumed
   }
   
-  private var _associatedImageName: String?
+  fileprivate var _associatedImageName: String?
   var associatedImageName: String? {
     return _associatedImageName
   }
@@ -77,10 +77,10 @@ class CaffeineSource {
     self._volume = volume
     self._sourceName = _sourceType.getName()
     self._sourceDescription = _sourceType.getDescription()
-    self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(volumeUnit: _baseUnit)
+    self._mgCaffeinePerVolume = _sourceType.getMgCaffeinePer(_baseUnit)
     self._associatedImageName = _sourceType.getAssociatedImageName()
     self._creation = Date()
-    consume(percentage: _percentageConsumed)
+    consume(_percentageConsumed)
   }
   
   func initSource(fromEntity entity: CaffeineSourceCD) -> CaffeineSource {
@@ -97,7 +97,7 @@ class CaffeineSource {
     return self 
   }
   
-  func initFromCustom(drink: CustomDrink) {
+  func initFromCustom(_ drink: CustomDrink) {
     self._mgCaffeinePerVolume = drink.mgCaffeinePerVolume
     self._sourceName = drink.sourceName!
     self._sourceDescription = drink.sourceDescription!
@@ -134,22 +134,22 @@ class CaffeineSource {
     self._sourceDescription = description
   }
   
-  private func convertVolume(to unit: UnitVolume) {
+  fileprivate func convertVolume(to unit: UnitVolume) {
     let measurement = Measurement(value: _volume, unit: _baseUnit)
     if unit == .milliliters {
-      _volume = measurement.converted(to: .milliliters).value.roundTo(places: 2)
+      _volume = measurement.converted(to: .milliliters).value.roundTo(2)
     } else {
-      _volume = measurement.converted(to: .fluidOunces).value.roundTo(places: 2)
+      _volume = measurement.converted(to: .fluidOunces).value.roundTo(2)
     }
-    setCaffeinePerVolume(inMg: _sourceType.getMgCaffeinePer(volumeUnit: unit))
+    setCaffeinePerVolume(inMg: _sourceType.getMgCaffeinePer(unit))
   }
   
-  func consume(percentage: Double) {
+  func consume(_ percentage: Double) {
     _percentageConsumed = percentage / 100
   }
   
   func totalCaffeineConsumed() -> Double {
-    return (totalCaffeineContent * percentageConsumed).roundTo(places: 2)
+    return (totalCaffeineContent * percentageConsumed).roundTo(2)
   }
   
   func setUUID(to uuid: String) {

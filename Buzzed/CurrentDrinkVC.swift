@@ -58,7 +58,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     initialSetup()
   }
   
-  @IBAction func tempDeleteAllDataPressed(sender: UIButton) {
+  @IBAction func tempDeleteAllDataPressed(_ sender: UIButton) {
     let dm = DataManager()
     _ = dm.clearAllHistory()
     dm.clearUserDefaults()
@@ -69,11 +69,11 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     topNav.configure(title: "")
   }
   
-  @IBAction func newDrinkPressed(sender: NewDrinkBtn) {
+  @IBAction func newDrinkPressed(_ sender: NewDrinkBtn) {
     presentNewDrinkOptions()
   }
   
-  private func presentNewDrinkOptions() {
+  fileprivate func presentNewDrinkOptions() {
     
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     let dm = DataManager()
@@ -94,7 +94,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     present(alert, animated: true, completion: nil)
   }
   
-  private func getLastDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
+  fileprivate func getLastDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
     guard drink != nil else {
       return UIAlertAction(title: "No recent drinks", style: .default, handler: nil)
     }
@@ -102,22 +102,22 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     let title = "Recent: \(drink!.sourceName) - \(drink!.volume) \(dm.getDefaultUnits().symbol)"
     return UIAlertAction(title: title, style: .default, handler: { (action) in
       let source = CaffeineSource(type: drink!.sourceType, volume: drink!.volume)
-      self.setSelected(drink: source)
+      self.setSelected(source)
     })
   }
   
-  private func getFavoriteDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
+  fileprivate func getFavoriteDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
     guard drink != nil else {
       return UIAlertAction(title: "No favorite drinks", style: .default, handler: nil)
     }
     let dm = DataManager()
     return UIAlertAction(title: "Favorite: \(drink!.sourceName) - \(drink!.volume) \(dm.getDefaultUnits().symbol)", style: .default, handler: { (action) in
       let source = CaffeineSource(type: drink!.sourceType, volume: drink!.volume)
-      self.setSelected(drink: source)
+      self.setSelected(source)
     })
   }
   
-  @IBAction func donePressed(sender: SystemBtn) {
+  @IBAction func donePressed(_ sender: SystemBtn) {
     // TODO: dismiss consumed drink differently than canceled drink
     
     if let drink = consumptionControls.source {
@@ -139,7 +139,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     tempTestLogField.text = sl.readLog()
   }
   
-  @IBAction func cancelPressed(sender: SystemBtn) {
+  @IBAction func cancelPressed(_ sender: SystemBtn) {
     mode = .notDrinking
   }
   

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Buzzed
+//@testable import Buzzed
 
 class BuzzedTests: XCTestCase {
   
@@ -39,13 +39,13 @@ class BuzzedTests: XCTestCase {
     XCTAssert(source.mgCaffeinePerVolume == 0.51)
     XCTAssert(source.totalCaffeineContent == 241.32)
     
-    source.consume(percentage: 50.0)
+    source.consume(50.0)
     XCTAssert(source.totalCaffeineConsumed() == 241.32/2)
     
-    source.consume(percentage: 25.0)
+    source.consume(25.0)
     XCTAssert(source.totalCaffeineConsumed() == 241.32/4)
     
-    source.consume(percentage: 100.0)
+    source.consume(100.0)
     XCTAssert(source.totalCaffeineConsumed() == 241.32)
     
     source.toggleMetricOrCustomary()

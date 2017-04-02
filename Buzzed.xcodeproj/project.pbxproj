@@ -372,6 +372,7 @@
 					10011AC61E592A460096F426 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = TFEDY5M56J;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -382,6 +383,7 @@
 					10011ADD1E592A460096F426 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = TFEDY5M56J;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 10011AC61E592A460096F426;
 					};
@@ -673,6 +675,7 @@
 				CODE_SIGN_ENTITLEMENTS = Buzzed/Buzzed.entitlements;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				INFOPLIST_FILE = Buzzed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.drewlanning.Buzzed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -687,6 +690,7 @@
 				CODE_SIGN_ENTITLEMENTS = Buzzed/Buzzed.entitlements;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				INFOPLIST_FILE = Buzzed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.drewlanning.Buzzed;
 				PRODUCT_NAME = "$(TARGET_NAME)";

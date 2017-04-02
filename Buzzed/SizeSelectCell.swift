@@ -17,7 +17,7 @@ class SizeSelectCell: UITableViewCell {
   func configure(withType type: CaffeineSourceType, andSize volume: Double) {
     let dm = DataManager()
     drinkImg.image = UIImage(named: "Blank Drink") //type.getAssociatedImageName())
-    let caff = type.getMgCaffeinePer(volumeUnit: dm.getDefaultUnits()) * volume
+    let caff = type.getMgCaffeinePer(dm.getDefaultUnits()) * volume
     totalCaff.text = "\(caff)mg total caffeine"
     sizeName.text = "\(volume) \(dm.getDefaultUnits().symbol)"
     

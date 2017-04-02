@@ -21,7 +21,7 @@ class HealthManager {
     }
   }
   
-  func authorizeHealthkit(completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
+  func authorizeHealthkit(_ completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
     let healthKitTypesToWrite: Set<HKSampleType> = [
       HKObjectType.quantityType(forIdentifier: .dietaryCaffeine)!
     ]
@@ -82,7 +82,7 @@ class HealthManager {
           print("Error saving sample")
         } else {
           drink.setUUID(to: sample.uuid.uuidString)
-          print("Caffeine sample saved with uuid \(drink.hkUUID)")
+          print("Caffeine sample saved with uuid \(String(describing: drink.hkUUID))")
         }
       })
     } else {
