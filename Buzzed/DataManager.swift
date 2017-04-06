@@ -234,6 +234,7 @@ class DataManager {
       if totalDecay >= getCurrentCaff() {
         setCurrentCaff(to: 0.0)
         UserDefaults.standard.removeObject(forKey: defaultKeys.lastOpen.rawValue)
+        sl.clearLog()
       } else {
         setCurrentCaff(to: getCurrentCaff() - totalDecay)
         setLastDecay()

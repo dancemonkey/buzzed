@@ -13,11 +13,12 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
+  @IBOutlet weak var emptyHistoryLbl: UILabel!
   
   fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
     let dm = DataManager()
     let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest() as! NSFetchRequest<CaffeineSourceCD>
-    fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: true)]
+    fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: false)]
     let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: #keyPath(CaffeineSourceCD.sectionNameFromDate), cacheName: nil)
     return frc
   }()
@@ -51,10 +52,15 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   // MARK: Tableview methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    guard let sections = fetchedResultsController.sections else {
+    guard let count = fetchedResultsController.sections?.count else {
       return 0
     }
-    return sections.count
+    if count == 0 {
+      emptyHistoryLbl.isHidden = false
+    } else {
+      emptyHistoryLbl.isHidden = true
+    }
+    return count
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,7 +97,9 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       let hm = HealthManager()
       hm.deleteSample(withUUID: uuidToDelete)
       dm.context.delete(record)
-      dm.reduceCaffeineBy(caffReduction: record.totalMgConsumed())
+      if Calendar.current.isDateInToday(record.creation!) {
+        dm.reduceCaffeineBy(caffReduction: record.totalMgConsumed())
+      }
       dm.save()
     }
   }
@@ -134,7 +142,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   // MARK: - Navigation
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+    
   }
   
 }

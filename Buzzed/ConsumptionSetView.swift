@@ -15,9 +15,6 @@ class ConsumptionSetView: UIView, Hideable {
   @IBOutlet weak var liquidImg: UIImageView!
   @IBOutlet weak var view: UIView!
   
-  // TESTING: Label for testing
-  @IBOutlet weak var caffeineConsumptionLbl: UILabel!
-  
   var source: CaffeineSource?
   var level: Double!
   var settingLevel: Bool = false

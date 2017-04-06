@@ -13,6 +13,7 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
+  @IBOutlet weak var createCustomBtn: SystemBtn!
   
   var customDrinks: [CustomDrink]?
   
@@ -47,6 +48,10 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   
   @IBAction func backPressed(_ withSender: UIButton) {
     _ = navigationController?.popViewController(animated: true)
+  }
+  
+  @IBAction func createDrinkPressed(sender: UIButton) {
+    performSegue(withIdentifier: "editCustomDrink", sender: nil)
   }
   
   func configure(_ cell: CustomDrinkCell, at indexPath: IndexPath) {
@@ -91,11 +96,20 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   // MARK: TableView methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
+    if (fetchedResultsController.fetchedObjects?.isEmpty)! {
+      createCustomBtn.isHidden = false
+    } else {
+      createCustomBtn.isHidden = true
+    }
     return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return fetchedResultsController.fetchedObjects?.count ?? 0
+    if let count = fetchedResultsController.fetchedObjects?.count {
+      return count
+    } else {
+      return 0
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

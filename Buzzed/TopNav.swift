@@ -31,16 +31,6 @@ class TopNav: UIView {
     NotificationCenter.default.addObserver(self, selector: #selector(self.setLabel), name: NSNotification.Name(rawValue: Constants.notificationKeys.dailyIntake.rawValue), object: nil)
   }
   
-//  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//    if keyPath == "data.currentCaff" {
-//      setMeter()
-//    }
-//    if keyPath == "data.dailyIntake" {
-//      print("setting labels from NC call")
-//      setLabels()
-//    }
-//  }
-  
   func configure(title: String) {
     
     if let currentTitle = self.title {

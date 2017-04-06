@@ -1007,13 +1007,21 @@
                                     <outlet property="delegate" destination="uMo-gx-0j9" id="6Xn-18-kMI"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No history here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xf-Ah-VRS">
+                                <rect key="frame" x="121.5" y="296.5" width="132.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rie-h0-QjZ" firstAttribute="leading" secondItem="vPE-53-5IL" secondAttribute="leading" id="2UD-DM-5c6"/>
                             <constraint firstItem="Rie-h0-QjZ" firstAttribute="top" secondItem="vPE-53-5IL" secondAttribute="top" id="3hk-vU-sEc"/>
                             <constraint firstAttribute="trailing" secondItem="cBz-7X-Yoe" secondAttribute="trailing" constant="8" id="7We-9x-YuP"/>
+                            <constraint firstItem="7Xf-Ah-VRS" firstAttribute="centerX" secondItem="vPE-53-5IL" secondAttribute="centerX" id="Edd-BX-qbb"/>
                             <constraint firstItem="cBz-7X-Yoe" firstAttribute="top" secondItem="Rie-h0-QjZ" secondAttribute="bottom" id="PZp-tO-DQB"/>
+                            <constraint firstItem="7Xf-Ah-VRS" firstAttribute="centerY" secondItem="vPE-53-5IL" secondAttribute="centerY" id="mZa-lm-yP6"/>
                             <constraint firstAttribute="trailing" secondItem="Rie-h0-QjZ" secondAttribute="trailing" id="n0Z-Vu-MqB"/>
                             <constraint firstItem="cBz-7X-Yoe" firstAttribute="leading" secondItem="vPE-53-5IL" secondAttribute="leading" constant="8" id="vtP-vp-TDE"/>
                             <constraint firstItem="s05-36-hmQ" firstAttribute="top" secondItem="cBz-7X-Yoe" secondAttribute="bottom" constant="8" id="yCG-zo-UQf"/>
@@ -1021,6 +1029,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nfj-BZ-XV8"/>
                     <connections>
+                        <outlet property="emptyHistoryLbl" destination="7Xf-Ah-VRS" id="a9m-9T-Bha"/>
                         <outlet property="tableView" destination="cBz-7X-Yoe" id="nuV-cq-Hcj"/>
                         <outlet property="topNav" destination="Rie-h0-QjZ" id="f1O-e2-Hdi"/>
                     </connections>
@@ -1620,19 +1629,36 @@
                                     <outlet property="delegate" destination="fkm-zF-2wC" id="9BF-W8-z9s"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0J-fh-HE8" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
+                                <rect key="frame" x="8" y="370" width="343" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="PCd-wT-6Ys"/>
+                                </constraints>
+                                <state key="normal" title="Empty, create your own drink..."/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="info"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createDrinkPressedWithSender:" destination="fkm-zF-2wC" eventType="touchUpInside" id="84w-1n-pSD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="0.2274509804" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5tk-Pk-kub" secondAttribute="trailing" id="5l8-LQ-Nbm"/>
                             <constraint firstAttribute="trailing" secondItem="uxd-NX-ZHu" secondAttribute="trailing" constant="8" id="Hhc-i4-PKG"/>
+                            <constraint firstItem="SHb-k1-2iB" firstAttribute="top" secondItem="e0J-fh-HE8" secondAttribute="bottom" constant="16" id="IBE-kp-SFn"/>
                             <constraint firstItem="uxd-NX-ZHu" firstAttribute="top" secondItem="5tk-Pk-kub" secondAttribute="bottom" id="W4Y-uE-boj"/>
                             <constraint firstItem="5tk-Pk-kub" firstAttribute="top" secondItem="SDU-Gd-mV6" secondAttribute="top" id="Y9V-Gt-YR5"/>
+                            <constraint firstAttribute="trailing" secondItem="e0J-fh-HE8" secondAttribute="trailing" constant="8" id="dhL-Dw-9lm"/>
                             <constraint firstItem="5tk-Pk-kub" firstAttribute="leading" secondItem="SDU-Gd-mV6" secondAttribute="leading" id="ekc-Jm-hoW"/>
                             <constraint firstItem="uxd-NX-ZHu" firstAttribute="leading" secondItem="SDU-Gd-mV6" secondAttribute="leading" constant="8" id="gdi-VZ-xiu"/>
+                            <constraint firstItem="e0J-fh-HE8" firstAttribute="leading" secondItem="SDU-Gd-mV6" secondAttribute="leading" constant="8" id="mBe-rp-hHX"/>
                             <constraint firstItem="SHb-k1-2iB" firstAttribute="top" secondItem="uxd-NX-ZHu" secondAttribute="bottom" constant="8" id="ydK-VB-87R"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createCustomBtn" destination="e0J-fh-HE8" id="CsU-fP-cO7"/>
                         <outlet property="tableView" destination="uxd-NX-ZHu" id="gNr-jY-GdF"/>
                         <outlet property="topNav" destination="5tk-Pk-kub" id="Eaz-jn-i26"/>
                         <segue destination="6sZ-aq-sZx" kind="show" identifier="editCustomDrink" id="9yi-gA-VMY"/>
@@ -1648,8 +1674,8 @@
         <image name="Check" width="32" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9yi-gA-VMY"/>
         <segue reference="mKY-A8-FKV"/>
-        <segue reference="IpU-UW-BuW"/>
         <segue reference="N2h-zR-7H3"/>
     </inferredMetricsTieBreakers>
 </document>
