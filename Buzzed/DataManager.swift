@@ -182,6 +182,11 @@ class DataManager {
   }
   
   func setCurrentCaff(to level: Double) {
+    
+    if getCurrentCaff() <= 0 {
+      UserDefaults.standard.removeObject(forKey: defaultKeys.lastOpen.rawValue)
+    }
+    
     let defaults = UserDefaults.standard
     defaults.set(level, forKey: defaultKeys.currentCaffLevel.rawValue)
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.notificationKeys.decay.rawValue), object: self.currentCaff)
@@ -225,8 +230,14 @@ class DataManager {
     
     if minutesToLastDecay > 15 {
       let totalDecay = Double(minutesToLastDecay) * decayPerMin
-      totalDecay >= getCurrentCaff() ? setCurrentCaff(to: 0.0) : setCurrentCaff(to: getCurrentCaff() - totalDecay)
-      setLastDecay()
+//      totalDecay >= getCurrentCaff() ? setCurrentCaff(to: 0.0) : setCurrentCaff(to: getCurrentCaff() - totalDecay)
+      if totalDecay >= getCurrentCaff() {
+        setCurrentCaff(to: 0.0)
+        UserDefaults.standard.removeObject(forKey: defaultKeys.lastOpen.rawValue)
+      } else {
+        setCurrentCaff(to: getCurrentCaff() - totalDecay)
+        setLastDecay()
+      }
       
       sl.log(data: "totalDecay: \(Double(minutesToLastDecay) * decayPerMin)\n")
       sl.log(data: "ending caff: \(getCurrentCaff())\n\n\n")
