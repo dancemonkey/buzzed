@@ -67,6 +67,8 @@ class DataManager {
   }
   
   func clearAllHistory() -> Bool {
+    let sl = SimpleLogger()
+    sl.clearLog()
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
     let request = NSBatchDeleteRequest(fetchRequest: fetch)
     do {
@@ -230,7 +232,6 @@ class DataManager {
     
     if minutesToLastDecay > 15 {
       let totalDecay = Double(minutesToLastDecay) * decayPerMin
-//      totalDecay >= getCurrentCaff() ? setCurrentCaff(to: 0.0) : setCurrentCaff(to: getCurrentCaff() - totalDecay)
       if totalDecay >= getCurrentCaff() {
         setCurrentCaff(to: 0.0)
         UserDefaults.standard.removeObject(forKey: defaultKeys.lastOpen.rawValue)

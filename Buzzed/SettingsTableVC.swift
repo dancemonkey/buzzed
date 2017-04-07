@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
+class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDelegate {
   
   @IBOutlet weak var defaultDrinkLbl: UILabel!
   @IBOutlet weak var dailyLimitFld: UITextField!
@@ -16,11 +16,11 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
   @IBOutlet weak var healthConnectImg: UIImageView!
 
   var dm: DataManager!
+  var tapper: UITapGestureRecognizer!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViews()
-    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
   }
   
   func setupViews() {
@@ -35,6 +35,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
     default:
       defaultUnitsCtl.selectedSegmentIndex = 0
     }
+    dailyLimitFld.delegate = self
   }
   
   // MARK: - Table view data source
@@ -61,6 +62,21 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate {
     if let dest = segue.destination as? DrinkSelectVC {
       dest.passThroughDelegate = self
     }
+  }
+  
+  // MARK: - TextFieldDelegate methods
+  
+  func didTapView() {
+    self.view.endEditing(true)
+  }
+  
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    tapper = UITapGestureRecognizer(target: self, action: #selector(SettingsTableVC.didTapView))
+    self.view.addGestureRecognizer(tapper)
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    self.view.removeGestureRecognizer(tapper)
   }
   
 }
