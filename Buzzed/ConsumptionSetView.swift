@@ -96,7 +96,6 @@ class ConsumptionSetView: UIView, Hideable {
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    print("touching draggable cup")
     settingLevel = true
     let diff = caffeineSourceImg.frame.height - touches.first!.location(in: self).y
     setLevel(to: Double(getLevel(fromTouchDiff: diff)))
