@@ -14,6 +14,7 @@ class ConsumptionSetView: UIView, Hideable {
   @IBOutlet weak var caffeineSourceImg: UIImageView!
   @IBOutlet weak var liquidImg: UIImageView!
   @IBOutlet weak var view: UIView!
+  @IBOutlet weak var percentConsumed: UILabel!
   
   var source: CaffeineSource?
   var level: Double!
@@ -28,20 +29,14 @@ class ConsumptionSetView: UIView, Hideable {
     view = Bundle.main.loadNibNamed("ConsumptionSetView", owner: self, options: nil)?[0] as! UIView
     self.addSubview(view)
     view.frame = self.bounds
-    
-    // for testing, source will most likely be set from parent or segue
-//    guard self.source != nil else {
-//      setSource(to: testSource)
-//      return
-//    }
-    // end testing
+  
   }
   
   func setLevel(to level: Double) {
     self.level = level
     source?.consume(self.level)
     setDrinkLevel()
-  
+    percentConsumed.text = "\(Int((source!.percentageConsumed * 100).roundTo(0)))%"
   }
   
   func setSource(to source: CaffeineSource) {

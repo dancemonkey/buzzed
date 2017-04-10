@@ -76,7 +76,14 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
       fatalError("Unexpected Section")
     }
     
-    return sectionInfo.name
+    let totalCaffForSection = fetchedResultsController.fetchedObjects?.reduce(0, { (result, source) -> Double in
+      if source.sectionNameFromDate == sectionInfo.name {
+        return result + source.totalMgConsumed()
+      }
+      return result
+    }).roundTo(2)
+    
+    return sectionInfo.name + " - \(totalCaffForSection!)mg"
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -19,7 +19,11 @@ class SizeSelectCell: UITableViewCell {
     drinkImg.image = UIImage(named: "Blank Drink") //type.getAssociatedImageName())
     let caff = type.getMgCaffeinePer(dm.getDefaultUnits()) * volume
     totalCaff.text = "\(caff)mg total caffeine"
-    sizeName.text = "\(volume) \(dm.getDefaultUnits().symbol)"
+    if type == .espresso {
+      volume == 1.0 ? (sizeName.text = "Single shot") : (sizeName.text = "Double shot")
+    } else {
+      sizeName.text = "\(volume) \(dm.getDefaultUnits().symbol)"
+    }
     
     sizeName.textColor = UIColor.white
     totalCaff.textColor = UIColor.white

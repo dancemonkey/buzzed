@@ -47,7 +47,7 @@ open class CaffeineSourceCD: NSManagedObject {
   }
   
   func totalMgConsumed() -> Double {
-    return (mgCaffeinePerVolume * volume) * percentageConsumed
+    return ((mgCaffeinePerVolume * volume) * percentageConsumed).roundTo(2)
   }
   
 }

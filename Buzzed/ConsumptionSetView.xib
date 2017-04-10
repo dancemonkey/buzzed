@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="caffeineSourceImg" destination="1xT-1I-y1N" id="Z1J-fE-Ag5"/>
                 <outlet property="liquidImg" destination="7Vf-Di-pDl" id="jQG-n9-CjX"/>
+                <outlet property="percentConsumed" destination="8hX-rA-6Eb" id="jrB-pL-uDQ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vHW-7L-7tJ"/>
             </connections>
         </placeholder>
@@ -33,15 +34,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="176" height="240"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%%%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-rA-6Eb">
+                    <rect key="frame" x="8" y="219" width="160" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="8hX-rA-6Eb" secondAttribute="trailing" constant="8" id="8sb-5O-u1I"/>
                 <constraint firstAttribute="trailing" secondItem="7Vf-Di-pDl" secondAttribute="trailing" id="BIB-8q-ZG6"/>
                 <constraint firstItem="7Vf-Di-pDl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fsr-Kc-ZKx"/>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hy4-WV-7En"/>
                 <constraint firstAttribute="bottom" secondItem="7Vf-Di-pDl" secondAttribute="bottom" id="NwJ-z8-b0y"/>
                 <constraint firstItem="1xT-1I-y1N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PlL-8w-IIU"/>
                 <constraint firstItem="7Vf-Di-pDl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QKo-u4-7mz"/>
+                <constraint firstItem="8hX-rA-6Eb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Vld-XJ-oPp"/>
+                <constraint firstAttribute="bottom" secondItem="8hX-rA-6Eb" secondAttribute="bottom" id="YFD-Wp-XeJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
