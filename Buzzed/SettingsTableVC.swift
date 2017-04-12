@@ -13,7 +13,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
   @IBOutlet weak var defaultDrinkLbl: UILabel!
   @IBOutlet weak var dailyLimitFld: UITextField!
   @IBOutlet weak var defaultUnitsCtl: DefaultUnitControl!
-  @IBOutlet weak var healthConnectImg: UIImageView!
+  @IBOutlet weak var healthConnectLbl: UILabel!
 
   var dm: DataManager!
   var tapper: UITapGestureRecognizer!
@@ -21,6 +21,18 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViews()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    let hm = HealthManager()
+    healthConnectLbl.isEnabled = hm.isAuthorized()
+    if healthConnectLbl.isEnabled == false {
+      healthConnectLbl.text = "Not connected to Health"
+    } else {
+      healthConnectLbl.textColor = .white
+      healthConnectLbl.text = "Connected to Health"
+    }
   }
   
   func setupViews() {
@@ -49,7 +61,6 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print("table row selected")
     if indexPath.item == 0 || indexPath.item == 2 {
       performSegue(withIdentifier: tableView.cellForRow(at: indexPath)!.reuseIdentifier!, sender: self)
     }

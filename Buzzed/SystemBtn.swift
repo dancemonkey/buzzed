@@ -9,7 +9,7 @@
 import UIKit
 
 enum ButtonStyle: String {
-  case done, cancel, info
+  case done, cancel, info, disabled
 }
 
 class SystemBtn: UIButton {
@@ -26,7 +26,13 @@ class SystemBtn: UIButton {
   }
   
   override func awakeFromNib() {
-    switch _style {
+    setShadow()
+    self.setTitleColor(.white, for: .normal)
+    setStyle(to: _style)
+  }
+  
+  func setStyle(to style: ButtonStyle) {
+    switch style {
     case .done:
       titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
       backgroundColor = Constants.Color.doneBtn.bground()
@@ -36,9 +42,12 @@ class SystemBtn: UIButton {
     case .info:
       titleLabel?.font = UIFont.italicSystemFont(ofSize: 18)
       backgroundColor = Constants.Color.infoBtn.bground()
+    case .disabled:
+      titleLabel?.font = UIFont.italicSystemFont(ofSize: 18)
+      backgroundColor = UIColor.gray
+      removeShadow()
     }
-    self.setTitleColor(.white, for: .normal)
-    setShadow()
+    self._style = style
   }
   
   fileprivate func setShadow() {

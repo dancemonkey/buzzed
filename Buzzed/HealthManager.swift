@@ -36,6 +36,15 @@ class HealthManager {
     healthStore?.requestAuthorization(toShare: healthKitTypesToWrite, read: nil, completion: completion)
   }
   
+  func isAuthorized() -> Bool {
+    guard let hs = healthStore else {
+      print("no healthkit on this device son")
+      return false
+    }
+    
+    return hs.authorizationStatus(for: HKSampleType.quantityType(forIdentifier: .dietaryCaffeine)!) == .sharingAuthorized
+  }
+  
   func deleteSample(withUUID uuidToFind: String?) {
     guard let hs = healthStore else {
       print("no healthkit on this device son")
