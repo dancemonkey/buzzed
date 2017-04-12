@@ -33,18 +33,18 @@ class Meter: UIView {
   var level: Double {
     return _level
   }
-  fileprivate let _minLevel: Double = -90.0
+  fileprivate let _minLevel: Double = 0//-90.0
   var minLevel: Double {
     return _minLevel
   }
-  fileprivate var _maxLevel: Double = 90.0
+  fileprivate var _maxLevel: Double = 180.0
   var maxLevel: Double {
     return _maxLevel
   }
   fileprivate var _maxIntake: Double = 300.0
   
   func setLevel(to level: Double) {
-    let levelMod = level / (self._maxIntake / 180)// - 90
+    let levelMod = level / (self._maxIntake / 180)
     self._level = (levelMod <= maxLevel ? levelMod : _maxLevel)
     rotateNeedle()
   }
