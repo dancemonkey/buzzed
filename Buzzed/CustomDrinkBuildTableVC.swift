@@ -14,7 +14,6 @@ class CustomDrinkBuildTableVC: UITableViewController {
   @IBOutlet weak var drinkDesc: UITextView!
   @IBOutlet weak var drinkSize: UITextField!
   @IBOutlet weak var drinkCaffPer: UITextField!
-  @IBOutlet weak var setFavorite: UISwitch!
   @IBOutlet weak var sizeInLbl: UILabel!
   @IBOutlet weak var mgCaffPerLbl: UILabel!
   
@@ -41,10 +40,6 @@ class CustomDrinkBuildTableVC: UITableViewController {
     return validName && validDesc && validSize && validCaff
   }
   
-  func isFavorite() -> Bool {
-    return setFavorite.isOn
-  }
-  
   func getDrink() -> CaffeineSource {
     var drink: CaffeineSource
     drink = CaffeineSource(type: .custom, volume: Double(drinkSize.text!)!)
@@ -68,7 +63,7 @@ class CustomDrinkBuildTableVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 4
   }
   
 }

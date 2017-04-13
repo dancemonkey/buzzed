@@ -114,6 +114,12 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         source.initFromCustom(customDrink)
         delegate.setSelected(source)
         _ = navigationController?.popToRootViewController(animated: true)
+      } else if let delegate = self.passThroughDelegate as? SettingsTableVC {
+        let customDrink = fetchedResultsController.fetchedObjects![indexPath.row]
+        let source = CaffeineSource(type: .custom, volume: customDrink.volume)
+        source.initFromCustom(customDrink)
+        delegate.setFavorite(source)
+        _ = navigationController?.popToRootViewController(animated: true)
       }
     case 1:
       performSegue(withIdentifier: "sizeSelect", sender: indexPath)

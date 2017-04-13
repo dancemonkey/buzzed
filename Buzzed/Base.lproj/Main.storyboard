@@ -1319,33 +1319,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="V6g-Tr-6ZZ">
-                                        <rect key="frame" x="0.0" y="256" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V6g-Tr-6ZZ" id="hYw-8E-4bb">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make favorite?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCt-29-anq">
-                                                    <rect key="frame" x="8" y="15" width="118" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yHF-vx-i7A">
-                                                    <rect key="frame" x="278" y="10.5" width="51" height="31"/>
-                                                    <color key="onTintColor" red="0.16470588235294117" green="0.47843137254901957" blue="0.54509803921568623" alpha="1" colorSpace="deviceRGB"/>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="yHF-vx-i7A" firstAttribute="centerY" secondItem="hYw-8E-4bb" secondAttribute="centerY" id="P2Z-f5-4YO"/>
-                                                <constraint firstItem="BCt-29-anq" firstAttribute="leading" secondItem="hYw-8E-4bb" secondAttribute="leading" constant="8" id="YxX-Xm-ffU"/>
-                                                <constraint firstItem="BCt-29-anq" firstAttribute="centerY" secondItem="hYw-8E-4bb" secondAttribute="centerY" id="Zht-7a-tAv"/>
-                                                <constraint firstAttribute="trailing" secondItem="yHF-vx-i7A" secondAttribute="trailing" constant="16" id="v4d-Op-Cch"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1360,7 +1333,6 @@
                         <outlet property="drinkName" destination="qbn-U5-REt" id="pjm-7q-g5T"/>
                         <outlet property="drinkSize" destination="QWP-jY-PiZ" id="MSr-Jf-ErN"/>
                         <outlet property="mgCaffPerLbl" destination="FNa-WR-udh" id="i3p-F4-Fl6"/>
-                        <outlet property="setFavorite" destination="yHF-vx-i7A" id="Bxr-3T-OE4"/>
                         <outlet property="sizeInLbl" destination="nHb-rl-Rct" id="taj-G2-jBl"/>
                     </connections>
                 </tableViewController>

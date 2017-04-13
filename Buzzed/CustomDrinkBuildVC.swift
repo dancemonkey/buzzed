@@ -41,15 +41,9 @@ class CustomDrinkBuildVC: UIViewController {
         drink.mgCaffeinePerVolume = Double(customDrinkContainer.drinkCaffPer.text!)!
         drink.volume = Double(customDrinkContainer.drinkSize.text!)!
         dm.save()
-        if customDrinkContainer.isFavorite() {
-          // save this drink as favorite or not
-        }
       } else {
         let tempDrink = customDrinkContainer.getDrink()
         dm.saveCustom(tempDrink)
-        if customDrinkContainer.isFavorite() {
-          // save drink as favorite drink too
-        }
       }
       _ = navigationController?.popViewController(animated: true)
     }
