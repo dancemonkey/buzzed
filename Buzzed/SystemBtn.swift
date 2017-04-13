@@ -9,7 +9,7 @@
 import UIKit
 
 enum ButtonStyle: String {
-  case done, cancel, info, disabled
+  case done, cancel, info, disabled, destructive
 }
 
 class SystemBtn: UIButton {
@@ -46,6 +46,8 @@ class SystemBtn: UIButton {
       titleLabel?.font = UIFont.italicSystemFont(ofSize: 18)
       backgroundColor = UIColor.gray
       removeShadow()
+    case .destructive:
+      backgroundColor = .red
     }
     self._style = style
   }

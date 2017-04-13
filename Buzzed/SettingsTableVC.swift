@@ -50,6 +50,23 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
     dailyLimitFld.delegate = self
   }
   
+  @IBAction func deleteAllPressed(sender: SystemBtn) {
+    showConfirmationPopup()
+  }
+  
+  func showConfirmationPopup() {
+    let alert = UIAlertController(title: "Delete all data?", message: "Are you sure you want to delete all of your caffeine data from the app?", preferredStyle: .actionSheet)
+    let cancel = UIAlertAction(title: "Nevermind!", style: .cancel, handler: nil)
+    let confirm = UIAlertAction(title: "Yep, go for it.", style: .destructive) { (action) in
+      let dm = DataManager()
+      dm.clearAllHistory()
+      // also pop-up asking if all Health data should be removed
+    }
+    alert.addAction(confirm)
+    alert.addAction(cancel)
+    present(alert, animated: true, completion: nil)
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,7 +74,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 6
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -66,7 +66,7 @@ class DataManager {
     return [.dripCoffee, .espresso, .soda, .energyDrink, .blackTea, .greenTea]
   }
   
-  func clearAllHistory() -> Bool {
+  @discardableResult func clearAllHistory() -> Bool {
     let sl = SimpleLogger()
     sl.clearLog()
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.Entity.caffeineSourceEntity.name())
