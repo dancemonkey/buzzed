@@ -17,8 +17,11 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   
   fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
     let dm = DataManager()
+    let priorMonthToDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+    let predicate = NSPredicate(format: "creation >= %@", priorMonthToDate! as CVarArg)
     let fetchReq: NSFetchRequest<CaffeineSourceCD> = CaffeineSourceCD.fetchRequest() as! NSFetchRequest<CaffeineSourceCD>
     fetchReq.sortDescriptors = [NSSortDescriptor(key: "creation", ascending: false)]
+    fetchReq.predicate = predicate
     let frc = NSFetchedResultsController<CaffeineSourceCD>(fetchRequest: fetchReq, managedObjectContext: dm.context, sectionNameKeyPath: #keyPath(CaffeineSourceCD.sectionNameFromDate), cacheName: nil)
     return frc
   }()
