@@ -16,8 +16,8 @@ class CustomDrinkCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    drinkInfoLbl.textColor = .white
-    drinkNameLbl.textColor = .white
+    drinkInfoLbl.textColor = .darkGray
+    drinkNameLbl.textColor = .darkGray
   }
   
   func config(withDrink drink: CustomDrink) {

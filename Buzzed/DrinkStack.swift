@@ -22,7 +22,7 @@ class DrinkStack: UIStackView {
       let formatter = DateFormatter()
       formatter.dateFormat = "HH:mm"
       timeLbl.text = formatter.string(from: date as Date)
-      timeLbl.textColor = UIColor.white
+      timeLbl.textColor = UIColor.darkGray
     }
   }
 

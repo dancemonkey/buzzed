@@ -30,7 +30,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
     if healthConnectLbl.isEnabled == false {
       healthConnectLbl.text = "Not connected to Health"
     } else {
-      healthConnectLbl.textColor = .white
+      healthConnectLbl.textColor = .green
       healthConnectLbl.text = "Connected to Health"
     }
   }

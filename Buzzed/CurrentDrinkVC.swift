@@ -19,8 +19,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   @IBOutlet weak var buttonStack: HideableStack!
   @IBOutlet weak var consumptionControls: ConsumptionSetView!
   
-//  @IBOutlet weak var tempTestLogField: UITextView!
-  
   var currentSource: CaffeineSource? = nil
   var mode: ScreenMode = .notDrinking {
     willSet(newValue) {
@@ -44,23 +42,12 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     super.viewDidLoad()
     let hm = HealthManager()
     hm.authorizeHealthkit { (success, error) in }
-    
-//    tempTestUpdateLogField()
-//    let tapGest = UITapGestureRecognizer(target: self, action: #selector(CurrentDrinkVC.tempTestUpdateLogField))
-//    tapGest.numberOfTapsRequired = 2
-//    tempTestLogField.addGestureRecognizer(tapGest)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     initialSetup()
   }
-  
-//  @IBAction func tempDeleteAllDataPressed(_ sender: UIButton) {
-//    let dm = DataManager()
-//    _ = dm.clearAllHistory()
-//    dm.clearUserDefaults()
-//  }
   
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
@@ -130,11 +117,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     }
     mode = .notDrinking    
   }
-  
-//  func tempTestUpdateLogField() {
-//    let sl = SimpleLogger()
-//    tempTestLogField.text = sl.readLog()
-//  }
   
   @IBAction func cancelPressed(_ sender: SystemBtn) {
     mode = .notDrinking

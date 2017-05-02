@@ -31,7 +31,7 @@ class DrinkSelectCell: UITableViewCell {
     self.drinkName.text = source.getName()
     let unit = DataManager().getDefaultUnits()
     self.drinkInfo.text = "\(source.getMgCaffeinePer(unit))mg per \(unit.symbol)"
-    drinkName.textColor = UIColor.white
-    drinkInfo.textColor = UIColor.white
+    drinkName.textColor = .darkGray
+    drinkInfo.textColor = .darkGray
   }
 }

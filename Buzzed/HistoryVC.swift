@@ -30,6 +30,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     super.viewDidLoad()
     fetchedResultsController.delegate = self
     initialSetup()
+    tableView.sectionHeaderHeight = 32.0
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +73,27 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
     }
     
     return sectionInfo.numberOfObjects
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let sectionInfo = fetchedResultsController.sections?[section] else {
+      fatalError("Unexpected Section")
+    }
+    
+    let totalCaffForSection = fetchedResultsController.fetchedObjects?.reduce(0, { (result, source) -> Double in
+      if source.sectionNameFromDate == sectionInfo.name {
+        return result + source.totalMgConsumed()
+      }
+      return result
+    }).roundTo(2)
+    
+    let vw = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 32))
+    vw.backgroundColor = Constants.Color.doneBtn.bground()
+    let lbl = UILabel(frame: CGRect(x: 20, y: 0, width: vw.frame.size.width, height: 32))
+    lbl.text = sectionInfo.name + " - \(totalCaffForSection!)mg"
+    lbl.textColor = .white
+    vw.addSubview(lbl)
+    return vw
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

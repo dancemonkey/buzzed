@@ -25,8 +25,8 @@ class SizeSelectCell: UITableViewCell {
       sizeName.text = "\(volume) \(dm.getDefaultUnits().symbol)"
     }
     
-    sizeName.textColor = UIColor.white
-    totalCaff.textColor = UIColor.white
+    sizeName.textColor = UIColor.darkGray
+    totalCaff.textColor = UIColor.darkGray
   }
   
   override func awakeFromNib() {

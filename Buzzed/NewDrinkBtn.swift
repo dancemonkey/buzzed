@@ -13,7 +13,7 @@ class NewDrinkBtn: UIButton, Hideable {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    setShadow()
+//    setShadow()
   }
   
   fileprivate func setShadow() {
@@ -23,13 +23,5 @@ class NewDrinkBtn: UIButton, Hideable {
     layer.shadowOpacity = LargeDrink.Shadow.opacity.value() as! Float
     layer.masksToBounds = false
   }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

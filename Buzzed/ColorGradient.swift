@@ -17,7 +17,8 @@ class ColorGradient {
   var gl: CAGradientLayer!
   
   init(withView view: UIView) {
-    setGradient(withView: view)
+//    setGradient(withView: view)
+    view.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 249/255, alpha: 1.0)
   }
   
   fileprivate func setGradient(withView view: UIView) {
