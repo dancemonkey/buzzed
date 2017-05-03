@@ -31,12 +31,19 @@ class SettingsVC: UIViewController {
   
   @IBAction func savePressed(_ sender: UIButton) {
     let dm = DataManager()
+    
     if settingsContainer.dailyLimitFld.numbersOnly() {
       dm.setDailyIntake(Double(settingsContainer.dailyLimitFld.text!)!)
-      settingsContainer.dailyLimitFld.clearBorder()
+      settingsContainer.dailyLimitFld.validEntryDisplay()
       dm.setDefaultMeasurement(settingsContainer.defaultUnitsCtl.getDefaultUnit())
     } else {
-      settingsContainer.dailyLimitFld.invalidEntryDisplay()
+      UIView.animateKeyframes(withDuration: 0.0, delay: 0.0, options: [], animations: {
+        self.settingsContainer.dailyLimitFld.invalidEntryDisplay()
+      }, completion: { (done) in
+        UIView.animate(withDuration: 2.0, animations: {
+          self.settingsContainer.dailyLimitFld.validEntryDisplay()
+        })
+      })
     }
   }
   

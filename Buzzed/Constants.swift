@@ -47,7 +47,7 @@ enum Constants {
   }
   
   enum Color {
-    case doneBtn, cancelBtn, infoBtn
+    case doneBtn, cancelBtn, infoBtn, accentSuccess, accentError
     
     func bground() -> UIColor {
       switch self {
@@ -57,6 +57,10 @@ enum Constants {
         return UIColor.init(red: 215, green: 146, blue: 87)
       case .infoBtn:
         return UIColor.init(red: 42, green: 122, blue: 139)
+      case .accentSuccess:
+        return UIColor.init(red: 34, green: 197, blue: 8)
+      case .accentError:
+        return UIColor.init(red: 255, green: 0, blue: 72)
       }
     }
   }

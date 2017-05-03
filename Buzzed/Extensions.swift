@@ -36,8 +36,9 @@ extension UIColor {
 }
 
 extension UITextField {
+  
   func numbersOnly() -> Bool {
-    guard let text = self.text else {
+    guard let text = self.text, text != "" else {
       return false
     }
     let allowed = CharacterSet.decimalDigits
@@ -46,8 +47,13 @@ extension UITextField {
   }
   
   func invalidEntryDisplay() {
-    self.borderColor = UIColor.red
-    self.borderWidth = 1.0
+    self.backgroundColor = Constants.Color.accentError.bground().withAlphaComponent(0.75)
+    self.textColor = .white
+  }
+  
+  func validEntryDisplay() {
+    self.backgroundColor = UIColor.white.withAlphaComponent(0.75)
+    self.textColor = Constants.Color.doneBtn.bground()
   }
   
   func clearBorder() {

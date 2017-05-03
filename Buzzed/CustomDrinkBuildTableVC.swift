@@ -11,7 +11,7 @@ import UIKit
 class CustomDrinkBuildTableVC: UITableViewController {
   
   @IBOutlet weak var drinkName: UITextField!
-  @IBOutlet weak var drinkDesc: UITextView!
+  @IBOutlet weak var drinkDesc: UITextField!
   @IBOutlet weak var drinkSize: UITextField!
   @IBOutlet weak var drinkCaffPer: UITextField!
   @IBOutlet weak var sizeInLbl: UILabel!
@@ -33,10 +33,27 @@ class CustomDrinkBuildTableVC: UITableViewController {
   }
   
   func allEntriesValid() -> Bool {
+    
     let validName = drinkName.text?.isEmpty == false
     let validDesc = drinkDesc.text?.isEmpty == false
     let validSize = drinkSize.text?.isEmpty == false && Double(drinkSize.text!) != nil && drinkSize.numbersOnly()
     let validCaff = drinkCaffPer.text?.isEmpty == false && Double(drinkCaffPer.text!) != nil && drinkCaffPer.numbersOnly()
+    
+    let valids: [Bool] = [validName, validDesc, validSize, validCaff]
+    let fields = [drinkName, drinkDesc, drinkSize, drinkCaffPer]
+    
+    for (index, valid) in valids.enumerated() {
+      if !valid {
+        UIView.animateKeyframes(withDuration: 0.0, delay: 0.0, options: [], animations: {
+          fields[index]?.invalidEntryDisplay()
+        }, completion: { (done) in
+          UIView.animate(withDuration: 2.0, animations: {
+            fields[index]?.validEntryDisplay()
+          })
+        })
+      }
+    }
+    
     return validName && validDesc && validSize && validCaff
   }
   
