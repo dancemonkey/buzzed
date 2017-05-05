@@ -78,7 +78,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.item == 0 || indexPath.item == 2 {
+    if indexPath.item == 3 || indexPath.item == 4 {
       performSegue(withIdentifier: tableView.cellForRow(at: indexPath)!.reuseIdentifier!, sender: self)
     }
   }

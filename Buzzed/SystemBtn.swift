@@ -47,7 +47,7 @@ class SystemBtn: UIButton {
       backgroundColor = UIColor.gray
       removeShadow()
     case .destructive:
-      backgroundColor = .red
+      backgroundColor = Constants.Color.accentError.bground()
     }
     self._style = style
   }

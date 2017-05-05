@@ -96,11 +96,11 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   // MARK: TableView methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    if (fetchedResultsController.fetchedObjects?.isEmpty)! {
-      createCustomBtn.isHidden = false
-    } else {
-      createCustomBtn.isHidden = true
-    }
+//    if (fetchedResultsController.fetchedObjects?.isEmpty)! {
+//      createCustomBtn.isHidden = false
+//    } else {
+//      createCustomBtn.isHidden = true
+//    }
     return 1
   }
   

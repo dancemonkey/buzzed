@@ -211,7 +211,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igf-ql-DfQ">
-                                                    <rect key="frame" x="0.0" y="4" width="326" height="78"/>
+                                                    <rect key="frame" x="0.0" y="4" width="310" height="78"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="coQ-9Q-iIe">
                                                             <rect key="frame" x="8" y="18" width="92" height="42.5"/>
@@ -231,7 +231,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Drink" translatesAutoresizingMaskIntoConstraints="NO" id="1sB-yJ-l2J">
-                                                            <rect key="frame" x="278" y="0.0" width="40" height="78"/>
+                                                            <rect key="frame" x="262" y="0.0" width="40" height="78"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="7dV-Yh-H8u"/>
                                                             </constraints>
@@ -280,7 +280,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5U-LF-cvg">
-                                                    <rect key="frame" x="0.0" y="4" width="326" height="78"/>
+                                                    <rect key="frame" x="0.0" y="4" width="310" height="78"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-v7-PWC">
                                                             <rect key="frame" x="8" y="18" width="92" height="42.5"/>
@@ -300,7 +300,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Drink" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-T3-GY4">
-                                                            <rect key="frame" x="278" y="0.0" width="40" height="78"/>
+                                                            <rect key="frame" x="262" y="0.0" width="40" height="78"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="mm6-ws-pjL"/>
                                                             </constraints>
@@ -535,217 +535,8 @@
                         <sections>
                             <tableViewSection id="MNm-Qk-58p">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drinkSelectVC" id="hbl-mK-NeK">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbl-mK-NeK" id="SmH-0P-2YH">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="52"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL1-cQ-XJr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="48"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite drink - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUW-43-93k">
-                                                            <rect key="frame" x="8" y="14" width="127" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="uUW-43-93k" firstAttribute="centerY" secondItem="pL1-cQ-XJr" secondAttribute="centerY" id="Oll-eN-BJb"/>
-                                                        <constraint firstItem="uUW-43-93k" firstAttribute="leading" secondItem="pL1-cQ-XJr" secondAttribute="leading" constant="8" id="XbK-nB-0bk"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="pL1-cQ-XJr" secondAttribute="trailing" id="ZDq-bc-rUn"/>
-                                                <constraint firstItem="pL1-cQ-XJr" firstAttribute="top" secondItem="SmH-0P-2YH" secondAttribute="top" id="kqo-AN-vNJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="pL1-cQ-XJr" secondAttribute="bottom" constant="4" id="mZc-8i-3d7"/>
-                                                <constraint firstItem="pL1-cQ-XJr" firstAttribute="leading" secondItem="SmH-0P-2YH" secondAttribute="leading" id="uxr-ww-oUZ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ez1-DE-5XM">
-                                        <rect key="frame" x="0.0" y="52" width="359" height="52"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ez1-DE-5XM" id="51h-7O-byb">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-po-0Ll">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily limit (mg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPM-7u-K68">
-                                                            <rect key="frame" x="8" y="13" width="120.5" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzQ-tg-NMh">
-                                                            <rect key="frame" x="160.5" y="0.0" width="182.5" height="48"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="gVH-jD-98c"/>
-                                                            </constraints>
-                                                            <color key="textColor" red="0.54509803921568623" green="0.3411764705882353" blue="0.16470588235294117" alpha="1" colorSpace="deviceRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        </textField>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="VPM-7u-K68" firstAttribute="centerY" secondItem="XAD-po-0Ll" secondAttribute="centerY" id="JZW-Mf-4IT"/>
-                                                        <constraint firstItem="dzQ-tg-NMh" firstAttribute="leading" secondItem="VPM-7u-K68" secondAttribute="trailing" constant="32" id="Y6m-hi-0zi"/>
-                                                        <constraint firstItem="dzQ-tg-NMh" firstAttribute="centerY" secondItem="XAD-po-0Ll" secondAttribute="centerY" id="ZeL-3s-gLq"/>
-                                                        <constraint firstItem="VPM-7u-K68" firstAttribute="leading" secondItem="XAD-po-0Ll" secondAttribute="leading" constant="8" id="hi4-UF-o4Y"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dzQ-tg-NMh" secondAttribute="trailing" constant="16" id="kMI-O6-PcM"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="XAD-po-0Ll" secondAttribute="bottom" constant="4" id="KZv-Zh-xqo"/>
-                                                <constraint firstItem="XAD-po-0Ll" firstAttribute="top" secondItem="51h-7O-byb" secondAttribute="top" id="MTg-G1-YgC"/>
-                                                <constraint firstAttribute="trailing" secondItem="XAD-po-0Ll" secondAttribute="trailing" id="U6b-qg-NQx"/>
-                                                <constraint firstItem="XAD-po-0Ll" firstAttribute="leading" secondItem="51h-7O-byb" secondAttribute="leading" id="aah-8f-vIM"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customDrinkList" id="Avx-Jp-5vg">
-                                        <rect key="frame" x="0.0" y="104" width="359" height="52"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Avx-Jp-5vg" id="GmE-59-Nxb">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="52"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvW-wc-5wR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="48"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom drinks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-lG-1d3">
-                                                            <rect key="frame" x="8" y="13" width="117" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="fbX-lG-1d3" firstAttribute="leading" secondItem="dvW-wc-5wR" secondAttribute="leading" constant="8" id="e3q-Kp-dib"/>
-                                                        <constraint firstItem="fbX-lG-1d3" firstAttribute="centerY" secondItem="dvW-wc-5wR" secondAttribute="centerY" id="eNK-LA-5z7"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="dvW-wc-5wR" firstAttribute="leading" secondItem="GmE-59-Nxb" secondAttribute="leading" id="3TP-y3-HjW"/>
-                                                <constraint firstAttribute="trailing" secondItem="dvW-wc-5wR" secondAttribute="trailing" id="GoA-Ni-dqu"/>
-                                                <constraint firstAttribute="bottom" secondItem="dvW-wc-5wR" secondAttribute="bottom" constant="4" id="bkL-Ai-5h2"/>
-                                                <constraint firstItem="dvW-wc-5wR" firstAttribute="top" secondItem="GmE-59-Nxb" secondAttribute="top" id="lEK-HA-we8"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Bnd-MH-VvA">
-                                        <rect key="frame" x="0.0" y="156" width="359" height="52"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bnd-MH-VvA" id="Bhx-2j-tcL">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-oQ-eos">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-BM-ToA">
-                                                            <rect key="frame" x="8" y="13.5" width="102" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wey-O6-MCu" customClass="DefaultUnitControl" customModule="Buzzed" customModuleProvider="target">
-                                                            <rect key="frame" x="206" y="10" width="137" height="29"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="0.5" colorSpace="deviceRGB"/>
-                                                            <segments>
-                                                                <segment title="Ounces"/>
-                                                                <segment title="Milliliters"/>
-                                                            </segments>
-                                                            <color key="tintColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
-                                                        </segmentedControl>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="zbB-BM-ToA" firstAttribute="leading" secondItem="Zft-oQ-eos" secondAttribute="leading" constant="8" id="49e-C0-cQJ"/>
-                                                        <constraint firstItem="wey-O6-MCu" firstAttribute="centerY" secondItem="Zft-oQ-eos" secondAttribute="centerY" id="GBD-PP-AEo"/>
-                                                        <constraint firstAttribute="trailing" secondItem="wey-O6-MCu" secondAttribute="trailing" constant="16" id="kxc-Em-D51"/>
-                                                        <constraint firstItem="zbB-BM-ToA" firstAttribute="centerY" secondItem="Zft-oQ-eos" secondAttribute="centerY" id="r8Q-nl-qrH"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="Zft-oQ-eos" firstAttribute="leading" secondItem="Bhx-2j-tcL" secondAttribute="leading" id="AjS-I8-exb"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zft-oQ-eos" secondAttribute="bottom" constant="4" id="Djs-Nx-ma9"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zft-oQ-eos" secondAttribute="trailing" id="IUM-eA-smE"/>
-                                                <constraint firstItem="Zft-oQ-eos" firstAttribute="top" secondItem="Bhx-2j-tcL" secondAttribute="top" id="zah-mb-vQu"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qLr-Xf-rMh">
-                                        <rect key="frame" x="0.0" y="208" width="359" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qLr-Xf-rMh" id="c6B-Zc-Ox9">
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
@@ -791,18 +582,231 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="lzV-IX-7PI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="Bnd-MH-VvA">
+                                        <rect key="frame" x="0.0" y="52" width="359" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bnd-MH-VvA" id="Bhx-2j-tcL">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="78"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-oQ-eos">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="74"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-BM-ToA">
+                                                            <rect key="frame" x="8" y="5" width="82" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wey-O6-MCu" customClass="DefaultUnitControl" customModule="Buzzed" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="27" width="343" height="41"/>
+                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="0.5" colorSpace="deviceRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="A2a-3r-Iop"/>
+                                                            </constraints>
+                                                            <segments>
+                                                                <segment title="Ounces"/>
+                                                                <segment title="Milliliters"/>
+                                                            </segments>
+                                                            <color key="tintColor" red="0.52156862749999999" green="0.34901960780000002" blue="0.19215686269999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        </segmentedControl>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wey-O6-MCu" firstAttribute="top" secondItem="zbB-BM-ToA" secondAttribute="bottom" constant="5" id="7dx-OG-oa2"/>
+                                                        <constraint firstItem="zbB-BM-ToA" firstAttribute="top" secondItem="Zft-oQ-eos" secondAttribute="top" constant="5" id="HUq-jK-lLc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wey-O6-MCu" secondAttribute="trailing" constant="8" id="tdv-Hy-dE0"/>
+                                                        <constraint firstItem="zbB-BM-ToA" firstAttribute="leading" secondItem="Zft-oQ-eos" secondAttribute="leading" constant="8" id="var-yp-zNp"/>
+                                                        <constraint firstItem="wey-O6-MCu" firstAttribute="leading" secondItem="Zft-oQ-eos" secondAttribute="leading" constant="8" id="wxH-1B-OBh"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="Zft-oQ-eos" firstAttribute="leading" secondItem="Bhx-2j-tcL" secondAttribute="leading" id="AjS-I8-exb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zft-oQ-eos" secondAttribute="bottom" constant="4" id="Djs-Nx-ma9"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zft-oQ-eos" secondAttribute="trailing" id="IUM-eA-smE"/>
+                                                <constraint firstItem="Zft-oQ-eos" firstAttribute="top" secondItem="Bhx-2j-tcL" secondAttribute="top" id="zah-mb-vQu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="Ez1-DE-5XM">
+                                        <rect key="frame" x="0.0" y="130" width="359" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ez1-DE-5XM" id="51h-7O-byb">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="78"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-po-0Ll">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="74"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily limit (mg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPM-7u-K68">
+                                                            <rect key="frame" x="8" y="5" width="96.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzQ-tg-NMh">
+                                                            <rect key="frame" x="8" y="27" width="343" height="40"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="Gyn-y2-wcF"/>
+                                                            </constraints>
+                                                            <color key="textColor" red="0.54509803921568623" green="0.3411764705882353" blue="0.16470588235294117" alpha="1" colorSpace="deviceRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="dzQ-tg-NMh" firstAttribute="top" secondItem="VPM-7u-K68" secondAttribute="bottom" constant="5" id="69I-Ck-vyb"/>
+                                                        <constraint firstItem="VPM-7u-K68" firstAttribute="leading" secondItem="XAD-po-0Ll" secondAttribute="leading" constant="8" id="79k-Le-DLN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dzQ-tg-NMh" secondAttribute="trailing" constant="8" id="Q0C-CP-9DQ"/>
+                                                        <constraint firstItem="dzQ-tg-NMh" firstAttribute="leading" secondItem="XAD-po-0Ll" secondAttribute="leading" constant="8" id="ong-xe-OIw"/>
+                                                        <constraint firstItem="VPM-7u-K68" firstAttribute="top" secondItem="XAD-po-0Ll" secondAttribute="top" constant="5" id="rJk-Ef-xRJ"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="XAD-po-0Ll" secondAttribute="bottom" constant="4" id="KZv-Zh-xqo"/>
+                                                <constraint firstItem="XAD-po-0Ll" firstAttribute="top" secondItem="51h-7O-byb" secondAttribute="top" id="MTg-G1-YgC"/>
+                                                <constraint firstAttribute="trailing" secondItem="XAD-po-0Ll" secondAttribute="trailing" id="U6b-qg-NQx"/>
+                                                <constraint firstItem="XAD-po-0Ll" firstAttribute="leading" secondItem="51h-7O-byb" secondAttribute="leading" id="aah-8f-vIM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drinkSelectVC" id="hbl-mK-NeK">
+                                        <rect key="frame" x="0.0" y="208" width="359" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbl-mK-NeK" id="SmH-0P-2YH">
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL1-cQ-XJr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite drink - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUW-43-93k">
+                                                            <rect key="frame" x="8" y="15.5" width="102" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="uUW-43-93k" firstAttribute="centerY" secondItem="pL1-cQ-XJr" secondAttribute="centerY" id="Oll-eN-BJb"/>
+                                                        <constraint firstItem="uUW-43-93k" firstAttribute="leading" secondItem="pL1-cQ-XJr" secondAttribute="leading" constant="8" id="XbK-nB-0bk"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="pL1-cQ-XJr" secondAttribute="trailing" id="ZDq-bc-rUn"/>
+                                                <constraint firstItem="pL1-cQ-XJr" firstAttribute="top" secondItem="SmH-0P-2YH" secondAttribute="top" id="kqo-AN-vNJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="pL1-cQ-XJr" secondAttribute="bottom" constant="4" id="mZc-8i-3d7"/>
+                                                <constraint firstItem="pL1-cQ-XJr" firstAttribute="leading" secondItem="SmH-0P-2YH" secondAttribute="leading" id="uxr-ww-oUZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customDrinkList" id="Avx-Jp-5vg">
                                         <rect key="frame" x="0.0" y="260" width="359" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Avx-Jp-5vg" id="GmE-59-Nxb">
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvW-wc-5wR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom drinks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-lG-1d3">
+                                                            <rect key="frame" x="8" y="15.5" width="93.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="fbX-lG-1d3" firstAttribute="leading" secondItem="dvW-wc-5wR" secondAttribute="leading" constant="8" id="e3q-Kp-dib"/>
+                                                        <constraint firstItem="fbX-lG-1d3" firstAttribute="centerY" secondItem="dvW-wc-5wR" secondAttribute="centerY" id="eNK-LA-5z7"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="dvW-wc-5wR" firstAttribute="leading" secondItem="GmE-59-Nxb" secondAttribute="leading" id="3TP-y3-HjW"/>
+                                                <constraint firstAttribute="trailing" secondItem="dvW-wc-5wR" secondAttribute="trailing" id="GoA-Ni-dqu"/>
+                                                <constraint firstAttribute="bottom" secondItem="dvW-wc-5wR" secondAttribute="bottom" constant="4" id="bkL-Ai-5h2"/>
+                                                <constraint firstItem="dvW-wc-5wR" firstAttribute="top" secondItem="GmE-59-Nxb" secondAttribute="top" id="lEK-HA-we8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="lzV-IX-7PI">
+                                        <rect key="frame" x="0.0" y="312" width="359" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lzV-IX-7PI" id="abd-2r-H7H">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFW-1Q-2W6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="74"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XE4-aa-cF8" customClass="SystemBtn" customModule="Buzzed" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="4" width="343" height="40"/>
+                                                            <rect key="frame" x="8" y="16" width="343" height="42"/>
                                                             <state key="normal" title="Reset all data"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="style" value="destructive"/>
@@ -814,11 +818,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="XE4-aa-cF8" firstAttribute="top" secondItem="CFW-1Q-2W6" secondAttribute="top" constant="4" id="5Zm-M4-MyW"/>
+                                                        <constraint firstItem="XE4-aa-cF8" firstAttribute="top" secondItem="CFW-1Q-2W6" secondAttribute="top" constant="16" id="5Zm-M4-MyW"/>
                                                         <constraint firstAttribute="trailing" secondItem="XE4-aa-cF8" secondAttribute="trailing" constant="8" id="DaV-FP-VPV"/>
                                                         <constraint firstItem="XE4-aa-cF8" firstAttribute="centerY" secondItem="CFW-1Q-2W6" secondAttribute="centerY" id="MjQ-bn-D1u"/>
                                                         <constraint firstItem="XE4-aa-cF8" firstAttribute="leading" secondItem="CFW-1Q-2W6" secondAttribute="leading" constant="8" id="Rix-w8-Ncv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="XE4-aa-cF8" secondAttribute="bottom" constant="4" id="TDF-eq-j5p"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XE4-aa-cF8" secondAttribute="bottom" constant="16" id="TDF-eq-j5p"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1429,7 +1433,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Drink" translatesAutoresizingMaskIntoConstraints="NO" id="atz-An-1gy">
-                                                    <rect key="frame" x="311" y="-91.5" width="40" height="269"/>
+                                                    <rect key="frame" x="295" y="-91.5" width="40" height="269"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="MQx-hl-ZHA"/>
                                                     </constraints>
@@ -1634,7 +1638,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="PCd-wT-6Ys"/>
                                 </constraints>
-                                <state key="normal" title="Empty, create your own drink..."/>
+                                <state key="normal" title="Create your own drink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="style" value="info"/>
                                 </userDefinedRuntimeAttributes>
