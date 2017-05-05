@@ -17,6 +17,7 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
 
   var dm: DataManager!
   var tapper: UITapGestureRecognizer!
+  weak var parentVC: SettingsVC?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -105,6 +106,13 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
   
   func textFieldDidEndEditing(_ textField: UITextField) {
     self.view.removeGestureRecognizer(tapper)
+    parentVC?.enableSave()
+  }
+  
+  // MARK: - Segmented Control
+  
+  @IBAction func indexChanged(sender: DefaultUnitControl) {
+    parentVC?.enableSave()
   }
   
 }

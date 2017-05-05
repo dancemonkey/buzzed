@@ -11,6 +11,7 @@ import UIKit
 class SettingsVC: UIViewController {
   
   @IBOutlet weak var topNav: TopNav!
+  @IBOutlet weak var saveButton: SystemBtn!
   
   var settingsContainer: SettingsTableVC!
   
@@ -27,6 +28,18 @@ class SettingsVC: UIViewController {
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
     topNav.configure(title: "Settings")
+    disableSave()
+    settingsContainer.parentVC = self
+  }
+  
+  func disableSave() {
+    saveButton.isEnabled = false
+    saveButton.setStyle(to: .disabled)
+  }
+  
+  func enableSave() {
+    saveButton.isEnabled = true
+    saveButton.setStyle(to: .done)
   }
   
   @IBAction func savePressed(_ sender: UIButton) {
@@ -45,6 +58,8 @@ class SettingsVC: UIViewController {
         })
       })
     }
+    
+    disableSave()
   }
   
   // MARK: - Navigation
