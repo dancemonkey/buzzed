@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SettingsVC: UIViewController {
   
@@ -58,8 +59,8 @@ class SettingsVC: UIViewController {
         })
       })
     }
-    
     disableSave()
+    self.view.makeToast("Saved!", duration: 2.0, position: .bottom)
   }
   
   // MARK: - Navigation

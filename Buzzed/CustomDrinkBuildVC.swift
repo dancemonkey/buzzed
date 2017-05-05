@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class CustomDrinkBuildVC: UIViewController {
   
@@ -47,6 +48,7 @@ class CustomDrinkBuildVC: UIViewController {
       }
       _ = navigationController?.popViewController(animated: true)
     }
+    self.view.makeToast("Saved!", duration: 2.0, position: .bottom)
   }
   
   

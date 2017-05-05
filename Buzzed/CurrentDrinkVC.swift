@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 enum ScreenMode {
   case drinking, notDrinking
@@ -37,11 +38,16 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
       }
     }
   }
+  var style = ToastStyle()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     let hm = HealthManager()
     hm.authorizeHealthkit { (success, error) in }
+    
+    style.messageColor = Constants.Color.accentSuccess.bground()
+    ToastManager.shared.style = style
+    ToastManager.shared.tapToDismissEnabled = true
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -115,7 +121,9 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
       dm.setCurrentCaff(to: dm.getCurrentCaff() + drink.totalCaffeineConsumed())
       topNav.configure(title: "")
     }
-    mode = .notDrinking    
+    mode = .notDrinking
+    
+    self.view.makeToast("Saved!", duration: 2.0, position: .bottom)
   }
   
   @IBAction func cancelPressed(_ sender: SystemBtn) {
