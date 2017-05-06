@@ -46,7 +46,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     hm.authorizeHealthkit { (success, error) in }
     
     style.messageColor = Constants.Color.accentSuccess.bground()
-    ToastManager.shared.style = style
     ToastManager.shared.tapToDismissEnabled = true
   }
   
@@ -123,7 +122,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     }
     mode = .notDrinking
     
-    self.view.makeToast("Saved!", duration: 2.0, position: .bottom)
+    self.view.makeToast("Saved!", duration: 2.0, position: .bottom, style: style)
   }
   
   @IBAction func cancelPressed(_ sender: SystemBtn) {

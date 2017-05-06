@@ -8,12 +8,15 @@
 
 import UIKit
 import CoreData
+import Toast_Swift
 
 class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var topNav: TopNav!
   @IBOutlet weak var emptyHistoryLbl: UILabel!
+  
+  var style = ToastStyle()
   
   fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CaffeineSourceCD> = {
     let dm = DataManager()
@@ -46,6 +49,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
   
   func initialSetup() {
     _ = ColorGradient(withView: self.view)
+    style.messageColor = Constants.Color.accentError.bground()
   }
   
   func configure(_ cell: HistoryDetailCell, at indexPath: IndexPath) {
@@ -133,6 +137,7 @@ class HistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
         dm.reduceCaffeineBy(caffReduction: record.totalMgConsumed())
       }
       dm.save()
+      self.view.makeToast("Deleted", duration: 2.0, position: .bottom, style: style)
     }
   }
   

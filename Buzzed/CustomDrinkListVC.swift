@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Toast_Swift
 
 class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
   
@@ -16,6 +17,7 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   @IBOutlet weak var createCustomBtn: SystemBtn!
   
   var customDrinks: [CustomDrink]?
+  var style = ToastStyle()
   
   fileprivate lazy var fetchedResultsController: NSFetchedResultsController<CustomDrink> = {
     let dm = DataManager()
@@ -28,6 +30,8 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   override func viewDidLoad() {
     super.viewDidLoad()
     fetchedResultsController.delegate = self
+    
+    style.messageColor = Constants.Color.accentError.bground()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -96,11 +100,6 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
   // MARK: TableView methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
-//    if (fetchedResultsController.fetchedObjects?.isEmpty)! {
-//      createCustomBtn.isHidden = false
-//    } else {
-//      createCustomBtn.isHidden = true
-//    }
     return 1
   }
   
@@ -132,6 +131,7 @@ class CustomDrinkListVC: UIViewController, NSFetchedResultsControllerDelegate, U
       let dm = DataManager()
       dm.context.delete(drink)
       dm.save()
+      self.view.makeToast("Deleted", duration: 2.0, position: .bottom, style: style)
     }
   }
   
