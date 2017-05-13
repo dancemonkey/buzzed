@@ -10,13 +10,6 @@ import UIKit
 
 class TopNav: UIView {
   
-  // methods for configuring self with title, meter data (if present), etc.
-  // needs to know:
-  // - TITLE: current state of screen (pick a drink or working on current drink)
-  // - MAX Caff: max caffeine goal from defaults
-  // - CURRENT Caff: total current caff from CD
-  // - METER: total current caff from CD
-  
   @IBOutlet weak var title: UILabel?
   @IBOutlet weak var meterCaffLbl: UILabel?
   @IBOutlet weak var totalCaff: UILabel!

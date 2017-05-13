@@ -43,7 +43,6 @@ class SizeSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // TODO: need to return number of drink sizes based on type of drink selected
     return sizes.count
   }
   
