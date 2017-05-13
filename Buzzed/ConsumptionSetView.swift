@@ -21,7 +21,6 @@ class ConsumptionSetView: UIView, Hideable {
   var settingLevel: Bool = false
   
   let minLevel: Double = 0.0
-  let testSource: CaffeineSource = CaffeineSource(type: .dripCoffee, volume: 16.0)
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -42,12 +41,10 @@ class ConsumptionSetView: UIView, Hideable {
   func setSource(to source: CaffeineSource) {
     self.source = source
     let imageName = self.source!.associatedImageName
-    
-    // TODO: load liquid background view image from enum too, based on drink type
-    
-    let liquidImage = UIImage(named: "LiquidWhite")
+        
+    let liquidImage = self.source!.sourceType.getLiquidWhiteName() //UIImage(named: "LiquidWhite")
     caffeineSourceImg.image = UIImage(named: imageName!)
-    liquidImg.image = liquidImage
+    liquidImg.image = UIImage(named: liquidImage)
     
     setShadow()
     

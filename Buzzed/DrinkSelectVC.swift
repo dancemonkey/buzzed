@@ -105,7 +105,6 @@ class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print("row selected")
     switch indexPath.section {
     case 0:
       if let delegate = self.passThroughDelegate as? CurrentDrinkVC {

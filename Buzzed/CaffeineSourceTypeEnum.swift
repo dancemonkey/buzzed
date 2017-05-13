@@ -10,12 +10,7 @@ import Foundation
 
 enum CaffeineSourceType: String {
   
-  // TODO: add single and double espresso types
-  
   case dripCoffee, espresso, soda, energyDrink, blackTea, greenTea, custom
-  
-  // TODO: also sub-switch on default units (oz/ml) so proper size is returned
-  // see getmgcaffeine for reference
   
   func getSize(inVolumeUnit volumeUnit: UnitVolume) -> [Double] {
     if volumeUnit == .milliliters {
@@ -106,15 +101,34 @@ enum CaffeineSourceType: String {
     case .dripCoffee:
       return "16oz Cup - Brown"
     case .espresso:
-      return ""
+      return "Cappuchino Brown"
     case .soda:
-      return ""
+      return "Soda Brown"
     case .energyDrink:
       return ""
     case .blackTea:
-      return ""
+      return "12oz Mug"
     case .greenTea:
+      return "12oz Mug"
+    case .custom:
       return ""
+    }
+  }
+  
+  func getLiquidWhiteName() -> String {
+    switch self {
+    case .dripCoffee:
+      return "LiquidWhite"
+    case .espresso:
+      return "Cappuchino Liquid White"
+    case .soda:
+      return "Soda Liquid White"
+    case .energyDrink:
+      return ""
+    case .blackTea:
+      return "12oz Liquid White"
+    case .greenTea:
+      return "12oz Liquid White"
     case .custom:
       return ""
     }
