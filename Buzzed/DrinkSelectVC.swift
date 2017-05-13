@@ -10,9 +10,7 @@ import UIKit
 import CoreData
 
 class DrinkSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  
-  // todo: frc methods to update custom area
-  
+    
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var viewTitle: UILabel!
   @IBOutlet weak var topNav: TopNav!

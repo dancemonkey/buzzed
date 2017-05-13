@@ -61,7 +61,6 @@ class SettingsTableVC: UITableViewController, DrinkSelectDelegate, UITextFieldDe
     let confirm = UIAlertAction(title: "Yep, go for it.", style: .destructive) { (action) in
       let dm = DataManager()
       dm.clearAllHistory()
-      // also pop-up asking if all Health data should be removed
     }
     alert.addAction(confirm)
     alert.addAction(cancel)

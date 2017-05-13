@@ -88,7 +88,7 @@ class DataManager {
     entity.imageName = CaffeineSourceType.custom.getAssociatedImageName()
     entity.mgCaffeinePerVolume = drink.mgCaffeinePerVolume
     entity.volume = drink.volume
-    entity.creation = Date()// as NSDate?
+    entity.creation = Date()
     self.save()
   }
   

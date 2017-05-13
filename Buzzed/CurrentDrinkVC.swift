@@ -108,7 +108,6 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
   }
   
   @IBAction func donePressed(_ sender: SystemBtn) {
-    // TODO: dismiss consumed drink differently than canceled drink
     
     if let drink = consumptionControls.source {
       let dm = DataManager()
