@@ -30,7 +30,7 @@
                         <constraint firstAttribute="height" constant="240" id="tDu-Xc-DOj"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Di-pDl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LiquidWhite" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Di-pDl">
                     <rect key="frame" x="0.0" y="0.0" width="176" height="240"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
@@ -59,5 +59,6 @@
     </objects>
     <resources>
         <image name="16oz Cup - Brown" width="168" height="240"/>
+        <image name="LiquidWhite" width="168" height="240"/>
     </resources>
 </document>

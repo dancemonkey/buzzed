@@ -878,7 +878,7 @@
         <scene sceneID="c8p-bi-9Xr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3yf-dP-bY3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Current" id="vJl-kt-ZeB"/>
+                    <tabBarItem key="tabBarItem" title="Current" image="Coffee" selectedImage="Coffee" id="vJl-kt-ZeB"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q6J-pb-KTK">
@@ -1344,7 +1344,7 @@
         <scene sceneID="0Wo-b3-G55">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="x66-hB-icy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="J62-rb-ui1"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="J62-rb-ui1"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qfa-9t-Exa">
@@ -1494,7 +1494,7 @@
         <scene sceneID="Wg9-vw-3yM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="g0y-fS-TyE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="FU6-P9-55O"/>
+                    <tabBarItem key="tabBarItem" title="History" image="Calendar" selectedImage="Calendar" id="FU6-P9-55O"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5P-dj-hFe">
@@ -1679,6 +1679,9 @@
     </scenes>
     <resources>
         <image name="Blank Drink" width="183" height="269"/>
+        <image name="Calendar" width="24" height="24"/>
+        <image name="Coffee" width="24" height="24"/>
+        <image name="Settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mKY-A8-FKV"/>
