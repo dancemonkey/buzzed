@@ -101,15 +101,15 @@ enum CaffeineSourceType: String {
     case .dripCoffee:
       return "16oz Cup - Brown"
     case .espresso:
-      return "Cappuchino Brown"
+      return "16oz Cup - Brown"
     case .soda:
       return "Soda Brown"
     case .energyDrink:
-      return ""
+      return "EnergyDrinkCan Brown"
     case .blackTea:
-      return "12oz Mug"
+      return "16oz Cup - Brown"
     case .greenTea:
-      return "12oz Mug"
+      return "16oz Cup - Brown"
     case .custom:
       return ""
     }
@@ -120,15 +120,15 @@ enum CaffeineSourceType: String {
     case .dripCoffee:
       return "LiquidWhite"
     case .espresso:
-      return "Cappuchino Liquid White"
+      return "LiquidWhite"
     case .soda:
       return "Soda Liquid White"
     case .energyDrink:
-      return ""
+      return "EnergyDrinkCan White"
     case .blackTea:
-      return "12oz Liquid White"
+      return "LiquidWhite"
     case .greenTea:
-      return "12oz Liquid White"
+      return "LiquidWhite"
     case .custom:
       return ""
     }
