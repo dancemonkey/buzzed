@@ -117,7 +117,28 @@ enum CaffeineSourceType: String {
     case .greenTea:
       return "16oz Cup - Brown"
     case .custom:
-      return ""
+      return "16oz Cup - Brown"
+    }
+  }
+  
+  func getBlankImageName() -> String {
+    switch self {
+    case .dripCoffee:
+      return "Blank Drink"
+    case .espresso:
+      return "Blank Drink"
+    case .soda:
+      return "Blank Soda"
+    case .energyDrink:
+      return "Blank EnergyDrink"
+    case .icedTea:
+      return "Blank IcedTea"
+    case .blackTea:
+      return "Blank Drink"
+    case .greenTea:
+      return "Blank Drink"
+    case .custom:
+      return "Blank Drink"
     }
   }
   
@@ -138,7 +159,7 @@ enum CaffeineSourceType: String {
     case .greenTea:
       return "LiquidWhite"
     case .custom:
-      return ""
+      return "LiquidWhite"
     }
   }
   

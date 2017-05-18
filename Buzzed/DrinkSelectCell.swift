@@ -25,7 +25,7 @@ class DrinkSelectCell: UITableViewCell {
   }
   
   func configure(with source: CaffeineSourceType) {
-    self.drinkImg.image = UIImage(named: "Blank Drink") //UIImage(named: source.getAssociatedImageName())
+    self.drinkImg.image = UIImage(named: source.getBlankImageName())
     self.drinkName.text = source.getName()
     let unit = DataManager().getDefaultUnits()
     self.drinkInfo.text = "\(source.getMgCaffeinePer(unit))mg per \(unit.symbol)"
