@@ -19,9 +19,13 @@ class HistoryDetailCell: UITableViewCell {
   }
   
   func configCell(with drink: CaffeineSourceCD) {
-    drinkName.text = drink.sourceName!
+    let dm = DataManager()
+    let size = drink.volume
+    let units = dm.getDefaultUnits().symbol
+    let drinkSize = "\(size) \(units)"
+    drinkName.text = drinkSize + " - " + drink.sourceName!
     let totalCaffAvailable = drink.mgCaffeinePerVolume * drink.volume
-    caffTotal.text = (totalCaffAvailable * drink.percentageConsumed).cleanValue + " mg"
+    caffTotal.text = (totalCaffAvailable * drink.percentageConsumed).roundTo(2).cleanValue + " mg"
     drinkStack.configure(withDrink: drink)
   }
   

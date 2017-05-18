@@ -874,11 +874,11 @@
             </objects>
             <point key="canvasLocation" x="2868" y="-791.60419790104959"/>
         </scene>
-        <!--Current-->
+        <!--+ New-->
         <scene sceneID="c8p-bi-9Xr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3yf-dP-bY3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Current" image="Coffee" selectedImage="Coffee" id="vJl-kt-ZeB"/>
+                    <tabBarItem key="tabBarItem" title="+ New" image="Coffee" selectedImage="Coffee" id="vJl-kt-ZeB"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q6J-pb-KTK">
@@ -1685,7 +1685,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mKY-A8-FKV"/>
-        <segue reference="9yi-gA-VMY"/>
         <segue reference="N2h-zR-7H3"/>
+        <segue reference="IpU-UW-BuW"/>
     </inferredMetricsTieBreakers>
 </document>
