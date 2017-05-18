@@ -63,7 +63,7 @@ class DataManager {
   }
   
   func fetchDrinkTypes() -> [CaffeineSourceType] {
-    return [.dripCoffee, .espresso, .soda, .energyDrink, .blackTea, .greenTea]
+    return [.dripCoffee, .espresso, .soda, .energyDrink, .blackTea, .greenTea, .icedTea]
   }
   
   @discardableResult func clearAllHistory() -> Bool {
