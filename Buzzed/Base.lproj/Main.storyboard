@@ -1681,7 +1681,7 @@
         <image name="Blank Drink" width="92" height="134"/>
         <image name="Calendar" width="24" height="24"/>
         <image name="Coffee" width="24" height="24"/>
-        <image name="NewDrinkButton" width="176" height="240"/>
+        <image name="NewDrinkButton" width="183" height="269"/>
         <image name="Settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>

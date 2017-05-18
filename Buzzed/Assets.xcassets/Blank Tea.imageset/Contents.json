@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "12oz Mug.png",
+      "filename" : "Blank Tea.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "12oz Mug@2x.png",
+      "filename" : "Blank Tea@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "12oz Mug@3x.png",
+      "filename" : "Blank Tea@3x.png",
       "scale" : "3x"
     }
   ],
