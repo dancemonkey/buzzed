@@ -111,7 +111,7 @@ enum CaffeineSourceType: String {
     case .energyDrink:
       return "EnergyDrinkCan Brown"
     case .icedTea:
-      return "" // make iced tea icon
+      return "IcedTea Brown"
     case .blackTea:
       return "16oz Cup - Brown"
     case .greenTea:
@@ -134,7 +134,7 @@ enum CaffeineSourceType: String {
     case .blackTea:
       return "LiquidWhite"
     case .icedTea:
-      return "" // make iced tea white icon
+      return "IcedTea White"
     case .greenTea:
       return "LiquidWhite"
     case .custom:
