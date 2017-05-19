@@ -24,7 +24,8 @@ class CustomDrinkCell: UITableViewCell {
     let dm = DataManager()
     drinkImg.image = UIImage(named: drink.imageName!)
     drinkNameLbl.text = "\(drink.sourceName!) - \(drink.volume) \(dm.getDefaultUnits().symbol)"
-    drinkInfoLbl.text = "\(drink.sourceDescription!)"
+    let unit = DataManager().getDefaultUnits()
+    drinkInfoLbl.text = "\(drink.mgCaffeinePerVolume)mg per \(unit.symbol)"
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
