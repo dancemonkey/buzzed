@@ -11,7 +11,7 @@ import UIKit
 class CustomDrinkBuildTableVC: UITableViewController {
   
   @IBOutlet weak var drinkName: UITextField!
-  @IBOutlet weak var drinkDesc: UITextField!
+//  @IBOutlet weak var drinkDesc: UITextField!
   @IBOutlet weak var drinkSize: UITextField!
   @IBOutlet weak var drinkCaffPer: UITextField!
   @IBOutlet weak var sizeInLbl: UILabel!
@@ -35,12 +35,12 @@ class CustomDrinkBuildTableVC: UITableViewController {
   func allEntriesValid() -> Bool {
     
     let validName = drinkName.text?.isEmpty == false
-    let validDesc = drinkDesc.text?.isEmpty == false
+//    let validDesc = drinkDesc.text?.isEmpty == false
     let validSize = drinkSize.text?.isEmpty == false && Double(drinkSize.text!) != nil && drinkSize.numbersOnly()
     let validCaff = drinkCaffPer.text?.isEmpty == false && Double(drinkCaffPer.text!) != nil && drinkCaffPer.numbersOnly()
     
-    let valids: [Bool] = [validName, validDesc, validSize, validCaff]
-    let fields = [drinkName, drinkDesc, drinkSize, drinkCaffPer]
+    let valids: [Bool] = [validName, validSize, validCaff]
+    let fields = [drinkName, drinkSize, drinkCaffPer]
     
     for (index, valid) in valids.enumerated() {
       if !valid {
@@ -54,7 +54,7 @@ class CustomDrinkBuildTableVC: UITableViewController {
       }
     }
     
-    return validName && validDesc && validSize && validCaff
+    return validName && validSize && validCaff
   }
   
   func getDrink() -> CaffeineSource {
@@ -62,13 +62,13 @@ class CustomDrinkBuildTableVC: UITableViewController {
     drink = CaffeineSource(type: .custom, volume: Double(drinkSize.text!)!)
     drink.setCaffeinePerVolume(inMg: Double(drinkCaffPer.text!)!)
     drink.changeName(to: drinkName.text!)
-    drink.changeDescription(to: drinkDesc.text!)
+    drink.changeDescription(to: "")
     return drink
   }
   
   func editExisting(_ drink: CustomDrink) {
     self.drinkName.text = drink.sourceName!
-    self.drinkDesc.text = drink.sourceDescription!
+//    self.drinkDesc.text = drink.sourceDescription!
     self.drinkSize.text = drink.volume.cleanValue
     self.drinkCaffPer.text = drink.mgCaffeinePerVolume.cleanValue
   }

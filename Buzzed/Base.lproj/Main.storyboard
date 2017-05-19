@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1197,7 +1198,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbn-U5-REt">
-                                                    <rect key="frame" x="8" y="26" width="327" height="40"/>
+                                                    <rect key="frame" x="8" y="26" width="343" height="40"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="qQs-a2-JZN"/>
@@ -1224,32 +1225,65 @@
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45E-NE-Bv6">
-                                                    <rect key="frame" x="8" y="5" width="74.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45E-NE-Bv6">
+                                                    <rect key="frame" x="8" y="5" width="27.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68y-qm-qug">
-                                                    <rect key="frame" x="8" y="27" width="327" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="deviceRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="qNt-Uv-7aT"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="0.54509803921568623" green="0.3411764705882353" blue="0.16470588235294117" alpha="1" colorSpace="deviceRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="8nN-Us-n04">
+                                                    <rect key="frame" x="8" y="26" width="343" height="48"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0n-L1-fOV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="33" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="U0n-L1-fOV" secondAttribute="height" multiplier="46:67" id="oKN-76-Cet"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Blank Drink"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NW-eV-8LJ">
+                                                            <rect key="frame" x="77.5" y="0.0" width="33" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="9NW-eV-8LJ" secondAttribute="height" multiplier="46:67" id="ebq-V9-iAb"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Blank Soda"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2y-60-ppG">
+                                                            <rect key="frame" x="155.5" y="0.0" width="32.5" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="N2y-60-ppG" secondAttribute="height" multiplier="46:67" id="jl2-jw-CXX"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Blank Tea"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbL-jv-2ro">
+                                                            <rect key="frame" x="232.5" y="0.0" width="33" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="UbL-jv-2ro" secondAttribute="height" multiplier="46:67" id="J7Q-R6-eES"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Blank EnergyDrink"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wiu-tK-nZr">
+                                                            <rect key="frame" x="310" y="0.0" width="33" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Wiu-tK-nZr" secondAttribute="height" multiplier="46:67" id="T0r-TG-M0n"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Blank IcedTea"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="68y-qm-qug" firstAttribute="top" secondItem="45E-NE-Bv6" secondAttribute="bottom" constant="5" id="OsZ-sH-ImT"/>
                                                 <constraint firstItem="45E-NE-Bv6" firstAttribute="top" secondItem="NMY-5v-XAl" secondAttribute="top" constant="5" id="PHx-iE-V0K"/>
-                                                <constraint firstItem="68y-qm-qug" firstAttribute="leading" secondItem="NMY-5v-XAl" secondAttribute="leading" constant="8" id="Xwn-bN-bQZ"/>
                                                 <constraint firstItem="45E-NE-Bv6" firstAttribute="leading" secondItem="NMY-5v-XAl" secondAttribute="leading" constant="8" id="Zis-Yz-8xd"/>
-                                                <constraint firstAttribute="trailing" secondItem="68y-qm-qug" secondAttribute="trailing" constant="8" id="uiu-UV-FvC"/>
+                                                <constraint firstItem="8nN-Us-n04" firstAttribute="top" secondItem="45E-NE-Bv6" secondAttribute="bottom" constant="4" id="b1L-ua-b4Z"/>
+                                                <constraint firstItem="8nN-Us-n04" firstAttribute="leading" secondItem="NMY-5v-XAl" secondAttribute="leading" constant="8" id="coD-ZO-OSj"/>
+                                                <constraint firstAttribute="trailing" secondItem="8nN-Us-n04" secondAttribute="trailing" constant="8" id="hok-OE-KIa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8nN-Us-n04" secondAttribute="bottom" constant="4" id="ixx-0N-Vjt"/>
+                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="oiP-be-ZCS">
                                         <rect key="frame" x="0.0" y="156" width="359" height="78"/>
@@ -1265,7 +1299,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-jY-PiZ">
-                                                    <rect key="frame" x="8" y="26" width="327" height="40"/>
+                                                    <rect key="frame" x="8" y="26" width="343" height="40"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Cpd-Z8-zqz"/>
@@ -1299,7 +1333,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAo-9Q-t5m">
-                                                    <rect key="frame" x="8" y="26" width="327" height="40"/>
+                                                    <rect key="frame" x="8" y="26" width="343" height="40"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="LYH-Wp-ZB8"/>
@@ -1329,7 +1363,6 @@
                     </tableView>
                     <connections>
                         <outlet property="drinkCaffPer" destination="sAo-9Q-t5m" id="YpR-Qa-Pyh"/>
-                        <outlet property="drinkDesc" destination="68y-qm-qug" id="hJj-oL-lIL"/>
                         <outlet property="drinkName" destination="qbn-U5-REt" id="pjm-7q-g5T"/>
                         <outlet property="drinkSize" destination="QWP-jY-PiZ" id="MSr-Jf-ErN"/>
                         <outlet property="mgCaffPerLbl" destination="FNa-WR-udh" id="i3p-F4-Fl6"/>
@@ -1437,7 +1470,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Drink" translatesAutoresizingMaskIntoConstraints="NO" id="atz-An-1gy">
-                                                    <rect key="frame" x="295" y="-24" width="40" height="134"/>
+                                                    <rect key="frame" x="311" y="-24" width="40" height="134"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="MQx-hl-ZHA"/>
                                                     </constraints>
@@ -1679,6 +1712,10 @@
     </scenes>
     <resources>
         <image name="Blank Drink" width="92" height="134"/>
+        <image name="Blank EnergyDrink" width="92" height="134"/>
+        <image name="Blank IcedTea" width="92" height="134"/>
+        <image name="Blank Soda" width="92" height="134"/>
+        <image name="Blank Tea" width="92" height="134"/>
         <image name="Calendar" width="24" height="24"/>
         <image name="Coffee" width="24" height="24"/>
         <image name="NewDrinkButton" width="183" height="269"/>
