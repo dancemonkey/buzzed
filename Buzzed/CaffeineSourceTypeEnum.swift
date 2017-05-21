@@ -27,7 +27,7 @@ enum CaffeineSourceType: String {
     case .espresso:
       return [1, 2]
     case .soda:
-      return [12, 20]
+      return [8, 12, 20]
     case .energyDrink:
       return [8.4, 12, 20, 24]
     case .blackTea, .icedTea:
@@ -46,14 +46,10 @@ enum CaffeineSourceType: String {
     case .espresso:
       return [30, 60]
     case .soda:
-      return [350, 590]
+      return [240, 350, 590]
     case .energyDrink:
       return [250, 350, 590, 700]
-    case .blackTea, .icedTea:
-      return [240, 350, 470, 590]
-    case .greenTea:
-      return [240, 350, 470, 590]
-    case .custom:
+    case .blackTea, .icedTea, .greenTea, .custom:
       return [240, 350, 470, 590]
     }
   }

@@ -72,7 +72,7 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     
     let lastDrinkAction = getLastDrinkAction(fromDrink: dm.fetchLastDrink())
     
-    let choose = UIAlertAction(title: "Choose a drink...", style: .default) { (action) in
+    let choose = UIAlertAction(title: "Choose Something Else...", style: .default) { (action) in
       self.performSegue(withIdentifier: "drinkSelect", sender: self)
     }
     

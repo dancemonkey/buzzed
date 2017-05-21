@@ -16,6 +16,7 @@ class CustomDrinkBuildTableVC: UITableViewController {
   @IBOutlet weak var drinkCaffPer: UITextField!
   @IBOutlet weak var sizeInLbl: UILabel!
   @IBOutlet weak var mgCaffPerLbl: UILabel!
+  @IBOutlet var drinkIconBtns: [UIButton]!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -55,6 +56,28 @@ class CustomDrinkBuildTableVC: UITableViewController {
     }
     
     return validName && validSize && validCaff
+  }
+  
+  func getDrinkIconName(fromSelection selection: Int) -> String {
+    switch selection {
+    case 0:
+      return CaffeineSourceType.dripCoffee.getAssociatedImageName()
+    case 1:
+      return CaffeineSourceType.soda.getAssociatedImageName()
+    case 2:
+      return CaffeineSourceType.blackTea.getAssociatedImageName()
+    case 3:
+      return CaffeineSourceType.energyDrink.getAssociatedImageName()
+    case 4:
+      return CaffeineSourceType.icedTea.getAssociatedImageName()
+    default:
+      return CaffeineSourceType.dripCoffee.getAssociatedImageName()
+    }
+  }
+  
+  @IBAction func drinkIconPressed(sender: UIButton) {
+    // add selected image name as custom drink icon
+    // update button with visual indication that it's the selected drink
   }
   
   func getDrink() -> CaffeineSource {
