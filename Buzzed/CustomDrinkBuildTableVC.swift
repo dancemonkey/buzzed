@@ -18,7 +18,7 @@ class CustomDrinkBuildTableVC: UITableViewController {
   @IBOutlet weak var mgCaffPerLbl: UILabel!
   @IBOutlet var drinkIconBtns: [UIButton]!
   
-  var selectedIcon: UIImage = UIImage(named: CaffeineSourceType.dripCoffee.getAssociatedImageName())!
+  var selectedIcon: String = CaffeineSourceType.dripCoffee.getAssociatedImageName()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -62,22 +62,22 @@ class CustomDrinkBuildTableVC: UITableViewController {
   func getDrinkIconName(fromSelection selection: Int) -> String {
     switch selection {
     case 0:
-      return CaffeineSourceType.dripCoffee.getAssociatedImageName()
+      return CaffeineSourceType.dripCoffee.getBlankImageName()
     case 1:
-      return CaffeineSourceType.soda.getAssociatedImageName()
+      return CaffeineSourceType.soda.getBlankImageName()
     case 2:
-      return CaffeineSourceType.blackTea.getAssociatedImageName()
+      return CaffeineSourceType.blackTea.getBlankImageName()
     case 3:
-      return CaffeineSourceType.energyDrink.getAssociatedImageName()
+      return CaffeineSourceType.energyDrink.getBlankImageName()
     case 4:
-      return CaffeineSourceType.icedTea.getAssociatedImageName()
+      return CaffeineSourceType.icedTea.getBlankImageName()
     default:
-      return CaffeineSourceType.dripCoffee.getAssociatedImageName()
+      return CaffeineSourceType.dripCoffee.getBlankImageName()
     }
   }
   
   @IBAction func drinkIconPressed(sender: UIButton) {
-    selectedIcon = UIImage(named: getDrinkIconName(fromSelection: sender.tag))!
+    selectedIcon = getDrinkIconName(fromSelection: sender.tag)
     for button in drinkIconBtns {
       button.borderColor = .clear
     }
@@ -91,6 +91,7 @@ class CustomDrinkBuildTableVC: UITableViewController {
     drink.setCaffeinePerVolume(inMg: Double(drinkCaffPer.text!)!)
     drink.changeName(to: drinkName.text!)
     drink.changeDescription(to: "")
+    drink.setCustomIcon(name: selectedIcon)
     return drink
   }
   

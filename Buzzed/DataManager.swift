@@ -85,7 +85,7 @@ class DataManager {
     let entity = NSEntityDescription.insertNewObject(forEntityName: Constants.Entity.customDrinkEntity.name(), into: self.context) as! CustomDrink
     entity.sourceName = drink.sourceName
     entity.sourceDescription = drink.sourceDescription
-    entity.imageName = CaffeineSourceType.custom.getAssociatedImageName() // Set name from selected icon
+    entity.imageName = drink.selectedCustomIcon
     entity.mgCaffeinePerVolume = drink.mgCaffeinePerVolume
     entity.volume = drink.volume
     entity.creation = Date()

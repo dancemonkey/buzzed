@@ -39,6 +39,7 @@ class CustomDrinkBuildVC: UIViewController {
       if let drink = existingDrink {
         drink.sourceName = customDrinkContainer.drinkName.text!
         drink.sourceDescription = ""
+        drink.imageName = customDrinkContainer.selectedIcon
         drink.mgCaffeinePerVolume = Double(customDrinkContainer.drinkCaffPer.text!)!
         drink.volume = Double(customDrinkContainer.drinkSize.text!)!
         dm.save()

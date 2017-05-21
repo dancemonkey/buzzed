@@ -70,6 +70,11 @@ class CaffeineSource {
     return _associatedImageName
   }
   
+  fileprivate var _selectedCustomIcon: String?
+  var selectedCustomIcon: String? {
+    return _selectedCustomIcon
+  }
+  
   init(type: CaffeineSourceType, volume: Double) {
     let dm = DataManager()
     _baseUnit = dm.getDefaultUnits()
@@ -154,6 +159,10 @@ class CaffeineSource {
   
   func setUUID(to uuid: String) {
     self._hkUUID = uuid
+  }
+  
+  func setCustomIcon(name: String) {
+    self._selectedCustomIcon = name
   }
 
 }
