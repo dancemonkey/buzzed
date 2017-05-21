@@ -40,10 +40,15 @@ class ConsumptionSetView: UIView, Hideable {
   
   func setSource(to source: CaffeineSource) {
     self.source = source
-    let imageName = self.source!.associatedImageName
-        
-    let liquidImage = self.source!.sourceType.getLiquidWhiteName() //UIImage(named: "LiquidWhite")
-    caffeineSourceImg.image = UIImage(named: imageName!)
+    var imageName: String = ""
+    var liquidImage: String = ""
+    if source.sourceType == .custom {
+      (imageName, liquidImage) = CustomDrink().getConsumptionImageName(for: source.selectedCustomIcon!)
+    } else {
+      imageName = self.source!.associatedImageName!
+      liquidImage = self.source!.sourceType.getLiquidWhiteName()
+    }
+    caffeineSourceImg.image = UIImage(named: imageName)
     liquidImg.image = UIImage(named: liquidImage)
     
     setShadow()

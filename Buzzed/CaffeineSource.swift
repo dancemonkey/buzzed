@@ -107,7 +107,7 @@ class CaffeineSource {
     self._sourceName = drink.sourceName!
     self._sourceDescription = drink.sourceDescription!
     self._creation = Date()
-    self._associatedImageName = _sourceType.getAssociatedImageName()
+    self.setCustomIcon(name: drink.imageName!)
   }
   
   func createEntity(fromSource source: CaffeineSource) -> CaffeineSourceCD {

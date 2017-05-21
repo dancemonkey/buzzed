@@ -11,7 +11,6 @@ import UIKit
 class CustomDrinkBuildTableVC: UITableViewController {
   
   @IBOutlet weak var drinkName: UITextField!
-//  @IBOutlet weak var drinkDesc: UITextField!
   @IBOutlet weak var drinkSize: UITextField!
   @IBOutlet weak var drinkCaffPer: UITextField!
   @IBOutlet weak var sizeInLbl: UILabel!
