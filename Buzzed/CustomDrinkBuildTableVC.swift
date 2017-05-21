@@ -18,6 +18,8 @@ class CustomDrinkBuildTableVC: UITableViewController {
   @IBOutlet weak var mgCaffPerLbl: UILabel!
   @IBOutlet var drinkIconBtns: [UIButton]!
   
+  var selectedIcon: UIImage = UIImage(named: CaffeineSourceType.dripCoffee.getAssociatedImageName())!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -36,7 +38,6 @@ class CustomDrinkBuildTableVC: UITableViewController {
   func allEntriesValid() -> Bool {
     
     let validName = drinkName.text?.isEmpty == false
-//    let validDesc = drinkDesc.text?.isEmpty == false
     let validSize = drinkSize.text?.isEmpty == false && Double(drinkSize.text!) != nil && drinkSize.numbersOnly()
     let validCaff = drinkCaffPer.text?.isEmpty == false && Double(drinkCaffPer.text!) != nil && drinkCaffPer.numbersOnly()
     
@@ -76,8 +77,12 @@ class CustomDrinkBuildTableVC: UITableViewController {
   }
   
   @IBAction func drinkIconPressed(sender: UIButton) {
-    // add selected image name as custom drink icon
-    // update button with visual indication that it's the selected drink
+    selectedIcon = UIImage(named: getDrinkIconName(fromSelection: sender.tag))!
+    for button in drinkIconBtns {
+      button.borderColor = .clear
+    }
+    sender.borderColor = Constants.Color.accentSuccess.bground()
+    sender.borderWidth = 1.0
   }
   
   func getDrink() -> CaffeineSource {
