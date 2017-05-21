@@ -59,6 +59,32 @@ class CustomDrinkBuildTableVC: UITableViewController {
     return validName && validSize && validCaff
   }
   
+  func highlightSelectedIcon() {
+    switch selectedIcon {
+    case CaffeineSourceType.dripCoffee.getBlankImageName():
+      highlight(iconButton: getButton(withTag: 0)!)
+    case CaffeineSourceType.soda.getBlankImageName():
+      highlight(iconButton: getButton(withTag: 1)!)
+    case CaffeineSourceType.blackTea.getBlankImageName():
+      highlight(iconButton: getButton(withTag: 2)!)
+    case CaffeineSourceType.energyDrink.getBlankImageName():
+      highlight(iconButton: getButton(withTag: 3)!)
+    case CaffeineSourceType.icedTea.getBlankImageName():
+      highlight(iconButton: getButton(withTag: 4)!)
+    default:
+      highlight(iconButton: getButton(withTag: 0)!)
+    }
+  }
+  
+  func getButton(withTag tag: Int) -> UIButton? {
+    for button in drinkIconBtns {
+      if button.tag == tag {
+        return button
+      }
+    }
+    return nil
+  }
+  
   func getDrinkIconName(fromSelection selection: Int) -> String {
     switch selection {
     case 0:
@@ -76,13 +102,17 @@ class CustomDrinkBuildTableVC: UITableViewController {
     }
   }
   
+  func highlight(iconButton: UIButton) {
+    iconButton.borderColor = Constants.Color.accentSuccess.bground()
+    iconButton.borderWidth = 1.0
+  }
+  
   @IBAction func drinkIconPressed(sender: UIButton) {
     selectedIcon = getDrinkIconName(fromSelection: sender.tag)
     for button in drinkIconBtns {
       button.borderColor = .clear
     }
-    sender.borderColor = Constants.Color.accentSuccess.bground()
-    sender.borderWidth = 1.0
+    highlight(iconButton: sender)
   }
   
   func getDrink() -> CaffeineSource {
@@ -97,9 +127,10 @@ class CustomDrinkBuildTableVC: UITableViewController {
   
   func editExisting(_ drink: CustomDrink) {
     self.drinkName.text = drink.sourceName!
-//    self.drinkDesc.text = drink.sourceDescription!
     self.drinkSize.text = drink.volume.cleanValue
     self.drinkCaffPer.text = drink.mgCaffeinePerVolume.cleanValue
+    self.selectedIcon = drink.imageName!
+    highlightSelectedIcon()
   }
   
   // MARK: - Table view data source
