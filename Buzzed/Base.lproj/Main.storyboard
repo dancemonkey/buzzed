@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1286,96 +1285,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="Iaz-5z-lnW">
-                                        <rect key="frame" x="0.0" y="234" width="359" height="83"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iaz-5z-lnW" id="NMY-5v-XAl">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="83"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6Y0-Ze-pLG">
-                                                    <rect key="frame" x="8" y="4" width="343" height="75"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45E-NE-Bv6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="91" height="10"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="10" id="U1C-qa-7Bd"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="8nN-Us-n04">
-                                                            <rect key="frame" x="0.0" y="14" width="343" height="61"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0n-L1-fOV">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="61"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="U0n-L1-fOV" secondAttribute="height" multiplier="46:67" id="oKN-76-Cet"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="Blank Drink"/>
-                                                                    <connections>
-                                                                        <action selector="drinkIconPressedWithSender:" destination="9JT-mK-5qm" eventType="touchUpInside" id="uJY-mO-9E5"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NW-eV-8LJ">
-                                                                    <rect key="frame" x="75.5" y="0.0" width="41.5" height="61"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="9NW-eV-8LJ" secondAttribute="height" multiplier="46:67" id="ebq-V9-iAb"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="Blank Soda"/>
-                                                                    <connections>
-                                                                        <action selector="drinkIconPressedWithSender:" destination="9JT-mK-5qm" eventType="touchUpInside" id="Heh-Jp-n36"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2y-60-ppG">
-                                                                    <rect key="frame" x="150.5" y="0.0" width="41.5" height="61"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="N2y-60-ppG" secondAttribute="height" multiplier="46:67" id="jl2-jw-CXX"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="Blank Tea"/>
-                                                                    <connections>
-                                                                        <action selector="drinkIconPressedWithSender:" destination="9JT-mK-5qm" eventType="touchUpInside" id="Rei-LL-y9H"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbL-jv-2ro">
-                                                                    <rect key="frame" x="225.5" y="0.0" width="41.5" height="61"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="UbL-jv-2ro" secondAttribute="height" multiplier="46:67" id="J7Q-R6-eES"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="Blank EnergyDrink"/>
-                                                                    <connections>
-                                                                        <action selector="drinkIconPressedWithSender:" destination="9JT-mK-5qm" eventType="touchUpInside" id="GWX-iE-CXW"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wiu-tK-nZr">
-                                                                    <rect key="frame" x="300.5" y="0.0" width="42.5" height="61"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="Wiu-tK-nZr" secondAttribute="height" multiplier="46:67" id="T0r-TG-M0n"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="Blank IcedTea"/>
-                                                                    <connections>
-                                                                        <action selector="drinkIconPressedWithSender:" destination="9JT-mK-5qm" eventType="touchUpInside" id="TR4-oW-EOP"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="8nN-Us-n04" firstAttribute="leading" secondItem="6Y0-Ze-pLG" secondAttribute="leading" id="GSC-dX-20E"/>
-                                                        <constraint firstAttribute="trailing" secondItem="8nN-Us-n04" secondAttribute="trailing" id="qyZ-02-EcC"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="6Y0-Ze-pLG" secondAttribute="trailing" constant="8" id="38X-EV-6u5"/>
-                                            <constraint firstItem="6Y0-Ze-pLG" firstAttribute="top" secondItem="Iaz-5z-lnW" secondAttribute="top" constant="4" id="G2C-Ah-EDP"/>
-                                            <constraint firstAttribute="bottom" secondItem="6Y0-Ze-pLG" secondAttribute="bottom" constant="4" id="T5G-wi-HuC"/>
-                                            <constraint firstItem="6Y0-Ze-pLG" firstAttribute="leading" secondItem="Iaz-5z-lnW" secondAttribute="leading" constant="8" id="lIL-Rc-DUO"/>
-                                        </constraints>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1390,11 +1299,6 @@
                         <outlet property="drinkSize" destination="QWP-jY-PiZ" id="MSr-Jf-ErN"/>
                         <outlet property="mgCaffPerLbl" destination="FNa-WR-udh" id="i3p-F4-Fl6"/>
                         <outlet property="sizeInLbl" destination="nHb-rl-Rct" id="taj-G2-jBl"/>
-                        <outletCollection property="drinkIconBtns" destination="U0n-L1-fOV" collectionClass="NSMutableArray" id="D9w-ys-7pC"/>
-                        <outletCollection property="drinkIconBtns" destination="9NW-eV-8LJ" collectionClass="NSMutableArray" id="WZL-qL-c0I"/>
-                        <outletCollection property="drinkIconBtns" destination="N2y-60-ppG" collectionClass="NSMutableArray" id="Jec-Qz-bpy"/>
-                        <outletCollection property="drinkIconBtns" destination="UbL-jv-2ro" collectionClass="NSMutableArray" id="sO7-ux-aU4"/>
-                        <outletCollection property="drinkIconBtns" destination="Wiu-tK-nZr" collectionClass="NSMutableArray" id="801-Aj-csM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rap-Bg-W9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1740,10 +1644,6 @@
     </scenes>
     <resources>
         <image name="Blank Drink" width="92" height="134"/>
-        <image name="Blank EnergyDrink" width="92" height="134"/>
-        <image name="Blank IcedTea" width="92" height="134"/>
-        <image name="Blank Soda" width="92" height="134"/>
-        <image name="Blank Tea" width="92" height="134"/>
         <image name="Calendar" width="24" height="24"/>
         <image name="Coffee" width="24" height="24"/>
         <image name="NewDrinkButton" width="183" height="269"/>
