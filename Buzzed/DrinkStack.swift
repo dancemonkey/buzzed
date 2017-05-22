@@ -15,6 +15,10 @@ class DrinkStack: UIStackView {
   
   func configure(withDrink drink: CaffeineSourceCD) {
     self.isHidden = false
+    if drink.sourceType == "custom" {
+      print("custom history data point")
+      
+    }
     if let imgName = drink.imageName {
       drinkImg.image = UIImage(named: imgName)
     }
