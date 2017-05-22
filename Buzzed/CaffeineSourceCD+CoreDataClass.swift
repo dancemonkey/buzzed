@@ -12,7 +12,7 @@ import CoreData
 
 open class CaffeineSourceCD: NSManagedObject {
   
-  func getBaseClass() -> CaffeineSource {
+  func getBaseClass(withImage image: String?) -> CaffeineSource {
     
     let type = CaffeineSourceType(rawValue: self.sourceType!)
     let volume: Double = self.volume
@@ -36,11 +36,16 @@ open class CaffeineSourceCD: NSManagedObject {
   func setValues(fromBase base: CaffeineSource) {
     self.creation = base.creation as Date?
     self.sourceType = base.sourceType.rawValue
+    print(self.sourceType)
     self.sourceName = base.sourceName
     self.sourceDescription = base.sourceDescription
     self.mgCaffeinePerVolume = base.mgCaffeinePerVolume
     self.volume = base.volume
-    self.imageName = base.associatedImageName
+//    if self.sourceType == "custom" {
+//      self.imageName = base.selectedCustomIcon
+//    } else {
+      self.imageName = base.associatedImageName
+//    }
     self.percentageConsumed = base.percentageConsumed
     self.hkUUID = base.hkUUID
     print("entity uuid set as \(String(describing: self.hkUUID))")

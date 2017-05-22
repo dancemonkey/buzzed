@@ -92,9 +92,19 @@ class CurrentDrinkVC: UIViewController, DrinkSelectDelegate {
     let title = "Recent: \(drink!.sourceName) - \(drink!.volume) \(dm.getDefaultUnits().symbol)"
     return UIAlertAction(title: title, style: .default, handler: { (action) in
       let source = CaffeineSource(type: drink!.sourceType, volume: drink!.volume)
+      if drink?.sourceType == .custom {
+//        source.setCaffeinePerVolume(inMg: drink?.mgCaffeinePerVolume)
+//        source.setCustomIcon(name: drink?.selectedCustomIcon)
+      }
       self.setSelected(source)
     })
   }
+  
+//  self._mgCaffeinePerVolume = drink.mgCaffeinePerVolume
+//  self._sourceName = drink.sourceName!
+//  self._sourceDescription = drink.sourceDescription!
+//  self._creation = Date()
+//  self.setCustomIcon(name: drink.imageName!)
   
   fileprivate func getFavoriteDrinkAction(fromDrink drink: CaffeineSource?) -> UIAlertAction {
     guard drink != nil else {

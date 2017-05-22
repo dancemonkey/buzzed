@@ -38,7 +38,7 @@ class DataManager {
       let results = try context.fetch(fetch)
       if results.count > 0 {
         for drink in results {
-          return (drink as? CaffeineSourceCD)?.getBaseClass()
+          return (drink as? CaffeineSourceCD)?.getBaseClass(withImage: (drink as? CaffeineSourceCD)?.imageName)
         }
       }
     } catch {
@@ -53,7 +53,7 @@ class DataManager {
       let results = try context.fetch(fetch)
       var drinksToReturn = [CaffeineSource]()
       for result in results {
-        drinksToReturn.append((result as! CaffeineSourceCD).getBaseClass())
+        drinksToReturn.append((result as! CaffeineSourceCD).getBaseClass(withImage: (result as? CaffeineSourceCD)?.imageName))
       }
       return drinksToReturn
     } catch {

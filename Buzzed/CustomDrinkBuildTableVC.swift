@@ -112,6 +112,7 @@ class CustomDrinkBuildTableVC: UITableViewController {
       button.borderColor = .clear
     }
     highlight(iconButton: sender)
+    self.view.endEditing(true)
   }
   
   func getDrink() -> CaffeineSource {
