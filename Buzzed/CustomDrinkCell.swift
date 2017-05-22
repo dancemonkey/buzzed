@@ -22,7 +22,7 @@ class CustomDrinkCell: UITableViewCell {
   
   func config(withDrink drink: CustomDrink) {
     let dm = DataManager()
-    drinkImg.image = UIImage(named: drink.imageName!)
+    drinkImg.image = UIImage(named: CaffeineSourceType.custom.getAssociatedImageName())
     drinkNameLbl.text = "\(drink.sourceName!) - \(drink.volume) \(dm.getDefaultUnits().symbol)"
     let unit = DataManager().getDefaultUnits()
     drinkInfoLbl.text = "\(drink.mgCaffeinePerVolume)mg per \(unit.symbol)"

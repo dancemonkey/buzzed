@@ -28,7 +28,7 @@ class ConsumptionSetView: UIView, Hideable {
     view = Bundle.main.loadNibNamed("ConsumptionSetView", owner: self, options: nil)?[0] as! UIView
     self.addSubview(view)
     view.frame = self.bounds
-  
+    
   }
   
   func setLevel(to level: Double) {
@@ -42,12 +42,8 @@ class ConsumptionSetView: UIView, Hideable {
     self.source = source
     var imageName: String = ""
     var liquidImage: String = ""
-    if source.sourceType == .custom {
-      (imageName, liquidImage) = CustomDrink().getConsumptionImageName(for: source.selectedCustomIcon!)
-    } else {
-      imageName = self.source!.associatedImageName!
-      liquidImage = self.source!.sourceType.getLiquidWhiteName()
-    }
+    imageName = self.source!.associatedImageName!
+    liquidImage = self.source!.sourceType.getLiquidWhiteName()
     caffeineSourceImg.image = UIImage(named: imageName)
     liquidImg.image = UIImage(named: liquidImage)
     
@@ -73,7 +69,7 @@ class ConsumptionSetView: UIView, Hideable {
   }
   
   fileprivate func setDrinkLevel() {
-
+    
     guard let mask = liquidImg.mask else {
       return
     }
@@ -84,7 +80,7 @@ class ConsumptionSetView: UIView, Hideable {
     let cc = src.percentageConsumed
     let newY = -(liquidImg.bounds.height * CGFloat(cc))
     let offset: CGFloat = 50 * CGFloat(cc)
-
+    
     mask.frame = CGRect(x: 0, y: newY+offset, width: mask.bounds.width, height: mask.bounds.height)
   }
   

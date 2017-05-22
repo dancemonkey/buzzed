@@ -113,7 +113,7 @@ enum CaffeineSourceType: String {
     case .greenTea:
       return "Tea - Brown"
     case .custom:
-      return "16oz Cup - Brown"
+      return ""
     }
   }
   
