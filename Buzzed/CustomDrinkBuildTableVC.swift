@@ -58,63 +58,6 @@ class CustomDrinkBuildTableVC: UITableViewController {
     return validName && validSize && validCaff
   }
   
-//  func highlightSelectedIcon() {
-//    switch selectedIcon {
-//    case CaffeineSourceType.dripCoffee.getBlankImageName():
-//      highlight(iconButton: getButton(withTag: 0)!)
-//    case CaffeineSourceType.soda.getBlankImageName():
-//      highlight(iconButton: getButton(withTag: 1)!)
-//    case CaffeineSourceType.blackTea.getBlankImageName():
-//      highlight(iconButton: getButton(withTag: 2)!)
-//    case CaffeineSourceType.energyDrink.getBlankImageName():
-//      highlight(iconButton: getButton(withTag: 3)!)
-//    case CaffeineSourceType.icedTea.getBlankImageName():
-//      highlight(iconButton: getButton(withTag: 4)!)
-//    default:
-//      highlight(iconButton: getButton(withTag: 0)!)
-//    }
-//  }
-  
-//  func getButton(withTag tag: Int) -> UIButton? {
-//    for button in drinkIconBtns {
-//      if button.tag == tag {
-//        return button
-//      }
-//    }
-//    return nil
-//  }
-  
-//  func getDrinkIconName(fromSelection selection: Int) -> String {
-//    switch selection {
-//    case 0:
-//      return CaffeineSourceType.dripCoffee.getBlankImageName()
-//    case 1:
-//      return CaffeineSourceType.soda.getBlankImageName()
-//    case 2:
-//      return CaffeineSourceType.blackTea.getBlankImageName()
-//    case 3:
-//      return CaffeineSourceType.energyDrink.getBlankImageName()
-//    case 4:
-//      return CaffeineSourceType.icedTea.getBlankImageName()
-//    default:
-//      return CaffeineSourceType.dripCoffee.getBlankImageName()
-//    }
-//  }
-//  
-//  func highlight(iconButton: UIButton) {
-//    iconButton.borderColor = Constants.Color.accentSuccess.bground()
-//    iconButton.borderWidth = 1.0
-//  }
-  
-//  @IBAction func drinkIconPressed(sender: UIButton) {
-//    selectedIcon = getDrinkIconName(fromSelection: sender.tag)
-//    for button in drinkIconBtns {
-//      button.borderColor = .clear
-//    }
-//    highlight(iconButton: sender)
-//    self.view.endEditing(true)
-//  }
-  
   func getDrink() -> CaffeineSource {
     var drink: CaffeineSource
     drink = CaffeineSource(type: .custom, volume: Double(drinkSize.text!)!)

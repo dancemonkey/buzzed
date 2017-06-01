@@ -113,7 +113,7 @@ enum CaffeineSourceType: String {
     case .greenTea:
       return "Tea - Brown"
     case .custom:
-      return ""
+      return "Custom - Brown"
     }
   }
   
@@ -141,9 +141,9 @@ enum CaffeineSourceType: String {
   func getLiquidWhiteName() -> String {
     switch self {
     case .dripCoffee:
-      return "LiquidWhite"
+      return "16oz Cup - White"
     case .espresso:
-      return "LiquidWhite"
+      return "16oz Cup - White"
     case .soda:
       return "Soda Liquid White"
     case .energyDrink:
@@ -155,7 +155,7 @@ enum CaffeineSourceType: String {
     case .greenTea:
       return "Tea - White"
     case .custom:
-      return "LiquidWhite"
+      return "Custom - White"
     }
   }
   

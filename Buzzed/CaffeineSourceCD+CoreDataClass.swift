@@ -19,7 +19,6 @@ open class CaffeineSourceCD: NSManagedObject {
     let source = CaffeineSource(type: type!, volume: volume)
     if let sentImage = image {
       source.setCustomIcon(name: sentImage)
-      print("found image \(sentImage)")
     }
     
     return source.initSource(fromEntity: self)

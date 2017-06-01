@@ -18,6 +18,9 @@ class DrinkStack: UIStackView {
     if let imgName = drink.imageName {
       drinkImg.image = UIImage(named: imgName)
     }
+    if drink.sourceType == "custom" {
+      drinkImg.image = UIImage(named: CaffeineSourceType.custom.getAssociatedImageName())
+    }
     if let date = drink.creation {
       let formatter = DateFormatter()
       formatter.dateFormat = "HH:mm"
